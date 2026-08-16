@@ -38,7 +38,7 @@ ACM A.M. 图灵奖获奖演讲中文翻译项目,覆盖 1966–2024 全部获奖
 | 1986 | Robert Tarjan | Algorithm Design | [ACM DL](https://doi.org/10.1145/1283920.1283944) | [算法设计](zh/1986-tarjan-算法设计.md) |
 | 1987 | John Cocke | The Search for Performance in Scientific Processors | [ACM DL](https://doi.org/10.1145/1283920.1283945) | [探寻科学处理器的性能](zh/1987-cocke-探寻科学处理器的性能.md) |
 | 1988 | Ivan Sutherland | Micropipelines | [ACM DL](https://doi.org/10.1145/1283920.1283946) | [微流水线](zh/1988-sutherland-微流水线.md) |
-| 1989 | William Kahan | *无书面讲稿(仅视频;替代读物:其 1997 年 SIAM 冯·诺依曼演讲 [PDF](https://people.eecs.berkeley.edu/~wkahan/SIAMjvnl.pdf))* | — | — |
+| 1989 | William Kahan | *无书面讲稿,ACM 演讲页亦无视频存档;替代读物:其 1997 年 SIAM 冯·诺依曼演讲* | [SIAM 演讲 PDF](https://people.eecs.berkeley.edu/~wkahan/SIAMjvnl.pdf) | — |
 | 1990 | Fernando Corbató | On Building Systems That Will Fail | [ACM DL](https://doi.org/10.1145/1283920.1283947) | [论构建注定失败的系统](zh/1990-corbato-论构建注定失败的系统.md) |
 | 1991 | Robin Milner | Elements of Interaction | [ACM DL](https://doi.org/10.1145/1283920.1283948) | [交互的要素](zh/1991-milner-交互的要素.md) |
 | 1992 | Butler Lampson | Principles for Computer System Design(幻灯片讲稿,无 CACM 论文) | [ACM DL](https://doi.org/10.1145/1283920.2159562) | [计算机系统设计原理](zh/1992-lampson-计算机系统设计原理.md) |
@@ -46,38 +46,38 @@ ACM A.M. 图灵奖获奖演讲中文翻译项目,覆盖 1966–2024 全部获奖
 | 1993 | Richard Stearns | It's Time to Reconsider Time(作者预印本) | [ACM DL](https://doi.org/10.1145/1283920.1283950) | [是时候重新考虑时间了](zh/1993-stearns-是时候重新考虑时间了.md) |
 | 1994 | Edward Feigenbaum | How the "What" Becomes the "How" | [ACM DL](https://doi.org/10.1145/1283920.1283951) | ["什么"如何变成"怎么做"](zh/1994-feigenbaum-"什么"如何变成"怎么做".md) |
 | 1994 | Raj Reddy | To Dream the Possible Dream | [ACM DL](https://doi.org/10.1145/1283920.1283952) | [梦想可能之梦](zh/1994-reddy-梦想可能之梦.md) |
-| 1995 | Manuel Blum | *无书面讲稿(仅视频)* | — | — |
+| 1995 | Manuel Blum | *无书面讲稿,ACM 演讲页亦无视频存档* | — | — |
 | 1996 | Amir Pnueli | Verification Engineering: A Future Profession(仅存会议摘要一页) | [ACM DL](https://doi.org/10.1145/259380.259407) | [验证工程:一个未来的职业](zh/1996-pnueli-验证工程:一个未来的职业.md) |
-| 1997 | Douglas Engelbart | *无书面讲稿(仅视频)* | — | — |
+| 1997 | Douglas Engelbart | *无书面讲稿,ACM 演讲页亦无视频存档* | — | — |
 | 1998 | Jim Gray | What Next? A Dozen Information-Technology Research Goals(MS-TR-99-50) | [ACM DL](https://doi.org/10.1145/1283920.2159561) | [下一步是什么:信息技术研究的十二个目标](zh/1998-gray-下一步是什么:信息技术研究的十二个目标.md) |
-| 1999 | Frederick Brooks | *无书面讲稿(书面版收入其 2010 年著作 The Design of Design)* | — | — |
-| 2000 | Andrew Yao(姚期智) | *无书面讲稿(仅视频)* | — | — |
+| 1999 | Frederick Brooks | *无书面讲稿,ACM 演讲页亦无视频存档;相关思想后收入其 2010 年著作 The Design of Design* | — | — |
+| 2000 | Andrew Yao(姚期智) | *无书面讲稿,ACM 演讲页亦无视频存档* | — | — |
 | 2001 | Ole-Johan Dahl & Kristen Nygaard | *无讲稿(两人于颁奖后、演讲前相继逝世)* | — | — |
-| 2002 | Rivest, Shamir & Adleman | *无书面讲稿(仅视频)* | — | — |
-| 2003 | Alan Kay | *无书面讲稿(仅视频)* | — | — |
-| 2004 | Vinton Cerf & Robert Kahn | *无书面讲稿(仅视频)* | — | — |
+| 2002 | Rivest, Shamir & Adleman | Rivest: The Early Days of RSA / Shamir: Cryptography: State of the Science / Adleman: Pre-RSA Days(视频) | [Rivest](https://amturing.acm.org/vp/rivest_1403005.cfm) · [Shamir](https://amturing.acm.org/vp/shamir_2327856.cfm) · [Adleman](https://amturing.acm.org/vp/adleman_7308544.cfm) | — |
+| 2003 | Alan Kay | ACM A.M. Turing Award Lecture(视频) | [视频](https://amturing.acm.org/vp/kay_3972189.cfm) | — |
+| 2004 | Vinton Cerf & Robert Kahn | Assessing the Internet: Lessons Learned, Strategies for Evolution, and Future Possibilities(视频) | [Cerf](https://amturing.acm.org/vp/cerf_1083211.cfm) · [Kahn](https://amturing.acm.org/vp/kahn_4598637.cfm) | — |
 | 2005 | Peter Naur | Computing Versus Human Thinking | [ACM DL](https://doi.org/10.1145/1188913.1188922) | [计算与人类思维](zh/2005-naur-计算与人类思维.md) |
-| 2006 | Frances Allen | *无书面讲稿(仅视频)* | — | — |
+| 2006 | Frances Allen | Compiling for Performance: A Personal Tour(视频) | [视频](https://amturing.acm.org/vp/allen_1012327.cfm) | — |
 | 2007 | Clarke, Emerson & Sifakis | Model Checking: Algorithmic Verification and Debugging | [ACM DL](https://doi.org/10.1145/1592761.1592781) | [模型检测:算法化的验证与调试](zh/2007-clarke-emerson-sifakis-模型检测:算法化的验证与调试.md) |
-| 2008 | Barbara Liskov | *无书面讲稿(仅视频)* | — | — |
-| 2009 | Charles Thacker | *无书面讲稿(仅视频)* | — | — |
-| 2010 | Leslie Valiant | *无书面讲稿(仅视频)* | — | — |
-| 2011 | Judea Pearl | *无书面讲稿(仅视频)* | — | — |
-| 2012 | Goldwasser & Micali | *无书面讲稿(仅视频)* | — | — |
-| 2013 | Leslie Lamport | *无书面讲稿(仅视频)* | — | — |
+| 2008 | Barbara Liskov | The Power of Abstraction(视频) | [视频](https://amturing.acm.org/vp/liskov_1108679.cfm) | — |
+| 2009 | Charles Thacker | Improving the Future by Examining the Past(视频) | [视频](https://amturing.acm.org/vp/thacker_1336106.cfm) | — |
+| 2010 | Leslie Valiant | The Extent and Limitations of Mechanistic Explanations of Nature(视频) | [视频](https://amturing.acm.org/vp/valiant_2612174.cfm) | — |
+| 2011 | Judea Pearl | The Mechanization of Causal Inference: A "Mini" Turing Test and Beyond(视频) | [视频](https://amturing.acm.org/vp/pearl_2658896.cfm) | — |
+| 2012 | Goldwasser & Micali | Goldwasser: The Cryptographic Lens / Micali: Proof According to Silvio(视频) | [Goldwasser](https://amturing.acm.org/vp/goldwasser_8627889.cfm) · [Micali](https://amturing.acm.org/vp/micali_9954407.cfm) | — |
+| 2013 | Leslie Lamport | An Incomplete History of Concurrency(视频) | [视频](https://amturing.acm.org/vp/lamport_1205376.cfm) | — |
 | 2014 | Michael Stonebraker | The Land Sharks Are on the Squawk Box | [ACM DL](https://doi.org/10.1145/2869958) | [陆行鲨上了电话会议](zh/2014-stonebraker-陆行鲨上了电话会议.md) |
-| 2015 | Whitfield Diffie & Martin Hellman | *无书面讲稿(仅视频)* | — | — |
-| 2016 | Tim Berners-Lee | *无书面讲稿(仅视频)* | — | — |
+| 2015 | Whitfield Diffie & Martin Hellman | Diffie: The Evolving Meaning of Information Security / Hellman: Cybersecurity, Nuclear Security, Alan Turing, and Illogical Logic(视频) | [Diffie](https://dl.acm.org/doi/10.1145/2939672.2949031) · [Hellman](https://amturing.acm.org/vp/hellman_4055781.cfm) | — |
+| 2016 | Tim Berners-Lee | The World Wide Web(视频) | [视频](https://amturing.acm.org/vp/berners-lee_8087960.cfm) | — |
 | 2017 | John Hennessy & David Patterson | A New Golden Age for Computer Architecture | [ACM DL](https://doi.org/10.1145/3282307) | [计算机体系结构的新黄金时代](zh/2017-hennessy-patterson-计算机体系结构的新黄金时代.md) |
 | 2018 | Bengio, Hinton & LeCun | Deep Learning for AI | [ACM DL](https://doi.org/10.1145/3448250) | [面向AI的深度学习](zh/2018-bengio-hinton-lecun-面向AI的深度学习.md) |
-| 2019 | Ed Catmull & Pat Hanrahan | *无书面讲稿(仅视频)* | — | — |
+| 2019 | Ed Catmull & Pat Hanrahan | ACM A.M. Turing Award Lecture(视频) | [Catmull](https://amturing.acm.org/vp/catmull_1244219.cfm) · [Hanrahan](https://amturing.acm.org/vp/hanrahan_4652251.cfm) | — |
 | 2020 | Alfred Aho & Jeffrey Ullman | Abstractions, Their Algorithms, and Their Compilers | [ACM DL](https://doi.org/10.1145/3490685) | [抽象、它们的算法与它们的编译器](zh/2020-aho-ullman-抽象、它们的算法与它们的编译器.md) |
 | 2021 | Jack Dongarra | The Evolution of Mathematical Software | [ACM DL](https://doi.org/10.1145/3554977) | [数学软件的演进](zh/2021-dongarra-数学软件的演进.md) |
-| 2022 | Bob Metcalfe | *无书面讲稿(仅视频)* | — | — |
-| 2023 | Avi Wigderson | *无书面讲稿(仅视频)* | — | — |
-| 2024 | Richard Sutton & Andrew Barto | *无书面讲稿(仅视频)* | — | — |
+| 2022 | Bob Metcalfe | ACM A.M. Turing Award Lecture(视频) | [视频](https://amturing.acm.org/vp/metcalfe_3968158.cfm) | — |
+| 2023 | Avi Wigderson | ACM A.M. Turing Award Lecture(视频) | [视频](https://amturing.acm.org/vp/wigderson_3844537.cfm) | — |
+| 2024 | Richard Sutton & Andrew Barto | *无书面讲稿;演讲视频尚未收录于 ACM 演讲页* | — | — |
 
-**统计**:1966–2024 共 59 个获奖年份;其中 39 个年份存在书面讲稿(含合著/同年双人分讲),对应 42 篇文献,**全部已收录并翻译(42 / 42)**;其余年份仅有演讲视频,无正式论文。
+**统计**:1966–2024 共 59 个获奖年份;其中 39 个年份存在书面讲稿(含合著/同年双人分讲),对应 42 篇文献,**全部已翻译(42 / 42)**;2002 年起仅以视频演讲的年份,表中已按 ACM 官方演讲页填入视频标题与链接。
 
 ## 说明
 
@@ -85,4 +85,5 @@ ACM A.M. 图灵奖获奖演讲中文翻译项目,覆盖 1966–2024 全部获奖
 - 1972 Dijkstra 原始 ACM 合集缺失,采用 UT Austin EWD 档案馆授权复刻版 EWD340。
 - 1993 Stearns 采用作者主页自存预印本(与 CACM 37(11) 正式版同文)。
 - 2021 Dongarra 采用 netlib 作者自存档(CACM 65(12) 正式版同文)。
-- 各年演讲视频见 ACM 官方页面:[amturing.acm.org/lectures.cfm](https://amturing.acm.org/lectures.cfm)。
+- 视频标题与链接均取自 ACM 官方演讲页 [amturing.acm.org/lectures.cfm](https://amturing.acm.org/lectures.cfm);2019/2022/2023 及 2003 年 ACM 页面仅以 "ACM A.M. Turing Award Lecture" 为题,故照录。
+- 1989 Kahan、1995 Blum、1997 Engelbart、1999 Brooks、2000 Yao 既无书面讲稿,亦不见于 ACM 演讲页(Kahan 一栏 ACM 官方书目注明 "never got around to publishing his");2001 Dahl & Nygaard 于颁奖后、演讲前相继逝世;2024 Sutton & Barto 的视频截至整理时尚未收录。
