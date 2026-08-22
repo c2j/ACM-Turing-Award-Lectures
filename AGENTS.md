@@ -39,6 +39,21 @@ NOTE (git): the repo at github.com:c2j/ACM-Turing-Award-Lectures ships ONLY zh/ 
 `translated/` (the PDFs) is gitignored and kept local-only for copyright reasons; README's
 原文 column links to ACM DL DOIs instead. History was rebuilt to purge PDFs — never re-add them.
 
+## Turing source papers (`papers/` → `papers-cn/`)
+
+- `papers/` holds 6 PDFs: two standalone papers (Church 1936, "An Unsolvable Problem of
+  Elementary Number Theory"; Sterrett, "Turing and the Integration of Human and Machine
+  Intelligence", Feb 2012 Turing100 draft) and the four-volume North-Holland/Elsevier
+  *Collected Works of A.M. Turing* (Mechanical Intelligence, Pure Mathematics, Morphogenesis,
+  Mathematical Logic — ~1,000 pp total; Mechanical Intelligence & Pure Mathematics are
+  image-only scans with NO text layer).
+- The two standalone papers are translated into `papers-cn/` (same format as `zh/`, named
+  `<year>-<author>-<中文标题>.md`). The four volumes are NOT translated — too large, two lack
+  text layers; only their TOCs were inspected.
+- NOTE: the current default model cannot read images (`read_image` fails), so math-heavy
+  translations must reconstruct formulas from pdftotext output + domain knowledge and flag
+  uncertain restorations in 译注 (this applied to the Church 1936 translation).
+
 ## File index (filename → lecture)
 
 | File | Year | Author(s) | Lecture |
