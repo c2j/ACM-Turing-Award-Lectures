@@ -36,7 +36,7 @@ jobs:
           hugo mod init github.com/c2j/ACM-Turing-Award-Lectures
           hugo mod get github.com/pgsty/oink@v0.6.0
       - name: Build
-        run: hugo --minify --buildFuture --gc --baseURL "${{ steps.pages.outputs.base_url }}/"
+        run: hugo --minify --buildFuture --gc
       - uses: actions/upload-pages-artifact@v3
         with:
           path: public
