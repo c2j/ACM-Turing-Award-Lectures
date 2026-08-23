@@ -1,0 +1,11 @@
+# 1985-karp 九张插图裁剪规格(坐标单位:pt,原点页面左上,页从1起)
+# 列: 输出名<TAB>页<TAB>x0<TAB>y0<TAB>x1<TAB>y1<TAB>备注
+fig-01.png	2	95	552	270	712	Figure 1. A Circuit for the Majority Function(p2左栏,图题在y≈714)
+fig-02.png	2	300	65	546	250	Figure 2. A Traveling Salesman Tour(p2右栏,图题在y≈252)
+fig-03.png	5	90	42	305	277	Figure 3. The Linear Programming Problem(p5左栏,图题在y≈281)
+fig-04.png	5	78	620	318	692	Figure 4. An Instance of the Marriage Problem((a)-(d)四个矩阵,p5左栏,图题在y≈695)
+fig-05.png	6	283	48	560	198	Figure 5. Halting Problem reducible to Hilbert's Tenth Problem(嵌入JPEG,p6右栏,图题在y≈200)
+fig-06.png	8	40	525	302	677	Figure 6. TSP Polynomial-Time Reducible to Satisfiability Problem(嵌入JPEG,p8左栏,图题在y≈680)
+fig-07.png	9	95	540	282	688	Figure 7. A Packing Created by the First-Fit Decreasing Algorithm(嵌入JPEG,p9左栏,图题在y≈694)
+fig-08.png	10	45	250	540	702	Figure 8. Divide-and-Conquer Algorithm for TSP in the Plane((a)-(d)四图2x2,通栏,图题在y≈705)
+fig-09.png	12	100	52	237	105	Figure 9. A Pattern-Matching Problem(Pattern/Text两行字符串,p12左栏,图题在y≈108)

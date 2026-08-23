@@ -86,6 +86,7 @@ ACM A.M. 图灵奖获奖演讲中文翻译项目,覆盖 1966–2024 全部获奖
 - 1972 Dijkstra 原始 ACM 合集缺失,采用 UT Austin EWD 档案馆授权复刻版 EWD340。
 - 1993 Stearns 采用作者主页自存预印本(与 CACM 37(11) 正式版同文)。
 - 2021 Dongarra 采用 netlib 作者自存档(CACM 65(12) 正式版同文)。
+- 原文含图形(矢量图/照片)的演讲,译文以 `![图 N](assets/<年份>-<作者>/...)` 内嵌保留,图片由 [`scripts/extract-figures.py`](scripts/extract-figures.py) 按 [`scripts/specs/`](scripts/specs/) 中的坐标规格从 PDF 渲染(300 dpi + 去白边)生成;示例见 1998-gray 的三张插图。
 - 视频标题与链接均取自 ACM 官方演讲页 [amturing.acm.org/lectures.cfm](https://amturing.acm.org/lectures.cfm);2019/2022/2023 及 2003 年 ACM 页面仅以 "ACM A.M. Turing Award Lecture" 为题,故照录。
 - 1989 Kahan、1995 Blum、1997 Engelbart、1999 Brooks、2000 Yao 既无书面讲稿,亦不见于 ACM 演讲页(Kahan 一栏 ACM 官方书目注明 "never got around to publishing his");2001 Dahl & Nygaard 于颁奖后、演讲前相继逝世;2024 Sutton & Barto 的视频截至整理时尚未收录。
 
