@@ -1,0 +1,175 @@
+{{/* 译注侧栏:自动跟随当前阅读位置的译注,显示在右侧目录下方。
+     仅在正文中存在〔译注N〕且附录定义了对应〔译注N〕时启用。
+     依赖:正文容器 .td-content;附录起始于文本为"译注"的标题之下。
+     若 OINK/Docsy 不调用本 hook,请把它 include 到页面模板尾部。
+*/}}
+<style>
+  #td-annot-panel{position:fixed;right:1rem;top:84px;width:296px;max-height:calc(100vh - 120px);
+    overflow:auto;z-index:1050;background:var(--td-surface,#fff);color:var(--td-body-color,#1c1c21);
+    border:1px solid var(--bs-border-color,#dee2e6);border-radius:.5rem;
+    box-shadow:0 .25rem .75rem rgba(0,0,0,.10);padding:.7rem .85rem;font-size:.85rem}
+  #td-annot-panel[hidden]{display:none}
+  #td-annot-panel .td-annot-panel__title{font-weight:700;font-size:.78rem;text-transform:uppercase;
+    letter-spacing:.04em;color:var(--bs-secondary-color,#6c757d);border-bottom:1px solid var(--bs-border-color,#dee2e6);
+    padding-bottom:.35rem;margin-bottom:.55rem}
+  #td-annot-panel .td-annot-item{padding:.45rem .15rem;border-bottom:1px dashed var(--bs-border-color,#e9ecef)}
+  #td-annot-panel .td-annot-item:last-child{border-bottom:0}
+  #td-annot-panel .td-annot-item__n{font-weight:700;color:var(--bs-primary,#0d6efd);margin-right:.3rem}
+  #td-annot-panel .td-annot-item p,#td-annot-panel .td-annot-item li{font-size:.84rem;line-height:1.5;margin:0 0 .2rem}
+  .td-annot-marker{color:var(--bs-primary,#0d6efd);border-bottom:1px dotted var(--bs-primary,#0d6efd);
+    cursor:help;padding:0 .05em}
+  @media(max-width:1199.98px){#td-annot-panel{display:none}}
+</style>
+<script>
+(function(){
+  "use strict";
+  var MARK = /〔译注(\d+)〕/;
+  function init(){
+    var article = document.querySelector(".td-content");
+    if(!article) return;
+    var notes = collectNotes(article);
+    if(!notes){ return; }               // 该页没有附录译注,不启用
+    var markers = wrapMarkers(article, notes);
+    if(!markers.length) return;
+    var panel = makePanel(notes);
+    var ticking = false;
+    function update(){
+      ticking = false;
+      var vh = window.innerHeight;
+      var top = Math.max(0, window.scrollY);
+      // 当前阅读窗口:视口上缘之下、约 60% 视口高度内的标记
+      var line = top + vh * 0.6;
+      var active = [];
+      for(var i=0;i<markers.length;i++){
+        var r = markers[i].el.getBoundingClientRect();
+        var absTop = r.top + window.scrollY;
+        // 位于阅读窗口内(起点 ≥ 窗口顶,且起点 ≤ 基线),或已越过基线但仍在视口内
+        if(absTop >= top - 120 && absTop <= line){
+          active.push(markers[i].n);
+        } else if(absTop > line && active.length === 0){
+          // 若窗口内尚无,则展示离窗口最近的下一处
+          active.push(markers[i].n);
+        }
+      }
+      // 去重
+      var seen = {}, list = [];
+      for(var j=0;j<active.length;j++){ if(!seen[active[j]]){ seen[active[j]]=1; list.push(active[j]); } }
+      render(panel, notes, list);
+    }
+    window.addEventListener("scroll", function(){ if(!ticking){ ticking=true; requestAnimationFrame(update); } }, {passive:true});
+    window.addEventListener("resize", function(){ if(!ticking){ ticking=true; requestAnimationFrame(update); } });
+    update();
+  }
+
+  // 收集附录 `## 译注` 下的 ([译注N] ) 定义;返回 {N: 定义HTML} 或 null。
+  // 兼容两种渲染:各条目独立段落(<p>)或编号列表(<ol><li>)。
+  function collectNotes(article){
+    var heads = article.querySelectorAll("h2, h3"), h = null;
+    for(var i=0;i<heads.length;i++){
+      if(heads[i].textContent.trim().indexOf("译注") === 0){ h = heads[i]; break; }
+    }
+    if(!h) return null;
+    var defs = {}, FOLLOW = Node.DOCUMENT_POSITION_FOLLOWING;
+    var cands = article.querySelectorAll("p, li");
+    for(var j=0;j<cands.length;j++){
+      var el = cands[j];
+      if(el === h || !(h.compareDocumentPosition(el) & FOLLOW)) continue;
+      var t = (el.textContent || "").trim();
+      var m = t.match(/^〔译注(\d+)〕/);
+      if(!m) continue;
+      var n = m[1];
+      if(defs[n]) continue;
+      defs[n] = (el.innerHTML || "").replace(/^\s*<span[^>]*>〔译注\d+〕<\/span>\s*/, "")
+                                   .replace(/^\s*〔译注\d+〕\s*/, "").trim();
+    }
+    return Object.keys(defs).length ? defs : null;
+  }
+
+  // 在正文文本节点里为每个 (〔译注N〕) 包一个可定位的 span。
+  // 只处理附录“译注”标题之前的正文,避免把附录条目本身当作正文标记。
+  function findZhHeading(article){
+    var heads = article.querySelectorAll("h2, h3");
+    for(var i=0;i<heads.length;i++){
+      if(heads[i].textContent.trim().indexOf("译注") === 0) return heads[i];
+    }
+    return null;
+  }
+  function wrapMarkers(article, notes){
+    var h = findZhHeading(article);
+    var out = [];
+    var walker = document.createTreeWalker(article, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n){
+        if(!(n.nodeValue && MARK.test(n.nodeValue))) return NodeFilter.FILTER_REJECT;
+        if(h && (h.compareDocumentPosition(n.parentNode) & Node.DOCUMENT_POSITION_FOLLOWING)) return NodeFilter.FILTER_REJECT; // 附录部分
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var nodes = [];
+    while(walker.nextNode()) nodes.push(walker.currentNode);
+    for(var i=0;i<nodes.length;i++){
+      splitNode(nodes[i], notes, out);
+    }
+    return out;
+  }
+
+  function splitNode(textNode, notes, out){
+    var text = textNode.nodeValue, re = /〔译注(\d+)〕/g, m, last = 0;
+    var doc = textNode.ownerDocument, frag = doc.createDocumentFragment();
+    var matchFound = false;
+    while((m = re.exec(text))){
+      if(m.index > last) frag.appendChild(doc.createTextNode(text.slice(last, m.index)));
+      // 只有附录里定义了该编号才包成可定位 span,否则保留原文
+      if(notes[m[1]]){
+        var span = doc.createElement("span");
+        span.className = "td-annot-marker";
+        span.setAttribute("data-n", m[1]);
+        span.style.cursor = "help";
+        span.textContent = m[0];
+        frag.appendChild(span);
+        out.push({n: m[1], el: span});
+      } else {
+        frag.appendChild(doc.createTextNode(m[0]));
+      }
+      matchFound = true;
+      last = m.index + m[0].length;
+    }
+    if(!matchFound) return;
+    if(last < text.length) frag.appendChild(doc.createTextNode(text.slice(last)));
+    textNode.parentNode.replaceChild(frag, textNode);
+  }
+
+  function makePanel(notes){
+    var p = document.createElement("aside");
+    p.id = "td-annot-panel";
+    p.setAttribute("aria-live", "polite");
+    p.hidden = true;
+    var title = document.createElement("div");
+    title.className = "td-annot-panel__title";
+    title.textContent = "本段译注";
+    p.appendChild(title);
+    document.body.appendChild(p);
+    return p;
+  }
+
+  function render(panel, notes, nums){
+    // 重建列表
+    while(panel.children.length > 1) panel.removeChild(panel.lastChild);
+    if(!nums.length){ panel.hidden = true; return; }
+    for(var i=0;i<nums.length;i++){
+      var item = document.createElement("div");
+      item.className = "td-annot-item";
+      var n = document.createElement("span");
+      n.className = "td-annot-item__n";
+      n.textContent = "译注" + nums[i];
+      item.appendChild(n);
+      var body = document.createElement("div");
+      body.innerHTML = notes[nums[i]] || "(无详细说明)";
+      item.appendChild(body);
+      panel.appendChild(item);
+    }
+    panel.hidden = false;
+  }
+
+  document.addEventListener("DOMContentLoaded", init);
+})();
+</script>

@@ -73,25 +73,25 @@ Thompson 和我所属的贝尔实验室计算科学研究中心研究三大领�
 **文本与翻译说明**
 
 1. ¹ 原文脚注:UNIX 是 AT&T 贝尔实验室的商标。
-2. Ritchie 与 Ken Thompson 因 UNIX 与 C 语言同获 1983 年图灵奖。两人的演讲同刊于 CACM 1984 年 8 月号,标题亦互相呼应:Thompson 的《反思对信任的信任》(*Reflections on Trusting Trust*)与本篇《软件研究之反思》(*Reflections on Software Research*)。
+2. 〔译注2〕 Ritchie 与 Ken Thompson 因 UNIX 与 C 语言同获 1983 年图灵奖。两人的演讲同刊于 CACM 1984 年 8 月号,标题亦互相呼应:Thompson 的《反思对信任的信任》(*Reflections on Trusting Trust*)与本篇《软件研究之反思》(*Reflections on Software Research*)。
 
 **背景与文化注**(译者补注,原文无)
 
-3. PDP-7 是 DEC 公司 1965 年推出的小型机,到 1969 年已属过时的旧设备——"发现一台没人用的旧机器"正是 UNIX 传奇的经典开场。
-4. Joe Ossanna,UNIX 排版系统 troff 的作者;Doug McIlroy,UNIX"管道"(pipe)概念的提出者;Bob Morris,UNIX 密码方案(crypt)的设计者之一,后任美国国家安全局国家计算机安全中心首席科学家(1988 年放出首个互联网蠕虫的 Robert T. Morris 是其子)。
-5. 这三位打字员是 UNIX 史上的著名典故:贝尔实验室专利部门需要文档排版系统,这为研究组争取到 PDP-11 提供了正当理由——UNIX 的第一个"生产应用"是排版专利申请书。
-6. Don Norman,认知科学家,后以《设计心理学》(*The Design of Everyday Things*)闻名;他 1981 年在《Datamation》上发表的《UNIX 的真相》是对 UNIX 用户界面最著名的批评之一。
-7. PDP-10 与 Sigma 7 均为昂贵的大型分时主机。此处与 Thompson 演讲开头"如果 Bobrow 买不起 PDP-10 而不得不屈就 PDP-11,站在这里的就会是他"互为镜像:两人都把 UNIX 的成功部分归于"没能得到大机器"的幸运。
-8. 指加州大学伯克利分校在 UNIX 基础上发展出的 BSD(Berkeley Software Distribution),其贡献包括虚拟内存支持、TCP/IP 网络栈等。
-9. "臭鼬工厂"(skunk works)源自洛克希德公司二战时期的秘密飞机研发部门(得名于漫画《Li'l Abner》中的"Skonk Works"酿酒棚),引申指绕开官方流程、编制外偷偷进行的研发项目。"bootleg"(私酿酒)同义。Ritchie 在此澄清:UNIX 虽起于简陋,却始终有管理层的正式支持。
-10. Mike Lesk,UNIX 重要工具的多产作者:词法分析器生成器 lex、文件传输系统 UUCP、排版预处理器 tbl/refer 等皆出自其手。
-11. 1984 年 1 月 1 日,依据美国司法部反垄断诉讼的和解令,AT&T 剥离 22 家地方贝尔运营公司(即"贝尔系统解体")。作为交换,AT&T 获准进入此前被禁入的计算机市场——这正是下文"AT&T 进军计算机行业"的由来,也是本文写作的时代焦虑所在。
-12. James Watson《双螺旋》(1968),DNA 双螺旋结构发现者的自述,以毫不掩饰地披露科学界的竞争、抢发与保密而轰动一时。
-13. VisiCalc(1979),史上第一款电子表格软件,由 Dan Bricklin 与 Bob Frankston 的小公司开发,被公认为个人电脑的第一个"杀手级应用"。
-14. Alan Kay,面向对象编程语言 Smalltalk 的设计者、Dynabook(笔记本电脑先驱构想)提出者,2003 年图灵奖得主。他 1984 年离开游戏公司 Atari 转投 Apple,正值 Atari 因电子游戏市场崩盘而大砍研究经费。
-15. "账房先生"原文 bean counter(数豆子的人),美式俚语,贬称只盯财务数字、不懂业务价值的会计或管理层。Kay 这句妙语戏仿了托马斯·杰斐逊的名言"自由之树必须时时用爱国者与暴君的鲜血来浇灌"(The tree of liberty must be refreshed from time to time with the blood of patriots and tyrants)——把"浇灌自由之树"的烈士鲜血换成"账房先生"的血,意为:研究要繁荣,就得时不时"祭掉"几个财务至上的管理者。另:原刊此句印作"must from time to time by refreshed",系"be refreshed"之误印。
-16. Xerox PARC(帕洛阿尔托研究中心)是现代个人计算的摇篮:Alto 计算机(参考文献 [10])、图形用户界面、以太网、激光打印机皆诞生于此。参考文献 [10] 的第一作者 Charles Thacker 后于 2009 年获图灵奖。
-17. CRAY-1(原刊排作"CRAY/I"),Seymour Cray 设计的超级计算机(1976),当时世界上最快、最昂贵的机器之一,售价数百万美元。"发现一台没人用的 CRAY-1"与开头"发现一台没人用的 PDP-7"首尾呼应——是幽默,也是对宽松研究环境的期许:愿未来的天才也能碰上一台闲置的顶级机器和一段不被打扰的时光。
+3. 〔译注3〕 PDP-7 是 DEC 公司 1965 年推出的小型机,到 1969 年已属过时的旧设备——"发现一台没人用的旧机器"正是 UNIX 传奇的经典开场。
+4. 〔译注4〕 Joe Ossanna,UNIX 排版系统 troff 的作者;Doug McIlroy,UNIX"管道"(pipe)概念的提出者;Bob Morris,UNIX 密码方案(crypt)的设计者之一,后任美国国家安全局国家计算机安全中心首席科学家(1988 年放出首个互联网蠕虫的 Robert T. Morris 是其子)。
+5. 〔译注5〕 这三位打字员是 UNIX 史上的著名典故:贝尔实验室专利部门需要文档排版系统,这为研究组争取到 PDP-11 提供了正当理由——UNIX 的第一个"生产应用"是排版专利申请书。
+6. 〔译注6〕 Don Norman,认知科学家,后以《设计心理学》(*The Design of Everyday Things*)闻名;他 1981 年在《Datamation》上发表的《UNIX 的真相》是对 UNIX 用户界面最著名的批评之一。
+7. 〔译注7〕 PDP-10 与 Sigma 7 均为昂贵的大型分时主机。此处与 Thompson 演讲开头"如果 Bobrow 买不起 PDP-10 而不得不屈就 PDP-11,站在这里的就会是他"互为镜像:两人都把 UNIX 的成功部分归于"没能得到大机器"的幸运。
+8. 〔译注8〕 指加州大学伯克利分校在 UNIX 基础上发展出的 BSD(Berkeley Software Distribution),其贡献包括虚拟内存支持、TCP/IP 网络栈等。
+9. 〔译注9〕 "臭鼬工厂"(skunk works)源自洛克希德公司二战时期的秘密飞机研发部门(得名于漫画《Li'l Abner》中的"Skonk Works"酿酒棚),引申指绕开官方流程、编制外偷偷进行的研发项目。"bootleg"(私酿酒)同义。Ritchie 在此澄清:UNIX 虽起于简陋,却始终有管理层的正式支持。
+10. 〔译注10〕 Mike Lesk,UNIX 重要工具的多产作者:词法分析器生成器 lex、文件传输系统 UUCP、排版预处理器 tbl/refer 等皆出自其手。
+11. 〔译注11〕 1984 年 1 月 1 日,依据美国司法部反垄断诉讼的和解令,AT&T 剥离 22 家地方贝尔运营公司(即"贝尔系统解体")。作为交换,AT&T 获准进入此前被禁入的计算机市场——这正是下文"AT&T 进军计算机行业"的由来,也是本文写作的时代焦虑所在。
+12. 〔译注12〕 James Watson《双螺旋》(1968),DNA 双螺旋结构发现者的自述,以毫不掩饰地披露科学界的竞争、抢发与保密而轰动一时。
+13. 〔译注13〕 VisiCalc(1979),史上第一款电子表格软件,由 Dan Bricklin 与 Bob Frankston 的小公司开发,被公认为个人电脑的第一个"杀手级应用"。
+14. 〔译注14〕 Alan Kay,面向对象编程语言 Smalltalk 的设计者、Dynabook(笔记本电脑先驱构想)提出者,2003 年图灵奖得主。他 1984 年离开游戏公司 Atari 转投 Apple,正值 Atari 因电子游戏市场崩盘而大砍研究经费。
+15. 〔译注15〕 "账房先生"原文 bean counter(数豆子的人),美式俚语,贬称只盯财务数字、不懂业务价值的会计或管理层。Kay 这句妙语戏仿了托马斯·杰斐逊的名言"自由之树必须时时用爱国者与暴君的鲜血来浇灌"(The tree of liberty must be refreshed from time to time with the blood of patriots and tyrants)——把"浇灌自由之树"的烈士鲜血换成"账房先生"的血,意为:研究要繁荣,就得时不时"祭掉"几个财务至上的管理者。另:原刊此句印作"must from time to time by refreshed",系"be refreshed"之误印。
+16. 〔译注16〕 Xerox PARC(帕洛阿尔托研究中心)是现代个人计算的摇篮:Alto 计算机(参考文献 [10])、图形用户界面、以太网、激光打印机皆诞生于此。参考文献 [10] 的第一作者 Charles Thacker 后于 2009 年获图灵奖。
+17. 〔译注17〕 CRAY-1(原刊排作"CRAY/I"),Seymour Cray 设计的超级计算机(1976),当时世界上最快、最昂贵的机器之一,售价数百万美元。"发现一台没人用的 CRAY-1"与开头"发现一台没人用的 PDP-7"首尾呼应——是幽默,也是对宽松研究环境的期许:愿未来的天才也能碰上一台闲置的顶级机器和一段不被打扰的时光。
 
 **OCR 与印刷勘误**
 

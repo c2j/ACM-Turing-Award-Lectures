@@ -228,12 +228,12 @@ char *s;
 
 **背景与文化注**(译者补注,原文无)
 
-3. Daniel Bobrow,人工智能学者,时任职于 BBN 公司,参考文献 [1] 即其参与研制的 PDP-10 分时系统 TENEX。PDP-10 是昂贵的大型分时主机,PDP-11 则是便宜得多的小型机。此处是 Thompson 的自嘲:UNIX 的风行,很大程度上是因为它恰好运行在廉价小型机上,赶上了行业从大型机转向小型机的浪潮——这正呼应上文"时机与机缘的成分不亚于技术上的功绩"。
-4. "Dance with the one that brought you" 是美国俗谚,源于舞会礼仪:谁带你来舞会,你就应当同谁跳舞。引申为"不可忘本,应忠于成就你的人或事物"。Thompson 因 UNIX 获奖,按此理"理应谈谈 UNIX"。
-5. Dennis Ritchie,C 语言设计者、UNIX 共同创造者,与 Thompson 同获 1983 年图灵奖。其获奖演讲《软件研究之反思》(*Reflections on Software Research*)与本文发表于同期 CACM,两篇标题亦相互呼应。
-6. 1040 表(Form 1040)是美国联邦个人所得税申报表,上有"职业"(occupation)一栏。此处意在强调:即便功成名就,他对自己的身份认定始终是"程序员"。
-7. "自复制程序"(self-reproducing program)后来通称 quine(奎因程序),得名于哲学家 W. V. O. Quine,因其研究过语句自指问题。
-8. 原文 "three-legged race" 即"两人三足"赛跑(两人相邻的腿绑在一起跑步的游戏)。言下之意:用 FORTRAN 写自复制程序,其乐趣恰恰来自工具的笨拙滑稽——正如两人三足赛跑的乐趣来自跑不快。
+3. 〔译注3〕 Daniel Bobrow,人工智能学者,时任职于 BBN 公司,参考文献 [1] 即其参与研制的 PDP-10 分时系统 TENEX。PDP-10 是昂贵的大型分时主机,PDP-11 则是便宜得多的小型机。此处是 Thompson 的自嘲:UNIX 的风行,很大程度上是因为它恰好运行在廉价小型机上,赶上了行业从大型机转向小型机的浪潮——这正呼应上文"时机与机缘的成分不亚于技术上的功绩"。
+4. 〔译注4〕 "Dance with the one that brought you" 是美国俗谚,源于舞会礼仪:谁带你来舞会,你就应当同谁跳舞。引申为"不可忘本,应忠于成就你的人或事物"。Thompson 因 UNIX 获奖,按此理"理应谈谈 UNIX"。
+5. 〔译注5〕 Dennis Ritchie,C 语言设计者、UNIX 共同创造者,与 Thompson 同获 1983 年图灵奖。其获奖演讲《软件研究之反思》(*Reflections on Software Research*)与本文发表于同期 CACM,两篇标题亦相互呼应。
+6. 〔译注6〕 1040 表(Form 1040)是美国联邦个人所得税申报表,上有"职业"(occupation)一栏。此处意在强调:即便功成名就,他对自己的身份认定始终是"程序员"。
+7. 〔译注7〕 "自复制程序"(self-reproducing program)后来通称 quine(奎因程序),得名于哲学家 W. V. O. Quine,因其研究过语句自指问题。
+8. 〔译注8〕 原文 "three-legged race" 即"两人三足"赛跑(两人相邻的腿绑在一起跑步的游戏)。言下之意:用 FORTRAN 写自复制程序,其乐趣恰恰来自工具的笨拙滑稽——正如两人三足赛跑的乐趣来自跑不快。
 
 **印刷与 OCR 勘误**
 
@@ -243,5 +243,5 @@ char *s;
 
 **时代背景**(译者补注,原文无)
 
-12. "414 帮"(the 414s)指 1983 年入侵洛斯阿拉莫斯国家实验室、斯隆-凯特琳癌症中心等数十家机构计算机系统的密尔沃基青少年黑客团体,以当地电话区号 414 得名,案发后成员曾赴国会作证——即下文"我看过这些孩子在国会作证"所指。"Dalton 帮"指纽约私立 Dalton 学校学生入侵计算机网络的事件;媒体如此称呼亦是双关——Dalton Gang 本是 19 世纪美国西部著名的劫匪团伙。同年电影《战争游戏》(*WarGames*)热映,正是这波媒体将少年黑客浪漫化为"神童"(whiz kids)风潮的写照,也是 Thompson 此处批评的对象。
-13. Thompson 寻找的这份文献,后来被确认为 Karger 与 Schell 1974 年的 Multics 安全评估报告:Karger, P.A., and Schell, R.R. *Multics Security Evaluation: Vulnerability Analysis*, ESD-TR-74-193, Vol. II, 美国空军电子系统部,1974 年 6 月。该报告首次提出了在编译器中植入自我延续后门的设想。
+12. 〔译注12〕 "414 帮"(the 414s)指 1983 年入侵洛斯阿拉莫斯国家实验室、斯隆-凯特琳癌症中心等数十家机构计算机系统的密尔沃基青少年黑客团体,以当地电话区号 414 得名,案发后成员曾赴国会作证——即下文"我看过这些孩子在国会作证"所指。"Dalton 帮"指纽约私立 Dalton 学校学生入侵计算机网络的事件;媒体如此称呼亦是双关——Dalton Gang 本是 19 世纪美国西部著名的劫匪团伙。同年电影《战争游戏》(*WarGames*)热映,正是这波媒体将少年黑客浪漫化为"神童"(whiz kids)风潮的写照,也是 Thompson 此处批评的对象。
+13. 〔译注13〕 Thompson 寻找的这份文献,后来被确认为 Karger 与 Schell 1974 年的 Multics 安全评估报告:Karger, P.A., and Schell, R.R. *Multics Security Evaluation: Vulnerability Analysis*, ESD-TR-74-193, Vol. II, 美国空军电子系统部,1974 年 6 月。该报告首次提出了在编译器中植入自我延续后门的设想。

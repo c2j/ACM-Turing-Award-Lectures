@@ -196,25 +196,25 @@ Unix 系统是对 Multics 的一种反作用。甚至连名字都是个笑话。
 
 **文本与翻译说明**
 
-1. "ambitious systems" (雄心勃勃的系统) 是科尔巴托用来描述那些规模宏大、结构复杂、挑战技术极限的系统的术语。
-2. SNAFU 是美军俚语,原意为 "Situation Normal: All Fouled Up",意为"情况正常,一团乱麻"。
-3. 环岛(rotary)在波士顿地区非常普遍,且以交通混乱著称。科尔巴托以此作为分布式控制系统中"注定失败"但又通过人为策略达成平衡的绝佳隐喻。
-4. "啄序"(pecking order)原指群居鸟类通过斗争建立的等级制度,此处指司机在环岛博弈中形成的临时优先权。
+1. 〔译注1〕 "ambitious systems" (雄心勃勃的系统) 是科尔巴托用来描述那些规模宏大、结构复杂、挑战技术极限的系统的术语。
+2. 〔译注2〕 SNAFU 是美军俚语,原意为 "Situation Normal: All Fouled Up",意为"情况正常,一团乱麻"。
+3. 〔译注3〕 环岛(rotary)在波士顿地区非常普遍,且以交通混乱著称。科尔巴托以此作为分布式控制系统中"注定失败"但又通过人为策略达成平衡的绝佳隐喻。
+4. 〔译注4〕 "啄序"(pecking order)原指群居鸟类通过斗争建立的等级制度,此处指司机在环岛博弈中形成的临时优先权。
 
 **背景与文化注**(译者补注,原文无)
 
-5. Whirlwind 计算机是麻省理工学院在 20 世纪 40 年代末至 50 年代初研制的先驱性计算机,是第一台实时处理数据的计算机,也是磁芯存储器的发源地。
-6. PERT 图(Program Evaluation and Review Technique)是一种项目管理工具,用于分析和表示完成给定项目所涉及的任务。
-7. MIPS (Million Instructions Per Second) 是衡量计算机处理速度的指标,即每秒百万条指令。
-8. 磁芯存储器(core memory)是 20 世纪 50 年代至 70 年代计算机主存的主流技术,由 Jay Forrester 在 Whirlwind 项目中发明。
-9. CTSS (Compatible Time-Sharing System) 是世界上第一个实用的分时系统;Multics (Multiplexed Information and Computing Service) 是其继任者,对后来的 Unix 产生了深远影响。关于两者的历史背景及与 Unix 的渊源,可参见本合集中 Dennis Ritchie 的演讲《软件研究之反思》。
-10. Project MAC 是麻省理工学院于 1963 年启动的研究项目,旨在开发分时系统,MAC 是 "Multiple Access Computer" 或 "Machine Aided Cognition" 的缩写。该项目后来演变为麻省理工学院计算机科学与人工智能实验室(CSAIL)。
-11. 此处提及的 Marjorie Daggett、Bob Daley、Bob Fano、Ted Glaser 以及后文提及的 Vyssotsky、Ossanna、Saltzer 等均为 CTSS 和 Multics 开发的核心成员。其中 Joe Ossanna 也是 Unix 重要工具 troff 的作者。
+5. 〔译注5〕 Whirlwind 计算机是麻省理工学院在 20 世纪 40 年代末至 50 年代初研制的先驱性计算机,是第一台实时处理数据的计算机,也是磁芯存储器的发源地。
+6. 〔译注6〕 PERT 图(Program Evaluation and Review Technique)是一种项目管理工具,用于分析和表示完成给定项目所涉及的任务。
+7. 〔译注7〕 MIPS (Million Instructions Per Second) 是衡量计算机处理速度的指标,即每秒百万条指令。
+8. 〔译注8〕 磁芯存储器(core memory)是 20 世纪 50 年代至 70 年代计算机主存的主流技术,由 Jay Forrester 在 Whirlwind 项目中发明。
+9. 〔译注9〕 CTSS (Compatible Time-Sharing System) 是世界上第一个实用的分时系统;Multics (Multiplexed Information and Computing Service) 是其继任者,对后来的 Unix 产生了深远影响。关于两者的历史背景及与 Unix 的渊源,可参见本合集中 Dennis Ritchie 的演讲《软件研究之反思》。
+10. 〔译注10〕 Project MAC 是麻省理工学院于 1963 年启动的研究项目,旨在开发分时系统,MAC 是 "Multiple Access Computer" 或 "Machine Aided Cognition" 的缩写。该项目后来演变为麻省理工学院计算机科学与人工智能实验室(CSAIL)。
+11. 〔译注11〕 此处提及的 Marjorie Daggett、Bob Daley、Bob Fano、Ted Glaser 以及后文提及的 Vyssotsky、Ossanna、Saltzer 等均为 CTSS 和 Multics 开发的核心成员。其中 Joe Ossanna 也是 Unix 重要工具 troff 的作者。
 12. 战略防御倡议(Strategic Defense Initiative, SDI),又称"星球大战计划",是美国在 20 世纪 80 年代提出的反弹道导弹系统。大卫·帕纳斯(David Parnas, 参考文献 [14])曾发表著名的文章论证其软件系统因过于复杂而无法实现。
 
 **OCR 与印刷勘误**
 
 13. 扫描件中部分数学符号和图表标注存在 OCR 识别错误(如 `f(t)=k+ g(t).h(t)` 中的点号识别不一),本译文已对照原刊页面图像校正。
 14. 参考文献 [11] 提到的 Peter G. Neumann 是 Multics 资深成员,长期主持 ACM 的 "Risks Digest" 论坛,是计算机风险研究的权威。
-15. 这是 CTSS 历史上著名的安全事故。由于系统管理员和系统程序员为了方便而打破了"一用户一目录"的隔离原则,导致编辑器的临时文件冲突,最终将口令文件误当作"每日消息"发布。
+15. 〔译注15〕 这是 CTSS 历史上著名的安全事故。由于系统管理员和系统程序员为了方便而打破了"一用户一目录"的隔离原则,导致编辑器的临时文件冲突,最终将口令文件误当作"每日消息"发布。
 16. 原文五幅插图已按原版样式从扫描页中裁剪提取为 PNG 并内嵌于正文相应位置（见 zh/assets/1990-corbato/）：图 1 调试代码（A Subtle Bug，f(t) 阶梯曲线，第 3 页左栏）、图 2 不收敛的迭代法（Why Mishaps，f(x)≈x³ 曲线，第 3 页左栏）、图 3 顶级计算机按年代的性能图（MIPS 对数图，第 3 页左栏）、图 4 给定性能计算机的成本图（Cost/Performance 对数图，第 5 页左栏）、图 5 CTSS 架构简化视图（第 5 页左栏）。
