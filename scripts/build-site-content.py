@@ -25,10 +25,16 @@ def derive_meta(fname):
     m = re.match(r"^(\d{4})-", base)
     year = int(m.group(1)) if m else 0
     rest = base[len(str(year)) + 1:] if year else base
-    # author = up to first '-' after year; the rest is the Chinese title
-    parts = rest.split("-", 1)
-    author = parts[0]
-    chinese = parts[1] if len(parts) > 1 else ""
+    # Prefix titles are Chinese (non-ASCII), so the author is the leading
+    # ASCII run (letters/digits/hyphens), which keeps multi-word authors like
+    # "aho-ullman" intact. Strip a trailing '-' separator before the title.
+    am = re.match(r"^([A-Za-z0-9][A-Za-z0-9\-]*)", rest)
+    if am:
+        author = am.group(1).rstrip("-")
+        chinese = rest[len(am.group(1)):].lstrip("-")
+    else:
+        author = rest
+        chinese = ""
     return year, author, chinese
 
 def yq(s):
