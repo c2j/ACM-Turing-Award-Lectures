@@ -41,7 +41,7 @@ def yq(s):
     """YAML-safe double-quoted value: escape backslash and double quote."""
     return '"' + s.replace("\\", "\\\\").replace('"', '\\"') + '"'
 
-def build_front_matter(year, author, title, h1):
+def build_front_matter(year, author, title, h1, authors_full=None):
     fm = [f'---']
     fm.append(f'title: {yq(h1)}')
     fm.append(f'linkTitle: {yq(h1)}')
@@ -50,12 +50,24 @@ def build_front_matter(year, author, title, h1):
         fm.append(f'weight: {year - 1960}')
     fm.append(f'params:')
     fm.append(f'  author: "{author}"')
+    if authors_full:
+        fm.append(f'  authors: {yq(authors_full)}')
     fm.append(f'  year: {year}')
     fm.append(f'---')
     return "\n".join(fm)
 
 def main():
     os.makedirs(OUT, exist_ok=True)
+    # load award metadata (year/author full name) for extra front matter
+    import yaml
+    slug_authors = {}
+    try:
+        with open(os.path.join(ROOT, "data", "turing.yaml"), encoding="utf-8") as f:
+            for aw in yaml.safe_load(f).get("awards", []):
+                if aw.get("status") == "translated" and aw.get("slug"):
+                    slug_authors[aw["slug"]] = aw.get("authors", "")
+    except Exception as e:
+        print("warn: could not load turing.yaml:", e)
     # copy figures
     if os.path.isdir(os.path.join(ZH, "assets")):
         shutil.copytree(os.path.join(ZH, "assets"), STATIC_ASSETS, dirs_exist_ok=True)
@@ -89,7 +101,7 @@ def main():
         slug = f"{year}-{author}" if year else author
         out = os.path.join(OUT, slug + ".md")
         with open(out, "w", encoding="utf-8") as f:
-            f.write(build_front_matter(year, author, h1, h1) + "\n\n" + body_s.rstrip() + "\n")
+            f.write(build_front_matter(year, author, h1, h1, slug_authors.get(slug)) + "\n\n" + body_s.rstrip() + "\n")
         n += 1
     print(f"generated {n} lecture pages into content/lectures/")
 
