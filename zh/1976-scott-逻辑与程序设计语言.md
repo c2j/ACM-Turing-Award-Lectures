@@ -146,7 +146,7 @@ $$\langle x, y \rangle = \bigsqcup_{m=0}^\infty \langle x \upharpoonright m, y \
 
 即使我们在 $\mathscr{S}$ 上只放了少量的结构，一种语言也会浮现出来。为了说明起见，我们集中讨论 $\mathscr{S}$ 满足的两个同构；即 $\mathscr{S} \cong \mathscr{B} \times \mathscr{S}$ 和 $\mathscr{S} \cong \mathscr{S} \times \mathscr{S}$。第一个确定了 $\mathscr{S}$ 与布尔值（无限）序列有关；而第二个提醒我们上面关于配对函数的讨论。在图 2 中，我们列出了具有两种表达式的语言的简要 BNF 定义：布尔型（$\beta$）和序列型（$\sigma$）。
 
-![图 2:简要语言。](assets/1976-scott/fig-02.png)
+![图 2:简要语言](assets/1976-scott/fig-02.png)
 
 **图 2. 简要语言。**
 $\beta ::= true \mid false \mid \mathbf{head} \sigma$
@@ -238,7 +238,7 @@ $$\mathscr{F}_\infty \cong [\mathscr{F}_\infty \to \mathscr{S}]$$
 
 这里潜伏着很多结构；事实上比我起初想的还要多。在图 3 中，我说明了一个同构链，它表明 $\mathscr{F}_\infty$ 获得了我们已经熟悉的 $\mathscr{S}$ 的大部分特征。这些之所以有效的原因如下。首先，我们将 $\mathscr{F}_\infty$ 视为一个函数空间。现在，函数对可以同构地与承担成对值的函数建立对应关系。但 $\mathscr{S} \times \mathscr{S} \cong \mathscr{S}$，正如我们已经知道的那样。最后一步只是将 $\mathscr{F}_\infty$ 上的函数放回 $\mathscr{F}_\infty$ 的元素。
 
-![图 3:第一个同构链。](assets/1976-scott/fig-03.png)
+![图 3:第一个同构链](assets/1976-scott/fig-03.png)
 
 **图 3. 第一个同构链。**
 $\mathscr{F}_\infty \times \mathscr{F}_\infty \cong [\mathscr{F}_\infty \to \mathscr{S}] \times [\mathscr{F}_\infty \to \mathscr{S}]$
@@ -248,7 +248,7 @@ $\quad \cong \mathscr{F}_\infty$
 
 利用图 3 的同构，我们可以获得图 4 所示的进一步结果。原因相当清楚。取一个从 $\mathscr{F}_\infty$ 到 $\mathscr{F}_\infty$ 的函数。该函数的值可以解释为函数。但考虑到一个其值为函数的函数（在空间同构意义下）只是一个具有两个参数的函数。正如我们在图 3 中看到的，$\mathscr{F}_\infty \times \mathscr{F}_\infty \cong \mathscr{F}_\infty$，因此我们获得了最终的简化（在同构意义下）。
 
-![图 4:第二个同构链。](assets/1976-scott/fig-04.png)
+![图 4:第二个同构链](assets/1976-scott/fig-04.png)
 
 **图 4. 第二个同构链。**
 $[\mathscr{F}_\infty \to \mathscr{F}_\infty] \cong [\mathscr{F}_\infty \to [\mathscr{F}_\infty \to \mathscr{S}]]$

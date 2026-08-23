@@ -358,7 +358,7 @@ $$ \text{NETWORK} \stackrel{def}{=} \nu \text{talk}_1 \nu \text{switch}_1 \dots 
 7. CSP (Communicating Sequential Processes)：Tony Hoare 于 1978 年提出的并发模型。米尔纳在文中提到 Hoare 独立发现了同步交互作为编程原语的思想。
 8. $\pi$-演算 ($\pi$-calculus)：米尔纳等人在 20 世纪 80 年代末提出的并发演算，允许通道名作为消息传递，从而支持移动性（mobility）。本演讲实际上是 $\pi$-演算的宣言。
 9. Newell 和 Simon 的 1975 年图灵奖演讲：即《作为经验探究的计算机科学：符号与搜索》（*Computer Science as Empirical Enquiry: Symbols and Search*），强调了计算机科学的实验科学属性。
-10. 原文图 1-4 展示了从共享存储到分布式进程的演进，以及移动电话网络的拓扑。图 5-6 对比了 $\lambda$-演算的归约与 CCS 的交互。图 7-11 展示了 $\pi$-演算的语法和应用。由于 Markdown 限制，此处以文字描述和公式替代。
+10. 原文图 1-4 展示了从共享存储到分布式进程的演进，以及移动电话网络的拓扑。图 5-6 对比了 $\lambda$-演算的归约与 CCS 的交互。图 7-11 展示了 $\pi$-演算的语法和应用。这些插图已按原稿提取为 PNG 内嵌于正文相应位置（见译注 14）。
 
 **OCR 与印刷勘误**
 
