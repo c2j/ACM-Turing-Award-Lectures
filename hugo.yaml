@@ -4,9 +4,17 @@
 
 title: 图灵奖演讲集
 baseURL: https://c2j.github.io/ACM-Turing-Award-Lectures/
-languageCode: zh-cn
 defaultContentLanguage: zh
 # enableGitInfo: true   # "last modified" from git
+
+# The 'print' output format used by OINK's printable-section layouts.
+outputFormats:
+  print:
+    baseName: print
+    mediaType: text/html
+    isHTML: true
+    permalinkable: true
+    notAlternative: true
 
 # Single-language Chinese site. The theme ships zh translations.
 languages:
