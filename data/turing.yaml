@@ -1,0 +1,72 @@
+# ACM Turing Award lecture index data (1966-2024).
+# Each entry: one award / lecture. status:
+#   translated -> zh translation exists (slug + summary)
+#   video      -> ACM lecture video exists, no Chinese translation (link)
+#   none       -> no written lecture or archived video (note explains the gap)
+# category is the award field/domain.
+
+awards:
+  - { year: 1966, authors: Alan Perlis, category: 程序设计与编译, status: translated, slug: 1966-perlis, summary: 程序系统设计的基石：把程序构造提升为一门学科。 }
+  - { year: 1967, authors: Maurice Wilkes, category: 计算机体系结构, status: translated, slug: 1967-wilkes, summary: 从早期计算机到现代机型的演进与经验回顾。 }
+  - { year: 1968, authors: Richard Hamming, category: 数值计算与工程方法, status: translated, slug: 1968-hamming, summary: 一位老前辈对计算机科学本质与工程实践的独到看法。 }
+  - { year: 1969, authors: Marvin Minsky, category: 人工智能, status: translated, slug: 1969-minsky, summary: 计算机科学中的形式与内容：既有形式语言，更有直觉与内容。 }
+  - { year: 1970, authors: J. H. Wilkinson, category: 数值计算与数学软件, status: translated, slug: 1970-wilkinson, summary: 数值分析家的几点评论：舍入误差与算法的实践。 }
+  - { year: 1971, authors: John McCarthy, category: 人工智能, status: translated, slug: 1971-mccarthy, summary: 人工智能的通用性：接受"通用性"这一目标的辩护。 }
+  - { year: 1972, authors: Edsger Dijkstra, category: 程序设计方法与编程语言, status: translated, slug: 1972-dijkstra, summary: 谦卑的程序员：程序设计作为一门认真而严谨的艺术。 }
+  - { year: 1973, authors: Charles Bachman, category: 数据库系统, status: translated, slug: 1973-bachman, summary: 程序员作为领航员：数据在组织中的角色。 }
+  - { year: 1974, authors: Donald Knuth, category: 算法与程序设计艺术, status: translated, slug: 1974-knuth, summary: 计算机程序设计是一门艺术，而非工程琐事。 }
+  - { year: 1975, authors: Allen Newell 与 Herbert Simon, category: 人工智能与认知科学, status: translated, slug: 1975-newell-simon, summary: 计算机科学作为经验探究：符号与搜索。 }
+  - { year: 1976, authors: Michael Rabin, category: 计算复杂性, status: translated, slug: 1976-rabin, summary: 计算复杂性：可计算与易计算的分野。 }
+  - { year: 1976, authors: Dana Scott, category: 程序设计语言与数理逻辑, status: translated, slug: 1976-scott, summary: 逻辑与程序设计语言：指称语义与布尔值域。 }
+  - { year: 1977, authors: John Backus, category: 程序设计语言与函数式, status: translated, slug: 1977-backus, summary: 把程序设计从冯·诺依曼风格中解放出来，走向函数式。 }
+  - { year: 1978, authors: Robert Floyd, category: 程序设计与形式化证明, status: translated, slug: 1978-floyd, summary: 程序设计的范式：正确性、归纳与断言。 }
+  - { year: 1979, authors: Kenneth Iverson, category: 程序设计语言与APL, status: translated, slug: 1979-iverson, summary: 记号作为思维工具：APL 的威力。 }
+  - { year: 1980, authors: C.A.R. Hoare, category: 程序设计语言与软件工程, status: translated, slug: 1980-hoare, summary: 皇帝的旧衣：对软件业浮华技术评论的批判。 }
+  - { year: 1981, authors: Edgar Codd, category: 关系数据库, status: translated, slug: 1981-codd, summary: 关系数据库：支撑生产力的实用基础。 }
+  - { year: 1982, authors: Stephen Cook, category: 计算复杂性, status: translated, slug: 1982-cook, summary: 计算复杂性概览：P 与 NP 的核心问题。 }
+  - { year: 1983, authors: Dennis Ritchie, category: 操作系统与系统软件, status: translated, slug: 1983-ritchie, summary: 软件研究之反思：Unix 与 C 语言的工程经验。 }
+  - { year: 1983, authors: Ken Thompson, category: 系统软件与网络安全, status: translated, slug: 1983-thompson, summary: 反思对信任的信任：编译器后门与信任根基。 }
+  - { year: 1984, authors: Niklaus Wirth, category: 程序设计语言与编译, status: translated, slug: 1984-wirth, summary: 从语言设计到计算机构造：Pascal 体系。 }
+  - { year: 1985, authors: Richard Karp, category: 算法与计算复杂性, status: translated, slug: 1985-karp, summary: 组合数学、复杂性与随机性：NP 完全性。 }
+  - { year: 1986, authors: John Hopcroft, category: 计算理论与算法, status: translated, slug: 1986-hopcroft, summary: 计算机科学：一门学科的兴起。 }
+  - { year: 1986, authors: Robert Tarjan, category: 算法设计与数据结构, status: translated, slug: 1986-tarjan, summary: 算法设计：数据结构的艺术。 }
+  - { year: 1987, authors: John Cocke, category: 计算机体系结构与编译器, status: translated, slug: 1987-cocke, summary: 为科学处理器探寻性能：RISC 与优化。 }
+  - { year: 1988, authors: Ivan Sutherland, category: 计算机图形学与VLSI, status: translated, slug: 1988-sutherland, summary: 微流水线：异步电路设计的优雅方案。 }
+  - { year: 1989, authors: William Kahan, category: 数值计算, status: none, note: 无书面讲稿，ACM 演讲页亦无视频存档；可参考其 1997 年 SIAM 冯·诺依曼演讲。 }
+  - { year: 1990, authors: Fernando Corbató, category: 操作系统与分时系统, status: translated, slug: 1990-corbato, summary: 论构建注定失败的系统：大型系统工程的教训。 }
+  - { year: 1991, authors: Robin Milner, category: 并发与进程代数, status: translated, slug: 1991-milner, summary: 交互的要素：CCS 与 π-演算。 }
+  - { year: 1992, authors: Butler Lampson, category: 计算机系统设计, status: translated, slug: 1992-lampson, summary: 计算机系统设计原理：层次化与抽象。 }
+  - { year: 1993, authors: Juris Hartmanis, category: 计算复杂性, status: translated, slug: 1993-hartmanis, summary: 计算复杂性与计算机科学的本质。 }
+  - { year: 1993, authors: Richard Stearns, category: 计算复杂性与算法, status: translated, slug: 1993-stearns, summary: 是时候重新考虑时间：时间与复杂性。 }
+  - { year: 1994, authors: Edward Feigenbaum, category: 人工智能与知识工程, status: translated, slug: 1994-feigenbaum, summary: 什么如何变成怎么做：知识与推理。 }
+  - { year: 1994, authors: Raj Reddy, category: 人工智能与语音, status: translated, slug: 1994-reddy, summary: 梦想可能之梦：语音识别与 AI 的愿景。 }
+  - { year: 1995, authors: Manuel Blum, category: 计算复杂性, status: none, note: 无书面讲稿，ACM 演讲页亦无视频存档。 }
+  - { year: 1996, authors: Amir Pnueli, category: 形式化方法与并发, status: translated, slug: 1996-pnueli, summary: 验证工程：并发的时序逻辑与模型检验。 }
+  - { year: 1997, authors: Douglas Engelbart, category: 人机交互, status: none, note: 无书面讲稿，ACM 演讲页亦无视频存档。 }
+  - { year: 1998, authors: Jim Gray, category: 数据库与数据管理, status: translated, slug: 1998-gray, summary: 下一步是什么：信息技术研究的十二个目标。 }
+  - { year: 1999, authors: Frederick Brooks, category: 软件工程, status: none, note: 无书面讲稿，ACM 演讲页亦无视频存档；相关思想后收入其 2010 年著作《The Design of Design》。 }
+  - { year: 2000, authors: Andrew Yao, category: 计算理论与密码学, status: none, note: 无书面讲稿，ACM 演讲页亦无视频存档。 }
+  - { year: 2001, authors: Ole-Johan Dahl 与 Kristen Nygaard, category: 程序设计语言与面向对象, status: none, note: 无讲稿（两位于颁奖后、演讲前相继逝世）。 }
+  - { year: 2002, authors: Rivest, Shamir 与 Adleman, category: 密码学与网络安全, status: video, link: https://amturing.acm.org/vp/rivest_1403005.cfm, note: 三位分别发表视频演讲（RSA 历史 / 密码学 / 前 RSA 时代）。 }
+  - { year: 2003, authors: Alan Kay, category: 程序设计语言与面向对象, status: video, link: https://amturing.acm.org/vp/kay_3972189.cfm, note: 仅有 ACM 图灵奖演讲视频，无书面论文。 }
+  - { year: 2004, authors: Vinton Cerf 与 Robert Kahn, category: 互联网与网络协议, status: video, link: https://amturing.acm.org/vp/cerf_1083211.cfm, note: 视频演讲：评估互联网的经验与策略。 }
+  - { year: 2005, authors: Peter Naur, category: 程序设计方法与软件工程, status: translated, slug: 2005-naur, summary: 计算与人类思维：软件工程的社会视角。 }
+  - { year: 2006, authors: Frances Allen, category: 编译优化与体系结构, status: video, link: https://amturing.acm.org/vp/allen_1012327.cfm, note: 视频演讲：编译优化性能的旅程。 }
+  - { year: 2007, authors: Clarke, Emerson 与 Sifakis, category: 形式化方法与模型检验, status: translated, slug: 2007-clarke-emerson-sifakis, summary: 模型检验：算法的验证与调试。 }
+  - { year: 2008, authors: Barbara Liskov, category: 程序设计语言与抽象, status: video, link: https://amturing.acm.org/vp/liskov_1108679.cfm, note: 视频演讲：抽象的威力。 }
+  - { year: 2009, authors: Charles Thacker, category: 计算机体系结构与系统, status: video, link: https://amturing.acm.org/vp/thacker_1336106.cfm, note: 视频演讲：着眼于过去的改进未来。 }
+  - { year: 2010, authors: Leslie Valiant, category: 计算理论与机器学习, status: video, link: https://amturing.acm.org/vp/valiant_2612174.cfm, note: 视频演讲：机械论解释的限度。 }
+  - { year: 2011, authors: Judea Pearl, category: 人工智能与因果推理, status: video, link: https://amturing.acm.org/vp/pearl_2658896.cfm, note: 视频演讲：因果推理的机械化。 }
+  - { year: 2012, authors: Shafi Goldwasser 与 Silvio Micali, category: 密码学与复杂性, status: video, link: https://amturing.acm.org/vp/goldwasser_8627889.cfm, note: 视频演讲：密码学视角与概率证明。 }
+  - { year: 2013, authors: Leslie Lamport, category: 分布式系统与并发, status: video, link: https://amturing.acm.org/vp/lamport_1205376.cfm, note: 视频演讲：并发的不完整历史。 }
+  - { year: 2014, authors: Michael Stonebraker, category: 数据库系统, status: translated, slug: 2014-stonebraker, summary: 陆行鲨上了电话会议：数据库社区的经验之谈。 }
+  - { year: 2015, authors: Whitfield Diffie 与 Martin Hellman, category: 密码学与信息安全, status: video, link: https://dl.acm.org/doi/10.1145/2939672.2949031, note: 视频演讲：信息安全意义的演进与网络安全。 }
+  - { year: 2016, authors: Tim Berners-Lee, category: 互联网与万维网, status: video, link: https://amturing.acm.org/vp/berners-lee_8087960.cfm, note: 视频演讲：万维网。 }
+  - { year: 2017, authors: John Hennessy 与 David Patterson, category: 计算机体系结构, status: translated, slug: 2017-hennessy-patterson, summary: 计算机体系结构的新黄金时代。 }
+  - { year: 2018, authors: Yoshua Bengio, Geoffrey Hinton 与 Yann LeCun, category: 人工智能与深度学习, status: translated, slug: 2018-bengio-hinton-lecun, summary: 面向 AI 的深度学习。 }
+  - { year: 2019, authors: Ed Catmull 与 Pat Hanrahan, category: 计算机图形学, status: video, link: https://amturing.acm.org/vp/catmull_1244219.cfm, note: 视频演讲。 }
+  - { year: 2020, authors: Alfred Aho 与 Jeffrey Ullman, category: 程序设计语言与编译, status: translated, slug: 2020-aho-ullman, summary: 抽象、它们的算法与它们的编译器。 }
+  - { year: 2021, authors: Jack Dongarra, category: 数值计算与数学软件, status: translated, slug: 2021-dongarra, summary: 数学软件的演进。 }
+  - { year: 2022, authors: Bob Metcalfe, category: 计算机网络, status: video, link: https://amturing.acm.org/vp/metcalfe_3968158.cfm, note: 视频演讲。 }
+  - { year: 2023, authors: Avi Wigderson, category: 计算复杂性与随机性, status: video, link: https://amturing.acm.org/vp/wigderson_3844537.cfm, note: 视频演讲。 }
+  - { year: 2024, authors: Richard Sutton 与 Andrew Barto, category: 人工智能与强化学习, status: none, note: 无书面讲稿，演讲视频尚未收录于 ACM 演讲页。 }
