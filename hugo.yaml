@@ -7,7 +7,7 @@ baseURL: https://c2j.github.io/ACM-Turing-Award-Lectures/
 defaultContentLanguage: zh
 # enableGitInfo: true   # "last modified" from git
 
-# The 'print' output format used by OINK's printable-section layouts.
+# The 'print'/'LLMS' output formats used by OINK's printable and LLM layouts.
 outputFormats:
   print:
     baseName: print
@@ -15,6 +15,12 @@ outputFormats:
     isHTML: true
     permalinkable: true
     notAlternative: true
+  LLMS:
+    baseName: llms
+    mediaType: text/plain
+    isPlainText: true
+    notAlternative: true
+    permalinkable: true
 
 # Single-language Chinese site. The theme ships zh translations.
 languages:
