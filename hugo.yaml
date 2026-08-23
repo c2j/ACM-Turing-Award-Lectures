@@ -1,0 +1,58 @@
+# Hugo site configuration for the ACM Turing Award Lectures (Chinese translations)
+# Theme: OINK (https://oink.pgsty.com) - a local-first Hugo engineering-docs theme.
+# Deploy target: GitHub Pages project site.
+
+title: 图灵奖演讲集
+baseURL: https://c2j.github.io/ACM-Turing-Award-Lectures/
+languageCode: zh-cn
+defaultContentLanguage: zh
+# enableGitInfo: true   # "last modified" from git
+
+# Single-language Chinese site. The theme ships zh translations.
+languages:
+  zh:
+    label: 简体中文
+    locale: zh-CN
+    weight: 1
+    title: 图灵奖演讲集
+    params:
+      description: ACM 图灵奖获奖演讲中文翻译集(1966–2024)
+    menus:
+      main:
+        - { name: 演讲, pageRef: /lectures, weight: 20 }
+        - { name: 关于, pageRef: /about, weight: 50 }
+
+# The three Goldmark prerequisites OINK's native Markdown components depend on.
+markup:
+  goldmark:
+    renderer:
+      unsafe: true # allow inline HTML in content
+    parser:
+      attribute:
+        block: true # attribute lines such as {.steps} {.cards} {caption=}
+      wrapStandAloneImageWithinParagraph: false
+  highlight:
+    noClasses: false # code colours follow light and dark mode
+
+params:
+  offline_search: true
+  github_repo: https://github.com/c2j/ACM-Turing-Award-Lectures
+  copyright:
+    authors: '[c2j](https://github.com/c2j)'
+    from_year: 2026
+  ui:
+    dark_mode: true
+    sidebar_menu_foldable: true
+    section_index: cards
+
+outputs:
+  home: [HTML, markdown, LLMS]
+  page: [HTML, markdown]
+  section: [HTML, RSS, print, markdown]
+
+module:
+  imports:
+    - path: github.com/pgsty/oink
+  hugoVersion:
+    extended: true
+    min: '0.160.1'
