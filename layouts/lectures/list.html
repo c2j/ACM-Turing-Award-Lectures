@@ -27,7 +27,7 @@
       </div>
       <div class="td-turing-item__btn">
         {{ if eq .status "translated" }}
-          <a class="btn btn-sm btn-primary" href="{{ printf "%slectures/%s/" .Site.BaseURL .slug }}">中文译稿 →</a>
+          <a class="btn btn-sm btn-primary" href="{{ printf "%slectures/%s/" site.BaseURL .slug }}">中文译稿 →</a>
         {{ else if eq .status "video" }}
           <a class="btn btn-sm btn-outline-secondary" href="{{ .link }}" target="_blank" rel="noopener">ACM 视频</a>
         {{ else }}
