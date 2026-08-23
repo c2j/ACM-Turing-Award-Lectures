@@ -159,9 +159,9 @@
 
 **文本与翻译说明**
 
-1. Integrated Data Store (I-D-S) 是巴赫曼在通用电气(GE)工作期间开发的第一个网状数据库管理系统,也是世界上第一个商业化的 DBMS。
-2. CODASYL (Conference on Data Systems Languages) 是一个旨在促进有效数据系统分析、设计和实现的组织,最著名的成果是 COBOL 语言。其下属的数据库任务组(DBTG)定义的网状数据库模型被称为 CODASYL 模型。
-3. 指巴赫曼图(Bachman diagrams),即数据结构图,用于描述数据库中的实体及其之间的联系。
+1. 〔译注1〕 Integrated Data Store (I-D-S) 是巴赫曼在通用电气(GE)工作期间开发的第一个网状数据库管理系统,也是世界上第一个商业化的 DBMS。
+2. 〔译注2〕 CODASYL (Conference on Data Systems Languages) 是一个旨在促进有效数据系统分析、设计和实现的组织,最著名的成果是 COBOL 语言。其下属的数据库任务组(DBTG)定义的网状数据库模型被称为 CODASYL 模型。
+3. 〔译注3〕 指巴赫曼图(Bachman diagrams),即数据结构图,用于描述数据库中的实体及其之间的联系。
 
 **背景与文化注**(译者补注,原文无)
 
