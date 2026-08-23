@@ -17,6 +17,7 @@
 
 	{{ partial "content/render.html" . }}
 
+  {{ if eq .Section "lectures" }}
   <div class="td-turing-list">
   {{ range sort .Site.Data.turing.awards "year" }}
     <div class="td-turing-item">
@@ -39,6 +40,9 @@
     </div>
   {{ end }}
   </div>
+  {{ else }}
+    {{ partial "section-index.html" . -}}
+  {{ end }}
 
 	{{ partial "page-end.html" . }}
 </div>
