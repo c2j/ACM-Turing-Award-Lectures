@@ -4,10 +4,11 @@
      若 OINK/Docsy 不调用本 hook,请把它 include 到页面模板尾部。
 */}}
 <style>
-  #td-annot-panel{position:fixed;right:1rem;top:84px;width:296px;max-height:calc(100vh - 120px);
-    overflow:auto;z-index:1050;background:var(--td-surface,#fff);color:var(--td-body-color,#1c1c21);
-    border:1px solid var(--bs-border-color,#dee2e6);border-radius:.5rem;
-    box-shadow:0 .25rem .75rem rgba(0,0,0,.10);padding:.7rem .85rem;font-size:.85rem}
+  /* 面板置于右侧目录栏(.td-shell-aside)内、目录之下,不遮挡目录 */
+  #td-annot-panel{margin:.5rem .75rem 1.25rem;background:var(--td-shell-card,#fff);
+    color:var(--td-body-color,#1c1c21);border:1px solid var(--bs-border-color,#dee2e6);
+    border-radius:.5rem;box-shadow:0 .25rem .75rem rgba(0,0,0,.06);
+    padding:.7rem .85rem;font-size:.85rem}
   #td-annot-panel[hidden]{display:none}
   #td-annot-panel .td-annot-panel__title{font-weight:700;font-size:.78rem;text-transform:uppercase;
     letter-spacing:.04em;color:var(--bs-secondary-color,#6c757d);border-bottom:1px solid var(--bs-border-color,#dee2e6);
@@ -147,7 +148,15 @@
     title.className = "td-annot-panel__title";
     title.textContent = "本段译注";
     p.appendChild(title);
-    document.body.appendChild(p);
+    // 放入右侧目录栏的滚动容器内、目录分组之下,避免遮挡目录
+    var rail = document.querySelector(".td-shell-aside") || document.querySelector(".td-shell-toc__panel");
+    if(rail){
+      var tocGroup = rail.querySelector(".td-shell-aside-group--toc");
+      if(tocGroup && tocGroup.nextSibling){ rail.insertBefore(p, tocGroup.nextSibling); }
+      else { rail.appendChild(p); }
+    } else {
+      document.body.appendChild(p); // 兜底
+    }
     return p;
   }
 
