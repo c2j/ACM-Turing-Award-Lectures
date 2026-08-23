@@ -18,6 +18,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/configure-pages@v5
       - uses: actions/checkout@v4
       - uses: actions/setup-go@v5
         with:
@@ -33,7 +34,7 @@ jobs:
           hugo mod init github.com/c2j/ACM-Turing-Award-Lectures
           hugo mod get github.com/pgsty/oink@v0.6.0
       - name: Build
-        run: hugo --minify --buildFuture --gc
+        run: hugo --minify --buildFuture --gc --baseURL "${{ steps.pages.outputs.base_url }}/"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: public
