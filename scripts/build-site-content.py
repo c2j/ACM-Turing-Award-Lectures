@@ -62,7 +62,7 @@ def main():
         print(f"copied zh/assets/ -> static/assets/")
     # index page for the lectures section
     with open(os.path.join(OUT, "_index.md"), "w", encoding="utf-8") as f:
-        f.write("---\ntitle: 全部演讲\nlinkTitle: 全部演讲\nweight: 20\n---\n\n本页为 **1966–2024 年 ACM 图灵奖获奖演讲总览**，按获奖年份列出每位获奖者及其属别、演讲概要。凡已有中文译稿者以 **中文译稿** 标注并可进入正文；仅有 ACM 演讲视频者以 **ACM 视频** 标注；**空缺** 表示该年无书面讲稿、ACM 演讲页亦无视频存档。\n")
+        f.write("---\ntitle: 全部演讲\nlinkTitle: 全部演讲\nweight: 20\ncascade:\n  type: docs\n---\n\n本页为 **1966–2024 年 ACM 图灵奖获奖演讲总览**，按获奖年份列出每位获奖者及其属别、演讲概要。凡已有中文译稿者以 **中文译稿** 标注并可进入正文；仅有 ACM 演讲视频者以 **ACM 视频** 标注；**空缺** 表示该年无书面讲稿、ACM 演讲页亦无视频存档。\n")
     n = 0
     for fn in sorted(os.listdir(ZH)):
         if not fn.endswith(".md"):
