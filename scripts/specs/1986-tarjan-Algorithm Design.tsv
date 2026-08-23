@@ -1,0 +1,10 @@
+# 1986-tarjan 插图裁剪规格(坐标单位:pt,原点页面左上,页从1起;本PDF共9页,原文CACM 204-212页)
+# 坐标依据:pdftotext -bbox 文字坐标 + 150dpi 渲染像素统计 + pdftocairo -svg 位图定位交叉验证
+# 列: 输出名<TAB>页<TAB>x0<TAB>y0<TAB>x1<TAB>y1<TAB>备注
+fig-01.png	3	315	50	560	228	FIGURE 1. A Planar Graph 平面图(右栏顶部,位图盒约321-561 x 52-246)
+fig-02.png	3	360	473	532	690	FIGURE 2. Kuratowski禁止子图 K5(上)与K3,3(下),两图带中间空档
+fig-03.png	4	288	52	539	302	FIGURE 3. 移去回路C划分图1的图(含图下说明文字)
+fig-04.png	6	285	317	559	489	FIGURE 4. 二叉搜索树(A-L,含"items ordered alphabetically"说明)
+fig-05.png	7	64	50	318	246	FIGURE 5. 二叉搜索树旋转(含节点x/y与说明文字)
+fig-06.png	8	146	46	435	440	FIGURE 6. 伸展步三种情形 zig/zig-zig/zig-zag(跨两栏,含图下说明)
+fig-07.png	8	130	572	445	714	FIGURE 7. 不平衡树上两次昂贵伸展的序列(两棵splay树)

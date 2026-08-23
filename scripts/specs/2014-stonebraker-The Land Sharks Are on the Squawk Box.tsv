@@ -1,0 +1,7 @@
+# 2014-stonebraker 四张插图裁剪规格(坐标单位:pt,原点页面左上,页从1起)
+# 列: 输出名<TAB>页<TAB>x0<TAB>y0<TAB>x1<TAB>y1<TAB>备注
+# 每图结构: 顶部青色(teal)标题条内嵌英文图题, 下方浅蓝面板为图形内容
+fig-01.png	3	34	51.5	372	263	双时间线图:横穿美国骑行 vs Illustra/Postgres 开发(浅蓝面板+青色图题条)
+fig-02.png	3	34	270	199	435	相关性数据示例表:dept/Employee 两表,说明引用完整性
+fig-03.png	4	386	414	551	580	传统 DBMS 崩溃恢复示意图(DBMS+Data Log 框图)
+fig-04.png	4	386	586	551	741	Postgres 无覆写(No overwrite)示意图(DBMS+Data+Log 框图)
