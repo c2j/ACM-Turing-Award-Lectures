@@ -31,10 +31,14 @@ def derive_meta(fname):
     chinese = parts[1] if len(parts) > 1 else ""
     return year, author, chinese
 
+def yq(s):
+    """YAML-safe double-quoted value: escape backslash and double quote."""
+    return '"' + s.replace("\\", "\\\\").replace('"', '\\"') + '"'
+
 def build_front_matter(year, author, title, h1):
     fm = [f'---']
-    fm.append(f'title: "{h1}"')
-    fm.append(f'linkTitle: "{h1}"')
+    fm.append(f'title: {yq(h1)}')
+    fm.append(f'linkTitle: {yq(h1)}')
     if year:
         fm.append(f'date: {year}-01-01')
         fm.append(f'weight: {year - 1960}')
