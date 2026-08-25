@@ -92,7 +92,7 @@ ACM A.M. 图灵奖获奖演讲中文翻译项目,覆盖 1966–2024 全部获奖
 
 ## 相关文献翻译:`papers/` → `papers-cn/`
 
-`papers/` 目录另存有一批图灵相关原始文献:两篇独立论文与四卷图灵《全集》(*Collected Works of A.M. Turing*,North-Holland/Elsevier)。全部文献已译入 [`papers-cn/`](papers-cn/),格式规范与 `zh/` 一致(正文 + 译注);四卷《全集》合计约 1,000 页,按单元逐篇译出,每卷目录下有 `README.md`(单元对照表)与 `翻译清单.md`(逐页核对清单)。
+`papers/` 目录另存有一批图灵相关原始文献:两篇独立论文与四卷图灵《全集》(*Collected Works of A.M. Turing*,North-Holland/Elsevier)。全部文献已译入 [`papers-cn/`](papers-cn/),格式规范与 `zh/` 一致(正文 + 译注);四卷《全集》合计约 1,000 页,按单元逐篇译出,每卷目录下有 `README.md`(单元对照表)与 `翻译清单.md`(逐页核对清单)。这些文献与 `zh/` 演讲译文一同由 Hugo 流水线(`scripts/build-site-content.py`)转换为 HTML,发布于站点"图灵全集"栏目。
 
 | 原文文件(`papers/`) | 类型 | 状态 | 中文翻译 |
 |---|---|---|---|
