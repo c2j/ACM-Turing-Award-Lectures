@@ -3,7 +3,7 @@
 ACM A.M. 图灵奖获奖演讲中文翻译项目,覆盖 1966–2024 全部获奖年份。
 
 - 中文译文位于 [`zh/`](zh/),命名为 `年份-作者-中文标题.md`,含译注(文化背景、勘误、OCR 校正说明),共 42 篇(凡存在书面讲稿者均已翻译)。
-- 图灵相关原始文献的独立论文译文位于 [`papers-cn/`](papers-cn/)(Church 1936、Sterrett 2012),见文末"相关文献翻译"附表;四卷图灵《全集》体量过大,暂未翻译。
+- 图灵相关原始文献的译文位于 [`papers-cn/`](papers-cn/):两篇独立论文(Church 1936、Sterrett 2012)与四卷图灵《全集》(*Collected Works of A.M. Turing*)均已逐篇译出(共 100 余个文件),见文末"相关文献翻译"附表。
 - 原文 PDF **不随本仓库分发**,总索引中"原文"列直接链接到 ACM Digital Library 的正式出版页(DOI);ACM 已开放 1951–2000 年全部文库及历年图灵演讲论文,点击即可免费获取。
 - 部分年份从未发表书面讲稿(仅有演讲视频,见 [amturing.acm.org](https://amturing.acm.org/lectures.cfm)),已在表中逐年注明。
 
@@ -91,18 +91,18 @@ ACM A.M. 图灵奖获奖演讲中文翻译项目,覆盖 1966–2024 全部获奖
 
 ## 相关文献翻译:`papers/` → `papers-cn/`
 
-`papers/` 目录另存有一批图灵相关原始文献:两篇独立论文与四卷图灵《全集》(*Collected Works of A.M. Turing*,North-Holland/Elsevier)。独立论文已译入 [`papers-cn/`](papers-cn/),格式规范与 `zh/` 一致(正文 + 译注);四卷《全集》合计约 1,000 页,暂未翻译。
+`papers/` 目录另存有一批图灵相关原始文献:两篇独立论文与四卷图灵《全集》(*Collected Works of A.M. Turing*,North-Holland/Elsevier)。全部文献已译入 [`papers-cn/`](papers-cn/),格式规范与 `zh/` 一致(正文 + 译注);四卷《全集》合计约 1,000 页,按单元逐篇译出,每卷目录下有 `README.md`(单元对照表)与 `翻译清单.md`(逐页核对清单)。
 
 | 原文文件(`papers/`) | 类型 | 状态 | 中文翻译 |
 |---|---|---|---|
 | `An Unsolvable Problem of Elementary Number Theory-Alonzo Church.pdf` | 独立论文:Church 1936,《美国数学杂志》58(2),pp. 345–363 | 已翻译 | [初等数论的一个不可解问题](papers-cn/1936-church-初等数论的一个不可解问题.md) |
 | `SterrettTuring100February2.pdf` | 独立论文:Sterrett 2012 年 2 月草稿(Turing100);修订版 2017 年以 *Turing on the Integration of Human and Machine Intelligence* 收入 Springer 文集 | 已翻译 | [图灵与人类及机器智能的整合](papers-cn/2012-sterrett-图灵与人类及机器智能的整合.md) |
-| `Mechanical Intelligence. 1-North Holland (1992).pdf` | 图灵《全集》:Mechanical Intelligence(Ince 编,1992,247 页) | 未翻译(纯扫描件,无文本层) | — |
-| `Pure Mathematics. 2-North Holland (1992).pdf` | 图灵《全集》:Pure Mathematics(Britton 编,1992,309 页) | 未翻译(纯扫描件,无文本层) | — |
-| `Morphogenesis-North Holland (1992).pdf` | 图灵《全集》:Morphogenesis(Saunders 编,1992,158 页) | 未翻译 | — |
-| `Mathematical Logic-Elsevier (2001).pdf` | 图灵《全集》:Mathematical Logic(Gandy & Yates 编,2001,307 页) | 未翻译 | — |
+| `Mechanical Intelligence. 1-North Holland (1992).pdf` | 图灵《全集》:Mechanical Intelligence(Ince 编,1992,247 页;纯扫描件,无文本层) | 已翻译(16 个文件) | [机械智能卷译文目录](papers-cn/mechanical-intelligence/README.md) |
+| `Pure Mathematics. 2-North Holland (1992).pdf` | 图灵《全集》:Pure Mathematics(Britton 编,1992,309 页;纯扫描件,无文本层) | 已翻译(26 个文件) | [纯数学卷译文目录](papers-cn/pure-mathematics/README.md) |
+| `Morphogenesis-North Holland (1992).pdf` | 图灵《全集》:Morphogenesis(Saunders 编,1992,158 页) | 已翻译(18 个文件) | [形态发生卷译文目录](papers-cn/morphogenesis/README.md) |
+| `Mathematical Logic-Elsevier (2001).pdf` | 图灵《全集》:Mathematical Logic(Gandy & Yates 编,2001,307 页) | 已翻译(39 个文件) | [数理逻辑卷译文目录](papers-cn/mathematical-logic/README.md) |
 
 说明:
 
 - Church 1936 与图灵 1936 年《论可计算数》(On Computable Numbers)同年发表,是 λ 演算与判定问题不可解性的奠基文献;Sterrett 一文基于图灵 1948 年报告《智能机器》(Intelligent Machinery)与 1950 年《Mind》论文,结合沃森(Watson)与 NELL 项目讨论人类与机器智能的整合。
-- 四卷《全集》含《论可计算数》《计算机器与智能》《形态发生的化学基础》等名篇;其中《机械智能》《纯数学》两卷为无文本层扫描件。如需优先翻译其中某篇名作,可另行提出。
+- 四卷《全集》含《论可计算数》《计算机器与智能》《形态发生的化学基础》等名篇;其中《机械智能》《纯数学》两卷为无文本层扫描件,译文系先经 OCR 预提取、逐单元复原公式与图表后翻译,存疑处均以〔译注〕标示。

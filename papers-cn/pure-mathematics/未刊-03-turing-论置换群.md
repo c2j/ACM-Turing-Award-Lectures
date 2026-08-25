@@ -1,0 +1,705 @@
+# 论置换群
+
+**On Permutation Groups**
+
+> 作者:A. M. 图灵(A. M. Turing)
+> 未刊手稿,年代不详(开头佚失,现有标题系 R. O. Gandy 拟定;与图灵战时密码分析工作相关,见译注4)
+> 译自《图灵文集·纯数学》卷 pp. 125–145(个人学习用途)
+
+〔编者按,原书〕:[图灵打字稿的开头部分连同标题一并佚失。上面的标题系 R. O. Gandy 所拟。]
+
+正文自半句开始——
+
+## 手稿开篇(残)——群 H 与 J
+
+……形如 $U_m,\ U_{m+1},\ \dots,\ U_n$ 的乘积。容易看出,这个置换的奇偶性就是 $U_M$ 的奇偶性,因此出自同一台机器的诸置换总具有相同的奇偶性。不过眼下我们暂时用不上这一点。〔译注1〕
+
+设 $H(U)$ 或简记 $H$ 为可以从直立排列 $U$ 得出的全体置换之集。〔译注4〕易见 $H$ 成一群:若 $P$、$Q$ 是可以从直立排列 $U$ 得出的两个置换,则 $PQ$ 也可从它得出——只需把给出 $P$ 与 $Q$ 的两台机器串联起来(代数论证几乎同样简单)。由于 $H$ 有限且含于对称群之中,这就足以证明它是群。$H$ 可以表为由 $U, U_2, \ldots, U_T$ 生成的群〔$U_k$ 的定义应在佚失的开头部分,按上下文应为 $R^k U R^{-k}$ 一类〕,或者表为一切形如
+
+$$R^{p_1}\, U\, R^{p_2}\, U \cdots U\, R^{p_{r+1}}$$
+
+的表达式,其中诸 $p$ 任取,而 $R$ 的指数总和为零。它与群 $J(U)$ 或 $J$ 仅略有不同:$J$ 由 $U$ 与 $R$ 生成,由类似的表达式构成,只是对指数总和没有限制。$J(U)$ 的每个成员都形如 $PR^s$,其中 $P$ 属于 $H$。因此 $H$ 是 $J$ 的子群,指数至多为 $T$。$H$ 其实还是 $J$ 的自共轭(即正规)子群,因为它被 $J$ 的生成元 $U$、$R$ 各自变到自身:$UHU^{-1} = H$,因为 $U$ 属于 $H$;又因 $RUR^{-1}$ 是某个 $U_{n+1}$,故 $RHR^{-1} = H$。
+
+我们称 $H$ 或 $H(U)$ 为**例外的**(exceptional),如果 $H$ 不包含整个交错群 $A$(全体偶置换)。若 $H$ 非例外,则依 $U$ 的奇偶,它必为 $A$ 或对称群 $S$(全体置换)。用这种方式判断 $H$ 是 $A$ 还是 $S$ 极其容易,所以说一句"$H$ 非例外"(unexceptional)便足以刻画它。
+
+我们实际考察的是 $J$ 而非 $H$。$J$ 显然比 $H$ 容易处理,而关于 $J$ 的结果可以借助下一个定理翻译成关于 $H$ 的结果。
+
+**定理一**。$H$ 非例外的充分必要条件是 $J$ 非例外,前提为 $U \neq 1$、$T \neq 4$。
+
+上面已经证明 $H$ 是 $J$ 的自共轭子群。若 $J$ 非例外,则它为 $A$ 或 $S$;而当 $T \neq 4$ 时,二者仅有的自共轭子群是 $A$、$S$ 与仅含单位元的群,故 $H$ 必居其一。最后一种可能已被假设 $U \neq 1$ 排除,于是 $H$ 是 $A$ 或 $S$,即 $H$ 非例外。反之,若 $H$ 非例外,则因 $J$ 包含 $H$,$J$ 也非例外。∎
+
+〔排除 $T = 4$ 的原因见译注9。定理编号的说明见译注2。〕
+
+## 考察任一特定直立排列的方法
+
+为证 $H$ 非例外,只需证 $J$ 包含全部三轮换(3-cycles):若果真如此,$J$ 便是 $S$ 的自共轭子群,而它既非单位元群,便必为 $A$ 或 $S$。证明 $J$ 包含全部对换(2-cycles)也同样充分。我们将证明如下定理。
+
+**定理二**。若 $J$ 含有形如 $(\alpha,\, R^m\alpha)$、$(\alpha,\, R^m\alpha,\, \beta)$ 或 $(\alpha,\, R^m\alpha)(\beta,\, \gamma)$ 的成员,其中 $m$ 与 $T$ 互素,则 $J$ 包含全部三轮换;且在第一种情形下还包含全部对换。须有 $T > 4$。当 $T$ 为偶数时,$(\alpha, R^m\alpha)(\beta, \gamma)$ 不得与 $R^{T/2}$ 交换。
+
+证明分三段。
+
+**(1)** 设 $J$ 含 $(\alpha, R^m\alpha)$。记 $\alpha_k = R^{mk}\alpha$,则符号 $\alpha_0, \alpha_1, \ldots, \alpha_{T-1}$ 取遍全部 $T$ 个字母。于是 $J$ 含 $R^{ms}(\alpha_0, \alpha_1)R^{-ms}$,即 $(\alpha_s, \alpha_{s+1})$;因而也含 $(\alpha_0, \alpha_2)$,因为在 $T > 2$ 时它就是 $(\alpha_1, \alpha_2)(\alpha_0, \alpha_1) \times (\alpha_1, \alpha_2)^{-1}$。它还含 $(\alpha_0, \alpha_3)$,后者在 $T > 3$ 时为 $(\alpha_2, \alpha_3)(\alpha_0, \alpha_2)(\alpha_2, \alpha_3)^{-1}$;重复这一论证,便知对每个 $0 < r < T$ 它都含 $(\alpha_0, \alpha_r)$。
+
+〔此处原书夹有一行倒排文字,OCR 残损,大意为:也可能含 $(\alpha_0, \alpha_{T-1})$,因为当 $r \neq T$ 时它就是 $R^m(\alpha_0, \alpha_{r-1})R^{-m}$。见译注3。〕
+
+于是 $J$ 含每一个对换(从而也含每一个三轮换)。
+
+**(2)** 设 $J$ 含 $(\alpha, R^m\alpha, \beta)$,$m$ 与 $T$ 互素。可将 $\beta$ 写成 $R^{mk}\alpha$。第一步是证明 $J$ 含形如 $(\alpha, R^{m'}\alpha, R^{2m'}\alpha)$、其中 $m'$ 与 $T$ 互素的元素。若 $2k \equiv 1 \pmod{T}$,可取 $m' = k$:$\left(\alpha, R^m\alpha, R^{km}\alpha\right)^{-1}$ 即是。若 $k+1 \equiv 0 \pmod{T}$,可取 $m' = m$:$R^m(\alpha, R^m\alpha, R^{mk}\alpha)R^{-m}$ 即是。对其余情形,我准备证明 $(\alpha, R^m\alpha, R^{(k+1)m}\alpha)$ 属于 $J$,这样 $k$ 便可不断增大,直到 $k+1 \equiv 0$ 或 $2k-1 \equiv 0 \pmod{T}$,然后套用前面的情形。
+
+现设 $k+1 \not\equiv 0$ 且 $2k-1 \not\equiv 0 \pmod{T}$;暂时再设 $2k \not\equiv 0 \pmod{T}$。此时 $\alpha,\ R^m\alpha,\ R^{mk}\alpha,\ R^{m(k+1)}\alpha,\ R^{2mk}\alpha$ 两两不同,而且
+
+$$\bigl[R^{mk}(\alpha, R^m\alpha, R^{mk}\alpha)R^{-mk}\bigr]\,(\alpha, R^m\alpha, R^{mk}\alpha)\,\bigl[R^{mk}(\alpha, R^m\alpha, R^{mk}\alpha)R^{-mk}\bigr]^{-1}$$
+$$=\ (R^{mk}\alpha,\, R^{m(k+1)}\alpha,\, R^{2mk}\alpha)\,(\alpha, R^m\alpha, R^{mk}\alpha)\,(R^{mk}\alpha,\, R^{m(k+1)}\alpha,\, R^{2mk}\alpha)^{-1}\ =\ (\alpha,\ R^m\alpha,\ R^{m(k+1)}\alpha)$$
+
+属于 $J$。但若 $2k \equiv 0 \pmod{T}$,则上式左端等于 $(R^{mk}\alpha, R^m\alpha, R^{m(k+1)}\alpha)$,亦即 $(R^{mk}\alpha, R^{(2k+1)m}\alpha, R^{(k+1)m}\alpha)$,于是
+
+$$R^{-mk}\left(R^{mk}\alpha,\ R^{(2k+1)m}\alpha,\ R^{(k+1)m}\alpha\right)R^{mk}\ =\ (\alpha,\ R^{(k+1)m}\alpha,\ R^m\alpha)^{-1}\ =\ (\alpha,\ R^m\alpha,\ R^{(k+1)m}\alpha)$$
+
+属于 $J$。
+
+这就证明了 $J$ 中存在 $(\alpha, R^{m'}\alpha, R^{2m'}\alpha)$、其中 $m'$ 与 $T$ 互素。现在改记 $\alpha_k = R^{m'k}\alpha$,于是 $(\alpha_0, \alpha_1, \alpha_2)$ 属于 $J$,从而 $(\alpha_s, \alpha_{s+1}, \alpha_{s+2})$ 也是(用 $R^{m's}$ 作变换)。再用 $(\alpha_2, \alpha_3, \alpha_4)$ 变换 $(\alpha_0, \alpha_1, \alpha_2)$,得 $(\alpha_0, \alpha_1, \alpha_3)$ 属于 $J$(只要 $T \ge 5$);再以 $(\alpha_3, \alpha_4, \alpha_5)$ 变换一次,得当 $T \ge 6$ 时 $(\alpha_0, \alpha_1, \alpha_4)$ 属于 $J$;重复此论证,只要 $r < T-1$ 便有 $(\alpha_0, \alpha_1, \alpha_r)$ 属于 $J$。$(\alpha_0, \alpha_1, \alpha_{T-1})$ 可这样得到:用 $(\alpha_{r-3}, \alpha_{r-2}, \alpha_{r-1})$ 变换 $(\alpha_0, \alpha_1, \alpha_{T-2})$,只要 $T > 4$。于是,凡同时含 $\alpha_0$ 与 $\alpha_1$ 的三轮换都属于 $J$。但是
+
+$$(\alpha_0, \alpha_1, \alpha_r)\,(\alpha_0, \alpha_1, \alpha_s)^{-1} = (\alpha_s, \alpha_r, \alpha_0),$$
+
+故凡含 $\alpha_0$ 的三轮换都属于 $J$。最后
+
+$$(\alpha_s, \alpha_0, \alpha_r)\,(\alpha_s, \alpha_0, \alpha_t)^{-1} = (\alpha_t, \alpha_r, \alpha_s),$$
+
+故任何三轮换都属于 $J$。
+
+**(3)** 最后是已知 $(\alpha, R^m\alpha)(\beta, \gamma)$ 属于 $J$ 的情形。我们要把它化归为已含三轮换的情形。照旧记 $\alpha_k = R^{mk}\alpha$;又记 $\beta'$ 表示 $R^m\beta$。于是已知 $(\alpha_0, \alpha_1)(\beta, \gamma)$ 属于 $J$。按字母相对位置分情况讨论(记住 $T > 4$):
+
+- (a) $(\alpha_0, \alpha_1)(\beta, \gamma)$ 属于 $J$,其中 $\beta$、$\gamma$ 都不同于 $\alpha_2, \alpha_{-1}$;$\beta$ 不同于 $\gamma'$,$\gamma$ 不同于 $\beta'$;
+- (b) $(\alpha_0, \alpha_1)(\alpha_2, \gamma)$ 属于 $J$,其中 $\gamma$ 不同于 $\alpha_{-1}, \alpha_{-2}$;
+- (c) $(\alpha_0, \alpha_1)(\alpha_{-1}, \gamma)$ 属于 $J$,其中 $\gamma$ 不同于 $\alpha_2, \alpha_3$;
+- (d) $(\alpha_0, \alpha_1)(\beta, \beta')$ 属于 $J$,其中 $\beta$ 不同于 $\alpha_2, \alpha_{-1}$;
+- (e) $(\alpha_0, \alpha_1)(\alpha_{-1}, \alpha_2)$ 属于 $J$;
+- (f) $(\alpha_0, \alpha_1)(\alpha_2, \alpha_{-2})$ 属于 $J$;
+
+〔原文此处指示"P.T.O."(请翻背面),读者翻过稿纸看到:〕
+
+- (g) $(\alpha_0, \alpha_1)(\alpha_2, \alpha_{-2}')$〔OCR 残损〕;
+- (h) $(\alpha_0, \alpha_1)(\alpha_{-1}, \alpha_3)$。[见图 1*]
+
+*\*图 1 注:此图由一个经过点 $\alpha_{-3}, \alpha_{-2}, \alpha_{-1}, \alpha_0, \alpha_1$ 的圆构成,圆内一点为 $\alpha$;第二个圆以 $\alpha_0, \alpha_1$ 为直径;第三个圆经过 $\alpha_{-2}, \alpha_3$,并包住那个小圆。*
+
+【背面演算(P.T.O.)】
+
+> 这些相互等价:$(\alpha_0, \alpha_1)(\alpha_2, \alpha_{-2})$。于是 $(\alpha_{-3}, \alpha_{-2})(\alpha_1, \alpha_{-3})$ 给出 $(\alpha_0, \alpha_1)(\alpha_2, \alpha_{-3})$,若 $T > 7$。O.K. 无论如何,当 $T = 6$ 时可视之为 $(BC)(AE)$:
+>
+> ```
+> ABCDEF
+> ECBDAF    (AF)(EDB) O.K.
+> ```
+>
+> 当 $T = 5$ 时:
+>
+> ```
+> ABCDE
+> ECBDA    (EDB) O.K.
+> ```
+>
+> 故唯一的例外是 $T = 7$,此时得到七点几何的群。
+>
+> [主文本至此接续:]
+
+易见情形 (b) 与 (c) 本质相同(改变 $m$ 的符号即可)。情形 (a):既然 $(\alpha_1, \alpha_2)(\beta', \gamma')$ 属于 $J$,
+
+$$[(\alpha_1, \alpha_2)(\beta, \gamma)]\;(\alpha_0, \alpha_1)(\beta, \gamma)\;[(\alpha_1, \alpha_2)(\beta', \gamma')]^{-1} = (\alpha_0, \alpha_2)(\beta, \gamma)$$
+
+属于 $J$,于是
+
+$$(\alpha_0, \alpha_1)(\beta, \gamma)\;\bigl[(\alpha_0, \alpha_2)(\beta, \gamma)\bigr]^{-1} = (\alpha_0, \alpha_2, \alpha_1)$$
+
+也属于 $J$。
+
+情形 (b):先设 $\gamma \neq \alpha_{-2}$。$(\alpha_2, \alpha_3)(\alpha_4, \gamma')$ 属于 $J$,故用它变换 $(\alpha_0, \alpha_1)(\alpha_2, \gamma)$ 之后得 $(\alpha_0, \alpha_1)(\alpha_3, \gamma)$,归于情形 (a)。若 $\gamma = \alpha_{-2}$,同一变换的结果是 $(\alpha_4, \alpha_1)(\alpha_2, \alpha_{-2})$。但
+
+$$\bigl[(\alpha_4, \alpha_1)(\alpha_2, \alpha_{-2})\bigr]\bigl[(\alpha_0, \alpha_1)(\alpha_2, \alpha_{-2})\bigr] = (\alpha_0, \alpha_4, \alpha_1),$$
+
+于是可引用三轮换的情形。
+
+情形 (d):令 $\alpha_r = \beta$。若 $2r \not\equiv 0,\, 1,\, -1 \pmod{T}$,则
+
+$$(\alpha_0, \alpha_1)(\alpha_r, \alpha_{r+1})(\alpha_{r+1}, \alpha_{r+2})(\alpha_{2r+1}, \alpha_{2r+2}) = (\alpha_0, \alpha_1)(\alpha_r, \alpha_{r+1}, \alpha_{r+2})(\alpha_{2r+1}, \alpha_{2r+2}),$$
+
+故 $(\alpha_0, \alpha_{r+1}, \alpha_{r+2})$ 属于 $J$,三轮换情形适用。若 $2r \equiv 1 \pmod{T}$,则 $(\alpha_0, \alpha_1)(\alpha_r, \alpha_{r+1})$ 与
+
+$$(\alpha_r, \alpha_{r+1})(\alpha_2, \alpha_{2r+1}) = (\alpha_0, \alpha_{r+1})(\alpha_1, \alpha_2)$$
+
+都属于 $J$,故二者的乘积 $(\alpha_1, \alpha_2, \alpha_0)$ 亦然。$2r \equiv -1 \pmod T$ 时同理。若 $2r \equiv 0 \pmod{T}$,则 $(\alpha_0, \alpha_1)(\alpha_r, \alpha_{r+1})$ 与 $R^{T/2}$ 交换〔这正是定理条件所排除的情形〕。
+
+情形 (e):$(\alpha_0, \alpha_1)(\alpha_{-1}, \alpha_2)$ 与 $(\alpha_1, \alpha_2)(\alpha_0, \alpha_3)$ 属于 $J$,故(经变换)$(\alpha_3, \alpha_2)(\alpha_{-1}, \alpha_1)$ 以及(把下标各减 3)$(\alpha_0, \alpha_{-1})(\alpha_{-4}, \alpha_{-2})$ 属于 $J$。改变 $m$ 的符号后,它变成 $(\alpha_0, \alpha_1)(\alpha_4, \alpha_2)$,归于情形 (b)。
+
+情形 (f):$(\alpha_0, \alpha_1)(\alpha_2, \alpha_3)$ 与 $(\alpha_1, \alpha_2)(\alpha_3, \alpha_4)$ 属于 $J$,故 $(\alpha_0, \alpha_2)(\alpha_1, \alpha_4)$ 以及乘积
+
+$$\bigl[(\alpha_0, \alpha_1)(\alpha_2, \alpha_{-2})\bigr]\bigl[(\alpha_0, \alpha_2)(\alpha_1, \alpha_4)\bigr] = (\alpha_0, \alpha_3, \alpha_2)(\alpha_1, \alpha_4)$$
+
+及其平方 $(\alpha_2, \alpha_3, \alpha_0)$ 都属于 $J$,对后者可引用三轮换的结果。〔本段公式链 OCR 残损,按下标平移关系复原,见译注2。〕
+
+定理二至此证毕。但我们不妨留意定理诸前提失效时的种种情形。若给的是对换 $(\alpha, R^m\alpha)$ 而 $m$ 与 $T$ 不互素,则 $H$ 由若干条轨道 $(\beta, R^m\beta, R^{2m}\beta, \ldots)$ 组成。生成元为三轮换 $(\alpha, R^m\alpha, R^{m+p}\alpha)$ 而 $m$、$p$、$m+p$ 与 $T$ 有公因子时,情况亦然。我们未曾考虑 $m$、$p$、$m+p$ 各与 $T$ 有公因子、但这几个数之间并无公共公子的情形;大概定理二对这些情形也适用。若生成元为 $(\alpha, \beta)(\gamma, \delta)$ 且与 $R^{T/2}$ 交换,则群 $H$ 的每个元素也与 $R^{T/2}$ 交换。
+
+应用定理二非常容易。先把 $U$、$UR$、$UR^2$ 等写成循环分解:例如可以把字母表写两遍,再写出序列 $UA, UB, \ldots, UZ$;把前者放在后者的各个不同位置之上,便得到各个 $UR^s$。在这些之中寻找这样的置换:它有一个三轮换,而所有其余循环的长度都与 3 互素。把它升到适当的幂,便得到一个三轮换,它可能满足、也可能不满足定理二的条件。若不成功,还可以改用 $J$ 中的其他置换。类似地,我们或许也能造出一个"一对对换"型的置换。
+
+下面这个直立排列是随机选取的:
+
+```
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+MNYTFBGRSLAXOEWKPCJQZDHVUI
+```
+
+写成循环即为 $(AMOWHRCYUZISJLXVDTQPK)(BNEF)(G) = U$。于是 $U^{22} = (BE)(NF)$。距离 BE 为 3,与 26 互素;NF 的距离为 8。故定理二适用,$J$ 包含整个 $A$,从而 $H$ 包含 $A$。
+
+## 例外群的系统搜索:理论
+
+对一个给定的 $T$ 考察一切可能的直立排列时,主要困难在于数目庞大。一旦证明了某个直立排列非例外,一大批其他直立排列也随之非例外。更一般地说,任给一个直立排列,都能找到大量别的直立排列,它们要么生成同一个群 $H$,要么生成同构的群。若能设法把这些直立排列归为一类一类,工作量将大为缩减,因为每类只需考察一个成员。使我们得以找到等价直立排列的主要原理有:
+
+- (i) 若 $U' = R^{-n} U R^n$,则 $H(U') = H(U)$;
+- (ii) 若 $V$ 与 $\langle R\rangle$ 交换,则 $H(VUV^{-1}) = H(U)$;(注意:若 $V$ 与 $\langle R\rangle$ 交换,则 $VRV^{-1} = R^k$,$k$ 为某整数。)
+- (iii) 若 $U' = U^s$ 且 $U = U'^{s'}$〔原文如此,OCR 残损〕,则 $H(U) = H(U')$。
+
+原理 (i) 是我们使用得最系统的。我们的方法依赖如下事实:几乎没有 $U$ 能使得没有任何 $R^s U R^n$ 留下两个字母不动(换言之,"无甲虫"的 $U$ 极少);而当 $T$ 为偶数时根本没有。〔甲虫(beetle)释义见译注5〕于是我们把无甲虫的 $U$ 与有甲虫的 $U$ 分开考察。
+
+### 无甲虫的 U
+
+我们可以给出一个表达式,用来确定那些经左乘或右乘 $R$ 的幂便能互相得出的置换所属的类,做法如下。令
+
+$$U R^{n+1} Z = R^{f(n+1)}\, U R^n Z,$$
+
+($Z$ 代表字母表的最后一个字母,不论字母表中含多少字符。)于是我们取数字串 $f(1)\, f(2)\, \ldots\, f(T)$ 来描述包含 $U$ 的那个类。可以验证:由这串数字加上 $UZ$ 即可恢复 $U$;事实上,它们描述的是 $U,\ RU,\ R^2U, \ldots$ 所共有的信息。不过,若把序列末尾的若干数字搬到开头,描述的就变成 $UR^n,\ RUR^n, \ldots$ 等。举个例子会有帮助。考虑七个字母上的置换 $U = (ABCDGEF)$〔原书印作 (ABCDG),系扫描截断,见译注2〕。把它写作
+
+```
+ABCDEFG
+BCDGEFA
+```
+
+这些数字就是 B C D G E F A 中相邻字母间的差,即 `1135121`。置换 $R^2UR^{-2}$ 则是
+
+```
+ABCDEFG
+EFBGACD
+```
+
+其数字 `1351211` 可由把第一个数字搬到末尾而得。
+
+于是,若取形如 $f(1)f(2)\ldots f(T)$、$f(T)f(1)f(2)\ldots f(T-1)$ 等等各种形式,并选出其中视作阿拉伯数字而言最小的一个,我们便有了描述全部 $R^n U R^{-n}$ 的方法。所得数字串可以称为 $U$ 的**不变量**(invariant)。
+
+在很小的程度上,还能把这与原理 (ii) 结合起来:$U^{-1}$ 的不变量可由把 $U$ 的不变量倒读、再重新排列取最小而得到。
+
+考察 $U$ 无甲虫的情形时,不变量受到极强的限制:它不能含有〔图 1 所示的构形〕〔原图为手绘,所指应为由图 1 刻画的那种差分模式,见译注2〕。更一般地,数字
+
+$$0,\quad f(1)-1,\quad f(1)+f(2)-2,\quad f(1)+f(2)+f(3)-3,\quad \ldots$$
+
+(本质上是诸"杆"(rod)之一〔术语存疑,见译注2〕)必须两两不同。这些限制威力极大,以致除极少数情形外我们通常找不到别的解……〔此处原书脱漏一至两行,大意涉及 $U$ 属于 $\langle R\rangle$ 规范化子之类的特殊场合〕……数 $0,\ f(1)-1,\ f(1)+f(2)-2,\ \ldots$ 就必须是 $0, 1, \ldots, T-1$ 的某个排列,其总和模 $T$ 应为 $\tfrac{1}{2}T(T-1)$。但 $0,\ f(1),\ f(1)+f(2),\ \ldots$ 也两两不同,其总和模 $T$ 同样应为 $\tfrac{1}{2}T(T-1)$;同理 $0, 1, \ldots, T-1$ 的总和也是这个数。这样一来 $0,\ f(1)-1,\ f(1)+f(2)-2,\ \ldots$ 的总和便模 $T$ 为 0,即 $\tfrac{1}{2}T(T-1) \equiv 0 \pmod T$——而当 $T$ 为偶数时并非如此。
+
+### 有甲虫的 U
+
+我们选取一个留下两个字母不动的 $R^{-n} U R^n$ 来代表 $U$。必要时可用再一次 $R$ 的幂作变换,使其中一个不动字母为 $A$。借助原理 (ii),还能缩小第二个字母的可能范围。倘若原先固定的字母是 $A$ 与 $R^t A$,那么只要 $T$ 与 $t$ 的最大公因子等于 $T$ 与 $s$ 的最大公因子,就能把它们变换成 $A$ 与 $R^s A$,因为存在满足 $VA = A$、$VR^t V^{-1} = R^s$、$V\langle R\rangle V^{-1} = \langle R\rangle$ 的 $V$。因此我们需要考察各种不同的不动字母对,如 $A$ 与 $R^t A$;待考的 $t$ 应遍历整除 $T$ 的数——去掉 $T$ 本身,但包括 1。对每个这样的 $t$,写下使 $A$、$R^t A$ 固定的全部置换,把它们按 $S$ 中共轭类排列,并在写下的同时用原理 (i) 加以约减。此后还可按原理 (ii) 的一个非常特殊的用法进一步约减:若 $V$ 互换 $A$ 与 $R^t A$,即可应用。最好给这些置换编号,并为每个注明与之配对者的编号;将会发现许多都是自配对的(self-paired)。
+
+## 详细搜索
+
+### T = 1, 2, 3, 4
+
+不难证明 $T = 1, 2, 3$ 时没有例外群。$T = 4$ 已被定理一显式排除,需要专门考察。该情形下的例外直立排列是:
+
+```
+(1), (13), (24), (13)(24);
+(12)(34), (14)(23), (1234), (4321).
+```
+
+〔第二行 (14)(23) 原书印作 (32)(14);标点系译者所加。见译注2。〕
+
+例外群 $H$ 为:恒等群;循环群 $\langle(1234)\rangle$ 与 $\langle(13)(24)\rangle$;由单位元及全部形如 $(\alpha\beta)(\gamma\delta)$ 的置换组成的四群;还有一个与四群同构、由 (13) 与 (24) 生成的群。
+
+### T = 5
+
+利用已有的理论,这一情形也非常平凡。无甲虫的 $U$ 除了……
+
+〔原文此处指示"P.T.O.",背面写着:〕
+
+> 具有下列不变量者:
+>
+> ```
+> 22222
+> 33333
+> 44444.
+> ```
+>
+> 这几类合起来恰构成 $\langle R\rangle$ 的规范化子(numatizer)。
+
+……之外再无其他;剩下的只有留下两个字母不动的置换,而由于 5 是素数,它们全都已被定理二覆盖。故例外 $U$ 仅为 $\langle R\rangle$ 规范化子的成员,共 20 个。〔numatizer 应为 normalizer(规范化子),见译注6。〕
+
+### T = 6
+
+由于 6 是偶数,无需考虑无甲虫的 $U$。代表元 $U$ 总会留下两个字母不动,于是立即归于定理二。$U$ 只有在非传递、或与 $R^3$ 交换时才可能是例外。与 $R^3$ 交换的共 48 个;具有非传递集 {A,C,E}/{B,D,F} 的有 36 个,其中 6 个与 $R^3$ 交换;非传递集为 {A,D}/{B,E}/{C,F} 的则全部与 $R^3$ 交换。故例外 $U$ 共 $48 + 36 - 6 = 78$ 个(可能总数 720 之中)。
+
+### T = 7
+
+无甲虫的直立排列是 $\langle R\rangle$ 规范化子的成员,以及具有不变量 2335564 及其反序者。不过后者其实非例外:一个代表元是 $U = (BCGEDF)$,而 $U^2 R = (AG)(BEC)(DF)$ 显然非例外(求其平方即知)。
+
+对有甲虫的直立排列,只需取 $t = 1$,即总可设 $A$、$B$ 都固定。定理二的简单应用表明只需考虑五轮换的情形;原理 (ii) 又表明可设 $UC = G$,即代表置换 $U$ 已化为 $(A)(B)(G\alpha\beta\gamma C)$ 型。互换 $A$ 与 $B$ 的置换 $V$ 是 $(AB)(CG)(DF)(E)$。于是最终只需考虑:
+
+```
+(GDEFC)   自配对(s.p.)
+(GDFEC)   配对
+(GEDFC)   ——与上行配对
+(GEFDC)
+(GFDEC)   ——与上行配对
+(GFEDC)   自配对(s.p.)
+```
+
+〔配对归属按原书版面推断,见译注2。〕
+
+将它们乘以 $R$ 的幂,即可证明它们全都非例外。
+
+还有由 $(AE)(BC)$ 生成的群的情形,它与七点几何有关[见图 2*]。这种同构的群实际只有两个,分别由 $(BC)(AE)$ 与 $(BE)(FD)$ 生成。
+
+涉及的不变量:
+
+```
+(BC)(AE) 群         (BE)(FD) 群(反序)
+1556245             1542655
+1323354             1453323
+4444444             4444444
+1264663             1366462
+1111111             1111111
+2222222             2222222
+
+⟨R⟩ 规范化子的不变量:                 总元素数
+3333333
+5555555                                6×49 + 6×7 = 6×7×8 = 336
+6666666                                即共有 336 个例外直立排列
+4444444
+1111111
+2222222
+```
+
+*\*图 2 注:此图为三角形 ABC 及其内切圆,圆心 E,内切圆与边 BC、CA、AB 分别切于点 G、D、F。*
+
+### T = 8
+
+这一情形比前面各例需要更多的考察,一部分原因在于它是迄今最大的数,另一部分在于它的因子更多。
+
+显然,与 $\langle R\rangle$ 交换的、与 $R$ 的某次幂交换的、或生成非传递群的置换都是例外的。我们认为要找的是其他形式的例外直立排列。对付置换我们有种种手段:
+
+(a) 可以证明该群与稍后将考察的某个直立排列生成的群相同。这一手段的特例出现于 $t = 1$:某些形式 $R^s U$ 可能属于 $t = 2$ 或 $t = 4$ 下待考的类型。检验办法是写下数字 $m_1, m_2, \ldots$,其定义为 $R^{m_s}U = UR^s$〔OCR 残损,按上下文复原〕。若该序列中某个数字在相距偶数的位置上出现两次,则可转化为 $t = 2$ 的情形。以"X"标示。
+
+(b) 某个滑移 $R^s U$ 可能属于同一 $t$ 值下稍后要考察的类型;标"below"(见后)。
+
+(c) 平方或其他幂可以被证明非例外。这意味着六轮换中只需考察平方与立方皆非例外者。我们可以同时对六轮换及其平方、立方加以考察;这也是有益的,因为变换 $V$ 对三者同样适用。
+
+(d) 某个滑移 $R^s U$ 可能非例外。此时标"slide"(滑移)、该滑移的循环分解以及"O.K."。
+
+(e) 某个换位子 $UR^sUR^{-s}$ 可能非例外。此时给出该换位子并标"O.K."。
+
+当以上手段全部失败时,标一个问号,留待日后考察。
+
+#### t = 1
+
+先过一遍总体计划,按对称群中共轭类的类别分别安排处置:
+
+**六轮换**:暂置一旁,待双三循环组(double threes)考察之后再议。
+
+**双三循环组**:它们按 $(CH)(EF)(DG) = V$ 配对($V$ 固定 $A$、$B$,且 $VRV^{-1} = R^{-1}$),并详加处理:
+
+```
+(CDE)(FGH)  (s.p.)    (CDE)(FGH)·(DEF)(GHA) = (DC)(EGF)(HA) O.K.
+(CDE)(FHG)  (s.p.)    (CDE)(FHG)·(DEF)(GAH) = (DC)(EHF)(AG) O.K.
+(CDF)(EHG)  (s.p.)    slide (BAGC)(EFH) O.K.
+(CDF)(EGH)  (s.p.)    ??
+(CDG)(EFH)  (CEF)(HDG)      slide (CA)(DBE)(FG) O.K.
+(CDG)(EHF)  (CEF)(HDG)      slide (BAFHC)(EG) O.K.
+(CDH)(EFG)  (CGH)(DEF)      slide (BAC)(EH) O.K.
+(CEG)(DFH)  (s.p.)    非传递
+(CEG)(DHF)  (s.p.)    非传递
+(CEH)(DFG)  (CFH)(DEG)      slide (BAC)(DEFH)
+(CEH)(DGF)  (CFH)(DGE)      slide (DA)(EBF) O.K.   ??
+(CFG)(DEH)  (s.p.)
+(CFG)(DHE)  (s.p.)    slide (BAEHC)(DF),变换为 (HG) O.K.
+(CFH)(DEG)            slide (BAC)(DFGH) O.K.
+```
+
+我们避开了手段 (a) 与 (b),因为它们对六轮换不适用。
+
+直立排列 $(CDF)(EGH)$ 是例外的,相应的群由具有下列不变量的元素组成:
+
+```
+11111111      8 个元素       11111111
+12214554      64 个元素      25527667
+13272315      64 个元素      13245423
+16573756      64 个元素      34657564
+24636425      64 个元素      14737415
+33476674      64 个元素      12216336
+77777777      8 个元素       77777777
+              336 个元素
+```
+
+用与 $R$ 交换的 $(AG)(CH)(EC)$〔OCR 存疑,见译注2〕变换该群,得到另一个包含 $(CFG)(DEH)$ 的群;后者的不变量列于右列。这些不变量对核验其他例外直立排列属于这两个群很有用处。
+
+我们必须考察平方为例外的那些六轮换,列示如下:
+
+```
+(CEDGFH)   X
+(CGDHFE)   不变量 15132723(见上)
+(CHDEFG)   X
+(CDFEGH)   不变量 12216336(见上)
+(CEFHGD)   X,X
+(CHFDGE)
+(CDEFGH)   X
+(CFEHGD)   X
+(CHEDGF)   X
+(CDEHGF)   slide (ABDH)(CE) O.K.
+(CHEFGD)   X
+(CFEDGH)   X
+```
+
+不易直接证明具上述不变量的元素构成一个群。不过在眼下这一情形,我们可以靠猜出这个群是什么来解决。群的阶是 336,自然令人猜想它与七点几何的对称群有关——那是一个众所周知的 168 阶单群。我们群中的偶置换构成 168 阶的群,运气好的话应当与七点几何的群同构。事实确实如此。为避免记号混淆,把七点几何的点记作 a, b, c, d, e, f, g[见图 3*]。要把一个群表示为 m 个对象上的置换群,标准技巧是找出一个指数为 m 的子群,并把该子群的诸陪集当作那 m 个对象。这里我们要找 21 阶的子群;循环群 $\langle(abcegfd)\rangle$ 的规范化子即是。其陪集枚举如下(缩略形式;每行代表七个置换,彼此可由把字母从一端搬到另一端而得到;每个陪集冠以一个大写字母):
+
+```
+A          B          C          D
+abcegfd    abgdcfe    acdgfeb    aefbged
+acgdbef    agcebdf    adfbcge    afgdebc
+agbfcde    acbfged    afcedbg    agecfdb
+
+E          F          G          H
+acfbdeg    abecdfg    aegdfcb    abdgefc
+afgdebc    aedgbcf    agfbedc    adecbgf
+agecfdb    adbfegc    afecgbd    aebfdcg
+```
+
+*\*图 3 注:此图为三角形 abc 及其内切圆,圆心 g,内切圆与边 bc、ca、ab 分别切于 d、e、f。*
+
+现在,对称群含有置换 $(abgc)(fe)$,它在陪集上诱导 $(ACEG)(BDFH)$;又含有 $(abc)(def)$,诱导 $(ADH)(BCG)$。若把这些陪集与 $J$ 中被置换的八个对象等同起来(记号的用意正在于此),便可见 $(ACEG)(BDFH)$ 正是 $R^2$,而 $(ADH)(BCG)$ 具有不变量 14737415——那是群 K′ 的不变量之一。随后不难验证:对称群还在陪集上诱导出 K′ 的其余全部不变量,并且 $(ACEG)(BDFH)$ 与 $(ADH)(BCG)$ 生成整个对称群。既然该群阶为 168,又包含 K′ 中的偶置换(共 168 个),它必定与 $K‘ \cap A$ 重合。
+
+余下的只是证明形如 S 与 SR(S 属于 $K’\cap A$)的表达式构成一个群。若能证明〔一行 OCR 残损不可辨——大意:若 S 属于它,则 SR 也属于它〕即告完成。前者我们已经知道,后者由我们的不变量体系立即可得:K′ 由具有某些不变量的完整置换类组成。〔见译注3〕
+
+**三对换组(triple twos)**:如前所述,凡含 (CH)、(DH) 或 (GC) 对者无需考虑,剩下的只有:
+
+```
+(CD)(EF)(GH)    (CD)(EF)(GH)·(EF)(GH)(AB) = (CD)(AB) O.K.
+(CD)(EG)(FH)    (CD)(EG)(FH)·(FG)(HB)(AC) = (ADC)(BFEGH) O.K.
+(CE)(DF)(GH)    配对
+(CD)(EH)(FG)    slide (BAEC)(FH)
+(CF)(DE)(GH)    配对
+(CE)(DG)(FH)    (CE)(DG)(FH)·(FH)(GB)(AC) = (GBD)(AC) O.K.
+(CF)(DG)(EH)    (CF)(DG)(EH)·(DG)(EH)(FA) = (ACF) O.K.
+```
+
+**四轮换加对换(fours-and-twos)**:去掉平方非例外的、以及 $UH = C$ 者〔OCR 存疑〕及其配对之后,只剩:
+
+```
+(CDEF)(HG)   X
+(CDGF)(HE)   X
+(CGHD)(FC)   X
+(DEHG)(FC)   配对
+(FEHG)(CD)   配对
+```
+
+#### t = 2
+
+这里值得大规模地应用原理 (ii)。使 $A$、$C$ 固定的 $V$ 有四个:
+
+```
+ABCDEFGH
+CBAHGFED
+CFADGBEH
+AFCHEBGD
+```
+
+从一个置换出发,我们由此最多可得四个生成同构群 $J$ 的置换,例如从 $(BDEFHG)$ 出发:
+
+```
+(BDEFHG)
+(BHGFDE)
+(FDBGHE)
+(FHEBDG)
+```
+
+这些可以变换成等价形式,并选取字母序最早者。我们允许把取逆作为一种变换。于是得到
+
+$$(BDEFHG),\quad (BEDFGH)^{-1},\quad (BGDFEH)^{-1},\quad (BDCFHE).$$
+
+〔上标 ⁻¹ 系按文意补,见译注2。〕
+
+借这些手段,需考察的六轮换乘到 18 个。和先前一样,我们先实际考察它们的平方(双三循环组),指望它们非例外,从而六轮换本身无需专门研究。
+
+**六轮换与双三循环组**:
+
+```
+(BDEFGH)   slide (ACF)(BFDHE) O.K. indirect
+(BDEFHG)   slide (AB)(CEFHD) O.K.
+(BDEGFH)   (BEF)(DGH)·(CFG)(EHA) = (AFH)(CBEDG) O.K.
+(BDEGHF)   slide (AD)(FCB) O.K.
+(BDEHFG)   slide (BAG)(DCEH) O.K.
+(BDEHGF)   不变量 34657564,属群 K'
+(BDFEHG)   slide (BA)(DCFGH) O.K.
+(BDFGHE)   slide (BA)(CFD)(HEG) O.K.
+(BDFHGE)   slide (BAEH)(DCF) O.K.
+(BDGFEH)   不变量 34657564,属群 K'
+(BDGHEF)   slide (CAE)(FHDGB) O.K. indirect
+(BDGHFE)   (BGF)(DHE)·(CHG)(EAF) = (ABGCE)(DHF) O.K. indirect
+(BDHEFG)   slide (BAFG)(DCH) O.K.
+(BDHEGF)   slide (AH)(BCEDF) O.K.
+(BDHFGE)   slide (DAEH)(FCG) O.K.
+(BDHGEF)   slide (AD)(HBFCE) O.K.
+(BDHGFE)   slide (CAE)(DHBFG) O.K. indirect
+(BEDHGF)   slide (AED)(CF) O.K.
+```
+
+以上分析是对六轮换的平方(即双三循环组)进行的。现在必须考察双三循环组为例外的那些六轮换:
+
+```
+(BDEHGF)   slide (BAG)(FH)(CD) O.K.
+(BDGHEF)   slide (BAEGH)(CD) O.K.
+(BF)(DG)(EH)   X
+(BF)(DH)(EG)   非传递
+(BG)(DF)(EH)   slide (AGEDH)(BCF)
+(BG)(DH)(EF)   X
+(BH)(DF)(EG)   非传递
+(BH)(DG)(EF)   (AH)(BCG)(DF) slide O.K.
+(BE)(DH)(FG)   X
+(BG)(DH)(FE)   X
+(BH)(DG)(FE)   slide (AH)(BCG)(DF)
+(BF)(DE)(GH)   X
+(BH)(DE)(GF)   slide (AH)(BCEG)
+(BH)(DF)(GE)   非传递
+(BE)(DF)(HG)   slide (ACBFG)(EH)
+(BE)(DG)(HF)   slide (AEH)(BCGFD)
+(BF)(DG)(HE)   X
+(BG)(DE)(HF)   slide (ACDHG)(BE)
+(BG)(DF)(HE)   (AGEDH)(BCF) slide O.K.
+(BH)(EG)(DF)   非传递
+```
+
+**四轮换加对换与两个四轮换(fours and twos and fours)**:只需考虑平方非传递或与 $R^4$ 交换者:
+
+```
+(EBGD)[(FH)]   (FBGD)[(CE)] O.K.
+(EBGF)[(DH)]   (EBFC) O.K.;(ABFC)(DG) O.K.
+(EBGH)[(FD)]   (EBGA) O.K.;(GBAE)(CD) O.K.
+(EDGB)[(FH)]   (HDGB) O.K.;(HDAB)(EC) O.K.
+(EDGH)[(BF)]   (HDGA) O.K.;(HDCA)(BE) O.K.
+(EFGH)[(DB)]   (EGHA) O.K.;(CGHA)(DB) O.K.
+```
+
+此外,不存在既使 A、C 固定又与 $R^4$ 交换的其他置换——除了 $(BDFH)$、$(BHFD)$,而后者无论如何是非传递的。
+
+**五轮换**:这些五轮换成对给出,每对经原理 (i) 等价:
+
+```
+(DEFGH)   s.p. (DEFGH)(EFGHA)⁻¹ = (DEA) O.K.
+(DEFHG)   slide (BAGDC)(FH) O.K. indirect
+(DEHGF)   —
+(DEGFH)   slide (BADC)(FGH) O.K.
+(DEHFG)   —
+(DEGHF)   s.p. slide (EAGCH)(DFB) O.K. indirect
+(BEFGH)   slide (BA)(CED) O.K.
+(BEHFG)   —
+(BEFHG)   slide (BAGH)(CDE) O.K.
+(BEGHF)   —
+(BEGFH)   s.p. slide (BA)(CED)(FGH) O.K.
+(BEHGF)   s.p. slide (BAG)(DCE) O.K.
+(BEFGH)*  slide (AF)(BE)(CGDH) O.K.
+(BDHGF)   —
+(BDFHG)   slide (BAGH)(DC)(EF) O.K.
+(BDGFH)   —
+(BDGHF)   s.p. slide (BAFEG)(CD) O.K.
+(BDHFG)   s.p. slide (BAFEH)(CD) O.K.
+```
+
+〔带 \* 行原书印作 (BEFGH),与首行重复,疑为误植;"—"表示原书未加注。见译注2。〕
+
+#### t = 4
+
+与 $\langle R\rangle$ 交换、且使 $A$、$E$ 固定或互换它们的 $V$ 有:
+
+```
+ABCDEFGH
+ADGBEHCF
+EHCFADGB
+AHGFEDCB
+EDCBAHGF
+AFCHEBGD
+EBGDAFCH
+EFGHABCD
+```
+
+**六轮换与双三循环组**:照例我们实际检验的是双三循环组,尽管测试的对象是六轮换:
+
+```
+(BCDFGH)   与 R⁴ 交换((BCDFGH)、(BDG)(CFH)、(EF)(CG)(DH) 均然)
+(BCDFHG)   slide (BA)(EHCDF) O.K.
+(BCDGHF)   slide (AB)(CDG)(HFE) O.K.
+(BCDHGF)   不变量 33476674,群 K;
+           六轮换不变量 12214554,群 K;
+           三对换不变量 77777777,属 ⟨R⟩ 规范化子
+(BCFDGH)   slide (CAB)(EDFHG) O.K.
+(BCFDHG)   slide (BA)(CFEGH) O.K.
+(BCFHGD)   slide (BADH)(FEC) O.K.
+(BCGDFH)   slide (BACG)(EHF) O.K.
+(BCGDHF)   不变量 27652765,与 R⁴ 交换;
+           六轮换 slide (CAD)(FHB),化归为已考虑过的 t=2 情形;
+           三对换 slide (AHDG)(CEF) O.K.
+(BCGFDH)   不变量 33476674,群 K;
+           六轮换 slide (BA)(DG)(FEH) O.K.;
+           三对换 (BF)(CD)(GH) 与 R⁴ 交换
+(BCGFHD)   slide (BA)(DFECG) O.K.
+(BCGHDF)   与 R⁴ 交换;六轮换 slide (AE)(HFC) O.K.;
+           三对换 (AH)(CD)(GF) slide (ABCDH)(EGF) O.K.
+(BCGHFD)   slide (CAF)(EHBDG) O.K.
+```
+
+**三对换组(其余)**:
+
+```
+(BF)(CH)(DG)   与 R⁴ 交换
+(BG)(CH)(DF)   slide (AHG)(BFCE) O.K.
+(BD)(CG)(FH)   与 R⁴ 交换
+(BD)(CH)(FG)   slide (AHDG)(CEF) O.K.
+(BH)(CG)(DF)   非传递
+(BD)(CF)(GH)   (BD)(CF)(GH)·(CE)(DG)(HA) = (AGBDH)(CEF) O.K.
+(BF)(CH)(GD)   与 R⁴ 交换
+(BH)(CF)(GD)   (BH)(CF)(GD)·(DB)(EH)(AF) = (DHEBG)(FBC) O.K.
+```
+
+**五轮换(fives)**:
+
+```
+(CDFGH)   slide (BAC)(EF) O.K.
+(CDHFG)   —
+(CDFHG)   slide (BAGHC)(FE) O.K.
+(CDHGF)   —
+(CDGFH)   slide (BAC)(EGDF) O.K.
+(CDGHF)   —
+```
+
+两固定字母相距为 2 的五轮换已在 t = 2 下考察过。
+
+于是,T = 8 的结论是:例外直立排列必属下列情形之一:
+
+- (a) 非传递者,或非传递直立排列与 $R$ 之积;
+- (b) 与 $R^4$ 交换者;
+- (c) 群 K、K′ 的成员。
+
+现在来计算例外直立排列的数目。K 与 K′ 中去掉不变量为 11111111 与 77777777 者,共 $2 \times 336 - 32 = 640$ 个。具这两不变量的元素同时也是非传递的——非传递的充要条件是各位数字全偶或全奇。与 $R^4$ 交换的充要条件是不变量形如 abcdabcd。上述 16 个元素也属此类,而 K、K′ 的其他成员都不是。非传递直立排列共 $2 \times (4!)^2 = 1152$ 个;与 $R^4$ 交换的有 $24 \times 4! = 384$ 个。既非传递又与 $R^4$ 交换者,在给定 $UA$、$UB$ 的值(两者奇偶性必须相反)后即完全确定,共 $8 \times 4 = 32$ 个。
+
+**最终清点(Final account)**:
+
+```
+K 与 K'(扣除重复)               640
+非传递                           1152
+与 R⁴ 交换(已作扣减)             352
+                                ------
+                                 2144
+全部直立排列总数                 40320
+```
+
+## 相同转轮:输出的频率分布
+
+〔本节起话题转换,原书无节标题,节题为译者所拟。〕
+
+现在转向一个颇不相同的话题,它与相同转轮(identical drums)的使用有关。即使知道一切置换都有可能出现,它们会同等频繁地出现吗?幸运的是,我们能对此给出肯定的回答。这一问题将在稍微更一般的条件下考察:对生成元 $U_1, \ldots, U_k$ 之间的关系不作任何假设,也不假设基本群是对称群,而是某个别的有限群 G。
+
+〔原书此处脱漏一至两行〕……把群元素装入一个转轮;如何计算转轮输出处群元素的频率分布?设 $g(a)$ 为输入元素中等于 $a$ 的比例,$f(a)$ 为转轮所实现的群元素中等于 $a$ 的比例;也就是说,记群的阶为 $h$,
+
+$$f(a) = h^{-1}\!\!\sum_{\substack{r = 1, \ldots, k \\ U_r = a}}\!\! 1.$$
+
+〔公式 OCR 残损,按文义复原:统计使 $U_r = a$ 的下标个数再除以 h。〕若输入为 $b$ 而转轮实现群元素 $ab^{-1}$(对任意 $b$),则输出为 $a$。这类情形的比例是 $f(ab^{-1})g(b)$;把 $b$ 的各个取值一并计入,总比例便是
+
+$$\sum_b f(ab^{-1})\, g(b).$$
+
+于是,若定义算子 $R_f$ 如下〔原书页边有一孤立字符"D",疑为手稿残迹〕:
+
+$$(R_f g)(a) = \sum_b f(ab^{-1})\, g(b),$$
+
+那么就可以说:n 个转轮的频率分布由 $R_f^{\,n-1} f$ 给出〔原文上标 OCR 残缺,据上下文补为 $n-1$〕。我们想弄清这个函数随 $n$ 增大时的行为。
+
+把群上的实值函数视为构成一个 $h$ 维欧氏空间($h$ 为群 H 的阶)。记 $(g, k)$ 为标量积 $h^{-1}\sum_a g(a)k(a)$,记 $|g|$ 为到原点的距离 $(g,g)^{1/2}$;再记 $\bar g$ 为均值 $h^{-1}\sum_a g(a)$。施瓦茨不等式立刻给出 $|g| \ge \bar g$(即 $\bar g^2 \le |g|^2$,OCR 有缺损);若再设 $g(a) \ge 0$ 对一切 $a$ 成立、且 $g(a)$ 对某些 $a$ 大于零,便有 $\bar g > 0$。我们还设 $f(a) \ge 0$ 对一切 $a$、$f(a)$ 对某些 $a$ 大于零,且 $\sum_a f(a) = 1$〔原文作"F=1",OCR 残损〕。于是有下述引理。
+
+**引理 (a)**。若 $\sum_a f(a) = 1$,则 $|R_f g| \le |g|$;等号成立当且仅当比值 $g(ab^{-1}x)/g(x)$ 与 $x$ 无关——对一切使 $f(a)f(b) \neq 0$ 的 $a, b$。〔引理陈述的第二行原书倒印,OCR 残损,按证明末句复原。〕
+
+先注意
+
+$$h^{-1}\sum_x g(x)g(cx) \le \Bigl[h^{-1}\sum_x \bigl(g(x)\bigr)^2 \cdot h^{-1}\sum_x \bigl(g(cx)\bigr)^2\Bigr]^{1/2} = h^{-1}\sum_x \bigl(g(x)\bigr)^2 = |g|^2,$$
+
+等号成立的条件是 $g(cx)/g(x)$ 与 $x$ 无关。于是
+
+$$|R_f g|^2 = h^{-1}\sum_{a,b,x} f(ab^{-1})g(b)\, f(ax^{-1})g(x) = h^{-1}\sum_{c,u,x} f(c)f(cu)\, g(ux)g(x) \le \sum_{c,u} f(c)f(cu)\, |g|^2 = |g|^2,$$
+
+(代入 $u = bx^{-1}$、$c = ab^{-1}$)等号在所述情形成立。
+
+定义 $f$ 的**极限分布**(limiting distribution)为序列 $g,\ R_f g,\ R_f^2 g, \ldots$ 的凝聚点(condensation points)。
+
+引理 (a) 将使我们得以证明如下定理。
+
+**定理三**。$f$ 的极限分布在 H 的某个自共轭子群 $H_1$ 的各陪集上恒为常数。$H_1$ 由一切形如 $U_1^{m_1} U_2^{m_2} \cdots U_n^{m_n}$、且指数之和 $\sum m_g$ 为零的表达式组成。商群 $H/H_1$ 循环。当 $g$ 为 $f$ 时,各极限分布除了在一个陪集上以外处处取值为零。
+
+证明:设 $k$ 是一个极限分布,设它是序列 $R_f^{n_r} g$ 的极限。$|R_f^{n_r} g|/|k|$ 当 $n_r \to \infty$ 时趋于 1,故 $|R_f^{n+1} g|/|R_f^n g|$ 趋于 1。而 $|R_f u|/|u|$ 是 $u$ 的连续函数〔其后一行 OCR 残损——大意:该收敛一致成立,故可对极限 $k$ 引用引理 (a) 的等号条件〕。对它应用引理 (a),我们看到:存在函数 $\Phi_1(y)$,定义在一切使 $f(a) \neq 0$、$f(b) \neq 0$ 的表达式 $ab^{-1}$ 上,使得对所有 $x$ 有 $k(yx) = \Phi_1(y)\, k(x)$。以 $R_f^{n-1} f$ 代替 $f$ 作同样的论证,又发现存在函数 $\Phi_u(y)$,定义在一切形如 $a_1 a_2 \cdots a_r\, b_1^{-1} \cdots b_s^{-1}$、且诸 $f(a_i)$、$f(b_i)$ 全不为零的表达式上,使得
+
+$$k(yx) = \Phi_u(y)\, k(x),\qquad \text{对一切 } x,$$
+
+只要 $\Phi_u(y)$ 有定义。诸函数 $\Phi_u(y)$ 在定义域重叠之处必须一致,故可用同一个符号 $\phi$ 统括。事实上可以说:$\phi(y)$ 有定义、取值为 $\alpha$,当且仅当对所有 $x$ 有 $k(yx) = \alpha\, k(x)$。由此可见 $\phi$ 的定义域是一个群:若对所有 $x$ 有 $k(y_1 x) = \alpha k(x)$ 及 $k(y_2 x) = \alpha k(x)$,则对所有 $x$ 有 $k(y_1 y_2 x) = \phi(y_1)\phi(y_2) k(x)$;故当 $y_1$、$y_2$ 属于 $\phi$ 的定义域时 $y_1 y_2$ 也属于之,且 $\phi(y_1 y_2) = \phi(y_1)\phi(y_2)$。
+
+立即可见定义域恰是 $H_1$。函数 $\phi$ 是 $H_1$ 的一维表示,但它取实的正值,故在整个 $H_1$ 上取值 1。不用表示论也可这样说:由于 $H_1$ 有限,其任一元素 $y$ 满足方程 $y^N = 1$,故 $\bigl(\phi(y)\bigr)^N = \phi(y^N) = 1$;又因 $g(x)$ 总非负,$\phi(y) \ge 0$,于是 $\phi(y) = 1$。这就蕴含 $k(x)$ 在 $H_1$ 的每个陪集上恒为常数。
+
+剩下只需考察群 $H_1$ 的性质。易见它是自共轭的:若 $aba^{-1}$ 属于 $H_1$ 而 $b$ 属于 $H$,则 $aba^{-1}$ 中群生成元 $U_i$ 的指数总和必为 0($a^{-1}$ 中的指数与 $a$ 中的相抵消);故 $b$ 若属于 $H_1$,$aba^{-1}$ 也属于之。$H_1$ 自共轭。
+
+现在取定一个特定的生成元 $U$。陪集 $H_1 U^m$ 取遍整个群 H:因为若 $p$ 是 H 的元素,它便是若干生成元的乘积;设其指数总和为 $m$,则 $pU^{-m}$ 的指数总和为 0,故属于 $H_1$,即 $p$ 属于 $H_1 U^m$;可见这些陪集穷尽 H。若 $U^s$ 是属于 $H_1$ 的 $U$ 的最低次幂,则 $H/H_1$ 显然同构于 $s$ 阶循环群。
+
+当 $g$ 为 $f$ 时,$R_f^{n-1} f$ 不为零的那些群元素都是 n 个生成元的乘积,因而属于陪集 $H_1 U^n$。〔句末 OCR 残损,按上下文复原。〕
+
+**例**:作为例子,考虑四元数群,它由 $1, i, j, k, 1', i', j', k'$ 组成,乘法表为〔原书表格 OCR 严重残损,下表按四元数群标准乘法(其中 $1' = -1$ 等)复原,见译注7〕:
+
+```
+        1    i    j    k    1'   i'   j'   k'
+ 1      1    i    j    k    1'   i'   j'   k'
+ i      i    1'   k    j'   i'   1    k'   j
+ j      j    k'   1'   i    j'   k    1    i'
+ k      k    j    i'   1'   k'   j'   i    1
+ 1'     1'   i'   j'   k'   1    i    j    k
+ i'     i'   1    k'   j    i    1'   k    j'
+ j'     j'   k    1    i'   j    k'   1'   i
+ k'     k'   j'   i    1    k    j    i'   1'
+```
+
+取 $U_1$ 为 $i$,$U_2$ 为 $j$。诸函数 $R_f^n f$ 由原书的一个表格给出〔该数值表 OCR 残损过甚,无法辨读复原〕。由此可以看出:群 $H_1$ 就是由 $k$ 生成的群;它有一个 2 阶循环的商群。
+
+### 对称群与交错群的情形
+
+在我们分析开始时所考察的情形,H 除非直立排列 U 例外,否则为对称群或交错群。此时 $H_1$ 也为对称群或交错群,因为它在 H 中自共轭。若诸生成元奇偶性全同,则为交错群;否则为对称群。
+
+于是我们断言:**当直立排列非例外时,转轮数目很大时的分布在整个交错群(偶置换)上是均匀的。若在给定的直立排列与转轮数目下奇置换可能出现,则分布在整个对称群(全体置换)上是均匀的。**
+
+---
+
+## 译注
+
+### 一、文本与版本状况
+
+**译注1**(佚失的开头):本篇为未刊打字稿,收于《图灵文集·纯数学》卷(J. L. Britton 编,North-Holland,1992),书页 125–145。手稿开头连同标题一并佚失,现题《On Permutation Groups》系 R. O. Gandy 所拟,正文自半句开始。"同一台机器"云云表明前文应已描述过多级转轮机的模型。文中另有多处因稿纸版面造成的断裂:边注、"P.T.O."(please turn over,请翻背面)指示读者翻看背面续写的旁注——译文均以引块或方括号标明。
+
+**译注2**(OCR 复原通例):凡标注"OCR 残损""按上下文复原""OCR 存疑"的公式、数字串与语句,均为译者依据前后文与标准群论记法所作的最佳推测复原,未能逐字核对原扫描件。残损较重处包括:定理二证明情形 (g) 与 (f) 的公式链、原理 (iii) 的表述、T=8 各表的个别条目、t=2 一节的逆元上标,以及 T=8 五轮换表中与首行重复的 (BEFGH)。另:原文定理编号排印混乱("Theorem I"一度重出,"Theorem II"又印作"Theorem I"),译文按内容顺序统一编为定理一、二、三。
+
+**译注3**(脱文与倒印):书页 126 正文中间夹有一行倒排文字(OCR 读出乱码),按上下文应为承接"(α₀,α_r) 对每个 0<r<T 都属于 J"的补充说明,其后紧接"于是 J 含每一对换"。书页 136 K′∩A 封闭性论证中亦缺一行(该论证需证 S 与 SR 两类表达式对乘法封闭)。书页 130"无甲虫的 U"一节与书页 142 频率分布一节开头各有脱文,已随文注明位置并给出大意。
+
+### 二、背景与术语
+
+**译注4**(背景):本文的研究对象是 Enigma 式转轮密码机的数学模型。"机器"指转轮机:字母表上的循环移位置换记作 R(即 R = (ABC…)),转子固定接线对应的置换称为一个"直立排列"(upright);n 台机器串联对应置换连乘,"滑移"(slide)指形如 R^s U 的乘积。此文与图灵二战期间在布莱切利园从事的 Enigma 密码分析(Bletchley Park 的"Banburismus"等方法)直接相关,也是他战后继续思考密码学问题的产物。I. J. Good 在《纯数学》卷的统计工作专节中曾论及这批手稿与其统计思想的关联。
+
+**译注5**("甲虫"):beetle 是图灵的诨名式用语:若某个滑移 R^s U R^n 至少留下两个字母不动,便称 U"有甲虫"。T 为偶数时一切 U 必有甲虫(T 为奇数时偶有例外)。
+
+**译注6**("numatizer"):原书如此印行,当为 normalizer(规范化子)之误植(或图灵笔误),即子群 ⟨R⟩ 在全对称群中的规范化子;译文一律按"规范化子"理解。
+
+**译注7**(表格用语与四元数表):"double threes"(双三循环组)指两个三轮换之积型置换,"triple twos"(三对换组)指三个对换之积型,"fours-and-twos"(四轮换加对换)指四轮换与对换之积型;"s.p." 即 self-paired(自配对);"O.K."、"X"、"below"、"slide"、"indirect"、"intransitive"(非传递)、"??" 等均为原稿表格用语,照录不译。四元数乘法表在原扫描件中严重破碎,译文按标准乘法(ij=k、jk=i、ki=j 及反交换性)复原;紧随其后列 R_f^n f 数值的表格完全不可辨读,只能存目。
+
+**译注8**(图件):图 1、图 2、图 3 原件均为手绘图,未随印刷文本复制;译文按编者图注文字转述。七点几何指 Fano 平面 PG(2,2),其对称(自同构)群是著名的 168 阶单群 PSL(2,7)——K∩A 与 K′∩A 均与之同构。
+
+### 三、数学评注
+
+**译注9**:定理一中排除 T=4 的原因:A₄ 除自身与单位元群外,尚有一个非常规的自共轭子群(Klein 四元群 V₄ = {1,(12)(34),(13)(24),(14)(23)}),故"T≠4 时 A、S 仅有的自共轭子群为 A、S 与单位元群"这一论证在 T=4 时失效。
+
+**译注10**(不变量):不变量的构造相当于把共轭滑动类 {R^n U R⁻ⁿ} 压缩成一个数字串代表元:f(i) 记录 U 把 RⁿZ 送到了何处,再把所有轮换形式中视作阿拉伯数字最小者取为代表。这与现代对转子接线按"循环差分"分类的做法一致;"各位数字全偶或全奇 ⇔ 非传递""形如 abcdabcd ⇔ 与 R⁴ 交换"等判据均可由该定义直接验证。
+
+**译注11**(频率分布):算子 $R_f$ 就是有限群上的卷积;引理 (a) 断言:当 Σf = 1 时卷积算子在 ℓ² 范数下压缩(|R_f g| ≤ |g|),这是随机游走收敛理论中的经典论证(与 Markov 链遍历性的证明同源)。定理三相当于说:极限平稳分布在某个商群(由"生成元指数和为零"这一关系决定的正规子群 H₁ 的陪集上)为常数;结尾结论即"用足相同转轮即可抹平初始偏倚"的定量表述。
+
+**译注12**(例外直立排列计数):T=8 时例外者共 2144 个,占全部 40320 个直立排列的约 5.3%;K、K′ 两组贡献 640 个(去重后),其余几乎全是平凡情形(非传递或与 R⁴ 交换)。这一系统性清点展示了图灵把群论(共轭类、规范化子、陪集表示)用作密码分析的穷举工具的手法。
