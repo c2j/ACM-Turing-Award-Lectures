@@ -1,0 +1,20 @@
+# Home page landing data (read by the OINK theme's data-driven home layout).
+sections:
+  - hero
+  - cards
+
+hero:
+  eyebrow: ACM 图灵奖
+  title_lines:
+    - 图灵奖演讲集
+  lead: 收录 1966–2024 年 ACM 图灵奖获奖演讲的中文翻译（含插图与译注），由 GitHub Pages 托管。
+  actions:
+    - { label: 浏览全部演讲, url: /ACM-Turing-Award-Lectures/lectures/, style: primary, icon: fa-solid fa-book }
+    - { label: 关于, url: /ACM-Turing-Award-Lectures/about/, style: ghost, icon: fa-solid fa-circle-info }
+
+cards:
+  title: 快速导航
+  columns: 2
+  items:
+    - { title: 全部演讲, desc: 42 篇中文译文，按获奖年份排序，含插图。, url: /ACM-Turing-Award-Lectures/lectures/ }
+    - { title: 关于, desc: 项目说明、版权声明与致谢。, url: /ACM-Turing-Award-Lectures/about/ }

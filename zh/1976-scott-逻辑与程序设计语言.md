@@ -83,9 +83,9 @@ $$\mathscr{B} = \{true, false, \perp\}$$
 
 对于所有 $x, y \in \mathscr{B}$。在这里 $\mathscr{B}$ 中这并不意味着全部，但我们可以将“$\sqsubseteq$”读作 $x$ 的信息内容包含在 $y$ 的信息内容中。因此，元素 $\perp$ 具有空的信息内容。该方案如图 1 所示。
 
-**图 1. 布尔值。**
+![图 1:布尔值](assets/1976-scott/fig-01.png)
 
-(此处应有图 1 示意图)
+**图 1.** 布尔值格：元素 $\perp$ 具有空信息内容,且 $\perp \sqsubseteq x$ 对一切 $x \in \mathscr{B}$ 成立(true、false 经连线指向 $\perp$)。〔译注10〕
 
 （顺便提一句：在许多出版物中，我一直主张使用格，作为偏序，格既有“顶”元素 $\top$ 也有“底”元素 $\perp$，这样我们可以断言对于域的所有元素都有 $\perp \sqsubseteq x \sqsubseteq \top$。由于许多我无法在这里详述的原因，这个建议并没有被很好地接受。关于其合理性的一些讨论可以在 Scott [12] 中找到，但当然那里研究的结构是特殊的。可能最好既不排除也不包括 $\top$；并且，为了简单起见，我今天将不再提及它。）
 
@@ -145,6 +145,8 @@ $$\langle x, y \rangle = \bigsqcup_{m=0}^\infty \langle x \upharpoonright m, y \
 这意味着 $\langle \cdot, \cdot \rangle$ 在取有限近似下表现良好。这只是一个例子；单调和连续函数的整个理论对于这种方法非常重要。
 
 即使我们在 $\mathscr{S}$ 上只放了少量的结构，一种语言也会浮现出来。为了说明起见，我们集中讨论 $\mathscr{S}$ 满足的两个同构；即 $\mathscr{S} \cong \mathscr{B} \times \mathscr{S}$ 和 $\mathscr{S} \cong \mathscr{S} \times \mathscr{S}$。第一个确定了 $\mathscr{S}$ 与布尔值（无限）序列有关；而第二个提醒我们上面关于配对函数的讨论。在图 2 中，我们列出了具有两种表达式的语言的简要 BNF 定义：布尔型（$\beta$）和序列型（$\sigma$）。
+
+![图 2:简要语言](assets/1976-scott/fig-02.png)
 
 **图 2. 简要语言。**
 $\beta ::= true \mid false \mid \mathbf{head} \sigma$
@@ -236,6 +238,8 @@ $$\mathscr{F}_\infty \cong [\mathscr{F}_\infty \to \mathscr{S}]$$
 
 这里潜伏着很多结构；事实上比我起初想的还要多。在图 3 中，我说明了一个同构链，它表明 $\mathscr{F}_\infty$ 获得了我们已经熟悉的 $\mathscr{S}$ 的大部分特征。这些之所以有效的原因如下。首先，我们将 $\mathscr{F}_\infty$ 视为一个函数空间。现在，函数对可以同构地与承担成对值的函数建立对应关系。但 $\mathscr{S} \times \mathscr{S} \cong \mathscr{S}$，正如我们已经知道的那样。最后一步只是将 $\mathscr{F}_\infty$ 上的函数放回 $\mathscr{F}_\infty$ 的元素。
 
+![图 3:第一个同构链](assets/1976-scott/fig-03.png)
+
 **图 3. 第一个同构链。**
 $\mathscr{F}_\infty \times \mathscr{F}_\infty \cong [\mathscr{F}_\infty \to \mathscr{S}] \times [\mathscr{F}_\infty \to \mathscr{S}]$
 $\quad \cong [\mathscr{F}_\infty \to \mathscr{S} \times \mathscr{S}]$
@@ -243,6 +247,8 @@ $\quad \cong [\mathscr{F}_\infty \to \mathscr{S}]$
 $\quad \cong \mathscr{F}_\infty$
 
 利用图 3 的同构，我们可以获得图 4 所示的进一步结果。原因相当清楚。取一个从 $\mathscr{F}_\infty$ 到 $\mathscr{F}_\infty$ 的函数。该函数的值可以解释为函数。但考虑到一个其值为函数的函数（在空间同构意义下）只是一个具有两个参数的函数。正如我们在图 3 中看到的，$\mathscr{F}_\infty \times \mathscr{F}_\infty \cong \mathscr{F}_\infty$，因此我们获得了最终的简化（在同构意义下）。
+
+![图 4:第二个同构链](assets/1976-scott/fig-04.png)
 
 **图 4. 第二个同构链。**
 $[\mathscr{F}_\infty \to \mathscr{F}_\infty] \cong [\mathscr{F}_\infty \to [\mathscr{F}_\infty \to \mathscr{S}]]$
@@ -292,3 +298,4 @@ $\quad \cong \mathscr{F}_\infty$
 
 8. 〔译注8〕 扫描件中数学符号 OCR 损毁严重：$\sqsubseteq$ 常被识别为 `c` 或 `r-`，$\bigsqcup$ 被识别为 `LI` 或 `U`，$\mathscr{S}$ 被识别为 `S` 或 `J`，$\mathscr{B}$ 被识别为 `B` 或 `27/3`。本译文已对照原刊页面图像全部校正为 LaTeX 格式。
 9. 〔译注9〕 参考文献 [13] 在原刊中标记为 "To appear"，实际出版于 1977 年。
+10. 〔译注10〕 原刊四幅插图已从扫描页中裁剪提取为 PNG 并内嵌于正文相应位置（见 zh/assets/1976-scott/）：图 1 为布尔值格（本 PDF 第 5 页左栏,图题 "Fig. 1." 在图形上方,格图在图题下方）、图 2 为简要语言的 BNF 语法定义（第 6 页）、图 3 与图 4 为两个同构链（第 7 页右栏）。

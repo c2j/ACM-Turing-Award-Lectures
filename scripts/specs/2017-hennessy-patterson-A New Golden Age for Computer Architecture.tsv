@@ -1,0 +1,13 @@
+# 2017-hennessy-patterson 九幅插图裁剪规格(坐标单位:pt,原点页面左上,页从1起)
+# 列: 输出名<TAB>页<TAB>x0<TAB>y0<TAB>x1<TAB>y1<TAB>备注
+# 说明: 本论文所有图题均以白色文字印在图形顶部深青色(0,122,164)横条内(属图形一部分),
+#       按 1998-gray 范本惯例,裁剪时裁掉图题横条,仅保留图形本体;图题以中文文本重排于 MD。
+fig-01.png	3	34	576	373	742	RISC-I 与 MIPS 微处理器芯片照片两幅(浅蓝衬底;照片为嵌入位图)
+fig-02.png	5	34	66	373	247	Intel 微处理器单芯片晶体管数 vs 摩尔定律(半对数图,浅蓝背景)
+fig-03.png	5	34	268	373	435	晶体管数与每平方毫米功耗(双纵轴折线图,浅蓝背景)
+fig-04.png	6	212	346	551	511	Intel Core i7 上 SPEC 整数基准浪费指令百分比(条形图,浅蓝背景)
+fig-05.png	6	212	542	551	742	阿姆达尔定律对加速比的影响(曲线图,纵轴 Speedup 横轴 Processor Count)
+fig-06.png	7	34	314	373	534	使用整数程序(SPECintCPU)的性能增长(半对数图,浅蓝背景,含四条斜率标注线)
+fig-07.png	7	34	555	373	742	Python 矩阵乘法四种优化的潜在加速(条形图,标题 Matrix Multiply Speedup Over Native Python)
+fig-08.png	9	34	66	546	401	Google 张量处理单元 TPU v1 功能组织框图(通栏宽,底部标注 Not to Scale)
+fig-09.png	10	212	497	551	742	敏捷硬件开发方法论(同心层示意图,标注 Big Chip Tape-Out/Tape-Out/Tape-In/ASIC Flow/FPGA/C++)

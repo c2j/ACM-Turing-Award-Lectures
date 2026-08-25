@@ -1,0 +1,8 @@
+# 2020-aho-ullman 五幅插图裁剪规格(坐标单位:pt,原点页面左上,页从1起)
+# 列: 输出名<TAB>页<TAB>x0<TAB>y0<TAB>x1<TAB>y1<TAB>备注
+# 所有图均为 CACM 版式:顶部青色图题条(白字 Figure N 题注)+ 浅蓝条 + 图形内容 + 底部浅蓝条
+fig-01.png	2	34	512	386	744	抽象层次与算法示意(跨左两栏,图题条含 Figure 1 题注)
+fig-02.png	7	30	571	207	744	表达式 a + b * c 的语法树(图题条含 Figure 2 题注)
+fig-03.png	9	30	549	380	742	关系 Cities 与 States 两个表格(图题条含 Figure 3 题注)
+fig-04.png	10	378	48	556	174	按 Country 分组求 Pop 之和的结果表(图题条含 Figure 4 题注)
+fig-05.png	14	204	578	555	744	生成 EPR 态的量子线路(图题条含 Figure 5 题注)

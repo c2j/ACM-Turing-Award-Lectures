@@ -245,8 +245,8 @@ $$Q' = \frac{1 \cdot 3 \cdot 5}{2^7 \cdot 2 \cdot 4 \cdot 6}, \quad C' = 7, \qua
 
 **背景与文化注**(译者补注,原文无)
 
-3. **tree-sort**: 弗洛伊德在此指的是他 1964 年发表的堆排序(Heapsort)算法的早期版本。虽然他在文中称之为 "tree-sort",但在现代算法教材中,这通常被称为堆排序。
-4. **《科学革命的结构》**: 托马斯·库恩(Thomas Kuhn) 1962 年出版的名著,提出了“范式转移”(paradigm shift)的概念,深刻影响了科学哲学和科学史研究。
+3. 〔译注3〕 **tree-sort**: 弗洛伊德在此指的是他 1964 年发表的堆排序(Heapsort)算法的早期版本。虽然他在文中称之为 "tree-sort",但在现代算法教材中,这通常被称为堆排序。
+4. 〔译注4〕 **《科学革命的结构》**: 托马斯·库恩(Thomas Kuhn) 1962 年出版的名著,提出了“范式转移”(paradigm shift)的概念,深刻影响了科学哲学和科学史研究。
 5. **软件萧条(software depression)**: 弗洛伊德在此幽默地对比了当时流行的“软件危机”(software crisis)说法。他认为既然这种糟糕状态已经持续了十多年,就不再是暂时的“危机”,而是长期的“萧条”。
 6. **John Cocke**: 1987 年图灵奖得主,编译器优化和 RISC 架构的先驱。文中提到的算法即著名的 CYK 算法(Cocke-Younger-Kasami)的一部分。
 7. **MYCIN**: 20 世纪 70 年代在斯坦福大学开发的早期专家系统,用于诊断血液感染。它是基于规则的系统的代表作。
@@ -254,7 +254,7 @@ $$Q' = \frac{1 \cdot 3 \cdot 5}{2^7 \cdot 2 \cdot 4 \cdot 6}, \quad C' = 7, \qua
 9. **闵斯基(Marvin Minsky)**: 1969 年图灵奖得主,人工智能先驱。弗洛伊德提到的 1970 年演讲《计算机科学的形式与内容》批评了当时计算机科学过于关注形式化语法而忽视实际内容的倾向。
 10. **捕食者-猎物系统**: 即 Lotka-Volterra 模型,用于描述生态系统中两个物种(如狼和兔子)相互作用的数学模型。
 11. **同时赋值(simultaneous assignment)**: 弗洛伊德指出,在处理状态转移时,同时更新多个变量的值是一个非常自然的范式,但当时的编程语言(如 Fortran, Algol)大多不支持,需要通过临时变量手动实现。
-12. **IRIA**: 法国国家信息与自动化研究所(Institut de Recherche en Informatique et en Automatique),现名为 Inria。
+12. 〔译注12〕 **IRIA**: 法国国家信息与自动化研究所(Institut de Recherche en Informatique et en Automatique),现名为 Inria。
 13. **辛普森法则(Simpson's rule)**: 数值积分的一种方法。
 14. **高斯消元法(Gaussian elimination)**: 求解线性方程组的经典算法。
 15. **Ben Mittman, Herb Simon, George Forsythe, Donald Knuth**: 弗洛伊德在致谢中提到的四位重要人物。Herb Simon(赫伯特·西蒙)是 1975 年图灵奖得主,也是诺贝尔经济学奖得主;George Forsythe 是斯坦福大学计算机科学系的创始人;Donald Knuth(高德纳)是 1974 年图灵奖得主,《计算机程序设计艺术》的作者。

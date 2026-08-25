@@ -1,0 +1,49 @@
+{{ define "main" }}
+<div class="td-content">
+		{{ partial "page-title.html" . }}
+  {{ with .Params.description }}<div class="lead">{{ . | markdownify }}</div>{{ end }}
+
+  <style>
+  .td-turing-list{display:flex;flex-direction:column;gap:.85rem;margin:1.25rem 0 2rem}
+  .td-turing-item{display:grid;grid-template-columns:3.5rem 1fr auto;gap:.15rem 1rem;padding:1rem 1.1rem;border:1px solid var(--bs-border-color);border-radius:.5rem;background:var(--td-surface)}
+  .td-turing-item__year{font-weight:700;color:var(--bs-primary);line-height:1.2}
+  .td-turing-item__title{font-size:1.02rem;font-weight:600;margin:0}
+  .td-turing-item__meta{color:var(--bs-secondary-color);font-size:.82rem}
+  .td-turing-item__summary{grid-column:1 / -1;margin:.35rem 0 0}
+  .td-turing-item__note{grid-column:1 / -1;margin:.15rem 0 0;color:var(--bs-secondary-color);font-size:.85rem;font-style:italic}
+  .td-turing-item__btn{grid-column:3;grid-row:1 / span 2;align-self:center}
+  @media(max-width:768px){.td-turing-item{grid-template-columns:1fr}.td-turing-item__btn{grid-column:1;grid-row:auto}}
+  </style>
+
+	{{ partial "content/render.html" . }}
+
+  {{ if eq .Section "lectures" }}
+  <div class="td-turing-list">
+  {{ range sort .Site.Data.turing.awards "year" }}
+    <div class="td-turing-item">
+      <div class="td-turing-item__year">{{ .year }}</div>
+      <div>
+        <div class="td-turing-item__title">{{ .authors }}</div>
+        <div class="td-turing-item__meta">{{ .category }}</div>
+      </div>
+      <div class="td-turing-item__btn">
+        {{ if eq .status "translated" }}
+          <a class="btn btn-sm btn-primary" href="{{ printf "%slectures/%s/" site.BaseURL .slug }}">中文译稿 →</a>
+        {{ else if eq .status "video" }}
+          <a class="btn btn-sm btn-outline-secondary" href="{{ .link }}" target="_blank" rel="noopener">ACM 视频</a>
+        {{ else }}
+          <span class="badge text-bg-secondary">空缺</span>
+        {{ end }}
+      </div>
+      {{ if .summary }}<p class="td-turing-item__summary">{{ .summary }}</p>{{ end }}
+      {{ if .note }}<p class="td-turing-item__note">{{ .note }}</p>{{ end }}
+    </div>
+  {{ end }}
+  </div>
+  {{ else }}
+    {{ partial "section-index.html" . -}}
+  {{ end }}
+
+	{{ partial "page-end.html" . }}
+</div>
+{{ end -}}

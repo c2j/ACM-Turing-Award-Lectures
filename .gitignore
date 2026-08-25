@@ -1,3 +1,7 @@
 .DS_Store
 translated/
 papers/
+content/lectures/
+static/
+.tools/
+.github/hooks/

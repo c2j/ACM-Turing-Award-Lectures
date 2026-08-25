@@ -233,470 +233,6 @@ b) **函数式程序的代数**。描述了一种代数,其变量表示 FP 函�
 c) **正式函数式编程系统**。描述了一个正式的(FFP)系统,它扩展了上述非正式 FP 系统的能力。因此,FFP 系统是一个精确定义的系统,它提供了使用 FP 系统的函数式编程风格及其程序代数的能力。FFP 系统可以作为应用式状态转换系统的基础。
 d) **应用式状态转换系统**。如上所述。
 
-### 12.8 程序代数的基础
-
-我们在本节中的目的是确立第 12.4 节中所述结果的有效性。后续章节不依赖于本节,因此希望跳过的读者可以跳过。我们使用 [16] 中的标准概念和结果,但用于对象和函数等的记号将是本文的记号。
-
-我们取给定 FP 系统的对象集 $O$(包括 $\perp$)作为所有函数的定义域(和值域)。我们取 $F$ 为函数集,$\mathcal{F}$ 为该 FP 系统的函数式形式集。我们用 $E(f)$ 表示任何涉及函数式形式、原语和定义函数以及函数符号 $f$ 的函数表达式,我们将 $E$ 视为一个将函数 $f$ 映射到相应函数 $E(f)$ 的泛函。我们假设 $F$ 中的所有 $f$ 都是保底的,且 $\mathcal{F}$ 中的所有函数式形式在每个变量中都对应于连续泛函(例如,$[f, g]$ 在 $f$ 和 $g$ 中都是连续的)。(前面给出的 FP 系统所有原语函数都是保底的,其所有函数式形式都是连续的。)
-
-**定义**: 令 $E(f)$ 为一个函数表达式。令:
-$f_0 \equiv \bar{\perp}$
-$f_{i+1} \equiv E(f_i)$ 对于 $i = 0, 1, \dots$
-如果 $E$ 具有以下性质:
-$f_{i+1} \equiv p_0 \to q_0; \dots; p_i \to q_i; \bar{\perp}$
-其中 $p_i, q_i \in F$,那么称 $E$ 是**可展开的**,并具有 $f_i$ 作为近似函数。
-
-**展开定理**: 令 $E(f)$ 为如上所述的可展开泛函。令 $f$ 为满足下式的最小函数:
-$f \equiv E(f)$  (1)
-我们写成:
-$f \equiv p_0 \to q_0; \dots; p_n \to q_n; \dots$  (2)
-来表示 $f \equiv \lim_i \{f_i\}$,其中 $f_i$ 具有上述形式。我们称右侧为 $f$ 的**无限展开**。我们认为 $f:x$ 有定义当且仅当存在一个 $n \ge 0$,使得 (a) 对于所有 $i < n$, $p_i:x = F$,且 (b) $p_n:x = T$,且 (c) $q_n:x$ 有定义,在这种情况下 $f:x = q_n:x$。
-
-**定义**: 令 $E(f)$ 为满足下式的函数表达式:
-$E(h) \equiv p_0 \to q_0; E_1(h)$  (LE1)
-其中存在 $p_i \in F$ 和 $q_i \in F$ 使得:
-$E_1(p_i \to q_i; h) \equiv p_{i+1} \to q_{i+1}; E_1(h)$  (LE2)
-对于所有 $h \in F$ 且 $i = 0, 1, \dots$。且:
-$E_1(\bar{\perp}) \equiv \bar{\perp}$  (LE3)
-那么称 $E$ 相对于这些 $p_i$ 和 $q_i$ 是**线性可展开的**。
-
-**线性展开定理**: 令 $E$ 相对于 $p_i$ 和 $q_i (i = 0, 1, \dots)$ 是线性可展开的。那么 $E$ 是可展开的,其近似函数为:
-$f_0 \equiv \bar{\perp}$
-$f_{i+1} \equiv p_0 \to q_0; \dots; p_i \to q_i; \bar{\perp}$
-
-**证明**: 我们想证明对于任何 $i \ge 0$,$E(f_i) \equiv f_{i+1}$。
-现在:
-$E(f_0) \equiv p_0 \to q_0; E_1(\bar{\perp}) \equiv p_0 \to q_0; \bar{\perp} \equiv f_1$  (3)
-根据 (LE1)、(LE3) 和 (1)。
-令 $i > 0$ 固定,并令:
-$f_i \equiv p_0 \to q_0; w_1$  (4a)
-$w_1 \equiv p_1 \to q_1; w_2$  (4b)
-等等。
-$w_{i-1} \equiv p_{i-1} \to q_{i-1}; \bar{\perp}$  (4-)
-那么,对于这个 $i > 0$:
-$E(f_i) \equiv p_0 \to q_0; E_1(f_i)$ (根据 (LE1))
-$E_1(f_i) \equiv p_1 \to q_1; E_1(w_1)$ (根据 (LE2) 和 (4a))
-$E_1(w_1) \equiv p_2 \to q_2; E_1(w_2)$ (根据 (LE2) 和 (4b))
-...
-$E_1(w_{i-1}) \equiv p_i \to q_i; E_1(\bar{\perp})$ (根据 (LE2) 和 (4-))
-$\equiv p_i \to q_i; \bar{\perp}$ (根据 (LE3))
-结合上述各项得到:
-$E(f_i) \equiv p_0 \to q_0; p_1 \to q_1; \dots; p_i \to q_i; \bar{\perp} \equiv f_{i+1}$
-对于任意 $i > 0$,根据 (2)。
-根据 (3),(5) 对 $i = 0$ 也成立;因此它对所有 $i \ge 0$ 都成立。因此 $E$ 是可展开的并具有所需的近似函数。 $\square$
-
-**推论**: 如果 $E$ 相对于 $p_i$ 和 $q_i (i = 0, 1, \dots)$ 是线性可展开的,且 $f$ 是满足下式的最小函数:
-$f \equiv E(f)$  (LE4)
-那么:
-$f \equiv p_0 \to q_0; \dots; p_n \to q_n; \dots$  (LE5)
-
-**证明**: 由于 $E$ 是来自 $F$ 的连续泛函的组合,且仅涉及单调函数(来自 $F$ 的保底函数)作为常数项,因此 $E$ 是连续的 ([16] p. 493)。因此其最小不动点 $f$ 是 $\lim_i \{E^i(\bar{\perp})\} = \lim_i \{f_i\}$ ([16] p. 494),根据定义,这就是 $f$ 的上述无限展开。 $\square$
-
-### 12.9 λ 演算与组合子的程序代数
-
-由于 Church 的 λ 演算 [5] 以及 Schönfinkel 和 Curry [6] 开发的组合子系统是表示函数应用概念的主要数学系统,且由于它们比 FP 系统更强大,自然会询问基于这些系统的程序代数会是什么样子。
-
-FP 组合 $f \circ g$ 的 λ 演算和组合子等价物是:
-$\lambda fgx.(f(gx)) \equiv \mathbf{B}$
-其中 $\mathbf{B}$ 是 Curry 定义的一个简单组合子。在 Church 或 Curry 系统本身中没有 FP 对象 $\langle x, y \rangle$ 的直接等价物;然而,遵循 Landin [14] 和 Burge [4] 的做法,可以使用原语函数 $prefix, head, tail, null$ 和 $atomic$ 来引入对应于 FP 序列的列表结构。然后,使用列表的 FP 记号,构造的 λ 演算等价物是 $\lambda fgx.\langle fx, gx \rangle$。组合子等价物是一个涉及 $prefix$、空列表以及两个或更多基本组合子的表达式。它如此复杂,以至于我不打算给出它。
-
-如果使用 λ 演算或组合子表达式来表示函数式形式 $f \circ g$ 和 $[f, g]$,以表达 FP 代数中的定律 I.1: $[f, g] \circ h \equiv [f \circ h, g \circ h]$,结果将是一个如此复杂的表达式,以至于定律的意义被掩盖了。在任一系统中使该意义清晰的唯一方法是命名这两个泛函:组合 $\equiv \mathbf{B}$,构造 $\equiv \mathbf{A}$,使得 $\mathbf{B}fg \equiv f \circ g$,且 $\mathbf{A}fg \equiv [f, g]$。那么 I.1 变为:
-$\mathbf{B}(\mathbf{A}fg)h \equiv \mathbf{A}(\mathbf{B}fh)(\mathbf{B}gh)$
-这仍然不如 FP 定律那样透彻。
-
-上述观点的重点在于,如果人们希望在 Church 或 Curry 的系统中陈述像 FP 代数那样清晰的定律,就会发现有必要选择某些泛函(例如组合和构造)作为代数的基本运算,并要么给它们起短名字,要么(最好是)像在 FP 中那样用某些特殊记号来表示它们。如果这样做并提供原语、对象、列表等,结果就是一个类 FP 系统,其中通常的 λ 表达式或组合子不会出现。即便如此,这些 FP 系统的 Church 或 Curry 版本由于限制较少,仍存在一些 FP 系统没有的问题:
-
-a) Church 和 Curry 版本容纳多种类型的函数,并且可以定义 FP 系统中不存在的函数。因此,$\mathbf{B}f$ 是一个在 FP 系统中没有对应物的函数。这种增加的力量带来了类型兼容性的问题。例如,在 $f \circ g$ 中,$g$ 的值域是否包含在 $f$ 的定义域内?在 FP 系统中,所有函数都具有相同的定义域和值域。
-
-b) Church 的 λ 演算的语义取决于简单陈述但其含义非常难以完全理解的替换规则。这些规则的真实复杂性并未得到广泛认可,但一批有能力的逻辑学家相继发表了 λ 演算的 Church-Rosser 定理的“证明”,却未能解释其中一个或另一个复杂性,这证明了这一点。(Church-Rosser 定理,或 Scott 关于模型存在性的证明 [22],是证明 λ 演算具有一致语义所必需的。)纯 Lisp 的定义在相当长的一段时间内包含一个相关的错误(“funarg”问题)。类似的问题也附着在 Curry 的系统上。
-
-相比之下,FP 系统的正式 (FFP) 版本(在下一节中描述)没有变量,只有一条基本的替换规则(用函数替换其名称),并且可以通过 Dana Scott 和 Manna 等人 [16] 开发的相对简单的不动点论证来证明其具有一致的语义。有关此类证明,请参见 McJones [18]。
-
-### 12.10 评论
-
-上面概述的程序代数需要大量工作来为更大类别的方程提供展开,并将其实律和定理扩展到此处给出的基本定律之外。探索一个序列构造器不是保底的类 FP 系统(定律 I.5 得到加强,但 IV.1 丢失)的代数将是很有趣的。其他有趣的问题包括:(a) 寻找使展开唯一的规则,给出函数的规范形式;(b) 寻找用于展开和分析各种参数类别的函数行为的算法;以及 (c) 探索将代数的定律和定理作为正式的、执行前的“惰性求值”方案 [9, 10] 或在执行期间运行的方案的基本规则的方法。例如,此类方案将利用定律 $1 \circ [f, g] \le f$ 来避免评估 $g:x$。
-
-## 13. 函数式程序设计的正式系统 (FFP 系统)
-
-### 13.1 引言
-
-正如我们所见,一个 FP 系统有一组函数,这取决于它的原语函数集、函数式形式集和定义集。特别是,它的函数式形式集是一劳永逸地固定的,这组形式在很大程度上决定了系统的力量。例如,如果它的函数式形式集为空,那么它的整个函数集就只是原语函数集。在 FFP 系统中,人们可以创建新的函数式形式。函数式形式由对象序列表示;序列的第一个元素决定了它表示哪种形式,而其余元素是该形式的参数。
-
-在 FFP 系统中定义新函数式形式的能力是它们与 FP 系统之间主要区别的一个结果:在 FFP 系统中,对象被用来以系统的方式“表示”函数。除此之外,FFP 系统密切镜像 FP 系统。它们类似于但比早期论文 [2] 中的规约 (Red) 语言更简单。
-
-我们将首先给出 FFP 系统的简单语法,然后非正式地讨论它们的语义并给出示例,最后给出它们的正式语义。
-
-### 13.2 语法
-
-我们描述 FFP 系统的对象集 $O$ 和表达式集 $E$。这些取决于某些原子集 $A$ 的选择,我们将其视为给定的。我们假设 $T$(真)、$F$(假)、$\phi$(空序列)和 $\#$(默认)属于 $A$,以及各种类型的“数字”等。
-
-1) 底 $\perp$ 是一个对象,但不是一个原子。
-2) 每个原子都是一个对象。
-3) 每个对象都是一个表达式。
-4) 如果 $x_1, \dots, x_n$ 是对象 [表达式],那么 $\langle x_1, \dots, x_n \rangle$ 是一个对象 [对应地,表达式],称为长度为 $n$ 的序列(对于 $n \ge 1$)。对象 [表达式] $x_i$ (对于 $1 \le i \le n$)是序列 $\langle x_1, \dots, x_i, \dots, x_n \rangle$ 的第 $i$ 个元素。($\phi$ 既是序列也是原子;其长度为 0。)
-5) 如果 $x$ 和 $y$ 是表达式,那么 $(x:y)$ 是一个表达式,称为**应用**, $x$ 是其算子,$y$ 是其操作数。两者都是表达式的元素。
-6) 如果 $x = \langle x_1, \dots, x_n \rangle$ 且 $x$ 的元素之一是 $\perp$,那么 $x = \perp$。也就是说,$\langle \dots, \perp, \dots \rangle = \perp$。
-7) 所有对象和表达式都是通过有限次使用上述规则形成的。
-
-表达式 $x$ 的子表达式要么是 $x$ 本身,要么是 $x$ 的元素的子表达式。FFP 对象是不以应用作为子表达式的表达式。给定相同的原子集,FFP 和 FP 对象是相同的。
-
-### 13.3 关于 FFP 语义的非正式评论
-
-**13.3.1 表达式的含义;语义函数 $\mu$**。每个 FFP 表达式 $e$ 都有一个含义 $\mu e$,它始终是一个对象; $\mu e$ 是通过反复将 $e$ 中每个最内层应用替换为其含义而找到的。如果此过程不终止,则 $e$ 的含义为 $\perp$。最内层应用 $(x:y)$ 的含义(由于它是最内层的, $x$ 和 $y$ 必须是对象)是将由 $x$ 表示的函数应用于 $y$ 的结果,就像在 FP 系统中一样,只不过在 FFP 系统中,函数由对象表示,而不是由函数表达式表示,原子(而不是函数符号)表示原语和定义函数,序列表示由函数式形式表示的 FP 函数。
-
-对象与其表示的函数之间的关联由 FFP 系统的**表示函数** $\rho$ 给出。( $\rho$ 和 $\mu$ 都属于系统的描述,而不是系统本身。)因此,如果原子 $NULL$ 表示 FP 函数 $null$,那么 $\rho NULL = null$,且 $(NULL:A)$ 的含义是:
-$\mu(NULL:A) = (\rho NULL):A = null:A = F$
-从这里开始,如上所述,我们在两种意义上使用冒号。当它位于两个对象之间时,如在 $(NULL:A)$ 中,它标识一个仅表示其自身的 FFP 应用;当它位于函数和对象之间时,如在 $(\rho NULL):A$ 或 $null:A$ 中,它标识一个类 FP 应用,表示将函数应用于对象的结果。
-
-FFP 算子是对象这一事实使得一个函数 $apply$ 成为可能,这在 FP 系统中是毫无意义的:
-$apply:\langle x, y \rangle = (x:y)$
-$apply:\langle x, y \rangle$ 的结果,即 $(x:y)$,在 FP 系统中在两个层面上都是毫无意义的。首先,$(x:y)$ 本身不是一个对象;它说明了 FP 和 FFP 系统之间的另一个区别:某些 FFP 函数(如 $apply$)将对象映射为表达式,而不是像 FP 函数那样直接映射为对象。然而,$apply:\langle x, y \rangle$ 的含义是一个对象(见下文)。其次,$(x:y)$ 甚至不能作为 FP 系统中的中间结果;它在 FP 系统中是毫无意义的,因为 $x$ 是一个对象而不是一个函数,且 FP 系统不将函数与对象关联。现在,如果 $APPLY$ 表示 $apply$,那么 $(APPLY:\langle NULL, A \rangle)$ 的含义是:
-$\mu(APPLY:\langle NULL, A \rangle) = \mu((\rho APPLY):\langle NULL, A \rangle)$
-$= \mu(apply:\langle NULL, A \rangle) = \mu(NULL:A) = \mu((\rho NULL):A)$
-$= \mu(null:A) = \mu F = F$
-最后一步遵循每个对象都是其自身含义的事实。由于含义函数 $\mu$ 最终会评估所有应用,人们可以将 $apply:\langle NULL, A \rangle$ 视为产生 $F$,尽管实际结果是 $(NULL:A)$。
-
-**13.3.2 对象如何表示函数;表示函数 $\rho$**。正如我们所见,某些原子(原语原子)将表示系统的原语函数。其他原子可以像 FP 系统中的符号一样表示定义函数。如果一个原子既不是原语也不是定义的,它表示 $\bar{\perp}$,即处处为 $\perp$ 的函数。
-
-序列也表示函数,类似于 FP 的函数式形式。由序列表示的函数由以下规则(递归地)给出:
-
-**元组合规则 (Metacomposition rule)**
-$(\rho \langle x_1, \dots, x_n \rangle):y \equiv (\rho x_1):\langle \langle x_1, \dots, x_n \rangle, y \rangle$
-其中 $x_i$ 和 $y$ 是对象。这里 $\rho x_1$ 决定了序列 $\langle x_1, \dots, x_n \rangle$ 表示哪种函数式形式,而 $x_2, \dots, x_n$ 是该形式的参数(在 FFP 中,$x_1$ 本身也可以作为参数)。因此,例如,令 $Def \ \rho CONST \equiv 2 \circ 1$; 那么 FFP 中的 $\langle CONST, x \rangle$ 表示 FP 函数式形式 $\bar{x}$,因为根据元组合规则,如果 $y \neq \perp$:
-$(\rho \langle CONST, x \rangle):y = (\rho CONST):\langle \langle CONST, x \rangle, y \rangle$
-$= 2 \circ 1 : \langle \langle CONST, x \rangle, y \rangle = x$
-这里我们可以看到,一个序列或形式的第一个控制算子(在本例中为 $CONST$),在元组合之后,其操作数总是一个对,其第一个元素是序列本身,第二个元素是序列的原始操作数(在本例中为 $y$)。控制算子随后可以以各种方式重新排列并重新应用序列的元素和原始操作数。元组合的重要意义在于,它允许通过定义新函数来定义新的函数式形式。它还允许在没有定义的情况下编写递归函数。
-
-我们再给出一个函数式形式的控制函数示例: $Def \ \rho CONS \equiv \alpha apply \circ tl \circ distr$。这个定义导致 $\langle CONS, f_1, \dots, f_n \rangle$(其中 $f_i$ 是对象)表示与 $[\rho f_1, \dots, \rho f_n]$ 相同的函数。以下展示了这一点:
-$(\rho \langle CONS, f_1, \dots, f_n \rangle):x$
-$= (\rho CONS):\langle \langle CONS, f_1, \dots, f_n \rangle, x \rangle$ (根据元组合)
-$= \alpha apply \circ tl \circ distr : \langle \langle CONS, f_1, \dots, f_n \rangle, x \rangle$ (根据 $\rho CONS$ 的定义)
-$= \alpha apply : \langle \langle f_1, x \rangle, \dots, \langle f_n, x \rangle \rangle$ (根据 $tl, distr$ 和 $\circ$ 的定义)
-$= \langle apply:\langle f_1, x \rangle, \dots, apply:\langle f_n, x \rangle \rangle$ (根据 $\alpha$ 的定义)
-$= \langle (f_1:x), \dots, (f_n:x) \rangle$ (根据 $apply$ 的定义)
-在评估最后一个表达式时,含义函数将产生每个应用的含义,给出 $\rho f_i:x$ 作为第 $i$ 个元素。
-
-通常,在描述由序列表示的函数时,我们将给出其总体效果,而不是展示其控制算子如何实现该效果。因此,我们会简单地写成:
-$(\rho \langle CONS, f_1, \dots, f_n \rangle):x = \langle (f_1:x), \dots, (f_n:x) \rangle$
-而不是上述更详细的说明。
-
-我们需要一个控制算子 $COMP$,来为我们提供表示函数式形式“组合”的序列。我们取 $\rho COMP$ 为一个原语函数,使得对于所有对象 $x$:
-$(\rho \langle COMP, f_1, \dots, f_n \rangle):x = (f_1:(f_2:(\dots:(f_n:x)\dots)))$ 对于 $n \ge 1$。
-(我感谢 Paul McJones 的观察,即普通组合可以通过这个原语函数实现,而不是像早期论文 [2] 那样在基本语义中使用两条组合规则。)
-
-虽然 FFP 系统允许定义和研究新的函数式形式,但可以预期大多数编程将使用一组固定的形式(其控制算子是原语),如在 FP 中那样,以便可以利用这些形式的代数定律,并可以使用基于这些形式的结构化编程风格。
-
-除了用于定义函数式形式外,元组合还可以用于直接创建递归函数,而无需使用 $Def \ f \equiv E(f)$ 形式的递归定义。例如,如果 $\rho MLAST \equiv null \circ tl \circ 2 \to 1 \circ 2; apply \circ [1, tl \circ 2]$,那么 $\rho \langle MLAST \rangle \equiv last$,其中 $last:x \equiv x = \langle x_1, \dots, x_n \rangle \to x_n; \perp$。因此算子 $\langle MLAST \rangle$ 的工作方式如下:
-$\mu(\langle MLAST \rangle : \langle A, B \rangle)$
-$= \mu(\rho MLAST : \langle \langle MLAST \rangle, \langle A, B \rangle \rangle)$ (根据元组合)
-$= \mu(apply \circ [1, tl \circ 2] : \langle \langle MLAST \rangle, \langle A, B \rangle \rangle)$
-$= \mu(apply : \langle \langle MLAST \rangle, \langle B \rangle \rangle)$
-$= \mu(\langle MLAST \rangle : \langle B \rangle)$
-$= \mu(\rho MLAST : \langle \langle MLAST \rangle, \langle B \rangle \rangle)$
-$= \mu(1 \circ 2 : \langle \langle MLAST \rangle, \langle B \rangle \rangle)$
-$= B$
-
-**13.3.3 $\rho$ 和 $\mu$ 性质的总结**。到目前为止,我们已经展示了 $\rho$ 如何将原子和序列映射为函数,以及这些函数如何将对象映射为表达式。实际上,$\rho$ 和所有 FFP 函数都可以扩展,以便它们对所有表达式都有定义。通过此类扩展,$\rho$ 和 $\mu$ 的性质可以总结如下:
-
-1) $\mu \in [expressions \to objects]$。
-2) 如果 $x$ 是一个对象,$\mu x = x$。
-3) 如果 $e$ 是一个表达式且 $e = \langle e_1, \dots, e_n \rangle$,那么 $\mu e = \langle \mu e_1, \dots, \mu e_n \rangle$。
-4) $\rho \in [expressions \to [expressions \to expressions]]$。
-5) 对于任何表达式 $e$,$\rho e = \rho(\mu e)$。
-6) 如果 $x$ 是一个对象且 $e$ 是一个表达式,那么 $\rho x:e = \rho x:(\mu e)$。
-7) 如果 $x$ 和 $y$ 是对象,那么 $\mu(x:y) = \mu(\rho x:y)$。换句话说:FFP 应用 $(x:y)$ 的含义是通过将由 $x$ 表示的函数 $\rho x$ 应用于 $y$,然后寻找结果表达式(通常是一个对象,然后是其自身的含义)的含义而找到的。
-
-**13.3.4 单元、获取与存储**。出于多种原因,创建充当名称的函数是很方便的。特别是,我们在描述 FFP 系统中定义的语义时将需要这种设施。为了引入命名函数,即从存储器(单元序列)中获取具有给定名称的单元内容,以及在这样的序列中存储具有给定名称和内容的单元的能力,我们引入了称为**单元(cells)**的对象和两个新的函数式形式:获取(fetch)和存储(store)。
-
-**单元**
-单元是一个三元组 $\langle CELL, name, contents \rangle$。我们使用这种形式而不是对 $\langle name, contents \rangle$,以便可以将单元与普通对区分开来。
-
-**获取 (Fetch)**
-函数式形式 fetch 以一个对象 $n$ 作为其参数($n$ 通常是一个充当名称的原子);它被写成 $\uparrow n$(读作“获取 $n$”)。它对对象 $n$ 和 $x$ 的定义是:
-$\uparrow n:x \equiv x = \phi \to \#; atom:x \to \perp; (1:x) = \langle CELL, n, c \rangle \to c; \uparrow n \circ tl:x$
-其中 $\#$ 是原子“默认(default)”。因此,$\uparrow n$(获取 $n$)应用于一个序列时,给出序列中第一个名称为 $n$ 的单元的内容;如果没有名为 $n$ 的单元,结果为默认值 $\#$。因此 $\uparrow n$ 是名称 $n$ 的名称函数。(我们假设 $\rho FETCH$ 是原语函数,使得 $\rho \langle FETCH, n \rangle \equiv \uparrow n$。注意 $\uparrow n$ 只是跳过其操作数中不是单元的元素。)
-
-**存储以及入栈、出栈、清除**
-与 fetch 类似,store 以一个对象 $n$ 作为其参数;它被写成 $\downarrow n$(“存储 $n$”)。当应用于对 $\langle x, y \rangle$(其中 $y$ 是一个序列)时,$\downarrow n$ 从 $y$ 中移除第一个名为 $n$ 的单元(如果有),然后创建一个名为 $n$ 且内容为 $x$ 的新单元并将其追加到 $y$。在定义 $\downarrow n$(存储 $n$)之前,我们将指定四个辅助函数式形式。(这些可以与 fetch $n$ 和 store $n$ 结合使用,以在存储序列中获得多个命名的 LIFO 栈。)其中两个辅助形式由递归泛函方程指定;每个都以一个对象 $n$ 作为其参数。
-$(cellname \ n) \equiv atom \to \bar{F}; eq \circ [length, \bar{3}] \to eq \circ [[CELL, \bar{n}], [1, 2]]; \bar{F}$
-$(push \ n) \equiv pair \to apndl \circ [[CELL, \bar{n}, 1], 2]; \bar{\perp}$
-$(pop \ n) \equiv null \to \bar{\phi}; (cellname \ n) \circ 1 \to tl; apndl \circ [1, (pop \ n) \circ tl]$
-$(purge \ n) \equiv null \to \bar{\phi}; (cellname \ n) \circ 1 \to (purge \ n) \circ tl; apndl \circ [1, (purge \ n) \circ tl]$
-$\downarrow n \equiv pair \to (push \ n) \circ [1, (pop \ n) \circ 2]; \bar{\perp}$
-
-上述函数式形式的工作方式如下。对于 $x \neq \perp$,如果 $x$ 是名为 $n$ 的单元,则 $(cellname \ n):x$ 为 $T$,否则为 $F$。$(pop \ n):y$ 从序列 $y$ 中移除第一个名为 $n$ 的单元;$(purge \ n):y$ 从 $y$ 中移除所有名为 $n$ 的单元。$(push \ n):\langle x, y \rangle$ 将一个名为 $n$ 且内容为 $x$ 的单元放在序列 $y$ 的头部;$\downarrow n:\langle x, y \rangle$ 是 $(push \ n):\langle x, (pop \ n):y \rangle$。
-(因此 $(push \ n):\langle x, y \rangle = y'$ 将 $x$ 压入 $y'$ 中名为 $n$ 的“栈”顶;$x$ 可以通过 $\uparrow n:y' = x$ 读取,并可以通过 $(pop \ n):y'$ 移除;因此 $\uparrow n \circ (pop \ n):y'$ 是栈 $n$ 中 $x$ 下方的元素,前提是 $y'$ 中有多个名为 $n$ 的单元。)
-
-**13.3.5 FFP 系统中的定义**。FFP 系统的语义取决于一组固定的定义 $D$(一个单元序列),就像 FP 系统取决于其非正式给出的定义集一样。因此,语义函数 $\mu$ 取决于 $D$;改变 $D$ 会给出一个反映改变后定义的新 $\mu'$。我们将 $D$ 表示为一个对象,因为在 AST 系统(第 14 节)中,我们将希望通过向其应用函数来变换 $D$,并从中获取数据——除了在 FFP 语义中将其作为函数定义的来源之外。
-
-如果 $\langle CELL, n, c \rangle$ 是序列 $D$ 中第一个名为 $n$ 的单元(且 $n$ 是一个原子),那么它具有与 FP 定义 $Def \ n \equiv \rho c$ 相同的效果,也就是说,$(n:x)$ 的含义将与 $(\rho c):x$ 的含义相同。因此,例如,如果 $\langle CELL, CONST, \langle COMP, 2, 1 \rangle \rangle$ 是 $D$ 中第一个名为 $CONST$ 的单元,那么它具有与 $Def \ CONST \equiv 2 \circ 1$ 相同的效果,具有该 $D$ 的 FFP 系统将发现:
-$\mu(CONST : \langle \langle x, y \rangle, z \rangle) = y$
-并因此:
-$\mu(\langle CONST, A \rangle : B) = A$
-
-通常,在具有定义 $D$ 的 FFP 系统中,形式为 $(atom:x)$ 的应用的含义取决于 $D$;如果 $\uparrow atom:D \neq \#$(即 $atom$ 在 $D$ 中有定义),那么其含义是 $\mu(c:x)$,其中 $c = \uparrow atom:D$,即 $D$ 中第一个名为 $atom$ 的单元的内容。如果 $\uparrow atom:D = \#$,那么 $atom$ 在 $D$ 中没有定义,且要么 $atom$ 是原语(即系统知道如何计算 $\rho atom:x$,且 $\mu(atom:x) = \mu(\rho atom:x)$),否则 $\mu(atom:x) = \perp$。
-
-### 13.4 FFP 系统的正式语义
-
-我们假设已经选择了一个原子集 $A$、一个定义集 $D$、一个原语原子集 $P \subseteq A$ 以及它们所表示的原语函数。我们假设如果 $a \in P$,则 $\rho a$ 是由 $a$ 表示的原语函数;如果 $a \in Q$,则 $\rho a = \bar{\perp}$,其中 $Q$ 是 $A-P$ 中未在 $D$ 中定义的原子集。虽然 $\mu$ 对所有表达式都有定义(见 13.3.3),但正式语义仅在 $P$ 和 $Q$ 上使用其定义。$\rho$ 分配给其他表达式 $x$ 的函数在以下用于评估 $\mu(x:y)$ 的语义规则中被隐式确定并应用。上述 $A$ 和 $D$ 的选择,以及 $P$ 和相关原语函数的选择,确定了 FFP 系统的对象、表达式和语义函数 $\mu_D$。(我们将 $D$ 视为固定的,并简写 $\mu$ 为 $\mu_D$。)我们假设 $D$ 是一个序列,且对于任何原子 $y$,$\uparrow y:D$ 是可计算的(通过第 13.3.4 节中给出的函数 $\uparrow y$)。在这些假设下,我们将 $\mu$ 定义为泛函 $\tau$ 的最小不动点,其中函数 $\tau g$ 对任何函数 $g$ 定义如下(对于所有表达式 $x, x_i, y, y_i, z$ 和 $w$):
-
-$(\tau g)x \equiv x \in A \to x;$
-$x = \langle x_1, \dots, x_n \rangle \to \langle gx_1, \dots, gx_n \rangle;$
-$x = (y:z) \to ($
-$y \in A \land (\uparrow y:D) = \# \to g((\rho y)(gz));$
-$y \in A \land (\uparrow y:D) = w \to g(w:z);$
-$y = \langle y_1, \dots, y_n \rangle \to g(y_1 : \langle y, z \rangle);$
-$g(gy:z)); \perp$
-
-上述对 $\mu$ 的描述在评估操作数之前,通过定义和元组合展开应用的算子。假设上述 $\tau g$ 定义中的谓词(如 “$x \in A$”)是保底的(例如,“$\perp \in A$”的值为 $\perp$),且条件表达式本身也是保底的。因此 $(\tau g)\perp \equiv \perp$ 且 $(\tau g)(\perp:z) \equiv \perp$。FFP 系统的语义到此结束。
-
-## 14. 应用式状态转换系统 (AST 系统)
-
-### 14.1 引言
-
-本节勾勒了一类前面提到的作为冯·诺依曼系统替代方案的系统。必须再次强调,这些应用式状态转换系统目前并不是作为实用的编程系统提出的,而是作为一类系统的示例,在这些系统中,应用式风格的编程可以在一个具有历史敏感性但非冯·诺依曼的系统中实现。这些系统与状态松散耦合,并依赖于底层的应用式系统来提供其程序设计语言和对其状态转换的描述。下文描述的 AST 系统的底层应用式系统是一个 FFP 系统,但也可以使用其他应用式系统。
-
-为了理解 AST 系统结构的原因,首先回顾冯·诺依曼系统 Algol 的基本结构,观察其局限性,并将其与 AST 系统的结构进行比较是有帮助的。在回顾之后,描述了一个极简的 AST 系统;给出了一个用于文件维护和运行用户程序的小型、自顶向下、自我保护的系统程序,并给出了将其安装在 AST 系统中以及运行示例用户程序的说明。系统程序使用“名称函数”而不是传统的名称,用户也可以这样做。本节最后的小节讨论了 AST 系统的变体、它们的一般性质以及命名系统。
-
-### 14.2 Algol 结构与 AST 系统结构的比较
-
-一个 Algol 程序是一个语句序列,每个语句代表 Algol 状态的一个变换,而 Algol 状态是一个关于各种栈、指针以及标识符到值的变量映射等状态信息的复杂存储库。每个语句通过其特有的复杂协议与这个不断变化的状态进行通信,甚至其不同部分也有不同的协议(例如,与变量 $x$ 相关的协议取决于它出现在赋值语句的左侧还是右侧、出现在声明中、作为参数等)。就好像 Algol 状态是一个复杂的“存储器”,它通过一根由许多专用导线组成的巨大“电缆”与 Algol 程序通信。这根电缆的复杂通信协议是固定的,包括每种语句类型的协议。Algol 程序的“含义”必须根据通过电缆及其协议与状态进行的大量通信的总效果来给出(加上识别输出并将输入插入状态的方法)。与通往 Algol 状态/存储器的这根庞大电缆相比,作为计算机冯·诺依曼瓶颈的电缆是一个简单、优雅的概念。
-
-因此,Algol 语句不是表示状态到状态函数的表达式,这些函数是通过使用有序的组合形式从更简单的状态到状态函数构建起来的。相反,它们是具有上下文相关部分的复杂消息,这些部分一点点蚕食状态。每个部分通过其自身的协议在电缆上向状态传输信息或从状态接收信息。没有规定将通用函数应用于整个状态,从而对其进行重大改变。通过函数应用对状态 $S$ 进行大规模、强大的变换 $S \to f:S$,在冯·诺依曼——电缆和协议——语境中实际上是不可想象的:除非 $f$ 被限制在电缆最初允许的微小变化范围内,否则无法保证新状态 $f:S$ 能与电缆及其固定协议匹配。
-
-我们想要一个计算系统,其语义不依赖于一堆用于与状态通信的怪异协议,并且我们希望能够通过应用通用函数对状态进行大规模变换。AST 系统提供了实现这些目标的一种方式。它们的语义有两种用于从状态获取信息的协议:(1) 从中获取要应用的函数的定义,以及 (2) 获取整个状态本身。有一种用于改变状态的协议:通过函数应用计算新状态。除了这些与状态的通信外,AST 语义是应用式的(即 FFP)。它不依赖于状态改变,因为在计算过程中状态根本不会改变。相反,计算的结果是输出和新状态。AST 状态的结构受到其协议之一的轻微限制:必须能够识别其中的定义(即单元)。它的结构——它是一个序列——比 Algol 状态的结构简单得多。
-
-因此,AST 系统的结构避免了冯·诺依曼状态的复杂性和限制(及其通信协议),同时在一个截然不同且更简单的框架中实现了更大的力量和自由。
-
-### 14.3 AST 系统的结构
-
-一个 AST 系统由三个元素组成:
-
-1) 一个应用式子系统(如 FFP 系统)。
-2) 一个状态 $D$,它是应用式子系统的定义集。
-3) 一组转换规则,描述输入如何转换为输出以及状态 $D$ 如何改变。
-
-AST 系统的程序设计语言就是其应用式子系统的语言。(从这里开始,我们将假设后者是一个 FFP 系统。)因此,AST 系统可以使用我们讨论过的 FP 编程风格。应用式子系统不能改变状态 $D$,且在评估表达式期间它不会改变。新状态与输出一起计算,并在发出输出时替换旧状态。(回想一下,定义集 $D$ 是一个单元序列;单元名称是定义函数的名称,其内容是定义表达式。然而,在这里,某些单元可能命名数据而不是函数;数据名称 $n$ 将用于 $\uparrow n$(获取 $n$),而函数名称将作为算子本身使用。)
-
-下面我们给出我们将用于程序示例的初级 AST 系统的转换规则。这些可能是决定各种 AST 系统行为的许多可能转换规则中最简单的。
-
-**14.3.1 初级 AST 系统的转换规则**。当系统接收到输入 $x$ 时,它形成应用 $(SYSTEM:x)$,然后继续在 FFP 子系统中获取其含义,使用当前状态 $D$ 作为定义集。$SYSTEM$ 是 $D$ 中定义的函数的特殊名称(即它是“系统程序”)。通常结果是一个对:
-$\mu(SYSTEM:x) = \langle o, d \rangle$
-其中 $o$ 是由输入 $x$ 产生的系统输出,$d$ 成为系统下一次输入的各个新状态 $D$。通常 $d$ 将是 $D$ 的副本或部分改变的副本。如果 $\mu(SYSTEM:x)$ 不是一个对,则输出是一条错误消息,且状态保持不变。
-
-**14.3.2 转换规则:异常情况与启动**。一旦输入被接受,我们的系统将不再接受另一个输入(除了 $\langle RESET, x \rangle$,见下文),直到发出输出并安装了新状态(如果有)。系统随时接受输入 $\langle RESET, x \rangle$。有两种情况:(a) 如果 $SYSTEM$ 在当前状态 $D$ 中有定义,则系统中止其当前计算而不改变 $D$,并将 $x$ 视为一个新的正常输入;(b) 如果 $SYSTEM$ 在 $D$ 中没有定义,则将 $x$ 作为第一个元素追加到 $D$ 中。(初级 AST 系统转换规则的完整描述到此结束。)
-
-如果 $SYSTEM$ 在 $D$ 中有定义,它总是可以防止对其自身定义的任何更改。如果没有定义,普通的输入 $x$ 将产生 $\mu(SYSTEM:x) = \perp$,转换规则产生错误消息和不变的状态;另一方面,输入 $\langle RESET, \langle CELL, SYSTEM, s \rangle \rangle$ 将定义 $SYSTEM$ 为 $s$。
-
-**14.3.3 程序对状态的访问;函数 $\rho DEFS$**。我们的 FFP 子系统被要求有一个新的原语函数 $defs$,名为 $DEFS$,使得对于任何对象 $x \neq \perp$:
-$defs:x = \rho DEFS:x = D$
-其中 $D$ 是 AST 系统的当前状态和定义集。该函数允许程序出于任何目的访问整个状态,包括计算后继状态这一基本目的。
-
-### 14.4 系统程序示例
-
-上述对初级 AST 系统的描述,加上 FFP 子系统以及前面章节的 FP 原语和函数式形式,规定了一个完整的历史敏感计算系统。其输入和输出行为受到其简单转换规则的限制,但除此之外,一旦配备了合适的定义集,它就是一个强大的系统。作为其使用的示例,我们将描述一个小型的系统程序、其安装和运行。
-
-我们的示例系统程序将处理其维护的文件的查询和更新,评估 FFP 表达式,运行不损坏文件或状态的通用用户程序,并允许授权用户更改定义集和系统程序本身。它接受的所有输入都将具有 $\langle key, input \rangle$ 的形式,其中 $key$ 是一个代码,它既决定了输入类别(系统更改、表达式、程序、查询、更新),也决定了用户的身份及其在给定输入类别下使用系统的权限。我们不规定 $key$ 的格式。$input$ 是输入本身,属于 $key$ 给出的类别。
-
-**14.4.1 系统程序的总体规划**。我们的 AST 系统的状态 $D$ 将包含系统程序和用户程序所需的所有非原语函数的定义。(每个定义都在序列 $D$ 的一个单元中。)此外,$D$ 中将有一个名为 $FILE$ 的单元,其内容为 $file$,由系统维护。我们将给出函数的 FP 定义,稍后展示如何以 FFP 形式将它们放入系统中。
-
-转换规则使输入成为 $SYSTEM$ 的操作数,但我们的计划是使用名称函数来引用数据,因此我们对输入做的第一件事是创建两个名为 $KEY$ 和 $INPUT$ 的单元,其内容分别为 $key$ 和 $input$,并将这些追加到 $D$。这个单元序列包含 $key, input$ 和 $file$ 各一个;它将成为我们名为 $subsystem$ 的主函数的操作数。$subsystem$ 随后可以通过向其操作数应用 $\uparrow KEY$ 来获取 $key$,依此类推。因此定义:
-$Def \ system \equiv pair \to subsystem \circ f; \overline{NONPAIR}, defs$
-其中:
-$f \equiv \downarrow INPUT \circ [2, \downarrow KEY \circ [1, defs]]$
-使得如果输入不是一个对,系统输出 $NONPAIR$ 并保持状态不变。否则,如果输入是 $\langle key, input \rangle$,那么:
-$f:\langle key, input \rangle = \langle \langle CELL, INPUT, input \rangle, \langle CELL, KEY, key \rangle, d_1, \dots, d_n \rangle$
-其中 $D = \langle d_1, \dots, d_n \rangle$。(我们本可以构造一个与上述不同的操作数,一个只有三个单元(用于 $key, input$ 和 $file$)的操作数。我们没有这样做,是因为真实的程序与 $subsystem$ 不同,会包含许多引用状态中数据的名称函数,而这种操作数的“标准”构造在那时也足够了。)
-
-**14.4.2 “subsystem” 函数**。我们现在给出函数 $subsystem$ 的 FP 定义,随后简要解释其六种情况和辅助函数。
-$Def \ subsystem \equiv$
-$is\text{-}system\text{-}change \circ \uparrow KEY \to [report\text{-}change, apply] \circ [\uparrow INPUT, defs];$
-$is\text{-}expression \circ \uparrow KEY \to [\uparrow INPUT, defs];$
-$is\text{-}program \circ \uparrow KEY \to system\text{-}check \circ apply \circ [\uparrow INPUT, defs];$
-$is\text{-}query \circ \uparrow KEY \to [query\text{-}response \circ [\uparrow INPUT, \uparrow FILE], defs];$
-$is\text{-}update \circ \uparrow KEY \to [report\text{-}update, \downarrow FILE \circ [update, defs]] \circ [\uparrow INPUT, \uparrow FILE];$
-$[report\text{-}error \circ [\uparrow KEY, \uparrow INPUT], defs].$
-
-这个 $subsystem$ 有五个 “$p \to f$” 子句和一个最终的默认函数,总共六类输入;每类的处理如下。回想一下,$subsystem$ 的操作数是一个包含 $key, input$ 和 $file$ 以及 $D$ 的所有定义函数的单元序列,且 $subsystem:operand = \langle output, newstate \rangle$。
-
-**默认输入**。在这种情况下,当 $key$ 不满足任何前面的子句时,结果由定义的最后一个(默认)函数给出。输出是 $report\text{-}error:\langle key, input \rangle$。状态保持不变,因为它由 $defs:operand = D$ 给出。(我们留给读者想象函数 $report\text{-}error$ 将从其操作数生成什么。)
-
-**系统更改输入**。当 $is\text{-}system\text{-}change \circ \uparrow KEY:operand = is\text{-}system\text{-}change:key = T$ 时,$key$ 规定用户被授权进行系统更改,且 $input = \uparrow INPUT:operand$ 表示一个要应用于 $D$ 以产生新状态 $f:D$ 的函数 $f$。(当然 $f:D$ 可以是一个无用的新状态;对其没有施加任何约束。)输出是一份报告,即 $report\text{-}change:\langle input, D \rangle$。
-
-**表达式输入**。当 $is\text{-}expression:key = T$ 时,系统理解输出将是 FFP 表达式 $input$ 的含义;$\uparrow INPUT:operand$ 产生它并对其进行评估,就像评估所有表达式一样。状态保持不变。
-
-**程序输入与系统自我保护**。当 $is\text{-}program:key = T$ 时,输出和新状态均由 $(\rho input):D = \langle output, newstate \rangle$ 给出。如果 $newstate$ 包含处于合适状态的 $file$ 以及 $system$ 和其他受保护函数的定义,那么 $system\text{-}check:\langle output, newstate \rangle = \langle output, newstate \rangle$。否则,$system\text{-}check:\langle output, newstate \rangle = \langle error\text{-}report, D \rangle$。虽然程序输入在产生 $newstate$ 时可能对状态做出重大、甚至是灾难性的改变,但 $system\text{-}check$ 可以使用任何标准来允许它成为实际的新状态或保留旧状态。更复杂的 $system\text{-}check$ 可能只纠正状态中被禁止的更改。这类函数是可能的,因为它们总是可以访问旧状态以与即将成为新状态的状态进行比较,并控制最终允许什么样的状态转换。
-
-**文件查询输入**。如果 $is\text{-}query:key = T$,函数 $query\text{-}response$ 旨在从其操作数 $\langle input, file \rangle$ 产生输出 = 对查询输入 $input$ 的回答。
-
-**文件更新输入**。如果 $is\text{-}update:key = T$,$input$ 规定了一个由函数 $update$ 理解的文件事务,该函数计算 $updated\text{-}file = update:\langle input, file \rangle$。因此 $\downarrow FILE$ 以 $\langle updated\text{-}file, D \rangle$ 作为其操作数,从而将更新后的文件存储在新状态的单元 $FILE$ 中。状态的其余部分保持不变。函数 $report\text{-}update$ 从其操作数 $\langle input, file \rangle$ 生成输出。
-
-**14.4.3 安装系统程序**。我们已经通过一些 FP 定义描述了名为 $system$ 的函数(使用仅指示了行为的辅助函数)。让我们假设我们已经有了所有所需非原语函数的 FP 定义。那么每个定义都可以转换为给出 $D$ 中一个单元的名称和内容(当然这种转换本身将由一个更好的系统来完成)。转换是通过将每个 FP 函数名更改为其等效原子(例如,$update$ 变为 $UPDATE$),并将函数式形式替换为序列(其第一个成员是该特定形式的控制函数)来完成的。因此,$\downarrow FILE \circ [update, defs]$ 被转换为:
-$\langle COMP, \langle STORE, FILE \rangle, \langle CONS, UPDATE, DEFS \rangle \rangle$
-且 FP 函数与 FFP 对象所表示的函数相同,前提是 $update = \rho UPDATE$ 且 $COMP, STORE$ 和 $CONS$ 表示组合、存储和构造的控制函数。
-
-我们系统所需的所有 FP 定义都可以如上所述转换为单元,从而得到一个序列 $D_0$。我们假设 AST 系统开始时状态为空,因此 $SYSTEM$ 没有定义。我们希望最初定义 $SYSTEM$,以便它将其下一个输入安装为状态;这样做之后,我们就可以输入 $D_0$,并且我们所有的定义都将被安装,包括我们的程序——$system$——本身。为了实现这一点,我们输入第一个输入:
-$\langle RESET, \langle CELL, SYSTEM, loader \rangle \rangle$
-其中 $loader \equiv \langle CONS, \langle CONST, DONE \rangle, ID \rangle$。
-那么,根据当 $SYSTEM$ 在 $D$ 中未定义时 $RESET$ 的转换规则,我们输入中的单元被放在 $D = \phi$ 的头部,从而定义 $\rho SYSTEM = \rho loader \equiv [\overline{DONE}, id]$。我们的第二个输入是 $D_0$,即我们希望成为状态的定义集。常规转换规则使得 AST 系统评估:
-$\mu(SYSTEM:D_0) = [\overline{DONE}, id]:D_0 = \langle DONE, D_0 \rangle$。
-因此,我们第二个输入的输出是 $DONE$,新状态是 $D_0$,且 $\rho SYSTEM$ 现在是我们的系统程序(它只接受 $\langle key, input \rangle$ 形式的输入)。
-
-我们的下一个任务是加载文件(给定一个初始值 $file$)。为了加载它,我们向新安装的系统中输入一个程序,该程序包含 $file$ 作为常数并将其存储在状态中;输入是:
-$\langle program\text{-}key, [\overline{DONE}, store\text{-}file] \rangle$
-其中 $\rho store\text{-}file \equiv \downarrow FILE \circ [\overline{file}, id]$。
-$program\text{-}key$ 将 $[\overline{DONE}, store\text{-}file]$ 标识为一个要应用于状态 $D_0$ 以给出输出和新状态 $D_1$ 的程序,其中 $D_1$ 是:
-$\rho store\text{-}file:D_0 = \downarrow FILE \circ [\overline{file}, id]:D_0$
-即 $D_0$ 头部增加了一个包含 $file$ 的单元。输出是 $\overline{DONE}:D_0 = DONE$。我们假设 $system\text{-}check$ 将原样通过 $\langle DONE, D_1 \rangle$。在上述过程中,FP 表达式被用来代替它们所表示的 FFP 对象,例如用 $DONE$ 代替 $\langle CONST, DONE \rangle$。
-
-**14.4.4 使用系统**。我们还没有说明系统的文件、查询或更新是如何结构化的,因此我们无法给出文件操作的详细示例。然而,$subsystem$ 的结构清楚地展示了系统对查询和更新的响应如何取决于函数 $query\text{-}response, update$ 和 $report\text{-}update$。
-假设名为 $M$ 和 $N$ 的矩阵 $m, n$ 存储在 $D$ 中,且前面描述的函数 $MM$ 在 $D$ 中有定义。那么输入:
-$\langle expression\text{-}key, (MM \circ [\uparrow M, \uparrow N] \circ DEFS : \#) \rangle$
-将给出两个矩阵的乘积作为输出,且状态保持不变。$expression\text{-}key$ 将应用标识为一个要评估的表达式,且由于 $defs:\# = D$ 且 $[\uparrow M, \uparrow N]:D = \langle m, n \rangle$,表达式的值就是结果 $MM:\langle m, n \rangle$,即输出。
-
-我们的微型系统程序没有规定将控制权交给用户程序来处理多个输入,但不难赋予它这种能力,同时仍然监控用户程序并保留收回控制权的选项。
-
-### 14.5 AST 系统的变体
-
-上述建议的 AST 系统的一个主要扩展将提供组合形式——“系统形式”——用于从更简单的组件 AST 系统构建新的 AST 系统。也就是说,系统形式将以 AST 系统作为参数并生成一个新的 AST 系统,就像函数式形式以函数作为参数并生成新函数一样。这些系统形式将具有类似于函数式形式的性质,并成为有用的“系统代数”的“运算”,其方式与函数式形式是程序代数的“运算”非常相似。然而,寻找有用的系统形式的问题要困难得多,因为它们必须处理 $RESET$、匹配输入和输出,并组合历史敏感系统而不是固定函数。
-
-此外,系统形式的有用性或必要性不如函数式形式那样清晰。后者对于从初始原语集构建各种各样的函数至关重要,而即使没有系统形式,构建 AST 系统的设施已经如此丰富,以至于人们几乎可以构建任何系统(具有给定 AST 方案所允许的通用输入和输出性质)。也许系统形式对于构建具有复杂输入和输出安排的系统会很有用。
-
-### 14.6 关于 AST 系统的评论
-
-正如我上面试图指出的,AST 系统的成分可以有无数种变化——它如何运行、如何处理输入和输出、何时以及如何产生新状态,等等。在任何情况下,一些评论适用于任何合理的 AST 系统:
-
-a) 状态转换在每次主要计算中发生一次,并且可以具有有用的数学性质。状态转换不涉及计算的最微小细节,如在传统语言中那样;因此,语言上的冯·诺依曼瓶颈已被消除。不需要复杂的“电缆”或协议来与状态通信。
-b) 程序是用一种应用式语言编写的,该语言可以容纳很大范围的可变部分,这些部分的力量和灵活性超过了迄今为止任何冯·诺依曼语言。“一次一词”风格被应用式风格所取代;程序设计不再划分为表达式世界和语句世界。程序可以通过程序代数进行分析和优化。
-c) 由于在计算 $system:x$ 期间状态不能改变,因此没有副作用。因此,独立的应用程序可以并行评估。
-d) 通过定义适当的函数,我相信人们可以随时在同一框架内引入重大的新特性。此类特性必须构建在冯·诺依曼语言的框架中。我心目中的此类特性包括:具有各种命名系统的“存储器”、类型和类型检查、通信并行进程、非确定性和 Dijkstra 的“守卫命令”构造 [8],以及改进的结构化编程方法。
-e) AST 系统的框架包含底层应用式系统的语法和语义加上上述勾勒的系统框架。按目前的标准,对于一种语言来说,这是一个极小的框架,并且是系统唯一固定的部分。
-
-### 14.7 AST 与冯·诺依曼模型中的命名系统
-
-在 AST 系统中,命名是通过函数完成的,如第 13.3.3 节所示。可以定义许多用于更改和访问存储器的有用函数(例如 $push, pop, purge$,带类型的 $fetch$ 等)。所有这些定义及其相关的命名系统都可以在不改变 AST 框架的情况下引入。在一个程序中可以使用具有各自命名系统的不同种类的“存储器”(例如,具有“带类型单元”的存储器)。一个存储器中的单元可能包含另一个完整的存储器。
-
-关于 AST 命名系统的重要一点是,它们利用了名称的函数性质(Reynolds 的 GEDANKEN [19] 在冯·诺依曼框架内也在一定程度上做到了这一点)。因此,名称函数可以被组合,并由函数式形式与其他函数结合。相比之下,冯·诺依曼语言中的函数和名称通常是互不相干的概念,名称的类函数性质几乎完全被掩盖且无用,因为:(a) 名称不能作为函数应用;(b) 没有通用的手段将名称与其他名称和函数结合;(c) 名称函数所应用的对象(存储器)不能作为对象访问。
-
-冯·诺依曼语言未能将名称视为函数,可能是它们较重要的弱点之一。在任何情况下,将名称用作函数并将存储器用作对象的能力可能会成为一个有用且重要的编程概念,一个应该被彻底探索的概念。
-
-## 15. 关于计算机构造的评论
-
-冯·诺依曼语言的主导地位使得设计者除了冯·诺依曼计算机的变体外,几乎没有实用的计算机设计智力模型。数据流模型 [1, 7, 13] 是另一类历史敏感模型。基于 λ 演算的语言的替换规则给机器设计者带来了严重的问题。Berkling [3] 开发了一种改进的 λ 演算,它有三种应用,并且使得变量重命名变得不必要。他开发了一台机器来评估这种语言的表达式。需要进一步的经验来证明这种语言作为有效编程风格的基础有多稳固,以及他的机器能有多高效。
-
-Magó [15] 开发了一种新颖的应用式机器,由相同的组件(两种)构建而成。它直接从底向上评估类 FP 和其他应用式表达式。它没有冯·诺依曼存储器,也没有地址寄存器,因此没有瓶颈;它能够并行评估许多应用;其内置操作与其说像冯·诺依曼计算机操作,不如说像 FP 算子。这是我见过的离冯·诺依曼计算机最远的背离。
-
-有许多迹象表明,应用式编程风格可以变得比冯·诺依曼风格更强大。因此,对于程序员来说,开发一类体现这种风格并避免似乎附着在基于 λ 演算的系统上的固有效率问题的新型历史敏感计算系统模型是很重要的。只有当这些模型及其应用式语言证明了它们优于传统语言时,我们才会有经济基础来开发能够最好地实现它们的新型计算机。也许只有到那时,我们才能在不受冯·诺依曼瓶颈限制的计算机设计中充分利用大规模集成电路。
-
-## 16. 总结
-
-本文前面的十五个章节可以总结如下:
-
-**第 1 节**。传统程序设计语言庞大、复杂且僵化。它们有限的表达能力不足以证明其规模和成本的合理性。
-
-**第 2 节**。作为程序设计语言基础的计算系统模型大致分为三类:(a) 简单操作模型(例如图灵机),(b) 应用式模型(例如 λ 演算),以及 (c) 冯·诺依曼模型(例如传统计算机和程序设计语言)。每类模型都有一个重要的困难: (a) 类的程序难以理解; (b) 类模型无法在程序之间保存信息; (c) 类模型的基础不可用,且程序在概念上没有帮助。
-
-**第 3 节**。冯·诺依曼计算机是围绕一个瓶颈构建的:连接 CPU 和存储器的“一次一词”管。由于程序必须通过冯·诺依曼瓶颈来回泵送大量词来对存储器进行整体改变,我们是在一种关注通过瓶颈的这种“一次一词”流量,而不是关注我们问题的更大概念单元的编程风格中成长起来的。
-
-**第 4 节**。传统语言基于冯·诺依曼计算机的编程风格。因此,变量 = 存储单元;赋值语句 = 取值、存储和算术运算;控制语句 = 跳转和测试指令。符号 “:=” 是语言上的冯·诺依曼瓶颈。在传统的冯·诺依曼语言中编程仍然关注通过这个稍微复杂一点的瓶颈的“一次一词”流量。冯·诺依曼语言还将编程划分为表达式世界和语句世界;前者是一个有序的世界,后者是一个无序的世界,结构化编程虽然对其进行了一些简化,但并未攻击分裂本身以及传统语言“一次一词”风格的根本问题。
-
-**第 5 节**。本节比较了一个冯·诺依曼内积程序和一个函数式内积程序。它说明了前者的许多问题和后者的优点:例如,冯·诺依曼程序是重复且“一次一词”的,仅适用于给定长度 $n$ 的两个名为 $a$ 和 $b$ 的向量,且只能通过使用具有复杂语义的过程序言来变得通用。函数式程序是非重复的,将向量视为单元,具有更强的层次化构造,完全通用,并通过组合高层内务算子来创建“内务”操作。它不命名其参数,因此不需要过程序言。
-
-**第 6 节**。程序设计语言包含一个框架加上一些可变部分。冯·诺依曼语言的框架要求大多数特性必须构建在其中;它只能容纳有限的可变部分(例如用户定义的过程),因为必须在“状态”及其转换规则中为可变部分的所有需求以及构建在框架中的所有特性提供详细规定。冯·诺依曼框架如此僵化的原因是其语义与状态耦合得太紧:计算的每个细节都会改变状态。
-
-**第 7 节**。冯·诺依曼语言的可变部分表达能力很弱;这就是为什么语言的大部分必须构建在框架中的原因。表达能力的缺乏源于冯·诺依曼语言无法有效地使用组合形式来构建程序,这反过来又源于表达式和语句之间的分裂。组合形式在表达式中表现最佳,但在冯·诺依曼语言中,一个表达式只能产生一个词;因此表达式世界的表达能力大部分丢失了。使用组合形式的进一步障碍是命名约定的复杂使用。
-
-**第 8 节**。APL 是第一种不基于 λ 演算、不是“一次一词”且使用函数式组合形式的语言。但它仍然保留了冯·诺依曼语言的许多问题。
-
-**第 9 节**。冯·诺依曼语言不具有用于程序推理的有益性质。公理语义和指称语义是描述和理解传统程序的精确工具,但它们只是谈论程序,而不能改变其笨拙的性质。与冯·诺依曼语言不同,普通代数的语言既适用于陈述其定律,也适用于将方程变换为其解,且这一切都在“语言”内部进行。
-
-**第 10 节**。在历史敏感语言中,一个程序可以通过改变由系统保存的某些存储器来影响后续程序的行为。任何此类语言都需要某种状态转换语义。但它不需要与状态紧密耦合的语义,即状态随计算的每个细节而改变。“应用式状态转换”(AST) 系统被提议作为冯·诺依曼系统的历史敏感替代方案。这些系统具有:(a) 松散耦合的状态转换语义,其中转换在每次主要计算中发生一次;(b) 简单的状态和转换规则;(c) 具有简单“规约”语义的底层应用式系统;以及 (d) 程序设计语言和状态转换规则均基于底层的应用式系统及其语义。接下来的四节描述了这种非冯·诺依曼语言和系统设计方法的元素。
-
-**第 11 节**。描述了一类不使用变量的非正式函数式编程 (FP) 系统。每个系统由对象、函数、函数式形式和定义构建而成。函数将对象映射为对象。函数式形式组合现有函数以形成新函数。本节列出了原语函数和函数式形式的示例,并给出了示例程序。它讨论了 FP 系统的局限性和优点。
-
-**第 12 节**。描述了一种“程序代数”,其变量范围涵盖 FP 系统的函数,其“运算”是系统的函数式形式。在列出约 24 条代数定律之后,给出了一个证明非重复矩阵乘法程序与递归程序等价的示例。下一小节陈述了两个“展开定理”的结果,它们“求解”了两类方程。这些解将此类方程中的“未知”函数表示为无限条件展开,这构成了对其行为的逐情况描述,并立即给出了终止的充分必要条件。这些结果被用于推导“递归定理”和“迭代定理”,它们为一些中等通用且有用的“线性”方程类别提供了现成的展开。使用这些定理的示例处理了:(a) 递归和迭代阶乘函数的正确性证明,以及 (b) 两个迭代程序等价性的证明。最后一个示例处理一个“二次”方程,并证明其解是一个幂等函数。下一小节给出了两个展开定理的证明。
-
-将与 FP 系统相关的代数与 λ 演算和其他应用式系统的相应代数进行了比较。比较显示了与更强大的经典系统相比,受到严格限制的 FP 系统所具有的一些优势。提出了关于将函数算法规约为无限展开以及在各种“惰性求值”方案中使用该代数的问题。
-
-**第 13 节**。本节描述了正式函数式编程 (FFP) 系统,它们扩展并精确化了 FP 系统的行为。它们的语义比经典系统更简单,并且可以通过简单的不动点论证证明其一致性。
-
-**第 14 节**。本节将 Algol 的结构与应用式状态转换 (AST) 系统的结构进行了比较。它描述了一个使用 FFP 系统作为其应用式子系统的 AST 系统。它描述了系统的简单状态和转换规则。描述了一个用于 AST 系统的微型自我保护系统程序,以及如何安装和使用它进行文件维护和运行用户程序。本节简要讨论了 AST 系统的变体以及可以在 AST 系统内定义和使用的函数式命名系统。
-
-**第 15 节**。本节简要讨论了关于应用式计算机构造的工作,以及开发和测试更实用的应用式系统模型作为此类设计未来基础的必要性。
-
-**致谢**。在与本文相关的早期工作中,我得到了 Paul R. McJones 和 Barry K. Rosen 的许多宝贵帮助和建议。在准备本文的过程中,我得到了大量的宝贵帮助和反馈。James N. Gray 在审阅初稿时非常慷慨地贡献了他的时间和知识。Stephen N. Zilles 也仔细阅读了初稿。两人在这个困难阶段都提出了许多宝贵的建议和批评。很高兴向他们表示感谢。我还与 Ronald Fagin、Paul R. McJones 和 James H. Morris, Jr. 就初稿进行了有益的讨论。Fagin 对定理的证明提出了一些改进建议。
-
-由于本文很大一部分包含技术材料,我请两位杰出的计算机科学家审阅了第三稿。David J. Gries 和 John C. Reynolds 欣然接受了这一繁重的任务。两人都给了我大量、详细的修正意见和总体评论,这使得最终版本(他们尚未有机会审阅)有了许多大大小小的改进。我衷心感谢他们为审阅本文所投入的慷慨时间和精力。
-
-最后,我还将第三稿的副本寄给了 Gyula A. Magó、Peter Naur 和 John H. Williams。他们欣然回应了许多极有帮助的评论和修正。北卡罗来纳大学的 Geoffrey A. Frank 和 Dave Tolle 审阅了 Magó 的副本,并指出了 FFP 系统语义函数定义中的一个重要错误。我衷心感谢所有这些好心人的帮助。
-
-## 参考文献
-
-1. Arvind, and Gostelow, K.P. A new interpreter for data flow schemas and its implications for computer architecture. Tech. Rep. No. 72, Dept. Comptr. Sci., U. of California, Irvine, Oct. 1975.
-2. Backus, J. Programming language semantics and closed applicative languages. Conf. Record ACM Symp. on Principles of Programming Languages, Boston, Oct. 1973, 71-86.
-3. Berkling, K.J. Reduction languages for reduction machines. Interner Bericht ISF-76-8, Gesellschaft für Mathematik und Datenverarbeitung MBH, Bonn, Sept. 1976.
-4. Burge, W.H. *Recursive Programming Techniques*, Addison-Wesley, Reading, Mass., 1975.
-5. Church, A. *The Calculi of Lambda-Conversion*. Princeton U. Press, Princeton, N.J., 1941.
-6. Curry, H.B., and Feys, R. *Combinatory Logic*, Vol. 1. North-Holland Pub. Co., Amsterdam, 1958.
-7. Dennis, J.B. First version of a data flow procedure language. Tech. Mem. No. 61, Lab. for Comptr. Sci., M.I.T., Cambridge, Mass., May 1973.
-8. Dijkstra, E.W. *A Discipline of Programming*. Prentice-Hall, Englewood Cliffs, N.J., 1976.
-9. Friedman, D.P., and Wise, D.S. CONS should not evaluate its arguments. In *Automata, Languages and Programming*, S. Michaelson and R. Milner, Eds., Edinburgh U. Press, Edinburgh, 1976, pp. 257-284.
-10. Henderson, P., and Morris, J.H. Jr. A lazy evaluator. Conf. Record Third ACM Symp. on Principles of Programming Languages, Atlanta, Ga., Jan. 1976, pp. 95-103.
-11. Hoare, C.A.R. An axiomatic basis for computer programming. *Comm. ACM 12*, 10 (Oct. 1969), 576-583.
-12. Iverson, K. *A Programming Language*. Wiley, New York, 1962.
-13. Kosinski, P. A data flow programming language. Rep. RC 4264, IBM T.J. Watson Research Ctr., Yorktown Heights, N.Y., March 1973.
-14. Landin, P.J. The mechanical evaluation of expressions. *Computer J. 6*, 4 (1964), 308-320.
-15. Magó, G.A. A network of microprocessors to execute reduction languages. To appear in *Int. J. Comptr. and Inform. Sci.*
-16. Manna, Z., Ness, S., and Vuillemin, J. Inductive methods for proving properties of programs. *Comm. ACM 16*, 8 (Aug. 1973) 491-502.
-17. McCarthy, J. Recursive functions of symbolic expressions and their computation by machine, Pt. 1. *Comm. ACM 3*, 4 (April 1960), 184-195.
-18. McJones, P. A Church-Rosser property of closed applicative languages. Rep. RJ 1589, IBM Res. Lab., San Jose, Calif., May 1975.
-19. Reynolds, J.C. GEDANKEN—a simple typeless language based on the principle of completeness and the reference concept. *Comm. ACM 13*, 5 (May 1970), 308-318.
-20. Reynolds, J.C. Notes on a lattice-theoretic approach to the theory of computation. Dept. Syst. and Inform. Sci., Syracuse U., Syracuse, N.Y., 1972.
-21. Scott, D. Outline of a mathematical theory of computation. *Proc. 4th Princeton Conf. on Inform. Sci. and Syst.*, 1970.
-22. Scott, D. Lattice-theoretic models for various type-free calculi. *Proc. Fourth Int. Congress for Logic, Methodology, and the Philosophy of Science*, Bucharest, 1972.
-23. Scott, D., and Strachey, C. Towards a mathematical semantics for computer languages. *Proc. Symp. on Comptrs. and Automata*, Polytechnic Inst. of Brooklyn, 1971.
-
-作者当时地址: John Backus, 91 Saint Germain Ave., San Francisco, CA 94114.
-
----
-
-## 译注
-
-**文本与翻译说明**
-
-1. 〔译注1〕 **冯·诺依曼瓶颈 (von Neumann bottleneck)**: 这一术语由巴克斯在本次演讲中首次提出并命名,现已成为计算机体系结构中的经典术语,指 CPU 与存储器之间数据传输带宽受限的问题。
-2. **FP 记号说明**: 本译文在代码块中使用 Unicode 字符以尽可能接近原刊排版。主要记号对应如下:
-   - `∘` (U+2218): 函数组合 (Composition)
-   - `α` (U+03B1): 全应用 (Apply-to-all)
-   - `/` : 插入 (Insert)
-   - `⊥` (U+22A5): 底/未定义 (Bottom/Undefined)
-   - `≡` (U+2261): 定义/等价 (Definition/Equivalence)
-   - `→` (U+2192): 条件 (Condition)
-   - `[` , `]` : 构造 (Construction)
-   - `<` , `>` : 序列 (Sequence)
-   - `↑` (U+2191): 获取 (Fetch)
-   - `↓` (U+2193): 存储 (Store)
-   - `\bar{x}` (文中记作 $\bar{x}$): 常数函数 (Constant function)
-
-**背景与文化注**
-
-3. **约翰·巴克斯 (John Backus)**: 1924–2007,美国计算机科学家。他领导开发了世界上第一种高级编程语言 FORTRAN,并提出了描述程序设计语言语法的 BNF(巴克斯范式)。作为命令式编程(FORTRAN)的奠基人,他在图灵奖演讲中对自己亲手开启的范式进行深刻反思并转向函数式编程,这被视为计算机科学史上最著名的“华丽转身”之一。
-4. **APL 与 Iverson**: 肯尼斯·艾弗森 (Kenneth Iverson) 因 APL 语言获 1979 年图灵奖。APL 以其强大的数组处理能力和简洁的符号著称,对巴克斯设计 FP 系统产生了直接影响。
-5. **λ 演算与函数式编程**: 巴克斯在文中多次将 FP 系统与 λ 演算(Lisp 的基础)进行对比。他批评 λ 演算过于强大且缺乏代数性质,主张通过限制力量(避开变量和替换)来获得更易于推理的“程序代数”。
-6. **文中提到的学者**:
-   - **Dana Scott**: 1976 年图灵奖得主,指称语义的奠基人。
-   - **C. A. R. Hoare**: 1980 年图灵奖得主,公理语义(霍尔逻辑)的奠基人。
-   - **John McCarthy**: 1971 年图灵奖得主,Lisp 语言之父。
-   - **Edsger Dijkstra**: 1972 年图灵奖得主,结构化编程的倡导者。
-   - **Peter Naur**: 2005 年图灵奖得主,BNF 中的“N”。
-
-**OCR 与印刷勘误**
-
-7. 扫描件 OCR 对数学符号和 FP 记号的识别极差,本译文所有公式、定律和程序示例均对照原刊页面图像(CACM Vol. 21, No. 8)逐一重构。
-8. 参考文献 [19] 原刊印作 “6EDANI~N”,系 “GEDANKEN” 之误,已校正。
-9. 参考文献 [15] 原刊印作 “Mag6”,系 “Magó” 之误,已校正。
-10. 参考文献 [3] 原刊印作 “Bedding”,系 “Berkling” 之误,已校正。
-
 ## 11. 函数式程序设计系统 (FP 系统)
 
 ### 11.1 引言
@@ -1343,4 +879,468 @@ $\equiv p \circ f \to f; p \circ h \circ f \to h \circ f; \dots$
 $\equiv p \to f; p \circ h \to h; \dots$ (因为 $p \to f \equiv id$ 且 $p \circ h^k \to h^k \circ f \equiv h^k$)
 $\equiv id \to f; p \circ h \to h; \dots$
 $\equiv f$ $\square$
+
+### 12.8 程序代数的基础
+
+我们在本节中的目的是确立第 12.4 节中所述结果的有效性。后续章节不依赖于本节,因此希望跳过的读者可以跳过。我们使用 [16] 中的标准概念和结果,但用于对象和函数等的记号将是本文的记号。
+
+我们取给定 FP 系统的对象集 $O$(包括 $\perp$)作为所有函数的定义域(和值域)。我们取 $F$ 为函数集,$\mathcal{F}$ 为该 FP 系统的函数式形式集。我们用 $E(f)$ 表示任何涉及函数式形式、原语和定义函数以及函数符号 $f$ 的函数表达式,我们将 $E$ 视为一个将函数 $f$ 映射到相应函数 $E(f)$ 的泛函。我们假设 $F$ 中的所有 $f$ 都是保底的,且 $\mathcal{F}$ 中的所有函数式形式在每个变量中都对应于连续泛函(例如,$[f, g]$ 在 $f$ 和 $g$ 中都是连续的)。(前面给出的 FP 系统所有原语函数都是保底的,其所有函数式形式都是连续的。)
+
+**定义**: 令 $E(f)$ 为一个函数表达式。令:
+$f_0 \equiv \bar{\perp}$
+$f_{i+1} \equiv E(f_i)$ 对于 $i = 0, 1, \dots$
+如果 $E$ 具有以下性质:
+$f_{i+1} \equiv p_0 \to q_0; \dots; p_i \to q_i; \bar{\perp}$
+其中 $p_i, q_i \in F$,那么称 $E$ 是**可展开的**,并具有 $f_i$ 作为近似函数。
+
+**展开定理**: 令 $E(f)$ 为如上所述的可展开泛函。令 $f$ 为满足下式的最小函数:
+$f \equiv E(f)$  (1)
+我们写成:
+$f \equiv p_0 \to q_0; \dots; p_n \to q_n; \dots$  (2)
+来表示 $f \equiv \lim_i \{f_i\}$,其中 $f_i$ 具有上述形式。我们称右侧为 $f$ 的**无限展开**。我们认为 $f:x$ 有定义当且仅当存在一个 $n \ge 0$,使得 (a) 对于所有 $i < n$, $p_i:x = F$,且 (b) $p_n:x = T$,且 (c) $q_n:x$ 有定义,在这种情况下 $f:x = q_n:x$。
+
+**定义**: 令 $E(f)$ 为满足下式的函数表达式:
+$E(h) \equiv p_0 \to q_0; E_1(h)$  (LE1)
+其中存在 $p_i \in F$ 和 $q_i \in F$ 使得:
+$E_1(p_i \to q_i; h) \equiv p_{i+1} \to q_{i+1}; E_1(h)$  (LE2)
+对于所有 $h \in F$ 且 $i = 0, 1, \dots$。且:
+$E_1(\bar{\perp}) \equiv \bar{\perp}$  (LE3)
+那么称 $E$ 相对于这些 $p_i$ 和 $q_i$ 是**线性可展开的**。
+
+**线性展开定理**: 令 $E$ 相对于 $p_i$ 和 $q_i (i = 0, 1, \dots)$ 是线性可展开的。那么 $E$ 是可展开的,其近似函数为:
+$f_0 \equiv \bar{\perp}$
+$f_{i+1} \equiv p_0 \to q_0; \dots; p_i \to q_i; \bar{\perp}$
+
+**证明**: 我们想证明对于任何 $i \ge 0$,$E(f_i) \equiv f_{i+1}$。
+现在:
+$E(f_0) \equiv p_0 \to q_0; E_1(\bar{\perp}) \equiv p_0 \to q_0; \bar{\perp} \equiv f_1$  (3)
+根据 (LE1)、(LE3) 和 (1)。
+令 $i > 0$ 固定,并令:
+$f_i \equiv p_0 \to q_0; w_1$  (4a)
+$w_1 \equiv p_1 \to q_1; w_2$  (4b)
+等等。
+$w_{i-1} \equiv p_{i-1} \to q_{i-1}; \bar{\perp}$  (4-)
+那么,对于这个 $i > 0$:
+$E(f_i) \equiv p_0 \to q_0; E_1(f_i)$ (根据 (LE1))
+$E_1(f_i) \equiv p_1 \to q_1; E_1(w_1)$ (根据 (LE2) 和 (4a))
+$E_1(w_1) \equiv p_2 \to q_2; E_1(w_2)$ (根据 (LE2) 和 (4b))
+...
+$E_1(w_{i-1}) \equiv p_i \to q_i; E_1(\bar{\perp})$ (根据 (LE2) 和 (4-))
+$\equiv p_i \to q_i; \bar{\perp}$ (根据 (LE3))
+结合上述各项得到:
+$E(f_i) \equiv p_0 \to q_0; p_1 \to q_1; \dots; p_i \to q_i; \bar{\perp} \equiv f_{i+1}$
+对于任意 $i > 0$,根据 (2)。
+根据 (3),(5) 对 $i = 0$ 也成立;因此它对所有 $i \ge 0$ 都成立。因此 $E$ 是可展开的并具有所需的近似函数。 $\square$
+
+**推论**: 如果 $E$ 相对于 $p_i$ 和 $q_i (i = 0, 1, \dots)$ 是线性可展开的,且 $f$ 是满足下式的最小函数:
+$f \equiv E(f)$  (LE4)
+那么:
+$f \equiv p_0 \to q_0; \dots; p_n \to q_n; \dots$  (LE5)
+
+**证明**: 由于 $E$ 是来自 $F$ 的连续泛函的组合,且仅涉及单调函数(来自 $F$ 的保底函数)作为常数项,因此 $E$ 是连续的 ([16] p. 493)。因此其最小不动点 $f$ 是 $\lim_i \{E^i(\bar{\perp})\} = \lim_i \{f_i\}$ ([16] p. 494),根据定义,这就是 $f$ 的上述无限展开。 $\square$
+
+### 12.9 λ 演算与组合子的程序代数
+
+由于 Church 的 λ 演算 [5] 以及 Schönfinkel 和 Curry [6] 开发的组合子系统是表示函数应用概念的主要数学系统,且由于它们比 FP 系统更强大,自然会询问基于这些系统的程序代数会是什么样子。
+
+FP 组合 $f \circ g$ 的 λ 演算和组合子等价物是:
+$\lambda fgx.(f(gx)) \equiv \mathbf{B}$
+其中 $\mathbf{B}$ 是 Curry 定义的一个简单组合子。在 Church 或 Curry 系统本身中没有 FP 对象 $\langle x, y \rangle$ 的直接等价物;然而,遵循 Landin [14] 和 Burge [4] 的做法,可以使用原语函数 $prefix, head, tail, null$ 和 $atomic$ 来引入对应于 FP 序列的列表结构。然后,使用列表的 FP 记号,构造的 λ 演算等价物是 $\lambda fgx.\langle fx, gx \rangle$。组合子等价物是一个涉及 $prefix$、空列表以及两个或更多基本组合子的表达式。它如此复杂,以至于我不打算给出它。
+
+如果使用 λ 演算或组合子表达式来表示函数式形式 $f \circ g$ 和 $[f, g]$,以表达 FP 代数中的定律 I.1: $[f, g] \circ h \equiv [f \circ h, g \circ h]$,结果将是一个如此复杂的表达式,以至于定律的意义被掩盖了。在任一系统中使该意义清晰的唯一方法是命名这两个泛函:组合 $\equiv \mathbf{B}$,构造 $\equiv \mathbf{A}$,使得 $\mathbf{B}fg \equiv f \circ g$,且 $\mathbf{A}fg \equiv [f, g]$。那么 I.1 变为:
+$\mathbf{B}(\mathbf{A}fg)h \equiv \mathbf{A}(\mathbf{B}fh)(\mathbf{B}gh)$
+这仍然不如 FP 定律那样透彻。
+
+上述观点的重点在于,如果人们希望在 Church 或 Curry 的系统中陈述像 FP 代数那样清晰的定律,就会发现有必要选择某些泛函(例如组合和构造)作为代数的基本运算,并要么给它们起短名字,要么(最好是)像在 FP 中那样用某些特殊记号来表示它们。如果这样做并提供原语、对象、列表等,结果就是一个类 FP 系统,其中通常的 λ 表达式或组合子不会出现。即便如此,这些 FP 系统的 Church 或 Curry 版本由于限制较少,仍存在一些 FP 系统没有的问题:
+
+a) Church 和 Curry 版本容纳多种类型的函数,并且可以定义 FP 系统中不存在的函数。因此,$\mathbf{B}f$ 是一个在 FP 系统中没有对应物的函数。这种增加的力量带来了类型兼容性的问题。例如,在 $f \circ g$ 中,$g$ 的值域是否包含在 $f$ 的定义域内?在 FP 系统中,所有函数都具有相同的定义域和值域。
+
+b) Church 的 λ 演算的语义取决于简单陈述但其含义非常难以完全理解的替换规则。这些规则的真实复杂性并未得到广泛认可,但一批有能力的逻辑学家相继发表了 λ 演算的 Church-Rosser 定理的“证明”,却未能解释其中一个或另一个复杂性,这证明了这一点。(Church-Rosser 定理,或 Scott 关于模型存在性的证明 [22],是证明 λ 演算具有一致语义所必需的。)纯 Lisp 的定义在相当长的一段时间内包含一个相关的错误(“funarg”问题)。类似的问题也附着在 Curry 的系统上。
+
+相比之下,FP 系统的正式 (FFP) 版本(在下一节中描述)没有变量,只有一条基本的替换规则(用函数替换其名称),并且可以通过 Dana Scott 和 Manna 等人 [16] 开发的相对简单的不动点论证来证明其具有一致的语义。有关此类证明,请参见 McJones [18]。
+
+### 12.10 评论
+
+上面概述的程序代数需要大量工作来为更大类别的方程提供展开,并将其实律和定理扩展到此处给出的基本定律之外。探索一个序列构造器不是保底的类 FP 系统(定律 I.5 得到加强,但 IV.1 丢失)的代数将是很有趣的。其他有趣的问题包括:(a) 寻找使展开唯一的规则,给出函数的规范形式;(b) 寻找用于展开和分析各种参数类别的函数行为的算法;以及 (c) 探索将代数的定律和定理作为正式的、执行前的“惰性求值”方案 [9, 10] 或在执行期间运行的方案的基本规则的方法。例如,此类方案将利用定律 $1 \circ [f, g] \le f$ 来避免评估 $g:x$。
+
+## 13. 函数式程序设计的正式系统 (FFP 系统)
+
+### 13.1 引言
+
+正如我们所见,一个 FP 系统有一组函数,这取决于它的原语函数集、函数式形式集和定义集。特别是,它的函数式形式集是一劳永逸地固定的,这组形式在很大程度上决定了系统的力量。例如,如果它的函数式形式集为空,那么它的整个函数集就只是原语函数集。在 FFP 系统中,人们可以创建新的函数式形式。函数式形式由对象序列表示;序列的第一个元素决定了它表示哪种形式,而其余元素是该形式的参数。
+
+在 FFP 系统中定义新函数式形式的能力是它们与 FP 系统之间主要区别的一个结果:在 FFP 系统中,对象被用来以系统的方式“表示”函数。除此之外,FFP 系统密切镜像 FP 系统。它们类似于但比早期论文 [2] 中的规约 (Red) 语言更简单。
+
+我们将首先给出 FFP 系统的简单语法,然后非正式地讨论它们的语义并给出示例,最后给出它们的正式语义。
+
+### 13.2 语法
+
+我们描述 FFP 系统的对象集 $O$ 和表达式集 $E$。这些取决于某些原子集 $A$ 的选择,我们将其视为给定的。我们假设 $T$(真)、$F$(假)、$\phi$(空序列)和 $\#$(默认)属于 $A$,以及各种类型的“数字”等。
+
+1) 底 $\perp$ 是一个对象,但不是一个原子。
+2) 每个原子都是一个对象。
+3) 每个对象都是一个表达式。
+4) 如果 $x_1, \dots, x_n$ 是对象 [表达式],那么 $\langle x_1, \dots, x_n \rangle$ 是一个对象 [对应地,表达式],称为长度为 $n$ 的序列(对于 $n \ge 1$)。对象 [表达式] $x_i$ (对于 $1 \le i \le n$)是序列 $\langle x_1, \dots, x_i, \dots, x_n \rangle$ 的第 $i$ 个元素。($\phi$ 既是序列也是原子;其长度为 0。)
+5) 如果 $x$ 和 $y$ 是表达式,那么 $(x:y)$ 是一个表达式,称为**应用**, $x$ 是其算子,$y$ 是其操作数。两者都是表达式的元素。
+6) 如果 $x = \langle x_1, \dots, x_n \rangle$ 且 $x$ 的元素之一是 $\perp$,那么 $x = \perp$。也就是说,$\langle \dots, \perp, \dots \rangle = \perp$。
+7) 所有对象和表达式都是通过有限次使用上述规则形成的。
+
+表达式 $x$ 的子表达式要么是 $x$ 本身,要么是 $x$ 的元素的子表达式。FFP 对象是不以应用作为子表达式的表达式。给定相同的原子集,FFP 和 FP 对象是相同的。
+
+### 13.3 关于 FFP 语义的非正式评论
+
+**13.3.1 表达式的含义;语义函数 $\mu$**。每个 FFP 表达式 $e$ 都有一个含义 $\mu e$,它始终是一个对象; $\mu e$ 是通过反复将 $e$ 中每个最内层应用替换为其含义而找到的。如果此过程不终止,则 $e$ 的含义为 $\perp$。最内层应用 $(x:y)$ 的含义(由于它是最内层的, $x$ 和 $y$ 必须是对象)是将由 $x$ 表示的函数应用于 $y$ 的结果,就像在 FP 系统中一样,只不过在 FFP 系统中,函数由对象表示,而不是由函数表达式表示,原子(而不是函数符号)表示原语和定义函数,序列表示由函数式形式表示的 FP 函数。
+
+对象与其表示的函数之间的关联由 FFP 系统的**表示函数** $\rho$ 给出。( $\rho$ 和 $\mu$ 都属于系统的描述,而不是系统本身。)因此,如果原子 $NULL$ 表示 FP 函数 $null$,那么 $\rho NULL = null$,且 $(NULL:A)$ 的含义是:
+$\mu(NULL:A) = (\rho NULL):A = null:A = F$
+从这里开始,如上所述,我们在两种意义上使用冒号。当它位于两个对象之间时,如在 $(NULL:A)$ 中,它标识一个仅表示其自身的 FFP 应用;当它位于函数和对象之间时,如在 $(\rho NULL):A$ 或 $null:A$ 中,它标识一个类 FP 应用,表示将函数应用于对象的结果。
+
+FFP 算子是对象这一事实使得一个函数 $apply$ 成为可能,这在 FP 系统中是毫无意义的:
+$apply:\langle x, y \rangle = (x:y)$
+$apply:\langle x, y \rangle$ 的结果,即 $(x:y)$,在 FP 系统中在两个层面上都是毫无意义的。首先,$(x:y)$ 本身不是一个对象;它说明了 FP 和 FFP 系统之间的另一个区别:某些 FFP 函数(如 $apply$)将对象映射为表达式,而不是像 FP 函数那样直接映射为对象。然而,$apply:\langle x, y \rangle$ 的含义是一个对象(见下文)。其次,$(x:y)$ 甚至不能作为 FP 系统中的中间结果;它在 FP 系统中是毫无意义的,因为 $x$ 是一个对象而不是一个函数,且 FP 系统不将函数与对象关联。现在,如果 $APPLY$ 表示 $apply$,那么 $(APPLY:\langle NULL, A \rangle)$ 的含义是:
+$\mu(APPLY:\langle NULL, A \rangle) = \mu((\rho APPLY):\langle NULL, A \rangle)$
+$= \mu(apply:\langle NULL, A \rangle) = \mu(NULL:A) = \mu((\rho NULL):A)$
+$= \mu(null:A) = \mu F = F$
+最后一步遵循每个对象都是其自身含义的事实。由于含义函数 $\mu$ 最终会评估所有应用,人们可以将 $apply:\langle NULL, A \rangle$ 视为产生 $F$,尽管实际结果是 $(NULL:A)$。
+
+**13.3.2 对象如何表示函数;表示函数 $\rho$**。正如我们所见,某些原子(原语原子)将表示系统的原语函数。其他原子可以像 FP 系统中的符号一样表示定义函数。如果一个原子既不是原语也不是定义的,它表示 $\bar{\perp}$,即处处为 $\perp$ 的函数。
+
+序列也表示函数,类似于 FP 的函数式形式。由序列表示的函数由以下规则(递归地)给出:
+
+**元组合规则 (Metacomposition rule)**
+$(\rho \langle x_1, \dots, x_n \rangle):y \equiv (\rho x_1):\langle \langle x_1, \dots, x_n \rangle, y \rangle$
+其中 $x_i$ 和 $y$ 是对象。这里 $\rho x_1$ 决定了序列 $\langle x_1, \dots, x_n \rangle$ 表示哪种函数式形式,而 $x_2, \dots, x_n$ 是该形式的参数(在 FFP 中,$x_1$ 本身也可以作为参数)。因此,例如,令 $Def \ \rho CONST \equiv 2 \circ 1$; 那么 FFP 中的 $\langle CONST, x \rangle$ 表示 FP 函数式形式 $\bar{x}$,因为根据元组合规则,如果 $y \neq \perp$:
+$(\rho \langle CONST, x \rangle):y = (\rho CONST):\langle \langle CONST, x \rangle, y \rangle$
+$= 2 \circ 1 : \langle \langle CONST, x \rangle, y \rangle = x$
+这里我们可以看到,一个序列或形式的第一个控制算子(在本例中为 $CONST$),在元组合之后,其操作数总是一个对,其第一个元素是序列本身,第二个元素是序列的原始操作数(在本例中为 $y$)。控制算子随后可以以各种方式重新排列并重新应用序列的元素和原始操作数。元组合的重要意义在于,它允许通过定义新函数来定义新的函数式形式。它还允许在没有定义的情况下编写递归函数。
+
+我们再给出一个函数式形式的控制函数示例: $Def \ \rho CONS \equiv \alpha apply \circ tl \circ distr$。这个定义导致 $\langle CONS, f_1, \dots, f_n \rangle$(其中 $f_i$ 是对象)表示与 $[\rho f_1, \dots, \rho f_n]$ 相同的函数。以下展示了这一点:
+$(\rho \langle CONS, f_1, \dots, f_n \rangle):x$
+$= (\rho CONS):\langle \langle CONS, f_1, \dots, f_n \rangle, x \rangle$ (根据元组合)
+$= \alpha apply \circ tl \circ distr : \langle \langle CONS, f_1, \dots, f_n \rangle, x \rangle$ (根据 $\rho CONS$ 的定义)
+$= \alpha apply : \langle \langle f_1, x \rangle, \dots, \langle f_n, x \rangle \rangle$ (根据 $tl, distr$ 和 $\circ$ 的定义)
+$= \langle apply:\langle f_1, x \rangle, \dots, apply:\langle f_n, x \rangle \rangle$ (根据 $\alpha$ 的定义)
+$= \langle (f_1:x), \dots, (f_n:x) \rangle$ (根据 $apply$ 的定义)
+在评估最后一个表达式时,含义函数将产生每个应用的含义,给出 $\rho f_i:x$ 作为第 $i$ 个元素。
+
+通常,在描述由序列表示的函数时,我们将给出其总体效果,而不是展示其控制算子如何实现该效果。因此,我们会简单地写成:
+$(\rho \langle CONS, f_1, \dots, f_n \rangle):x = \langle (f_1:x), \dots, (f_n:x) \rangle$
+而不是上述更详细的说明。
+
+我们需要一个控制算子 $COMP$,来为我们提供表示函数式形式“组合”的序列。我们取 $\rho COMP$ 为一个原语函数,使得对于所有对象 $x$:
+$(\rho \langle COMP, f_1, \dots, f_n \rangle):x = (f_1:(f_2:(\dots:(f_n:x)\dots)))$ 对于 $n \ge 1$。
+(我感谢 Paul McJones 的观察,即普通组合可以通过这个原语函数实现,而不是像早期论文 [2] 那样在基本语义中使用两条组合规则。)
+
+虽然 FFP 系统允许定义和研究新的函数式形式,但可以预期大多数编程将使用一组固定的形式(其控制算子是原语),如在 FP 中那样,以便可以利用这些形式的代数定律,并可以使用基于这些形式的结构化编程风格。
+
+除了用于定义函数式形式外,元组合还可以用于直接创建递归函数,而无需使用 $Def \ f \equiv E(f)$ 形式的递归定义。例如,如果 $\rho MLAST \equiv null \circ tl \circ 2 \to 1 \circ 2; apply \circ [1, tl \circ 2]$,那么 $\rho \langle MLAST \rangle \equiv last$,其中 $last:x \equiv x = \langle x_1, \dots, x_n \rangle \to x_n; \perp$。因此算子 $\langle MLAST \rangle$ 的工作方式如下:
+$\mu(\langle MLAST \rangle : \langle A, B \rangle)$
+$= \mu(\rho MLAST : \langle \langle MLAST \rangle, \langle A, B \rangle \rangle)$ (根据元组合)
+$= \mu(apply \circ [1, tl \circ 2] : \langle \langle MLAST \rangle, \langle A, B \rangle \rangle)$
+$= \mu(apply : \langle \langle MLAST \rangle, \langle B \rangle \rangle)$
+$= \mu(\langle MLAST \rangle : \langle B \rangle)$
+$= \mu(\rho MLAST : \langle \langle MLAST \rangle, \langle B \rangle \rangle)$
+$= \mu(1 \circ 2 : \langle \langle MLAST \rangle, \langle B \rangle \rangle)$
+$= B$
+
+**13.3.3 $\rho$ 和 $\mu$ 性质的总结**。到目前为止,我们已经展示了 $\rho$ 如何将原子和序列映射为函数,以及这些函数如何将对象映射为表达式。实际上,$\rho$ 和所有 FFP 函数都可以扩展,以便它们对所有表达式都有定义。通过此类扩展,$\rho$ 和 $\mu$ 的性质可以总结如下:
+
+1) $\mu \in [expressions \to objects]$。
+2) 如果 $x$ 是一个对象,$\mu x = x$。
+3) 如果 $e$ 是一个表达式且 $e = \langle e_1, \dots, e_n \rangle$,那么 $\mu e = \langle \mu e_1, \dots, \mu e_n \rangle$。
+4) $\rho \in [expressions \to [expressions \to expressions]]$。
+5) 对于任何表达式 $e$,$\rho e = \rho(\mu e)$。
+6) 如果 $x$ 是一个对象且 $e$ 是一个表达式,那么 $\rho x:e = \rho x:(\mu e)$。
+7) 如果 $x$ 和 $y$ 是对象,那么 $\mu(x:y) = \mu(\rho x:y)$。换句话说:FFP 应用 $(x:y)$ 的含义是通过将由 $x$ 表示的函数 $\rho x$ 应用于 $y$,然后寻找结果表达式(通常是一个对象,然后是其自身的含义)的含义而找到的。
+
+**13.3.4 单元、获取与存储**。出于多种原因,创建充当名称的函数是很方便的。特别是,我们在描述 FFP 系统中定义的语义时将需要这种设施。为了引入命名函数,即从存储器(单元序列)中获取具有给定名称的单元内容,以及在这样的序列中存储具有给定名称和内容的单元的能力,我们引入了称为**单元(cells)**的对象和两个新的函数式形式:获取(fetch)和存储(store)。
+
+**单元**
+单元是一个三元组 $\langle CELL, name, contents \rangle$。我们使用这种形式而不是对 $\langle name, contents \rangle$,以便可以将单元与普通对区分开来。
+
+**获取 (Fetch)**
+函数式形式 fetch 以一个对象 $n$ 作为其参数($n$ 通常是一个充当名称的原子);它被写成 $\uparrow n$(读作“获取 $n$”)。它对对象 $n$ 和 $x$ 的定义是:
+$\uparrow n:x \equiv x = \phi \to \#; atom:x \to \perp; (1:x) = \langle CELL, n, c \rangle \to c; \uparrow n \circ tl:x$
+其中 $\#$ 是原子“默认(default)”。因此,$\uparrow n$(获取 $n$)应用于一个序列时,给出序列中第一个名称为 $n$ 的单元的内容;如果没有名为 $n$ 的单元,结果为默认值 $\#$。因此 $\uparrow n$ 是名称 $n$ 的名称函数。(我们假设 $\rho FETCH$ 是原语函数,使得 $\rho \langle FETCH, n \rangle \equiv \uparrow n$。注意 $\uparrow n$ 只是跳过其操作数中不是单元的元素。)
+
+**存储以及入栈、出栈、清除**
+与 fetch 类似,store 以一个对象 $n$ 作为其参数;它被写成 $\downarrow n$(“存储 $n$”)。当应用于对 $\langle x, y \rangle$(其中 $y$ 是一个序列)时,$\downarrow n$ 从 $y$ 中移除第一个名为 $n$ 的单元(如果有),然后创建一个名为 $n$ 且内容为 $x$ 的新单元并将其追加到 $y$。在定义 $\downarrow n$(存储 $n$)之前,我们将指定四个辅助函数式形式。(这些可以与 fetch $n$ 和 store $n$ 结合使用,以在存储序列中获得多个命名的 LIFO 栈。)其中两个辅助形式由递归泛函方程指定;每个都以一个对象 $n$ 作为其参数。
+$(cellname \ n) \equiv atom \to \bar{F}; eq \circ [length, \bar{3}] \to eq \circ [[CELL, \bar{n}], [1, 2]]; \bar{F}$
+$(push \ n) \equiv pair \to apndl \circ [[CELL, \bar{n}, 1], 2]; \bar{\perp}$
+$(pop \ n) \equiv null \to \bar{\phi}; (cellname \ n) \circ 1 \to tl; apndl \circ [1, (pop \ n) \circ tl]$
+$(purge \ n) \equiv null \to \bar{\phi}; (cellname \ n) \circ 1 \to (purge \ n) \circ tl; apndl \circ [1, (purge \ n) \circ tl]$
+$\downarrow n \equiv pair \to (push \ n) \circ [1, (pop \ n) \circ 2]; \bar{\perp}$
+
+上述函数式形式的工作方式如下。对于 $x \neq \perp$,如果 $x$ 是名为 $n$ 的单元,则 $(cellname \ n):x$ 为 $T$,否则为 $F$。$(pop \ n):y$ 从序列 $y$ 中移除第一个名为 $n$ 的单元;$(purge \ n):y$ 从 $y$ 中移除所有名为 $n$ 的单元。$(push \ n):\langle x, y \rangle$ 将一个名为 $n$ 且内容为 $x$ 的单元放在序列 $y$ 的头部;$\downarrow n:\langle x, y \rangle$ 是 $(push \ n):\langle x, (pop \ n):y \rangle$。
+(因此 $(push \ n):\langle x, y \rangle = y'$ 将 $x$ 压入 $y'$ 中名为 $n$ 的“栈”顶;$x$ 可以通过 $\uparrow n:y' = x$ 读取,并可以通过 $(pop \ n):y'$ 移除;因此 $\uparrow n \circ (pop \ n):y'$ 是栈 $n$ 中 $x$ 下方的元素,前提是 $y'$ 中有多个名为 $n$ 的单元。)
+
+**13.3.5 FFP 系统中的定义**。FFP 系统的语义取决于一组固定的定义 $D$(一个单元序列),就像 FP 系统取决于其非正式给出的定义集一样。因此,语义函数 $\mu$ 取决于 $D$;改变 $D$ 会给出一个反映改变后定义的新 $\mu'$。我们将 $D$ 表示为一个对象,因为在 AST 系统(第 14 节)中,我们将希望通过向其应用函数来变换 $D$,并从中获取数据——除了在 FFP 语义中将其作为函数定义的来源之外。
+
+如果 $\langle CELL, n, c \rangle$ 是序列 $D$ 中第一个名为 $n$ 的单元(且 $n$ 是一个原子),那么它具有与 FP 定义 $Def \ n \equiv \rho c$ 相同的效果,也就是说,$(n:x)$ 的含义将与 $(\rho c):x$ 的含义相同。因此,例如,如果 $\langle CELL, CONST, \langle COMP, 2, 1 \rangle \rangle$ 是 $D$ 中第一个名为 $CONST$ 的单元,那么它具有与 $Def \ CONST \equiv 2 \circ 1$ 相同的效果,具有该 $D$ 的 FFP 系统将发现:
+$\mu(CONST : \langle \langle x, y \rangle, z \rangle) = y$
+并因此:
+$\mu(\langle CONST, A \rangle : B) = A$
+
+通常,在具有定义 $D$ 的 FFP 系统中,形式为 $(atom:x)$ 的应用的含义取决于 $D$;如果 $\uparrow atom:D \neq \#$(即 $atom$ 在 $D$ 中有定义),那么其含义是 $\mu(c:x)$,其中 $c = \uparrow atom:D$,即 $D$ 中第一个名为 $atom$ 的单元的内容。如果 $\uparrow atom:D = \#$,那么 $atom$ 在 $D$ 中没有定义,且要么 $atom$ 是原语(即系统知道如何计算 $\rho atom:x$,且 $\mu(atom:x) = \mu(\rho atom:x)$),否则 $\mu(atom:x) = \perp$。
+
+### 13.4 FFP 系统的正式语义
+
+我们假设已经选择了一个原子集 $A$、一个定义集 $D$、一个原语原子集 $P \subseteq A$ 以及它们所表示的原语函数。我们假设如果 $a \in P$,则 $\rho a$ 是由 $a$ 表示的原语函数;如果 $a \in Q$,则 $\rho a = \bar{\perp}$,其中 $Q$ 是 $A-P$ 中未在 $D$ 中定义的原子集。虽然 $\mu$ 对所有表达式都有定义(见 13.3.3),但正式语义仅在 $P$ 和 $Q$ 上使用其定义。$\rho$ 分配给其他表达式 $x$ 的函数在以下用于评估 $\mu(x:y)$ 的语义规则中被隐式确定并应用。上述 $A$ 和 $D$ 的选择,以及 $P$ 和相关原语函数的选择,确定了 FFP 系统的对象、表达式和语义函数 $\mu_D$。(我们将 $D$ 视为固定的,并简写 $\mu$ 为 $\mu_D$。)我们假设 $D$ 是一个序列,且对于任何原子 $y$,$\uparrow y:D$ 是可计算的(通过第 13.3.4 节中给出的函数 $\uparrow y$)。在这些假设下,我们将 $\mu$ 定义为泛函 $\tau$ 的最小不动点,其中函数 $\tau g$ 对任何函数 $g$ 定义如下(对于所有表达式 $x, x_i, y, y_i, z$ 和 $w$):
+
+$(\tau g)x \equiv x \in A \to x;$
+$x = \langle x_1, \dots, x_n \rangle \to \langle gx_1, \dots, gx_n \rangle;$
+$x = (y:z) \to ($
+$y \in A \land (\uparrow y:D) = \# \to g((\rho y)(gz));$
+$y \in A \land (\uparrow y:D) = w \to g(w:z);$
+$y = \langle y_1, \dots, y_n \rangle \to g(y_1 : \langle y, z \rangle);$
+$g(gy:z)); \perp$
+
+上述对 $\mu$ 的描述在评估操作数之前,通过定义和元组合展开应用的算子。假设上述 $\tau g$ 定义中的谓词(如 “$x \in A$”)是保底的(例如,“$\perp \in A$”的值为 $\perp$),且条件表达式本身也是保底的。因此 $(\tau g)\perp \equiv \perp$ 且 $(\tau g)(\perp:z) \equiv \perp$。FFP 系统的语义到此结束。
+
+## 14. 应用式状态转换系统 (AST 系统)
+
+### 14.1 引言
+
+本节勾勒了一类前面提到的作为冯·诺依曼系统替代方案的系统。必须再次强调,这些应用式状态转换系统目前并不是作为实用的编程系统提出的,而是作为一类系统的示例,在这些系统中,应用式风格的编程可以在一个具有历史敏感性但非冯·诺依曼的系统中实现。这些系统与状态松散耦合,并依赖于底层的应用式系统来提供其程序设计语言和对其状态转换的描述。下文描述的 AST 系统的底层应用式系统是一个 FFP 系统,但也可以使用其他应用式系统。
+
+为了理解 AST 系统结构的原因,首先回顾冯·诺依曼系统 Algol 的基本结构,观察其局限性,并将其与 AST 系统的结构进行比较是有帮助的。在回顾之后,描述了一个极简的 AST 系统;给出了一个用于文件维护和运行用户程序的小型、自顶向下、自我保护的系统程序,并给出了将其安装在 AST 系统中以及运行示例用户程序的说明。系统程序使用“名称函数”而不是传统的名称,用户也可以这样做。本节最后的小节讨论了 AST 系统的变体、它们的一般性质以及命名系统。
+
+### 14.2 Algol 结构与 AST 系统结构的比较
+
+一个 Algol 程序是一个语句序列,每个语句代表 Algol 状态的一个变换,而 Algol 状态是一个关于各种栈、指针以及标识符到值的变量映射等状态信息的复杂存储库。每个语句通过其特有的复杂协议与这个不断变化的状态进行通信,甚至其不同部分也有不同的协议(例如,与变量 $x$ 相关的协议取决于它出现在赋值语句的左侧还是右侧、出现在声明中、作为参数等)。就好像 Algol 状态是一个复杂的“存储器”,它通过一根由许多专用导线组成的巨大“电缆”与 Algol 程序通信。这根电缆的复杂通信协议是固定的,包括每种语句类型的协议。Algol 程序的“含义”必须根据通过电缆及其协议与状态进行的大量通信的总效果来给出(加上识别输出并将输入插入状态的方法)。与通往 Algol 状态/存储器的这根庞大电缆相比,作为计算机冯·诺依曼瓶颈的电缆是一个简单、优雅的概念。
+
+因此,Algol 语句不是表示状态到状态函数的表达式,这些函数是通过使用有序的组合形式从更简单的状态到状态函数构建起来的。相反,它们是具有上下文相关部分的复杂消息,这些部分一点点蚕食状态。每个部分通过其自身的协议在电缆上向状态传输信息或从状态接收信息。没有规定将通用函数应用于整个状态,从而对其进行重大改变。通过函数应用对状态 $S$ 进行大规模、强大的变换 $S \to f:S$,在冯·诺依曼——电缆和协议——语境中实际上是不可想象的:除非 $f$ 被限制在电缆最初允许的微小变化范围内,否则无法保证新状态 $f:S$ 能与电缆及其固定协议匹配。
+
+我们想要一个计算系统,其语义不依赖于一堆用于与状态通信的怪异协议,并且我们希望能够通过应用通用函数对状态进行大规模变换。AST 系统提供了实现这些目标的一种方式。它们的语义有两种用于从状态获取信息的协议:(1) 从中获取要应用的函数的定义,以及 (2) 获取整个状态本身。有一种用于改变状态的协议:通过函数应用计算新状态。除了这些与状态的通信外,AST 语义是应用式的(即 FFP)。它不依赖于状态改变,因为在计算过程中状态根本不会改变。相反,计算的结果是输出和新状态。AST 状态的结构受到其协议之一的轻微限制:必须能够识别其中的定义(即单元)。它的结构——它是一个序列——比 Algol 状态的结构简单得多。
+
+因此,AST 系统的结构避免了冯·诺依曼状态的复杂性和限制(及其通信协议),同时在一个截然不同且更简单的框架中实现了更大的力量和自由。
+
+### 14.3 AST 系统的结构
+
+一个 AST 系统由三个元素组成:
+
+1) 一个应用式子系统(如 FFP 系统)。
+2) 一个状态 $D$,它是应用式子系统的定义集。
+3) 一组转换规则,描述输入如何转换为输出以及状态 $D$ 如何改变。
+
+AST 系统的程序设计语言就是其应用式子系统的语言。(从这里开始,我们将假设后者是一个 FFP 系统。)因此,AST 系统可以使用我们讨论过的 FP 编程风格。应用式子系统不能改变状态 $D$,且在评估表达式期间它不会改变。新状态与输出一起计算,并在发出输出时替换旧状态。(回想一下,定义集 $D$ 是一个单元序列;单元名称是定义函数的名称,其内容是定义表达式。然而,在这里,某些单元可能命名数据而不是函数;数据名称 $n$ 将用于 $\uparrow n$(获取 $n$),而函数名称将作为算子本身使用。)
+
+下面我们给出我们将用于程序示例的初级 AST 系统的转换规则。这些可能是决定各种 AST 系统行为的许多可能转换规则中最简单的。
+
+**14.3.1 初级 AST 系统的转换规则**。当系统接收到输入 $x$ 时,它形成应用 $(SYSTEM:x)$,然后继续在 FFP 子系统中获取其含义,使用当前状态 $D$ 作为定义集。$SYSTEM$ 是 $D$ 中定义的函数的特殊名称(即它是“系统程序”)。通常结果是一个对:
+$\mu(SYSTEM:x) = \langle o, d \rangle$
+其中 $o$ 是由输入 $x$ 产生的系统输出,$d$ 成为系统下一次输入的各个新状态 $D$。通常 $d$ 将是 $D$ 的副本或部分改变的副本。如果 $\mu(SYSTEM:x)$ 不是一个对,则输出是一条错误消息,且状态保持不变。
+
+**14.3.2 转换规则:异常情况与启动**。一旦输入被接受,我们的系统将不再接受另一个输入(除了 $\langle RESET, x \rangle$,见下文),直到发出输出并安装了新状态(如果有)。系统随时接受输入 $\langle RESET, x \rangle$。有两种情况:(a) 如果 $SYSTEM$ 在当前状态 $D$ 中有定义,则系统中止其当前计算而不改变 $D$,并将 $x$ 视为一个新的正常输入;(b) 如果 $SYSTEM$ 在 $D$ 中没有定义,则将 $x$ 作为第一个元素追加到 $D$ 中。(初级 AST 系统转换规则的完整描述到此结束。)
+
+如果 $SYSTEM$ 在 $D$ 中有定义,它总是可以防止对其自身定义的任何更改。如果没有定义,普通的输入 $x$ 将产生 $\mu(SYSTEM:x) = \perp$,转换规则产生错误消息和不变的状态;另一方面,输入 $\langle RESET, \langle CELL, SYSTEM, s \rangle \rangle$ 将定义 $SYSTEM$ 为 $s$。
+
+**14.3.3 程序对状态的访问;函数 $\rho DEFS$**。我们的 FFP 子系统被要求有一个新的原语函数 $defs$,名为 $DEFS$,使得对于任何对象 $x \neq \perp$:
+$defs:x = \rho DEFS:x = D$
+其中 $D$ 是 AST 系统的当前状态和定义集。该函数允许程序出于任何目的访问整个状态,包括计算后继状态这一基本目的。
+
+### 14.4 系统程序示例
+
+上述对初级 AST 系统的描述,加上 FFP 子系统以及前面章节的 FP 原语和函数式形式,规定了一个完整的历史敏感计算系统。其输入和输出行为受到其简单转换规则的限制,但除此之外,一旦配备了合适的定义集,它就是一个强大的系统。作为其使用的示例,我们将描述一个小型的系统程序、其安装和运行。
+
+我们的示例系统程序将处理其维护的文件的查询和更新,评估 FFP 表达式,运行不损坏文件或状态的通用用户程序,并允许授权用户更改定义集和系统程序本身。它接受的所有输入都将具有 $\langle key, input \rangle$ 的形式,其中 $key$ 是一个代码,它既决定了输入类别(系统更改、表达式、程序、查询、更新),也决定了用户的身份及其在给定输入类别下使用系统的权限。我们不规定 $key$ 的格式。$input$ 是输入本身,属于 $key$ 给出的类别。
+
+**14.4.1 系统程序的总体规划**。我们的 AST 系统的状态 $D$ 将包含系统程序和用户程序所需的所有非原语函数的定义。(每个定义都在序列 $D$ 的一个单元中。)此外,$D$ 中将有一个名为 $FILE$ 的单元,其内容为 $file$,由系统维护。我们将给出函数的 FP 定义,稍后展示如何以 FFP 形式将它们放入系统中。
+
+转换规则使输入成为 $SYSTEM$ 的操作数,但我们的计划是使用名称函数来引用数据,因此我们对输入做的第一件事是创建两个名为 $KEY$ 和 $INPUT$ 的单元,其内容分别为 $key$ 和 $input$,并将这些追加到 $D$。这个单元序列包含 $key, input$ 和 $file$ 各一个;它将成为我们名为 $subsystem$ 的主函数的操作数。$subsystem$ 随后可以通过向其操作数应用 $\uparrow KEY$ 来获取 $key$,依此类推。因此定义:
+$Def \ system \equiv pair \to subsystem \circ f; \overline{NONPAIR}, defs$
+其中:
+$f \equiv \downarrow INPUT \circ [2, \downarrow KEY \circ [1, defs]]$
+使得如果输入不是一个对,系统输出 $NONPAIR$ 并保持状态不变。否则,如果输入是 $\langle key, input \rangle$,那么:
+$f:\langle key, input \rangle = \langle \langle CELL, INPUT, input \rangle, \langle CELL, KEY, key \rangle, d_1, \dots, d_n \rangle$
+其中 $D = \langle d_1, \dots, d_n \rangle$。(我们本可以构造一个与上述不同的操作数,一个只有三个单元(用于 $key, input$ 和 $file$)的操作数。我们没有这样做,是因为真实的程序与 $subsystem$ 不同,会包含许多引用状态中数据的名称函数,而这种操作数的“标准”构造在那时也足够了。)
+
+**14.4.2 “subsystem” 函数**。我们现在给出函数 $subsystem$ 的 FP 定义,随后简要解释其六种情况和辅助函数。
+$Def \ subsystem \equiv$
+$is\text{-}system\text{-}change \circ \uparrow KEY \to [report\text{-}change, apply] \circ [\uparrow INPUT, defs];$
+$is\text{-}expression \circ \uparrow KEY \to [\uparrow INPUT, defs];$
+$is\text{-}program \circ \uparrow KEY \to system\text{-}check \circ apply \circ [\uparrow INPUT, defs];$
+$is\text{-}query \circ \uparrow KEY \to [query\text{-}response \circ [\uparrow INPUT, \uparrow FILE], defs];$
+$is\text{-}update \circ \uparrow KEY \to [report\text{-}update, \downarrow FILE \circ [update, defs]] \circ [\uparrow INPUT, \uparrow FILE];$
+$[report\text{-}error \circ [\uparrow KEY, \uparrow INPUT], defs].$
+
+这个 $subsystem$ 有五个 “$p \to f$” 子句和一个最终的默认函数,总共六类输入;每类的处理如下。回想一下,$subsystem$ 的操作数是一个包含 $key, input$ 和 $file$ 以及 $D$ 的所有定义函数的单元序列,且 $subsystem:operand = \langle output, newstate \rangle$。
+
+**默认输入**。在这种情况下,当 $key$ 不满足任何前面的子句时,结果由定义的最后一个(默认)函数给出。输出是 $report\text{-}error:\langle key, input \rangle$。状态保持不变,因为它由 $defs:operand = D$ 给出。(我们留给读者想象函数 $report\text{-}error$ 将从其操作数生成什么。)
+
+**系统更改输入**。当 $is\text{-}system\text{-}change \circ \uparrow KEY:operand = is\text{-}system\text{-}change:key = T$ 时,$key$ 规定用户被授权进行系统更改,且 $input = \uparrow INPUT:operand$ 表示一个要应用于 $D$ 以产生新状态 $f:D$ 的函数 $f$。(当然 $f:D$ 可以是一个无用的新状态;对其没有施加任何约束。)输出是一份报告,即 $report\text{-}change:\langle input, D \rangle$。
+
+**表达式输入**。当 $is\text{-}expression:key = T$ 时,系统理解输出将是 FFP 表达式 $input$ 的含义;$\uparrow INPUT:operand$ 产生它并对其进行评估,就像评估所有表达式一样。状态保持不变。
+
+**程序输入与系统自我保护**。当 $is\text{-}program:key = T$ 时,输出和新状态均由 $(\rho input):D = \langle output, newstate \rangle$ 给出。如果 $newstate$ 包含处于合适状态的 $file$ 以及 $system$ 和其他受保护函数的定义,那么 $system\text{-}check:\langle output, newstate \rangle = \langle output, newstate \rangle$。否则,$system\text{-}check:\langle output, newstate \rangle = \langle error\text{-}report, D \rangle$。虽然程序输入在产生 $newstate$ 时可能对状态做出重大、甚至是灾难性的改变,但 $system\text{-}check$ 可以使用任何标准来允许它成为实际的新状态或保留旧状态。更复杂的 $system\text{-}check$ 可能只纠正状态中被禁止的更改。这类函数是可能的,因为它们总是可以访问旧状态以与即将成为新状态的状态进行比较,并控制最终允许什么样的状态转换。
+
+**文件查询输入**。如果 $is\text{-}query:key = T$,函数 $query\text{-}response$ 旨在从其操作数 $\langle input, file \rangle$ 产生输出 = 对查询输入 $input$ 的回答。
+
+**文件更新输入**。如果 $is\text{-}update:key = T$,$input$ 规定了一个由函数 $update$ 理解的文件事务,该函数计算 $updated\text{-}file = update:\langle input, file \rangle$。因此 $\downarrow FILE$ 以 $\langle updated\text{-}file, D \rangle$ 作为其操作数,从而将更新后的文件存储在新状态的单元 $FILE$ 中。状态的其余部分保持不变。函数 $report\text{-}update$ 从其操作数 $\langle input, file \rangle$ 生成输出。
+
+**14.4.3 安装系统程序**。我们已经通过一些 FP 定义描述了名为 $system$ 的函数(使用仅指示了行为的辅助函数)。让我们假设我们已经有了所有所需非原语函数的 FP 定义。那么每个定义都可以转换为给出 $D$ 中一个单元的名称和内容(当然这种转换本身将由一个更好的系统来完成)。转换是通过将每个 FP 函数名更改为其等效原子(例如,$update$ 变为 $UPDATE$),并将函数式形式替换为序列(其第一个成员是该特定形式的控制函数)来完成的。因此,$\downarrow FILE \circ [update, defs]$ 被转换为:
+$\langle COMP, \langle STORE, FILE \rangle, \langle CONS, UPDATE, DEFS \rangle \rangle$
+且 FP 函数与 FFP 对象所表示的函数相同,前提是 $update = \rho UPDATE$ 且 $COMP, STORE$ 和 $CONS$ 表示组合、存储和构造的控制函数。
+
+我们系统所需的所有 FP 定义都可以如上所述转换为单元,从而得到一个序列 $D_0$。我们假设 AST 系统开始时状态为空,因此 $SYSTEM$ 没有定义。我们希望最初定义 $SYSTEM$,以便它将其下一个输入安装为状态;这样做之后,我们就可以输入 $D_0$,并且我们所有的定义都将被安装,包括我们的程序——$system$——本身。为了实现这一点,我们输入第一个输入:
+$\langle RESET, \langle CELL, SYSTEM, loader \rangle \rangle$
+其中 $loader \equiv \langle CONS, \langle CONST, DONE \rangle, ID \rangle$。
+那么,根据当 $SYSTEM$ 在 $D$ 中未定义时 $RESET$ 的转换规则,我们输入中的单元被放在 $D = \phi$ 的头部,从而定义 $\rho SYSTEM = \rho loader \equiv [\overline{DONE}, id]$。我们的第二个输入是 $D_0$,即我们希望成为状态的定义集。常规转换规则使得 AST 系统评估:
+$\mu(SYSTEM:D_0) = [\overline{DONE}, id]:D_0 = \langle DONE, D_0 \rangle$。
+因此,我们第二个输入的输出是 $DONE$,新状态是 $D_0$,且 $\rho SYSTEM$ 现在是我们的系统程序(它只接受 $\langle key, input \rangle$ 形式的输入)。
+
+我们的下一个任务是加载文件(给定一个初始值 $file$)。为了加载它,我们向新安装的系统中输入一个程序,该程序包含 $file$ 作为常数并将其存储在状态中;输入是:
+$\langle program\text{-}key, [\overline{DONE}, store\text{-}file] \rangle$
+其中 $\rho store\text{-}file \equiv \downarrow FILE \circ [\overline{file}, id]$。
+$program\text{-}key$ 将 $[\overline{DONE}, store\text{-}file]$ 标识为一个要应用于状态 $D_0$ 以给出输出和新状态 $D_1$ 的程序,其中 $D_1$ 是:
+$\rho store\text{-}file:D_0 = \downarrow FILE \circ [\overline{file}, id]:D_0$
+即 $D_0$ 头部增加了一个包含 $file$ 的单元。输出是 $\overline{DONE}:D_0 = DONE$。我们假设 $system\text{-}check$ 将原样通过 $\langle DONE, D_1 \rangle$。在上述过程中,FP 表达式被用来代替它们所表示的 FFP 对象,例如用 $DONE$ 代替 $\langle CONST, DONE \rangle$。
+
+**14.4.4 使用系统**。我们还没有说明系统的文件、查询或更新是如何结构化的,因此我们无法给出文件操作的详细示例。然而,$subsystem$ 的结构清楚地展示了系统对查询和更新的响应如何取决于函数 $query\text{-}response, update$ 和 $report\text{-}update$。
+假设名为 $M$ 和 $N$ 的矩阵 $m, n$ 存储在 $D$ 中,且前面描述的函数 $MM$ 在 $D$ 中有定义。那么输入:
+$\langle expression\text{-}key, (MM \circ [\uparrow M, \uparrow N] \circ DEFS : \#) \rangle$
+将给出两个矩阵的乘积作为输出,且状态保持不变。$expression\text{-}key$ 将应用标识为一个要评估的表达式,且由于 $defs:\# = D$ 且 $[\uparrow M, \uparrow N]:D = \langle m, n \rangle$,表达式的值就是结果 $MM:\langle m, n \rangle$,即输出。
+
+我们的微型系统程序没有规定将控制权交给用户程序来处理多个输入,但不难赋予它这种能力,同时仍然监控用户程序并保留收回控制权的选项。
+
+### 14.5 AST 系统的变体
+
+上述建议的 AST 系统的一个主要扩展将提供组合形式——“系统形式”——用于从更简单的组件 AST 系统构建新的 AST 系统。也就是说,系统形式将以 AST 系统作为参数并生成一个新的 AST 系统,就像函数式形式以函数作为参数并生成新函数一样。这些系统形式将具有类似于函数式形式的性质,并成为有用的“系统代数”的“运算”,其方式与函数式形式是程序代数的“运算”非常相似。然而,寻找有用的系统形式的问题要困难得多,因为它们必须处理 $RESET$、匹配输入和输出,并组合历史敏感系统而不是固定函数。
+
+此外,系统形式的有用性或必要性不如函数式形式那样清晰。后者对于从初始原语集构建各种各样的函数至关重要,而即使没有系统形式,构建 AST 系统的设施已经如此丰富,以至于人们几乎可以构建任何系统(具有给定 AST 方案所允许的通用输入和输出性质)。也许系统形式对于构建具有复杂输入和输出安排的系统会很有用。
+
+### 14.6 关于 AST 系统的评论
+
+正如我上面试图指出的,AST 系统的成分可以有无数种变化——它如何运行、如何处理输入和输出、何时以及如何产生新状态,等等。在任何情况下,一些评论适用于任何合理的 AST 系统:
+
+a) 状态转换在每次主要计算中发生一次,并且可以具有有用的数学性质。状态转换不涉及计算的最微小细节,如在传统语言中那样;因此,语言上的冯·诺依曼瓶颈已被消除。不需要复杂的“电缆”或协议来与状态通信。
+b) 程序是用一种应用式语言编写的,该语言可以容纳很大范围的可变部分,这些部分的力量和灵活性超过了迄今为止任何冯·诺依曼语言。“一次一词”风格被应用式风格所取代;程序设计不再划分为表达式世界和语句世界。程序可以通过程序代数进行分析和优化。
+c) 由于在计算 $system:x$ 期间状态不能改变,因此没有副作用。因此,独立的应用程序可以并行评估。
+d) 通过定义适当的函数,我相信人们可以随时在同一框架内引入重大的新特性。此类特性必须构建在冯·诺依曼语言的框架中。我心目中的此类特性包括:具有各种命名系统的“存储器”、类型和类型检查、通信并行进程、非确定性和 Dijkstra 的“守卫命令”构造 [8],以及改进的结构化编程方法。
+e) AST 系统的框架包含底层应用式系统的语法和语义加上上述勾勒的系统框架。按目前的标准,对于一种语言来说,这是一个极小的框架,并且是系统唯一固定的部分。
+
+### 14.7 AST 与冯·诺依曼模型中的命名系统
+
+在 AST 系统中,命名是通过函数完成的,如第 13.3.3 节所示。可以定义许多用于更改和访问存储器的有用函数(例如 $push, pop, purge$,带类型的 $fetch$ 等)。所有这些定义及其相关的命名系统都可以在不改变 AST 框架的情况下引入。在一个程序中可以使用具有各自命名系统的不同种类的“存储器”(例如,具有“带类型单元”的存储器)。一个存储器中的单元可能包含另一个完整的存储器。
+
+关于 AST 命名系统的重要一点是,它们利用了名称的函数性质(Reynolds 的 GEDANKEN [19] 在冯·诺依曼框架内也在一定程度上做到了这一点)。因此,名称函数可以被组合,并由函数式形式与其他函数结合。相比之下,冯·诺依曼语言中的函数和名称通常是互不相干的概念,名称的类函数性质几乎完全被掩盖且无用,因为:(a) 名称不能作为函数应用;(b) 没有通用的手段将名称与其他名称和函数结合;(c) 名称函数所应用的对象(存储器)不能作为对象访问。
+
+冯·诺依曼语言未能将名称视为函数,可能是它们较重要的弱点之一。在任何情况下,将名称用作函数并将存储器用作对象的能力可能会成为一个有用且重要的编程概念,一个应该被彻底探索的概念。
+
+## 15. 关于计算机构造的评论
+
+冯·诺依曼语言的主导地位使得设计者除了冯·诺依曼计算机的变体外,几乎没有实用的计算机设计智力模型。数据流模型 [1, 7, 13] 是另一类历史敏感模型。基于 λ 演算的语言的替换规则给机器设计者带来了严重的问题。Berkling [3] 开发了一种改进的 λ 演算,它有三种应用,并且使得变量重命名变得不必要。他开发了一台机器来评估这种语言的表达式。需要进一步的经验来证明这种语言作为有效编程风格的基础有多稳固,以及他的机器能有多高效。
+
+Magó [15] 开发了一种新颖的应用式机器,由相同的组件(两种)构建而成。它直接从底向上评估类 FP 和其他应用式表达式。它没有冯·诺依曼存储器,也没有地址寄存器,因此没有瓶颈;它能够并行评估许多应用;其内置操作与其说像冯·诺依曼计算机操作,不如说像 FP 算子。这是我见过的离冯·诺依曼计算机最远的背离。
+
+有许多迹象表明,应用式编程风格可以变得比冯·诺依曼风格更强大。因此,对于程序员来说,开发一类体现这种风格并避免似乎附着在基于 λ 演算的系统上的固有效率问题的新型历史敏感计算系统模型是很重要的。只有当这些模型及其应用式语言证明了它们优于传统语言时,我们才会有经济基础来开发能够最好地实现它们的新型计算机。也许只有到那时,我们才能在不受冯·诺依曼瓶颈限制的计算机设计中充分利用大规模集成电路。
+
+## 16. 总结
+
+本文前面的十五个章节可以总结如下:
+
+**第 1 节**。传统程序设计语言庞大、复杂且僵化。它们有限的表达能力不足以证明其规模和成本的合理性。
+
+**第 2 节**。作为程序设计语言基础的计算系统模型大致分为三类:(a) 简单操作模型(例如图灵机),(b) 应用式模型(例如 λ 演算),以及 (c) 冯·诺依曼模型(例如传统计算机和程序设计语言)。每类模型都有一个重要的困难: (a) 类的程序难以理解; (b) 类模型无法在程序之间保存信息; (c) 类模型的基础不可用,且程序在概念上没有帮助。
+
+**第 3 节**。冯·诺依曼计算机是围绕一个瓶颈构建的:连接 CPU 和存储器的“一次一词”管。由于程序必须通过冯·诺依曼瓶颈来回泵送大量词来对存储器进行整体改变,我们是在一种关注通过瓶颈的这种“一次一词”流量,而不是关注我们问题的更大概念单元的编程风格中成长起来的。
+
+**第 4 节**。传统语言基于冯·诺依曼计算机的编程风格。因此,变量 = 存储单元;赋值语句 = 取值、存储和算术运算;控制语句 = 跳转和测试指令。符号 “:=” 是语言上的冯·诺依曼瓶颈。在传统的冯·诺依曼语言中编程仍然关注通过这个稍微复杂一点的瓶颈的“一次一词”流量。冯·诺依曼语言还将编程划分为表达式世界和语句世界;前者是一个有序的世界,后者是一个无序的世界,结构化编程虽然对其进行了一些简化,但并未攻击分裂本身以及传统语言“一次一词”风格的根本问题。
+
+**第 5 节**。本节比较了一个冯·诺依曼内积程序和一个函数式内积程序。它说明了前者的许多问题和后者的优点:例如,冯·诺依曼程序是重复且“一次一词”的,仅适用于给定长度 $n$ 的两个名为 $a$ 和 $b$ 的向量,且只能通过使用具有复杂语义的过程序言来变得通用。函数式程序是非重复的,将向量视为单元,具有更强的层次化构造,完全通用,并通过组合高层内务算子来创建“内务”操作。它不命名其参数,因此不需要过程序言。
+
+**第 6 节**。程序设计语言包含一个框架加上一些可变部分。冯·诺依曼语言的框架要求大多数特性必须构建在其中;它只能容纳有限的可变部分(例如用户定义的过程),因为必须在“状态”及其转换规则中为可变部分的所有需求以及构建在框架中的所有特性提供详细规定。冯·诺依曼框架如此僵化的原因是其语义与状态耦合得太紧:计算的每个细节都会改变状态。
+
+**第 7 节**。冯·诺依曼语言的可变部分表达能力很弱;这就是为什么语言的大部分必须构建在框架中的原因。表达能力的缺乏源于冯·诺依曼语言无法有效地使用组合形式来构建程序,这反过来又源于表达式和语句之间的分裂。组合形式在表达式中表现最佳,但在冯·诺依曼语言中,一个表达式只能产生一个词;因此表达式世界的表达能力大部分丢失了。使用组合形式的进一步障碍是命名约定的复杂使用。
+
+**第 8 节**。APL 是第一种不基于 λ 演算、不是“一次一词”且使用函数式组合形式的语言。但它仍然保留了冯·诺依曼语言的许多问题。
+
+**第 9 节**。冯·诺依曼语言不具有用于程序推理的有益性质。公理语义和指称语义是描述和理解传统程序的精确工具,但它们只是谈论程序,而不能改变其笨拙的性质。与冯·诺依曼语言不同,普通代数的语言既适用于陈述其定律,也适用于将方程变换为其解,且这一切都在“语言”内部进行。
+
+**第 10 节**。在历史敏感语言中,一个程序可以通过改变由系统保存的某些存储器来影响后续程序的行为。任何此类语言都需要某种状态转换语义。但它不需要与状态紧密耦合的语义,即状态随计算的每个细节而改变。“应用式状态转换”(AST) 系统被提议作为冯·诺依曼系统的历史敏感替代方案。这些系统具有:(a) 松散耦合的状态转换语义,其中转换在每次主要计算中发生一次;(b) 简单的状态和转换规则;(c) 具有简单“规约”语义的底层应用式系统;以及 (d) 程序设计语言和状态转换规则均基于底层的应用式系统及其语义。接下来的四节描述了这种非冯·诺依曼语言和系统设计方法的元素。
+
+**第 11 节**。描述了一类不使用变量的非正式函数式编程 (FP) 系统。每个系统由对象、函数、函数式形式和定义构建而成。函数将对象映射为对象。函数式形式组合现有函数以形成新函数。本节列出了原语函数和函数式形式的示例,并给出了示例程序。它讨论了 FP 系统的局限性和优点。
+
+**第 12 节**。描述了一种“程序代数”,其变量范围涵盖 FP 系统的函数,其“运算”是系统的函数式形式。在列出约 24 条代数定律之后,给出了一个证明非重复矩阵乘法程序与递归程序等价的示例。下一小节陈述了两个“展开定理”的结果,它们“求解”了两类方程。这些解将此类方程中的“未知”函数表示为无限条件展开,这构成了对其行为的逐情况描述,并立即给出了终止的充分必要条件。这些结果被用于推导“递归定理”和“迭代定理”,它们为一些中等通用且有用的“线性”方程类别提供了现成的展开。使用这些定理的示例处理了:(a) 递归和迭代阶乘函数的正确性证明,以及 (b) 两个迭代程序等价性的证明。最后一个示例处理一个“二次”方程,并证明其解是一个幂等函数。下一小节给出了两个展开定理的证明。
+
+将与 FP 系统相关的代数与 λ 演算和其他应用式系统的相应代数进行了比较。比较显示了与更强大的经典系统相比,受到严格限制的 FP 系统所具有的一些优势。提出了关于将函数算法规约为无限展开以及在各种“惰性求值”方案中使用该代数的问题。
+
+**第 13 节**。本节描述了正式函数式编程 (FFP) 系统,它们扩展并精确化了 FP 系统的行为。它们的语义比经典系统更简单,并且可以通过简单的不动点论证证明其一致性。
+
+**第 14 节**。本节将 Algol 的结构与应用式状态转换 (AST) 系统的结构进行了比较。它描述了一个使用 FFP 系统作为其应用式子系统的 AST 系统。它描述了系统的简单状态和转换规则。描述了一个用于 AST 系统的微型自我保护系统程序,以及如何安装和使用它进行文件维护和运行用户程序。本节简要讨论了 AST 系统的变体以及可以在 AST 系统内定义和使用的函数式命名系统。
+
+**第 15 节**。本节简要讨论了关于应用式计算机构造的工作,以及开发和测试更实用的应用式系统模型作为此类设计未来基础的必要性。
+
+**致谢**。在与本文相关的早期工作中,我得到了 Paul R. McJones 和 Barry K. Rosen 的许多宝贵帮助和建议。在准备本文的过程中,我得到了大量的宝贵帮助和反馈。James N. Gray 在审阅初稿时非常慷慨地贡献了他的时间和知识。Stephen N. Zilles 也仔细阅读了初稿。两人在这个困难阶段都提出了许多宝贵的建议和批评。很高兴向他们表示感谢。我还与 Ronald Fagin、Paul R. McJones 和 James H. Morris, Jr. 就初稿进行了有益的讨论。Fagin 对定理的证明提出了一些改进建议。
+
+由于本文很大一部分包含技术材料,我请两位杰出的计算机科学家审阅了第三稿。David J. Gries 和 John C. Reynolds 欣然接受了这一繁重的任务。两人都给了我大量、详细的修正意见和总体评论,这使得最终版本(他们尚未有机会审阅)有了许多大大小小的改进。我衷心感谢他们为审阅本文所投入的慷慨时间和精力。
+
+最后,我还将第三稿的副本寄给了 Gyula A. Magó、Peter Naur 和 John H. Williams。他们欣然回应了许多极有帮助的评论和修正。北卡罗来纳大学的 Geoffrey A. Frank 和 Dave Tolle 审阅了 Magó 的副本,并指出了 FFP 系统语义函数定义中的一个重要错误。我衷心感谢所有这些好心人的帮助。
+
+## 参考文献
+
+1. Arvind, and Gostelow, K.P. A new interpreter for data flow schemas and its implications for computer architecture. Tech. Rep. No. 72, Dept. Comptr. Sci., U. of California, Irvine, Oct. 1975.
+2. Backus, J. Programming language semantics and closed applicative languages. Conf. Record ACM Symp. on Principles of Programming Languages, Boston, Oct. 1973, 71-86.
+3. Berkling, K.J. Reduction languages for reduction machines. Interner Bericht ISF-76-8, Gesellschaft für Mathematik und Datenverarbeitung MBH, Bonn, Sept. 1976.
+4. Burge, W.H. *Recursive Programming Techniques*, Addison-Wesley, Reading, Mass., 1975.
+5. Church, A. *The Calculi of Lambda-Conversion*. Princeton U. Press, Princeton, N.J., 1941.
+6. Curry, H.B., and Feys, R. *Combinatory Logic*, Vol. 1. North-Holland Pub. Co., Amsterdam, 1958.
+7. Dennis, J.B. First version of a data flow procedure language. Tech. Mem. No. 61, Lab. for Comptr. Sci., M.I.T., Cambridge, Mass., May 1973.
+8. Dijkstra, E.W. *A Discipline of Programming*. Prentice-Hall, Englewood Cliffs, N.J., 1976.
+9. Friedman, D.P., and Wise, D.S. CONS should not evaluate its arguments. In *Automata, Languages and Programming*, S. Michaelson and R. Milner, Eds., Edinburgh U. Press, Edinburgh, 1976, pp. 257-284.
+10. Henderson, P., and Morris, J.H. Jr. A lazy evaluator. Conf. Record Third ACM Symp. on Principles of Programming Languages, Atlanta, Ga., Jan. 1976, pp. 95-103.
+11. Hoare, C.A.R. An axiomatic basis for computer programming. *Comm. ACM 12*, 10 (Oct. 1969), 576-583.
+12. Iverson, K. *A Programming Language*. Wiley, New York, 1962.
+13. Kosinski, P. A data flow programming language. Rep. RC 4264, IBM T.J. Watson Research Ctr., Yorktown Heights, N.Y., March 1973.
+14. Landin, P.J. The mechanical evaluation of expressions. *Computer J. 6*, 4 (1964), 308-320.
+15. Magó, G.A. A network of microprocessors to execute reduction languages. To appear in *Int. J. Comptr. and Inform. Sci.*
+16. Manna, Z., Ness, S., and Vuillemin, J. Inductive methods for proving properties of programs. *Comm. ACM 16*, 8 (Aug. 1973) 491-502.
+17. McCarthy, J. Recursive functions of symbolic expressions and their computation by machine, Pt. 1. *Comm. ACM 3*, 4 (April 1960), 184-195.
+18. McJones, P. A Church-Rosser property of closed applicative languages. Rep. RJ 1589, IBM Res. Lab., San Jose, Calif., May 1975.
+19. Reynolds, J.C. GEDANKEN—a simple typeless language based on the principle of completeness and the reference concept. *Comm. ACM 13*, 5 (May 1970), 308-318.
+20. Reynolds, J.C. Notes on a lattice-theoretic approach to the theory of computation. Dept. Syst. and Inform. Sci., Syracuse U., Syracuse, N.Y., 1972.
+21. Scott, D. Outline of a mathematical theory of computation. *Proc. 4th Princeton Conf. on Inform. Sci. and Syst.*, 1970.
+22. Scott, D. Lattice-theoretic models for various type-free calculi. *Proc. Fourth Int. Congress for Logic, Methodology, and the Philosophy of Science*, Bucharest, 1972.
+23. Scott, D., and Strachey, C. Towards a mathematical semantics for computer languages. *Proc. Symp. on Comptrs. and Automata*, Polytechnic Inst. of Brooklyn, 1971.
+
+作者当时地址: John Backus, 91 Saint Germain Ave., San Francisco, CA 94114.
+
+---
+
+## 译注
+
+**文本与翻译说明**
+
+1. 〔译注1〕 **冯·诺依曼瓶颈 (von Neumann bottleneck)**: 这一术语由巴克斯在本次演讲中首次提出并命名,现已成为计算机体系结构中的经典术语,指 CPU 与存储器之间数据传输带宽受限的问题。
+2. **FP 记号说明**: 本译文在代码块中使用 Unicode 字符以尽可能接近原刊排版。主要记号对应如下:
+   - `∘` (U+2218): 函数组合 (Composition)
+   - `α` (U+03B1): 全应用 (Apply-to-all)
+   - `/` : 插入 (Insert)
+   - `⊥` (U+22A5): 底/未定义 (Bottom/Undefined)
+   - `≡` (U+2261): 定义/等价 (Definition/Equivalence)
+   - `→` (U+2192): 条件 (Condition)
+   - `[` , `]` : 构造 (Construction)
+   - `<` , `>` : 序列 (Sequence)
+   - `↑` (U+2191): 获取 (Fetch)
+   - `↓` (U+2193): 存储 (Store)
+   - `\bar{x}` (文中记作 $\bar{x}$): 常数函数 (Constant function)
+
+**背景与文化注**
+
+3. **约翰·巴克斯 (John Backus)**: 1924–2007,美国计算机科学家。他领导开发了世界上第一种高级编程语言 FORTRAN,并提出了描述程序设计语言语法的 BNF(巴克斯范式)。作为命令式编程(FORTRAN)的奠基人,他在图灵奖演讲中对自己亲手开启的范式进行深刻反思并转向函数式编程,这被视为计算机科学史上最著名的“华丽转身”之一。
+4. **APL 与 Iverson**: 肯尼斯·艾弗森 (Kenneth Iverson) 因 APL 语言获 1979 年图灵奖。APL 以其强大的数组处理能力和简洁的符号著称,对巴克斯设计 FP 系统产生了直接影响。
+5. **λ 演算与函数式编程**: 巴克斯在文中多次将 FP 系统与 λ 演算(Lisp 的基础)进行对比。他批评 λ 演算过于强大且缺乏代数性质,主张通过限制力量(避开变量和替换)来获得更易于推理的“程序代数”。
+6. **文中提到的学者**:
+   - **Dana Scott**: 1976 年图灵奖得主,指称语义的奠基人。
+   - **C. A. R. Hoare**: 1980 年图灵奖得主,公理语义(霍尔逻辑)的奠基人。
+   - **John McCarthy**: 1971 年图灵奖得主,Lisp 语言之父。
+   - **Edsger Dijkstra**: 1972 年图灵奖得主,结构化编程的倡导者。
+   - **Peter Naur**: 2005 年图灵奖得主,BNF 中的“N”。
+
+**OCR 与印刷勘误**
+
+7. 扫描件 OCR 对数学符号和 FP 记号的识别极差,本译文所有公式、定律和程序示例均对照原刊页面图像(CACM Vol. 21, No. 8)逐一重构。
+8. 参考文献 [19] 原刊印作 “6EDANI~N”,系 “GEDANKEN” 之误,已校正。
+9. 参考文献 [15] 原刊印作 “Mag6”,系 “Magó” 之误,已校正。
+10. 参考文献 [3] 原刊印作 “Bedding”,系 “Berkling” 之误,已校正。
 
