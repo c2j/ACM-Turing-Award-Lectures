@@ -34,6 +34,7 @@ languages:
     menus:
       main:
         - { name: 演讲, pageRef: /lectures, weight: 20 }
+        - { name: 图灵全集, pageRef: /papers, weight: 30 }
         - { name: 关于, pageRef: /about, weight: 50 }
 
 # The three Goldmark prerequisites OINK's native Markdown components depend on.

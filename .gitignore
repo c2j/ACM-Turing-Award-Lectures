@@ -1,6 +1,14 @@
 .DS_Store
 translated/
+papers/
 content/lectures/
+content/papers/
 static/
 .tools/
 .github/hooks/
+public/
+resources/
+.hugo_build.lock
+go.mod
+go.sum
+__pycache__/
