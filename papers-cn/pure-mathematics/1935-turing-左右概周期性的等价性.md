@@ -4,46 +4,46 @@
 
 > 作者:艾伦·图灵(A. M. Turing)〔译注1〕
 > 原载 *Journal of the London Mathematical Society*, Vol. 10(1935),pp. 284–285(本文于 1935 年 4 月 23 日收到,1935 年 4 月 25 日宣读)
-> 译自 `papers/Pure Mathematics. 2-North Holland (1992).pdf` 第 23–24 页(书页 1–2)(个人学习用途)
+> 译自 `papers/Pure Mathematics. 2-North Holland $1992$.pdf` 第 23–24 页(书页 1–2)(个人学习用途)
 
 在《群中的概周期函数》("Almost periodic functions in a group")一文中,J. v. 诺依曼†〔译注2〕曾独立地使用了左周期性与右周期性这两个概念。我将证明二者是等价的。
 
-f(x) 是一个复值函数,其变元 x 取遍任意群 $\mathfrak{G}$。〔译注3〕若对每个 $\varepsilon > 0$,都存在 $\mathfrak{G}$ 中有限个元素 $b_1, \ldots, b_m$,使得对 $\mathfrak{G}$ 中每个 $t$,都存在一个 $\mu = \mu(t)$ 满足
+f(x) 是一个复值函数,其变元 x 取遍任意群 \(\mathfrak{G}\)。〔译注3〕若对每个 \(\varepsilon > 0\),都存在 \(\mathfrak{G}\) 中有限个元素 \(b_1, \ldots, b_m\),使得对 \(\mathfrak{G}\) 中每个 \(t\),都存在一个 \(\mu = \mu(t)\) 满足
 
 $$|f(xt) - f(xb_\mu)| < \varepsilon \qquad \text{对所有 } x \in \mathfrak{G}, \tag{D}$$
 
-则称 $f(x)$ 为**右概周期的**(right almost periodic,缩写 r.a.p.)。
+则称 \(f(x)\) 为**右概周期的**(right almost periodic,缩写 r.a.p.)。
 
 把不等式 (D) 换成
 
-$$|f(tx) - f(b_\mu x)| < \varepsilon, \tag{D$'$}$$
+$$|f(tx) - f(b_\mu x)| < \varepsilon, \tag{D\('\)}$$
 
 就得到左概周期性的定义。
 
-设 $f(x)$ 是 r.a.p. 的。要证 $f(x)$ 是 l.a.p. 的,只需证明:对每个 $\varepsilon > 0$,存在 $\mathfrak{G}$ 中有限个元素 $c_1, \ldots, c_n$,使得对 $\mathfrak{G}$ 中每个 $s$,都存在一个 $\nu = \nu(s)$ 满足
+设 \(f(x)\) 是 r.a.p. 的。要证 \(f(x)\) 是 l.a.p. 的,只需证明:对每个 \(\varepsilon > 0\),存在 \(\mathfrak{G}\) 中有限个元素 \(c_1, \ldots, c_n\),使得对 \(\mathfrak{G}\) 中每个 \(s\),都存在一个 \(\nu = \nu(s)\) 满足
 
 $$|f(sb_\pi) - f(c_\nu b_\pi)| < \varepsilon \qquad \text{对每个 } \pi; \tag{K}$$
 
-因为这时,由 $f(x)$ 的 r.a.p. 性质,
+因为这时,由 \(f(x)\) 的 r.a.p. 性质,
 
 $$|f(sb_\mu) - f(st)| < \varepsilon,$$
 $$|f(c_\nu b_\mu) - f(c_\nu t)| < \varepsilon,$$
 
-其中 $\mu = \mu(t)$。在不等式 (K) 中取 $\pi = \mu(t)$,便得
+其中 \(\mu = \mu(t)\)。在不等式 (K) 中取 \(\pi = \mu(t)\),便得
 
 $$|f(st) - f(c_\nu t)| < 3\varepsilon \qquad \text{对每个 } t,$$
 
-即 $f(x)$ 是 l.a.p. 的。
+即 \(f(x)\) 是 l.a.p. 的。
 
-为证元素 $c_1, \ldots, c_n$ 的存在性,我们引入一个 $m$ 个复维数的空间 $R$。考虑 $R$ 中由这样的点 $P_x$ 组成的集 $S$:其坐标为 $[\,f(xb_1), \ldots, f(xb_m)\,]$($x$ 取遍 $\mathfrak{G}$)。$f(x)$ 既是 r.a.p. 的就是有界的\*;因此 $S$ 有界,可以用有限个直径为 $\varepsilon$ 的球覆盖,每个球都含有 $S$ 的某个点。设用这种方式得到的 $S$ 中元素的有限集为 $P_{c_1}, \ldots, P_{c_n}$;那么对 $\mathfrak{G}$ 中每个 $s$,存在 $\nu = \nu(s)$ 使得 $P_s$ 与 $P_{c_\nu}$ 的距离小于 $\varepsilon$;于是,对每个 $\mu$,
+为证元素 \(c_1, \ldots, c_n\) 的存在性,我们引入一个 \(m\) 个复维数的空间 \(R\)。考虑 \(R\) 中由这样的点 \(P_x\) 组成的集 \(S\):其坐标为 \([\,f(xb_1), \ldots, f(xb_m)\,]\)(\(x\) 取遍 \(\mathfrak{G}\))。\(f(x)\) 既是 r.a.p. 的就是有界的\*;因此 \(S\) 有界,可以用有限个直径为 \(\varepsilon\) 的球覆盖,每个球都含有 \(S\) 的某个点。设用这种方式得到的 \(S\) 中元素的有限集为 \(P_{c_1}, \ldots, P_{c_n}\);那么对 \(\mathfrak{G}\) 中每个 \(s\),存在 \(\nu = \nu(s)\) 使得 \(P_s\) 与 \(P_{c_\nu}\) 的距离小于 \(\varepsilon\);于是,对每个 \(\mu\),
 
 $$|f(sb_\mu) - f(c_\nu b_\mu)| < \varepsilon,$$
 
-即 $c_1, \ldots, c_n$ 具有所需的性质。
+即 \(c_1, \ldots, c_n\) 具有所需的性质。
 
-这样,$f(x)$ 是 r.a.p. 的就蕴涵 $f(x)$ 是 l.a.p. 的;反过来同理可证,或者利用逆群即可。〔译注4〕于是,v. 诺依曼的理论现在便可用来证明每个 l.a.p. 函数都有唯一的左平均值。〔译注5〕
+这样,\(f(x)\) 是 r.a.p. 的就蕴涵 \(f(x)\) 是 l.a.p. 的;反过来同理可证,或者利用逆群即可。〔译注4〕于是,v. 诺依曼的理论现在便可用来证明每个 l.a.p. 函数都有唯一的左平均值。〔译注5〕
 
-群中 a.p. 函数的理论现在可以搬到允许群作传递变换的对象集上。〔译注6〕设 $\Omega$ 是一个允许群 $\mathfrak{G}$ 作(左)变换的对象集。用小写哥特字母表示 $\Omega$ 的元素。于是,$\Omega$ 上的函数 $f(\mathfrak{r})$ 对应于 $\mathfrak{G}$ 上的一个函数 $f(x)$,定义为 $f(x) = f(\mathfrak{r})$,只要 $x\mathfrak{t} = \mathfrak{r}$,其中 $\mathfrak{t}$ 是 $\Omega$ 中某个固定的元素。若 $f(x)$ 是 l.a.p. 的,则称 $f(\mathfrak{r})$ 是 a.p. 的,从而它有唯一的左平均值。
+群中 a.p. 函数的理论现在可以搬到允许群作传递变换的对象集上。〔译注6〕设 \(\Omega\) 是一个允许群 \(\mathfrak{G}\) 作(左)变换的对象集。用小写哥特字母表示 \(\Omega\) 的元素。于是,\(\Omega\) 上的函数 \(f(\mathfrak{r})\) 对应于 \(\mathfrak{G}\) 上的一个函数 \(f(x)\),定义为 \(f(x) = f(\mathfrak{r})\),只要 \(x\mathfrak{t} = \mathfrak{r}\),其中 \(\mathfrak{t}\) 是 \(\Omega\) 中某个固定的元素。若 \(f(x)\) 是 l.a.p. 的,则称 \(f(\mathfrak{r})\) 是 a.p. 的,从而它有唯一的左平均值。
 
 King's College,
 Cambridge.

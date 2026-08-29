@@ -4,7 +4,7 @@
 
 > 作者:A. M. 图灵(A. M. Turing);编者说明:R. O. 甘迪(R. O. Gandy)
 > 未刊稿:81 页无编号打字页,另在各处夹入 22 页手写页;工作当与已刊《类型理论的实用形式》(JSL 13, 1948)同时,1944 年间或之前已近完稿,1946 年前后尚在补写;收于 R. O. Gandy、C. E. M. Yates 编 *Collected Works of A.M. Turing: Mathematical Logic*,North-Holland/Elsevier,2001,印刷页 207–209(PDF 页 220–223;印刷页 210 为衬页)
-> 译自 `papers/Mathematical Logic-Elsevier (2001).pdf`(个人学习用途)
+> 译自 `papers/Mathematical Logic-Elsevier $2001$.pdf`(个人学习用途)
 >
 > 体例说明:本单元全部为甘迪对该未刊续稿的提要,缩进引文系直接摘录图灵原稿。公式上标与推导符号 OCR 损伤较重,译文按上下文复原,未能确证处以〔译注N〕标明,详见文末;本会话模型无法读图,涉符号处均留待书影复核。
 
