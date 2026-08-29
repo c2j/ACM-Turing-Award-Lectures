@@ -4,7 +4,7 @@
 
 > 作者:J. L. 布里顿(J. L. Britton)
 > 原载:*Collected Works of A.M. Turing: Pure Mathematics* 卷首,书页 xvii
-> 译自 `papers/Pure Mathematics. 2-North Holland (1992).pdf` 第 17 页(个人学习用途;PDF 第 16、18 页为空白隔页)
+> 译自 `papers/Pure Mathematics. 2-North Holland $1992$.pdf` 第 17 页(个人学习用途;PDF 第 16、18 页为空白隔页)
 
 1951 年 9 月至 1953 年 8 月,我在曼彻斯特大学读研究生。图灵当时的职位是计算机器实验室副主任(Deputy Director of the Computing Machine Laboratory);因此他形式上并不在数学教员编制之内,但实际上他是这个系里耀眼的明星。那是一个阵容极为强大的系:M. H. A. 纽曼、M. J. 莱特希尔、M. S. 巴特利特、库尔特·马勒、G. I. 卡姆、B. H. 诺依曼、C. R. 伊林沃思、F. G. 弗里德兰德、瓦尔特·莱德曼、格雷厄姆·希格曼、H. G. 霍普金斯、G. E. H. 罗伊特、A. H. 斯通、埃里克·怀尔德、塞缪尔·莱文、D. S. 琼斯、P. J. 希尔顿、J. E. 莫亚尔、F. D. 卡恩、G. E. 沃尔、J. A. 格林、M. B. 格劳特、亚埃尔·N. 道克、R. K. 利夫斯利与 A. M. 沃克。〔译注1〕
 

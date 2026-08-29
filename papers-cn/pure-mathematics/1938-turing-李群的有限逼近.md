@@ -4,33 +4,33 @@
 
 > 作者:艾伦·图灵(A. M. Turing)〔译注1〕
 > 原载 *Annals of Mathematics*, Second Series, Vol. 39, No. 1(1938 年 1 月),pp. 105–111(1937 年 4 月 28 日收到,1937 年 9 月 29 日修订)
-> 译自 `papers/Pure Mathematics. 2-North Holland (1992).pdf` 第 25–31 页(书页 3–9)(个人学习用途)
+> 译自 `papers/Pure Mathematics. 2-North Holland $1992$.pdf` 第 25–31 页(书页 3–9)(个人学习用途)
 
 我们将讨论"一个有限群可以在某种意义上逼近一个度量群的结构"这句话的一种确切含义。〔译注2〕由于有限线性变换群的若尔当定理¹,〔译注3〕很明显,我们不能指望用有限子群去逼近一般的李群。我将证明:甚至连"近似子群"("approximately subgroups")也无法用来逼近——事实上,可逼近的李群只有紧致阿贝尔群。解决问题的关键仍是若尔当定理,但它不能直接应用,必须为逼近群找到那样的表示,其次数只依赖于被逼近的群。
 
 ## 度量群的可逼近性
 
-设 $G$ 是带度量 $D$ 的群,$D$ 在左平移下不变,即对 $G$ 中所有 $x, y, \alpha$ 有 $D(\alpha x, \alpha y) = D(x, y)$。设 $H_\varepsilon$ 是 $G$ 的一个有限子集,其上定义了第二种乘法,使它对此构成一个群(若 $a$、$b$ 属于 $H_\varepsilon$,则它们作为 $G$ 中元素的乘积记作 $ab$;作为 $H_\varepsilon$ 中元素的乘积记作 $a \circ b$;$a$ 作为 $H_\varepsilon$ 中元素的逆记作 $[a]^{-1}$;$G$ 与 $H_\varepsilon$ 的单位元分别记作 $e$、$e_\varepsilon$),并设 $G$ 的每个元素 $x$ 与 $H_\varepsilon$ 的某个元素 $r(x)$ 相距不超过 $\varepsilon$,且对 $H_\varepsilon$ 中每对 $a, b$ 有 $D(a \circ b, ab) < \varepsilon$。这时称 $H_\varepsilon$ 是 $G$ 的一个 **$\varepsilon$-逼近**(ε-approximation)。
+设 \(G\) 是带度量 \(D\) 的群,\(D\) 在左平移下不变,即对 \(G\) 中所有 \(x, y, \alpha\) 有 \(D(\alpha x, \alpha y) = D(x, y)\)。设 \(H_\varepsilon\) 是 \(G\) 的一个有限子集,其上定义了第二种乘法,使它对此构成一个群(若 \(a\)、\(b\) 属于 \(H_\varepsilon\),则它们作为 \(G\) 中元素的乘积记作 \(ab\);作为 \(H_\varepsilon\) 中元素的乘积记作 \(a \circ b\);\(a\) 作为 \(H_\varepsilon\) 中元素的逆记作 \([a]^{-1}\);\(G\) 与 \(H_\varepsilon\) 的单位元分别记作 \(e\)、\(e_\varepsilon\)),并设 \(G\) 的每个元素 \(x\) 与 \(H_\varepsilon\) 的某个元素 \(r(x)\) 相距不超过 \(\varepsilon\),且对 \(H_\varepsilon\) 中每对 \(a, b\) 有 \(D(a \circ b, ab) < \varepsilon\)。这时称 \(H_\varepsilon\) 是 \(G\) 的一个 **\(\varepsilon\)-逼近**(ε-approximation)。
 
-一个群,若对每个 $\varepsilon > 0$ 都有一个 $\varepsilon$-逼近,就称它是**可逼近的**(approximable)。
+一个群,若对每个 \(\varepsilon > 0\) 都有一个 \(\varepsilon\)-逼近,就称它是**可逼近的**(approximable)。
 
-由定义立即可见,可逼近的群是全有界的,即条件紧的。〔译注4〕因此可以找到一个既左不变又右不变、且与原度量等价的度量(等价的意义是两种度量决定同一开集类)。今后我们总假定所取的度量是双向不变的,并把 $x$ 与 $y$ 的距离记作 $D(x, y)$。
+由定义立即可见,可逼近的群是全有界的,即条件紧的。〔译注4〕因此可以找到一个既左不变又右不变、且与原度量等价的度量(等价的意义是两种度量决定同一开集类)。今后我们总假定所取的度量是双向不变的,并把 \(x\) 与 \(y\) 的距离记作 \(D(x, y)\)。
 
-J. v. 诺依曼²已证明:对一个条件紧的群,可以为群上每个(复值)连续函数定义一种平均值,使得(把 $f(x)$ 的平均值记作 $\int f(x)\,dx$)
+J. v. 诺依曼²已证明:对一个条件紧的群,可以为群上每个(复值)连续函数定义一种平均值,使得(把 \(f(x)\) 的平均值记作 \(\int f(x)\,dx\))
 
 $$\int (f(x) + g(x))\,dx = \int f(x)\,dx + \int g(x)\,dx, \qquad \int f(ax)\,dx = \int f(xa)\,dx = \int f(x)\,dx,$$
 
-并且使得:若 $\varepsilon > 0$(且 $f(x)$ 连续),则存在 $G$ 中有限个元素 $a_1, a_2, \ldots, a_\nu$,使
+并且使得:若 \(\varepsilon > 0\)(且 \(f(x)\) 连续),则存在 \(G\) 中有限个元素 \(a_1, a_2, \ldots, a_\nu\),使
 
 $$\Bigl|\, \frac{1}{\nu}\sum_{i=1}^{\nu} f(xa_i) - \int f(x)\,dx \,\Bigr| < \varepsilon \tag{1}$$
 
-对 $G$ 的每个元素 $x$ 成立。〔译注5〕
+对 \(G\) 的每个元素 \(x\) 成立。〔译注5〕
 
-在着手证明主要定理之前,我们先建立两个初等不等式。设函数 $r(x)$ 属于 $G$ 的某个 $\varepsilon$-逼近 $H_\varepsilon$,则
+在着手证明主要定理之前,我们先建立两个初等不等式。设函数 \(r(x)\) 属于 \(G\) 的某个 \(\varepsilon\)-逼近 \(H_\varepsilon\),则
 
 $$D(r(x) \circ r(y),\, xy) \le D(r(x) \circ r(y),\, r(x)r(y)) + D(r(x)r(y),\, xr(y)) + D(xr(y),\, xy) < 3\varepsilon, \tag{2}$$
 
-而对 $H_\varepsilon$ 中任意 $a, c$ 有
+而对 \(H_\varepsilon\) 中任意 \(a, c\) 有
 
 $$D(c \circ a \circ [c]^{-1},\, cac^{-1}) < 4\varepsilon, \tag{3}$$
 
@@ -40,9 +40,9 @@ $$D(c \circ a \circ [c]^{-1},\, cac^{-1}) < D(ca[c]^{-1},\, cac^{-1}) + 2\vareps
 $$\le D([c]^{-1} \circ c,\, [c]^{-1}c) + D(e_\varepsilon,\, e) + 2\varepsilon \le D(e_\varepsilon,\, e) + 3\varepsilon$$
 $$= D(e_\varepsilon^2,\, e_\varepsilon) + 3\varepsilon \le D(e_\varepsilon \circ e_\varepsilon,\, e_\varepsilon) + 4\varepsilon = 4\varepsilon.$$
 
-**定理 1.** 设 $G$ 是可逼近的群,并有一个次数为 $n$ 的忠实连续矩阵表示。〔译注6〕则它可以用带同样次数 $n$ 的忠实表示的有限群来逼近。
+**定理 1.** 设 \(G\) 是可逼近的群,并有一个次数为 \(n\) 的忠实连续矩阵表示。〔译注6〕则它可以用带同样次数 \(n\) 的忠实表示的有限群来逼近。
 
-**引理.** 设 $H_\eta$ 是群 $G$ 的一个 $\eta$-逼近(其阶为 $h_\eta$),$f(x)$ 是 $G$ 上满足下述条件的连续函数:
+**引理.** 设 \(H_\eta\) 是群 \(G\) 的一个 \(\eta\)-逼近(其阶为 \(h_\eta\)),\(f(x)\) 是 \(G\) 上满足下述条件的连续函数:
 
 $$|f(x) - f(x')| < \Delta \qquad \text{当 } D(x, x') < \eta \text{ 时},$$
 
@@ -54,15 +54,15 @@ $$\Bigl|\, \frac{1}{h_\eta}\sum_{h \in H_\eta} f(h) - \int f(x)\,dx \,\Bigr| \le
 
 $$\frac{1}{h_\eta}\sum_{h \in H_\eta} f(h) = B, \qquad \int f(x)\,dx = A,$$
 
-那么给定 $\varepsilon > 0$,存在 $a_1, a_2, \ldots, a_\nu$ 使
+那么给定 \(\varepsilon > 0\),存在 \(a_1, a_2, \ldots, a_\nu\) 使
 
 $$\Bigl|\, \frac{1}{\nu}\sum_{i=1}^{\nu} f(xa_i) - A \,\Bigr| < \varepsilon \tag{5}$$
 
-对 $G$ 的每个元素 $x$ 成立。在 (5) 中依次取 $x$ 为 $H_\eta$ 的每个元素,并把所得各不等式合并,便得
+对 \(G\) 的每个元素 \(x\) 成立。在 (5) 中依次取 \(x\) 为 \(H_\eta\) 的每个元素,并把所得各不等式合并,便得
 
 $$\Bigl|\, \frac{1}{\nu}\sum_{i=1}^{\nu} f(ca_i) - A \,\Bigr| < \varepsilon;$$
 
-但 $D(ca_i,\, c \circ r(a_i)) < 2\eta$,故 $|f(ca_i) - f(c \circ r(a_i))| < 2\Delta$,因此
+但 \(D(ca_i,\, c \circ r(a_i)) < 2\eta\),故 \(|f(ca_i) - f(c \circ r(a_i))| < 2\Delta\),因此
 
 $$\Bigl|\, \frac{1}{h_\eta}\sum_{c \in H_\eta} \frac{1}{\nu}\sum_{i=1}^{\nu} f(c \circ r(a_i)) - A \,\Bigr| < \varepsilon + 2\Delta; \tag{6}$$
 
@@ -70,26 +70,26 @@ $$\Bigl|\, \frac{1}{h_\eta}\sum_{c \in H_\eta} \frac{1}{\nu}\sum_{i=1}^{\nu} f(c
 
 $$\frac{1}{h_\eta}\sum_{c \in H_\eta} f(c \circ r(a_i)) = B,$$
 
-于是 (6) 便给出 (4),因为 $\varepsilon$ 是任意的。
+于是 (6) 便给出 (4),因为 \(\varepsilon\) 是任意的。
 
 ## 定理的证明
 
-不妨设所给表示不包含任何多于一次的不可约成分。令 $\chi(x)$ 为该表示的特征标。这个函数将满足
+不妨设所给表示不包含任何多于一次的不可约成分。令 \(\chi(x)\) 为该表示的特征标。这个函数将满足
 
 $$\chi(x) = \int_G \chi(xy)\bar{\chi}(y)\,dy, \tag{7}$$
 $$\chi(x) = \chi(cxc^{-1}), \tag{8}$$
 $$|\chi(x)| \le n, \tag{9}$$
 
-又由于它是忠实表示的特征标,当 $x \ne e$ 时
+又由于它是忠实表示的特征标,当 \(x \ne e\) 时
 
 $$\chi(x) \ne \chi(e) = n.$$
 
-取 $\varepsilon > 0$。则存在某个 $\alpha$,$1 > \alpha > 0$,使当 $D(x, e) \ge \varepsilon$ 时 $|\chi(x) - n| > \alpha$。〔译注7〕再取 $\eta$ 满足 $\varepsilon/16 > \eta > 0$,并使
+取 \(\varepsilon > 0\)。则存在某个 \(\alpha\),\(1 > \alpha > 0\),使当 \(D(x, e) \ge \varepsilon\) 时 \(|\chi(x) - n| > \alpha\)。〔译注7〕再取 \(\eta\) 满足 \(\varepsilon/16 > \eta > 0\),并使
 
 $$|\chi(x) - \chi(x')| < \frac{\alpha}{50n^2} \qquad \text{当 } D(x, x') < 4\eta \text{ 时}, \tag{10}$$
 $$|\chi(ay)\bar{\chi}(y) - \chi(ay')\bar{\chi}(y')| < \frac{\alpha}{50n} \qquad \text{对一切 } a,\ \text{当 } D(y, y') < 2\eta \text{ 时}, \tag{11}$$
 
-然后取一个相应的 $\eta$-逼近 $H_\eta$。若令
+然后取一个相应的 \(\eta\)-逼近 \(H_\eta\)。若令
 
 $$\varphi(a) = \frac{1}{h_\eta}\sum_{c \in H_\eta} \chi(c \circ a \circ [c]^{-1}), \tag{12}$$
 
@@ -97,13 +97,13 @@ $$\varphi(a) = \frac{1}{h_\eta}\sum_{c \in H_\eta} \chi(c \circ a \circ [c]^{-1}
 
 $$\frac{1}{h_\eta}\sum_{c \in H_\eta} \bigl|\, \chi(c \circ a \circ [c]^{-1}) - \chi(cac^{-1}) \,\bigr| < \frac{\alpha}{50n^2}, \tag{13}$$
 
-因为由 (3) 有 $D(c \circ a \circ [c]^{-1},\, cac^{-1}) < 4\eta$,从而每一被加项都小于 $\alpha/(50n^2)$。我们有
+因为由 (3) 有 \(D(c \circ a \circ [c]^{-1},\, cac^{-1}) < 4\eta\),从而每一被加项都小于 \(\alpha/(50n^2)\)。我们有
 
 $$\frac{1}{h_\eta}\sum_{b \in H_\eta} \varphi(a \circ b)\bar{\varphi}(b) - \chi(a)$$
 $$= \frac{1}{h_\eta}\sum_{b \in H_\eta} \bigl(\varphi(a \circ b)\bar{\varphi}(b) - \chi(a \circ b)\bar{\chi}(b)\bigr) + \frac{1}{h_\eta}\sum_{b \in H_\eta} \bigl(\chi(a \circ b) - \chi(ab)\bigr)\bar{\chi}(b)$$
 $$+ \Bigl[\, \frac{1}{h_\eta}\sum_{b \in H_\eta} \chi(ab)\bar{\chi}(b) - \int \chi(ay)\bar{\chi}(y)\,dy \Bigr] + \Bigl[\, \int \chi(ay)\bar{\chi}(y)\,dy - \chi(a) \Bigr]. \tag{14}$$
 
-对 $\chi(ay)\bar{\chi}(y)$ 应用引理并利用 (11),得
+对 \(\chi(ay)\bar{\chi}(y)\) 应用引理并利用 (11),得
 
 $$\Bigl|\, \frac{1}{h_\eta}\sum_{b \in H_\eta} \chi(ab)\bar{\chi}(b) - \int \chi(ay)\bar{\chi}(y)\,dy \,\Bigr| \le \frac{2\alpha}{50n}; \tag{15}$$
 
@@ -111,7 +111,7 @@ $$\Bigl|\, \frac{1}{h_\eta}\sum_{b \in H_\eta} \chi(ab)\bar{\chi}(b) - \int \chi
 
 $$\Bigl|\, \frac{1}{h_\eta}\sum_{b \in H_\eta} \bigl(\chi(a \circ b) - \chi(ab)\bigr)\bar{\chi}(b) \,\Bigr| \le \frac{\alpha}{50n}; \tag{16}$$
 
-又〔由 (13) 及 $|\varphi| \le n$〕
+又〔由 (13) 及 \(|\varphi| \le n\)〕
 
 $$\Bigl|\, \frac{1}{h_\eta}\sum_{b \in H_\eta} \bigl(\varphi(a \circ b)\bar{\varphi}(b) - \chi(a \circ b)\bar{\chi}(b)\bigr) \,\Bigr| \le \frac{2\alpha}{50n}; \tag{17}$$
 
@@ -121,23 +121,23 @@ $$\Bigl|\, \frac{1}{h_\eta}\sum_{b \in H_\eta} \varphi(a \circ b)\bar{\varphi}(b
 
 $$\Bigl|\, \frac{1}{h_\eta}\sum_{b \in H_\eta} \varphi(a \circ b)\bar{\varphi}(b) - \varphi(a) \,\Bigr| \le \frac{\alpha}{8n}. \tag{19}$$
 
-现在,对 $H_\eta$ 中每对 $a, c$ 有 $\varphi(a) = \varphi(c \circ a \circ [c]^{-1})$。〔译注8〕因此这个函数可以写成特征标之和
+现在,对 \(H_\eta\) 中每对 \(a, c\) 有 \(\varphi(a) = \varphi(c \circ a \circ [c]^{-1})\)。〔译注8〕因此这个函数可以写成特征标之和
 
 $$\varphi(a) = \sum_{\lambda=1}^{M} \alpha_\lambda \chi_\lambda(a),$$
 
-其中 $\chi_\lambda$ 取遍 $H_\eta$ 的不可约表示的特征标。由有限群表示的一般理论,
+其中 \(\chi_\lambda\) 取遍 \(H_\eta\) 的不可约表示的特征标。由有限群表示的一般理论,
 
 $$\frac{1}{h_\eta}\sum_{b \in H_\eta} \chi_\lambda(ab)\bar{\chi}_\lambda(b) = \mu_\lambda \chi_\lambda(a),$$
 
-其中 $\mu_\lambda$ 为常数。〔译注8〕于是 (19) 便成为
+其中 \(\mu_\lambda\) 为常数。〔译注8〕于是 (19) 便成为
 
 $$\Bigl|\, \sum_{\lambda=1}^{M} \alpha_\lambda(\bar{\alpha}_\lambda \mu_\lambda - 1)\chi_\lambda(a) \,\Bigr| \le \frac{\alpha}{8n}.$$
 
-把不等式两边平方并对 $H_\eta$ 求和,得
+把不等式两边平方并对 \(H_\eta\) 求和,得
 
 $$\sum_{\lambda=1}^{M} |\alpha_\lambda|^2\,|\bar{\alpha}_\lambda \mu_\lambda - 1|^2 \le \frac{\alpha^2}{64n^2}.$$
 
-若用下式定义 $\psi(a)$:〔译注9〕
+若用下式定义 \(\psi(a)\):〔译注9〕
 
 $$\psi(a) = \sum_{\lambda=1}^{M} \beta_\lambda \chi_\lambda(a),$$
 
@@ -149,19 +149,19 @@ $$\frac{1}{h_\eta}\sum_{b \in H_\eta} \psi(a \circ b)\bar{\psi}(b) = \psi(a), \t
 
 $$|\psi(a) - \varphi(a)|^2 \le \frac{4}{16n^2} \sum_{\lambda=1}^{M} |\alpha_\lambda|^2\,|1 - \alpha_\lambda|. \tag{21}$$
 
-我们现在想从不等式 (21) 推出:函数 $\psi(a)$ 与 $\varphi(a)$ 在 $H_\eta$ 的每一点上都相差很小。这要靠关系式 (19)、(20) 才能做到。事实上
+我们现在想从不等式 (21) 推出:函数 \(\psi(a)\) 与 \(\varphi(a)\) 在 \(H_\eta\) 的每一点上都相差很小。这要靠关系式 (19)、(20) 才能做到。事实上
 
 $$\Bigl|\, \frac{1}{h_\eta}\sum_{b \in H_\eta} \bigl(\psi(a \circ b)\bar{\psi}(b) - \varphi(a \circ b)\bar{\varphi}(b)\bigr) \,\Bigr| \le \frac{1}{4n}\Bigl(\frac{\alpha}{8n} + \frac{\alpha}{10n}\Bigr), \tag{22}$$
 
-因为对 $H_\eta$ 中每个 $b$ 有 $|\psi(b)| \le n$、$|\varphi(b)| \le n$。现在把 (18)、(20)、(22) 结合起来,便得
+因为对 \(H_\eta\) 中每个 \(b\) 有 \(|\psi(b)| \le n\)、\(|\varphi(b)| \le n\)。现在把 (18)、(20)、(22) 结合起来,便得
 
 $$|\psi(a) - \chi(a)| < \frac{\alpha}{10n}.$$
 
-这就蕴涵 $\psi(e_\eta) = \chi(e) = n$,并且当 $D(a, e) \ge \varepsilon$ 时 $\psi(a) \ne \chi(e) = \psi(e_\eta)$。〔译注10〕于是 $\psi(a) = \psi(e_\eta)$ 只对某个自共轭(正规)子群 $N$ 中的元素成立,而 $N$ 整个落在离 $G$ 的单位元不超过 $\varepsilon$ 的范围内。商群有一个次数为 $n$ 的忠实表示,我将证明它可取为 $G$ 的一个 $\varepsilon$-逼近。我们在 $N$ 的每个陪集中各选一个元素作为该陪集的代表,并定义函数 $v(a)$($a$ 属于 $H_\eta$)为 $a$ 所在陪集的代表。元素 $v(a)$ 的全体称为 $K$。令 $v(a) \otimes v(b) = v(a \circ b)$,$K$ 关于乘法 $\otimes$ 构成一个群。对 $H_\eta$ 中每个 $a$,存在 $N$ 中元素 $m$ 使 $v(a) = a \circ m$,因此
+这就蕴涵 \(\psi(e_\eta) = \chi(e) = n\),并且当 \(D(a, e) \ge \varepsilon\) 时 \(\psi(a) \ne \chi(e) = \psi(e_\eta)\)。〔译注10〕于是 \(\psi(a) = \psi(e_\eta)\) 只对某个自共轭(正规)子群 \(N\) 中的元素成立,而 \(N\) 整个落在离 \(G\) 的单位元不超过 \(\varepsilon\) 的范围内。商群有一个次数为 \(n\) 的忠实表示,我将证明它可取为 \(G\) 的一个 \(\varepsilon\)-逼近。我们在 \(N\) 的每个陪集中各选一个元素作为该陪集的代表,并定义函数 \(v(a)\)(\(a\) 属于 \(H_\eta\))为 \(a\) 所在陪集的代表。元素 \(v(a)\) 的全体称为 \(K\)。令 \(v(a) \otimes v(b) = v(a \circ b)\),\(K\) 关于乘法 \(\otimes\) 构成一个群。对 \(H_\eta\) 中每个 \(a\),存在 \(N\) 中元素 \(m\) 使 \(v(a) = a \circ m\),因此
 
 $$D(a, v(a)) \le D(a, am) + D(am, a \circ m) < \varepsilon + \eta.$$
 
-从而若令 $R(x) = v(r(x))$,便有
+从而若令 \(R(x) = v(r(x))\),便有
 
 $$D(R(x), x) \le D(v(r(x)), r(x)) + D(r(x), x) < (\varepsilon + \eta) + \eta < \varepsilon,$$
 
@@ -169,34 +169,34 @@ $$D(R(x), x) \le D(v(r(x)), r(x)) + D(r(x), x) < (\varepsilon + \eta) + \eta < \
 
 $$D(v(a) \otimes v(b),\, v(a)v(b)) \le D(v(a \circ b), a \circ b) + D(a \circ b, ab) + D(ab, v(a)v(b)) < 3(\varepsilon + \eta) + \eta < \varepsilon,$$
 
-这就表明 $K$ 是 $G$ 的一个 $\varepsilon$-逼近。
+这就表明 \(K\) 是 \(G\) 的一个 \(\varepsilon\)-逼近。
 
 **定理 2.** 可逼近的李群是紧致且阿贝尔的。
 
 **引理.** 连通群的闭子群其指数不能大于 1。
 
-设 $H$ 是 $G$ 的闭子群且指数为 $i$,$1 < i < \infty$。则 $G - H$ 非空且是闭的,因为它是有限个闭集(即 $H$ 的各陪集)之和。于是 $G$ 是两个不相交的非空闭集之和,因此不连通。
+设 \(H\) 是 \(G\) 的闭子群且指数为 \(i\),\(1 < i < \infty\)。则 \(G - H\) 非空且是闭的,因为它是有限个闭集(即 \(H\) 的各陪集)之和。于是 \(G\) 是两个不相交的非空闭集之和,因此不连通。
 
-若 $G$ 是紧李群,它就不能有异于全群的正测度闭子群。
+若 \(G\) 是紧李群,它就不能有异于全群的正测度闭子群。
 
-**定理的证明.** 可逼近的李群是完备且条件紧的,即它是紧致的,因此〔由 v. 诺依曼³〕它是一个线性变换群,设其次数为 $n$。由定理 1,我们可以用带 $n$ 次线性变换表示的有限群 $H_\eta$ 逼近它。但由若尔当定理⁴,〔译注3〕每个有限线性变换群都有一个阿贝尔子群,其指数不超过某个只依赖于次数的界 $Z(n)$。令 $A_\eta$ 是 $H_\eta$ 中的这个阿贝尔子群。那么存在 $H_\eta$ 中有限个元素 $c_1, c_2, \ldots, c_N$($N \le Z(n)$),使 $H_\eta$ 的每个元素都形如 $c_i \circ a$,其中 $a$ 属于 $A_\eta$。对 $G$ 中任意 $x$,我们有
+**定理的证明.** 可逼近的李群是完备且条件紧的,即它是紧致的,因此〔由 v. 诺依曼³〕它是一个线性变换群,设其次数为 \(n\)。由定理 1,我们可以用带 \(n\) 次线性变换表示的有限群 \(H_\eta\) 逼近它。但由若尔当定理⁴,〔译注3〕每个有限线性变换群都有一个阿贝尔子群,其指数不超过某个只依赖于次数的界 \(Z(n)\)。令 \(A_\eta\) 是 \(H_\eta\) 中的这个阿贝尔子群。那么存在 \(H_\eta\) 中有限个元素 \(c_1, c_2, \ldots, c_N\)(\(N \le Z(n)\)),使 \(H_\eta\) 的每个元素都形如 \(c_i \circ a\),其中 \(a\) 属于 \(A_\eta\)。对 \(G\) 中任意 \(x\),我们有
 
 $$D(x, r(x)) < \eta,$$
 $$r(x) = c_i \circ a, \qquad a \in A_\eta,\ i \le N,$$
 $$D(c_i a, c_i \circ a) < \eta.$$
 
-因此 $G$ 的每个元素都形如 $c_i a d$,其中 $d$ 与 $G$ 的单位元相距不超过 $2\eta$,且 $i \le N$。这些点 $ad$ 必定构成一个测度至少为 $1/Z(n)$ 的集 $E_\eta$。现在取 $x = ad$、$y = a'd'$:
+因此 \(G\) 的每个元素都形如 \(c_i a d\),其中 \(d\) 与 \(G\) 的单位元相距不超过 \(2\eta\),且 \(i \le N\)。这些点 \(ad\) 必定构成一个测度至少为 \(1/Z(n)\) 的集 \(E_\eta\)。现在取 \(x = ad\)、\(y = a'd'\):
 
 $$D(xy, yx) = D(ada'd', a'd'ad)$$
 $$\le 2D(d, d') + D(a \circ a', aa') + D(aa', a \circ a') + D(aa', a'a) < 6\eta. \tag{23}$$
 
-于是在乘积群 $G \times G$ 中,我们有一个测度至少为 $1/(Z(n))^2$ 的点对 $(x, y)$ 的集 $E_\eta \times E_\eta$,在其中 $D(xy, yx) < 6\eta$。现在取趋于 0 的序列 $\eta_i$,并令 $F_i = E_{\eta_i} \times E_{\eta_i}$、$E = \bigcap_i F_i$。由于诸 $F_i$ 是递降序列,故 $mE \ge 1/(Z(n))^2$。若 $(x, y)$ 属于 $E$,则对每个 $i$ 有 $D(xy, yx) < 6\eta_i$;但 $i$ 是任意的,所以 $D(xy, yx) = 0$,即 $xy = yx$。
+于是在乘积群 \(G \times G\) 中,我们有一个测度至少为 \(1/(Z(n))^2\) 的点对 \((x, y)\) 的集 \(E_\eta \times E_\eta\),在其中 \(D(xy, yx) < 6\eta\)。现在取趋于 0 的序列 \(\eta_i\),并令 \(F_i = E_{\eta_i} \times E_{\eta_i}\)、\(E = \bigcap_i F_i\)。由于诸 \(F_i\) 是递降序列,故 \(mE \ge 1/(Z(n))^2\)。若 \((x, y)\) 属于 \(E\),则对每个 \(i\) 有 \(D(xy, yx) < 6\eta_i\);但 \(i\) 是任意的,所以 \(D(xy, yx) = 0\),即 \(xy = yx\)。
 
-现在令 $N_x$ 为使 $xy = yx$ 的那些 $y$ 组成的集,即 $x$ 的正规化子。则
+现在令 \(N_x\) 为使 \(xy = yx\) 的那些 \(y\) 组成的集,即 \(x\) 的正规化子。则
 
 $$mN_x = \int_{N_x} dc \ge mE \ge \frac{1}{(Z(n))^2}.$$
 
-因而在一个正测度的 $x$-集上 $mN_x > 0$。但若 $mN_x > 0$,由引理便有 $N_x = G$,因为 $N_x$ 显然是闭的。这表明 $G$ 的中心具有正测度;再次应用引理,便知 $G$ 是阿贝尔的。
+因而在一个正测度的 \(x\)-集上 \(mN_x > 0\)。但若 \(mN_x > 0\),由引理便有 \(N_x = G\),因为 \(N_x\) 显然是闭的。这表明 \(G\) 的中心具有正测度;再次应用引理,便知 \(G\) 是阿贝尔的。
 
 PRINCETON UNIVERSITY.
 

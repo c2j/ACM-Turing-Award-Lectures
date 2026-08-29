@@ -4,7 +4,7 @@
 
 > 作者:A. M. 图灵(A. M. Turing)〔译注1〕
 > 报告完成于 1945 年,1946 年 3 月提交国家物理实验室(National Physical Laboratory, NPL)执行委员会;报告原题 *Proposed Electronic Calculator*;重印自 B. E. Carpenter 与 R. N. Doran 编 *A. M. Turing's ACE Report of 1946 and Other Papers*(MIT Press,1986)第 2 章 pp. 20–105,收入 *Collected Works of A.M. Turing: MECHANICAL INTELLIGENCE*(North-Holland,1992)为卷内 pp. [1]–[86](PDF 页 21–106)
-> 译自 `papers/Mechanical Intelligence. 1-North Holland (1992).pdf`(纯图像扫描件,经 OCR 转录并多本校勘;个人学习用途)
+> 译自 `papers/Mechanical Intelligence. 1-North Holland $1992$.pdf`(纯图像扫描件,经 OCR 转录并多本校勘;个人学习用途)
 
 > **连载说明**:本篇分四部分连载。之一覆盖 PDF 页 21–45(报告原页码 [1]–[25]),含报告扉页与"第一部分 描述性说明"的 §1–§10;之二覆盖 PDF 页 46–70(报告原页码 [26]–[50]),续完 §10,并译"第二部分 技术方案"的 §11 与 §12 前半(§12 止于报告页 [49] 句中,其后为图 33 整页图版;页末语截处有续译标记);之三覆盖 PDF 页 71–90(报告原页码 [51]–[70]),续完 §12(含图 34–37),并译 §13 指令表示例与 §14 延迟线的设计(§14(vii) 止于报告页 [70],该节未完)。之四覆盖 PDF 页 91–106(报告原页码 [71]–[86]),续完 §14,并译 §15 电子管元件的设计与 §16 替代存储形式(报告原文至页 [86] 而止)。文末"译注"一节(文本与翻译说明/背景与文化注/OCR 与印刷勘误)已就全篇整理完毕。
 

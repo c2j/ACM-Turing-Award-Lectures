@@ -5,7 +5,7 @@
 > 作者:A. M. 图灵(A. M. Turing)
 > 原载 *The Journal of Symbolic Logic*,Vol. 2,No. 4(December 1937),p. 164
 > 〔1937 年 4 月 23 日收到(Received April 23, 1937.)〕
-> 译自 `papers/Mathematical Logic-Elsevier (2001).pdf`(PDF 页 83,印刷页 70;个人学习用途)
+> 译自 `papers/Mathematical Logic-Elsevier $2001$.pdf`(PDF 页 83,印刷页 70;个人学习用途)
 
 ---
 

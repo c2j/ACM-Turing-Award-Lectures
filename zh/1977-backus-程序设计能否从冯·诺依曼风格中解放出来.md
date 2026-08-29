@@ -1323,7 +1323,7 @@ Magó [15] 开发了一种新颖的应用式机器,由相同的组件(两种)构
    - `<` , `>` : 序列 (Sequence)
    - `↑` (U+2191): 获取 (Fetch)
    - `↓` (U+2193): 存储 (Store)
-   - `\bar{x}` (文中记作 $\bar{x}$): 常数函数 (Constant function)
+   - `\bar{x}` (文中记作 \(\bar{x}\)): 常数函数 (Constant function)
 
 **背景与文化注**
 

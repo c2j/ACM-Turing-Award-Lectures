@@ -1,6 +1,6 @@
 # 图灵《全集》第三卷 Mathematical Logic 中文翻译目录
 
-源文件:`papers/Mathematical Logic-Elsevier (2001).pdf`(R.O. Gandy 与 C.E.M. Yates 编,2001 年 Elsevier/North-Holland 出版,307 个 PDF 页)。
+源文件:`papers/Mathematical Logic-Elsevier $2001$.pdf`(R.O. Gandy 与 C.E.M. Yates 编,2001 年 Elsevier/North-Holland 出版,307 个 PDF 页)。
 
 - **页码对应**:印刷阿拉伯页码 = PDF 页码 − 13(印刷页 1 = PDF 14;印刷页 293 = PDF 306);卷首罗马页码 vii–xii = PDF 8–13。论文原刊页码(如 PLMS 230–265)不是本卷页码。
 - **逐页权威清单**:见 [`翻译清单.md`](翻译清单.md)(307 行,已验证无缺页、无重复、无重叠;本页为按内容单元汇总的目标文件索引)。

@@ -46,6 +46,12 @@ markup:
       attribute:
         block: true # attribute lines such as {.steps} {.cards} {caption=}
       wrapStandAloneImageWithinParagraph: false
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          block: [['\[', '\]'], ['$$', '$$']]
+          inline: [['\(', '\)']]
   highlight:
     noClasses: false # code colours follow light and dark mode
 

@@ -4,7 +4,7 @@
 
 > 作者:A. 科恩(A. M. Cohen)、M. J. E. 梅休(M. J. E. Mayhew)
 > 原载 *Proceedings of the London Mathematical Society* (3) 18 (1968),pp. 691–713(1965 年 9 月 21 日收到,1967 年 1 月 4 日修回);后收入《图灵文集·纯数学》卷(J. L. Britton 编,North-Holland,1992)"相关论文"部分〔译注1〕
-> 译自 `papers/Pure Mathematics. 2-North Holland (1992).pdf` 第 205–227 页(书页 183–205;即期刊页 691–713)(个人学习用途)
+> 译自 `papers/Pure Mathematics. 2-North Holland $1992$.pdf` 第 205–227 页(书页 183–205;即期刊页 691–713)(个人学习用途)
 
 ## 1 引言
 
@@ -79,15 +79,15 @@ $$f(t)=\{(\sin\beta t)/t\}^4\exp(-\alpha^2t^2).$$
 
 ## 2 一般引理
 
-设 f(t) 为偶函数,在带域 $|\Im t|\le\lambda$ 内正则,且对每个正数 $\varepsilon$ 满足增长条件
+设 f(t) 为偶函数,在带域 \(|\Im t|\le\lambda\) 内正则,且对每个正数 \(\varepsilon\) 满足增长条件
 
 $$f(t)=\begin{cases}O(e^{-(\mu-\varepsilon)s)},&s\to+\infty,\\ O(e^{-(\lambda-\varepsilon)s}),&s\to-\infty,\end{cases}$$
 
-其中 $\lambda>0$,$\mu>0$,$s=\Re t$〔译注7〕。定义
+其中 \(\lambda>0\),\(\mu>0\),\(s=\Re t\)〔译注7〕。定义
 
 $$F(u)=\int_{-\infty}^{\infty}e^{-iut}f(t)\,dt.\tag{2.1}$$
 
-再设 h(x) 在每个有限区间 $(0,X)$ 上是有界变差函数,s=σ+iτ,且下列条件满足:
+再设 h(x) 在每个有限区间 \((0,X)\) 上是有界变差函数,s=σ+iτ,且下列条件满足:
 
 (i) φ(s) 正则,并在 0≤σ≤2 上一致地为 O(e^{−δ|τ|}),其中 δ>0 固定;
 (ii) 当 x→0 与 x→∞ 时 h(x)=o(x^θ)(θ 为某固定数);
@@ -99,7 +99,7 @@ $$F(u)=\int_{-\infty}^{\infty}e^{-iut}f(t)\,dt.\tag{2.1}$$
 
 $$\int_0^\infty h(e^t)f(t-t_0)\,dt=\frac{1}{2\pi i}\int_{2-i\infty}^{2+i\infty}\phi(s)\,F(s-1)\,e^{(s-1)t_0}\,ds,$$
 
-其中 $\phi(s)=\displaystyle\int_0^\infty x^{-s}\,dh(x)$。
+其中 \(\phi(s)=\displaystyle\int_0^\infty x^{-s}\,dh(x)\)。
 
 证. 当 σ=2 时,对 (2.1) 分部积分并利用条件 (i),可得
 
@@ -146,7 +146,7 @@ $$\alpha^{-1}\exp(y^2/2\alpha^2)=M,\quad\text{其中 }u=\sigma+iy.$$
 1. |F(u)|≤α⁻¹exp(y²/2α²);
 2. |F(u)|≤√(2π)·exp(y²/2α²)/2μ;
 3. |F′(u)|≤(αμ)⁻¹exp(y²/2α²);
-4. $\Bigl|\displaystyle\int_{c-i\infty}^{c+i\infty}F(u)\,du\Bigr|\le\sqrt{2\pi}\,\exp(c^2/2\alpha^2)$(c 为实数);
+4. \(\Bigl|\displaystyle\int_{c-i\infty}^{c+i\infty}F(u)\,du\Bigr|\le\sqrt{2\pi}\,\exp(c^2/2\alpha^2)\)(c 为实数);
 5. |F(u)|≤α⁻¹exp[{y²−(|u|−4μ)²/2α²}](当 |u|>4μ)。
 
 证. 由 (2.5),
@@ -169,7 +169,7 @@ $$F'(u)=(2\pi)^{-1/2}\int F_2'(u-\xi)F_1(\xi)\,d\xi,$$
 
 $$|F'(u)|\le(2\pi)^{-1/2}\int|F_2'(u-\xi)|\,|F_1(\xi)|\,d\xi\le(\alpha\mu)^{-1}\exp(y^2/2\alpha^2),$$
 
-这是因为 $|F_2'|$ 可由 $-F_2'$ 的绝对值的积分控制,故得 (iii)。
+这是因为 \(|F_2'|\) 可由 \(-F_2'\) 的绝对值的积分控制,故得 (iii)。
 
 对于 (iv),我们有
 
@@ -241,7 +241,7 @@ $$g(s)=\log(s-1)+\bigl\{\text{整函数}\bigr\},$$
 
 $$0<g(s_0)=\int_{a(\sigma_0-1)}^{\infty}\frac{e^{-t}}{t}\,dt<\int_{a(\sigma_0-1)}^{\infty}\frac{e^{-t}}{a(\sigma_0-1)}\,dt=\frac{e^{-a(\sigma_0-1)}}{a(\sigma_0-1)},$$
 
-而由于 $a|s-1|\ge a(\sigma_0-1)$,遂有
+而由于 \(a|s-1|\ge a(\sigma_0-1)\),遂有
 
 $$|g(s_0)|\le 10\exp\{a(1-\sigma)\}/|s-1|.$$
 
@@ -467,7 +467,7 @@ $$\log\frac{\zeta(s)}{(s+1)(s+2)\zeta(s+2)}=\log\frac{\zeta(1-s)}{(\ldots)\zeta(
 
 $$\Bigl|\log\frac{\zeta(s)}{(s+1)(s+2)\zeta(s+2)}\Bigr|\le\pi+2\log 2\pi+\log|s/(s+2)|\\ +|\log\zeta(1-s)|+|\log\zeta(-1-s)|\\ <\pi+2\log 2\pi+\log 3+2\log\zeta(2)<12,$$
 
-这是因为当 σ<−3 时 $1<|s/(s+2)|<3$,且如上有
+这是因为当 σ<−3 时 \(1<|s/(s+2)|<3\),且如上有
 
 $$|\log\zeta(\pm1-s)|\le\log\zeta(\pm1-\sigma)\le\log\zeta(2).$$
 
@@ -547,7 +547,7 @@ $$|(s-\tfrac12)^{\cdot}ds|\le\sqrt{2\pi}\,\mu^{-1}\exp(c^2/2\alpha^2),\qquad\tex
 
 $$|K_\rho|\le\sqrt{2\pi}\,\mu^{-1}\gamma^{-2}\int_0^2 \exp\{(c^2/2\alpha^2)-ct_0\}\,dc.$$
 
-在 0≤c≤2 中,$(c^2/2\alpha^2)-ct_0\le -ct_0(1-c/800)$,而
+在 0≤c≤2 中,\((c^2/2\alpha^2)-ct_0\le -ct_0(1-c/800)\),而
 
 $$c\exp\{-ct_0(1-c/800)\}$$
 

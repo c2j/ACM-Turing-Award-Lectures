@@ -2,7 +2,7 @@
 
 原书：*Collected Works of A. M. Turing: Pure Mathematics*，J. L. Britton 编，I. J. Good 撰统计工作专节，North-Holland，1992。
 
-- 源文件：`papers/Pure Mathematics. 2-North Holland (1992).pdf`
+- 源文件：`papers/Pure Mathematics. 2-North Holland $1992$.pdf`
 - PDF 页数：309 页；正文书页码为罗马数字 v-xxii、阿拉伯数字 1-287。
 - 源文件为纯扫描 PDF，无文本层。本目录只建立源页边界和中文目标文件名，不含正文翻译。
 - 逐页归属见 [`翻译清单.md`](翻译清单.md)。空白隔页没有翻译目标文件。
@@ -43,7 +43,7 @@ PDF 第 32、44、100、120、138 页为空白隔页。
 | 139-141 | 117-119 | A Note on Normal Numbers | 关于正规数的札记 | `未刊-01-turing-关于正规数的札记.md` |
 | 143-145 | 121-123 | The Word Problem in Compact Groups | 紧群中的字问题 | `未刊-02-turing-紧群中的字问题.md` |
 | 147-167 | 125-145 | On Permutation Groups | 论置换群 | `未刊-03-turing-论置换群.md` |
-| 169-173 | 147-151 | The Difference ψ(x)-x | 差 ψ(x)-x | `未刊-04-turing-差ψ(x)-x.md` |
+| 169-173 | 147-151 | The Difference ψ(x)-x | 差 ψ(x)-x | `未刊-04-turing-差ψ$x$-x.md` |
 | 175-196 | 153-174 | On a Theorem of Littlewood — S. Skewes and A. M. Turing | 论利特尔伍德的一个定理 | `未刊-05-skewes-turing-论利特尔伍德的一个定理.md` |
 
 PDF 第 142、146、168、174 页为空白隔页。
@@ -53,7 +53,7 @@ PDF 第 142、146、168、174 页为空白隔页。
 | PDF 页 | 书页码 | 年份 | 原文 | 中文题名 | 目标文件 |
 |---:|:---:|:---:|---|---|---|
 | 197-204 | 175-182 | 1958 | An Analysis of Turing's “The Word Problem in Semi-Groups with Cancellation” — W. W. Boone | 对图灵《具有消去律的半群中的字问题》的分析 | `1958-boone-对图灵具有消去律的半群中的字问题的分析.md` |
-| 205-227 | 183-205 | 1968 | On the Difference π(x)-li x — A. M. Cohen and M. J. E. Mayhew | 论差 π(x)-li x | `1968-cohen-mayhew-论差π(x)-li-x.md` |
+| 205-227 | 183-205 | 1968 | On the Difference π(x)-li x — A. M. Cohen and M. J. E. Mayhew | 论差 π(x)-li x | `1968-cohen-mayhew-论差π$x$-li-x.md` |
 
 PDF 第 228 页为空白隔页。
 

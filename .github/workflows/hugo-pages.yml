@@ -24,7 +24,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-go@v5
         with:
-          go-version: "1.23"
+          go-version: "1.27"
       - uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: "0.165.0"
@@ -34,7 +34,7 @@ jobs:
       - name: Initialise Hugo module and fetch OINK theme
         run: |
           hugo mod init github.com/c2j/ACM-Turing-Award-Lectures
-          hugo mod get github.com/pgsty/oink@v0.6.0
+          hugo mod get github.com/pgsty/oink@v0.8.0
       - name: Build
         run: hugo --minify --buildFuture --gc
       - uses: actions/upload-pages-artifact@v3

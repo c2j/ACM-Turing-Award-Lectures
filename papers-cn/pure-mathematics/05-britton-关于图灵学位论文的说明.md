@@ -4,7 +4,7 @@
 
 > 作者:J. L. 布里顿(J. L. Britton)
 > 原载:*Collected Works of A.M. Turing: Pure Mathematics* 卷首,书页 xix–xx
-> 译自 `papers/Pure Mathematics. 2-North Holland (1992).pdf` 第 19–20 页(个人学习用途)
+> 译自 `papers/Pure Mathematics. 2-North Holland $1992$.pdf` 第 19–20 页(个人学习用途)
 
 图灵的研究员职位论文(Fellowship dissertation)曾送交剑桥大学国王学院研究员选举人传阅,选举人为:英厄姆、凯恩斯、布雷斯韦特、马修斯、麦科姆比、贝夫斯、F. L. 卢卡斯诸位先生及院长。〔译注1〕选举日期是 1935 年 3 月 16 日。据传记记载,菲利普·霍尔与 A. C. 庇古也担任了选举人。〔译注2〕
 

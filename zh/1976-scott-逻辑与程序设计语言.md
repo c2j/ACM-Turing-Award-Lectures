@@ -41,7 +41,7 @@ Joe Stoy [13] 的教科书即将出版。这将补充这些其他作品，并且
 
 ## 个人笔记
 
-我出生在加利福尼亚州，20 世纪 50 年代初在伯克利读本科时开始研究数理逻辑。主要的影​​响当然是 Alfred Tarski 以及他在加州大学的许多同事和学生。在许多其他事情中，我从 Raphael 和 Julia Robinson 那里学习了递归函数论，我要感谢他们的无数见解。此外，当时通过自学，我发现了 Curry 和 Church 的 $\lambda$-演算（起初这确实让我做噩梦）。对我后来的想法特别重要的是对 Tarski 语义学及其对形式化语言真理定义的学习。如你所知，这些概念今天在自然语言哲学中仍在激烈辩论。我尝试将 Tarski 方法的精神延续到算法语言中，算法语言至少具有在语法上相当好地形式化的优势。我是否在 Strachey 的方案指导下（并由许多人完成）找到了正确的项的指称，是需要讨论的。我是第一个说并非所有问题都仅仅通过给某些语言提供指称就能解决的人。像（非常纯粹的）$\lambda$-演算这样的语言得到了很好的服务，但许多程序设计概念仍未涵盖。
+我出生在加利福尼亚州，20 世纪 50 年代初在伯克利读本科时开始研究数理逻辑。主要的影​​响当然是 Alfred Tarski 以及他在加州大学的许多同事和学生。在许多其他事情中，我从 Raphael 和 Julia Robinson 那里学习了递归函数论，我要感谢他们的无数见解。此外，当时通过自学，我发现了 Curry 和 Church 的 \(\lambda\)-演算（起初这确实让我做噩梦）。对我后来的想法特别重要的是对 Tarski 语义学及其对形式化语言真理定义的学习。如你所知，这些概念今天在自然语言哲学中仍在激烈辩论。我尝试将 Tarski 方法的精神延续到算法语言中，算法语言至少具有在语法上相当好地形式化的优势。我是否在 Strachey 的方案指导下（并由许多人完成）找到了正确的项的指称，是需要讨论的。我是第一个说并非所有问题都仅仅通过给某些语言提供指称就能解决的人。像（非常纯粹的）\(\lambda\)-演算这样的语言得到了很好的服务，但许多程序设计概念仍未涵盖。
 
 我的研究生工作于 1958 年在普林斯顿大学完成，导师是 Alonzo Church，他也指导了 Michael Rabin 的论文。Rabin 和我当时相遇，但正是在 1957 年的一次 IBM 暑期工作中，我们完成了关于自动机理论的共同工作〔译注3〕。这很难说是在真空中进行的，因为许多人都在该领域工作；但我们确实设法将一些基本思想清晰地呈现出来。当时我肯定在考虑一个给出机器数学定义的项目。我现在觉得有限状态方法只是部分成功，没有太多的实际意义。诚然，许多物理机器可以建模为有限状态设备；但有限性很难说是最重要的特征，自动机的观点往往相当肤浅。
 
@@ -61,11 +61,11 @@ Joe Stoy [13] 的教科书即将出版。这将补充这些其他作品，并且
 
 直到我在阿姆斯特丹的那年年底，我才开始与 Jaco de Bakker 交谈，直到那个夏天的通信，我们的想法才有了明确的形式。我通过 WG 2.2 认识的维也纳 IBM 小组在这个阶段也影响了我。与此同时，我决定离开斯坦福去普林斯顿哲学系；但由于我和家人在欧洲，我申请了额外一个学期的假期，以便在 1969 年秋天访问牛津的 Strachey。那个学期对我来说是狂热活动的时期；事实上，有几天，我觉得自己好像患了某种真正的脑热。在那几周里与 Strachey 的合作是我职业生涯中最好的经历之一。第二年夏天我们在普林斯顿又重复了一次，尽管兴奋程度不同。遗憾的是，到 1972 年我永久来到牛津时，我们都忙于教学和行政职务，真正的合作几乎不可能。Strachey 也因为持续缺乏研究资金和教学帮助而变得非常沮丧，他基本上退出了，去和 Milne 一起写他的书。（这是一次巨大的努力，我认为这对他的健康没有任何好处；我多么希望他能看到它出版。）
 
-回到 1969 年，我开始做的是向 Strachey 展示他完全错了，他应该以另一种方式做事。他最初是由 Roger Penrose 引起对 $\lambda$-演算的关注的，并发展出一种方便的风格，使用这种符号进行函数抽象来解释程序设计概念。然而，这是一种形式化的装置，我试图争辩说它没有数学基础。我以前讲过这个故事，所以长话短说，让我只说首先我实际上通过“优越的逻辑”说服了他放弃无类型的 $\lambda$-演算。但随后，随着我的建议一个接一个地产生结果，我开始看到可以在各种各样的空间上定义可计算函数。真正的步骤是看到函数空间是好的空间，我清楚地记得当时也在访问牛津的逻辑学家 Andrzej Mostowski 根本不相信我定义的这种函数空间具有构造性描述。但当我看到它们确实具有时，我开始怀疑使用函数空间的可能性可能比我们想象的更令人惊讶。一旦我对试图强加给 Strachey 的逻辑类型的强制刚性产生怀疑，不久我就发现其中一个空间与其自身的函数空间同构，这提供了“无类型” $\lambda$-演算的一个模型〔译注5〕。故事的其余部分见文献。
+回到 1969 年，我开始做的是向 Strachey 展示他完全错了，他应该以另一种方式做事。他最初是由 Roger Penrose 引起对 \(\lambda\)-演算的关注的，并发展出一种方便的风格，使用这种符号进行函数抽象来解释程序设计概念。然而，这是一种形式化的装置，我试图争辩说它没有数学基础。我以前讲过这个故事，所以长话短说，让我只说首先我实际上通过“优越的逻辑”说服了他放弃无类型的 \(\lambda\)-演算。但随后，随着我的建议一个接一个地产生结果，我开始看到可以在各种各样的空间上定义可计算函数。真正的步骤是看到函数空间是好的空间，我清楚地记得当时也在访问牛津的逻辑学家 Andrzej Mostowski 根本不相信我定义的这种函数空间具有构造性描述。但当我看到它们确实具有时，我开始怀疑使用函数空间的可能性可能比我们想象的更令人惊讶。一旦我对试图强加给 Strachey 的逻辑类型的强制刚性产生怀疑，不久我就发现其中一个空间与其自身的函数空间同构，这提供了“无类型” \(\lambda\)-演算的一个模型〔译注5〕。故事的其余部分见文献。
 
-（关于 $\lambda$-演算的一个有趣插曲是 Alan Turing 的角色。他在普林斯顿跟随 Church 学习，并在 1936/37 年左右将可计算性与（形式化的）$\lambda$-演算联系起来。关于 Steve Kleene 如何看待他的工作（以及 $\lambda$-演算的进一步影响）的启发性细节可以在 Crossley [3] 中找到。（当然，图灵后来关于计算机的想法极大地影响了 Strachey，但现在不是进行完整历史分析的时候。）虽然我从未见过图灵（他于 1954 年去世），但通过 Church 和 Strachey 以及我现在的牛津同事 Les Fox 和 Robin Gandy 的二手联系相当密切，尽管到我在普林斯顿读研究生时，Church 已经不再研究 $\lambda$-演算了，我们从未讨论过他与图灵的经历。）
+（关于 \(\lambda\)-演算的一个有趣插曲是 Alan Turing 的角色。他在普林斯顿跟随 Church 学习，并在 1936/37 年左右将可计算性与（形式化的）\(\lambda\)-演算联系起来。关于 Steve Kleene 如何看待他的工作（以及 \(\lambda\)-演算的进一步影响）的启发性细节可以在 Crossley [3] 中找到。（当然，图灵后来关于计算机的想法极大地影响了 Strachey，但现在不是进行完整历史分析的时候。）虽然我从未见过图灵（他于 1954 年去世），但通过 Church 和 Strachey 以及我现在的牛津同事 Les Fox 和 Robin Gandy 的二手联系相当密切，尽管到我在普林斯顿读研究生时，Church 已经不再研究 \(\lambda\)-演算了，我们从未讨论过他与图灵的经历。）
 
-非常奇怪的是，我的 $\lambda$-演算模型没有早点被别人发现；但我感到非常鼓舞的是，现在正在发现具有新属性的新型模型，例如 Gordon Plotkin [10] 的“幂域”（powerdomains）。我个人深信，该领域无论是在理论方面还是在应用方面都已牢固确立。John Reynolds 和 Robert Milne 独立引入了一种证明等价性的新归纳方法，Robin Milner 关于 LCF 及其证明技术的一项有趣工作在爱丁堡继续进行。这种证明模型属性的方向是由 David Park 关于关联不动点算子和所谓的 $\lambda$-演算悖论组合子的定理开始的，它开启了对无限但可计算算子的研究，该研究现在沿着许多路线继续进行。另一个工作方向在诺夫哥罗德由 Yu.L. Ershov 进行，Karl H. Hofmann 及其小组向我指出了与拓扑代数的惊人联系。这里没有空间甚至无法开始列出许多贡献者。
+非常奇怪的是，我的 \(\lambda\)-演算模型没有早点被别人发现；但我感到非常鼓舞的是，现在正在发现具有新属性的新型模型，例如 Gordon Plotkin [10] 的“幂域”（powerdomains）。我个人深信，该领域无论是在理论方面还是在应用方面都已牢固确立。John Reynolds 和 Robert Milne 独立引入了一种证明等价性的新归纳方法，Robin Milner 关于 LCF 及其证明技术的一项有趣工作在爱丁堡继续进行。这种证明模型属性的方向是由 David Park 关于关联不动点算子和所谓的 \(\lambda\)-演算悖论组合子的定理开始的，它开启了对无限但可计算算子的研究，该研究现在沿着许多路线继续进行。另一个工作方向在诺夫哥罗德由 Yu.L. Ershov 进行，Karl H. Hofmann 及其小组向我指出了与拓扑代数的惊人联系。这里没有空间甚至无法开始列出许多贡献者。
 
 展望未来几年，我特别高兴地在这次会议上报告，Tony Hoare 最近接受了牛津大学计算讲席教授的职位〔译注6〕，自 Strachey 去世后，该职位现已成为永久性的。这为合作开启了各种新的可能性，无论是与 Hoare 还是与他明年上任后将吸引的许多学生。而且，如你所知，牛津大学肯定会强调计算机语言的使用和设计以及程序设计方法论的实际方面（我赶忙补充，Strachey 也是这么做的），这都是好事；但理论研究也有极好的希望。
 
@@ -73,40 +73,40 @@ Joe Stoy [13] 的教科书即将出版。这将补充这些其他作品，并且
 
 现在转到技术细节，我想简要说明我的构造是如何进行的，以及它是如何接受相当大的变化的。在这里不可能争辩说这些是“正确的”抽象，这就是为什么提到那些容易获得的参考文献是一种解脱。
 
-也许最快说明我所指内容的方法是由两个域提供的：$\mathscr{B}$，布尔值的域，以及 $\mathscr{S} = \mathscr{B}^\infty$，布尔值无限序列的域。第一个要点是，我们将接受偏函数的想法，在数学上通过不时给函数赋予偏值（partial values）来表示。就 $\mathscr{B}$ 而言，这个想法非常琐碎：我们写
+也许最快说明我所指内容的方法是由两个域提供的：\(\mathscr{B}\)，布尔值的域，以及 \(\mathscr{S} = \mathscr{B}^\infty\)，布尔值无限序列的域。第一个要点是，我们将接受偏函数的想法，在数学上通过不时给函数赋予偏值（partial values）来表示。就 \(\mathscr{B}\) 而言，这个想法非常琐碎：我们写
 
 $$\mathscr{B} = \{true, false, \perp\}$$
 
-其中 $\perp$ 是一个额外的元素，称为“未定义”。为了让 $\perp$ 各就其位，我们在域 $\mathscr{B}$ 上施加一个偏序 $\sqsubseteq$，其中
+其中 \(\perp\) 是一个额外的元素，称为“未定义”。为了让 \(\perp\) 各就其位，我们在域 \(\mathscr{B}\) 上施加一个偏序 \(\sqsubseteq\)，其中
 
-当且仅当 $x = \perp$ 或 $x = y$ 时，$x \sqsubseteq y$，
+当且仅当 \(x = \perp\) 或 \(x = y\) 时，\(x \sqsubseteq y\)，
 
-对于所有 $x, y \in \mathscr{B}$。在这里 $\mathscr{B}$ 中这并不意味着全部，但我们可以将“$\sqsubseteq$”读作 $x$ 的信息内容包含在 $y$ 的信息内容中。因此，元素 $\perp$ 具有空的信息内容。该方案如图 1 所示。
+对于所有 \(x, y \in \mathscr{B}\)。在这里 \(\mathscr{B}\) 中这并不意味着全部，但我们可以将“\(\sqsubseteq\)”读作 \(x\) 的信息内容包含在 \(y\) 的信息内容中。因此，元素 \(\perp\) 具有空的信息内容。该方案如图 1 所示。
 
 ![图 1:布尔值](assets/1976-scott/fig-01.png)
 
-**图 1.** 布尔值格：元素 $\perp$ 具有空信息内容,且 $\perp \sqsubseteq x$ 对一切 $x \in \mathscr{B}$ 成立(true、false 经连线指向 $\perp$)。〔译注10〕
+**图 1.** 布尔值格：元素 \(\perp\) 具有空信息内容,且 \(\perp \sqsubseteq x\) 对一切 \(x \in \mathscr{B}\) 成立(true、false 经连线指向 \(\perp\))。〔译注10〕
 
-（顺便提一句：在许多出版物中，我一直主张使用格，作为偏序，格既有“顶”元素 $\top$ 也有“底”元素 $\perp$，这样我们可以断言对于域的所有元素都有 $\perp \sqsubseteq x \sqsubseteq \top$。由于许多我无法在这里详述的原因，这个建议并没有被很好地接受。关于其合理性的一些讨论可以在 Scott [12] 中找到，但当然那里研究的结构是特殊的。可能最好既不排除也不包括 $\top$；并且，为了简单起见，我今天将不再提及它。）
+（顺便提一句：在许多出版物中，我一直主张使用格，作为偏序，格既有“顶”元素 \(\top\) 也有“底”元素 \(\perp\)，这样我们可以断言对于域的所有元素都有 \(\perp \sqsubseteq x \sqsubseteq \top\)。由于许多我无法在这里详述的原因，这个建议并没有被很好地接受。关于其合理性的一些讨论可以在 Scott [12] 中找到，但当然那里研究的结构是特殊的。可能最好既不排除也不包括 \(\top\)；并且，为了简单起见，我今天将不再提及它。）
 
-现在看序列域 $\mathscr{S}$，我们将采用一种简写符号，其中下标表示坐标；因此，
+现在看序列域 \(\mathscr{S}\)，我们将采用一种简写符号，其中下标表示坐标；因此，
 
 $$x = \langle x_n \rangle_{n=0}^\infty$$
 
-对于所有 $x \in \mathscr{S}$。每一项都满足 $x_n \in \mathscr{B}$，因为 $\mathscr{S} = \mathscr{B}^\infty$。从技术上讲，旨在实现结构的“直积”，因此我们通过以下方式在 $\mathscr{S}$ 上定义 $\sqsubseteq$：
+对于所有 \(x \in \mathscr{S}\)。每一项都满足 \(x_n \in \mathscr{B}\)，因为 \(\mathscr{S} = \mathscr{B}^\infty\)。从技术上讲，旨在实现结构的“直积”，因此我们通过以下方式在 \(\mathscr{S}\) 上定义 \(\sqsubseteq\)：
 
-对于所有 $n$，$x \sqsubseteq y$ 当且仅当 $x_n \sqsubseteq y_n$。
+对于所有 \(n\)，\(x \sqsubseteq y\) 当且仅当 \(x_n \sqsubseteq y_n\)。
 
-直观地说，序列 $y$ 在信息上比序列 $x$ “更好”，当且仅当 $x$ 的一些“未定义”坐标在从 $x$ 转到 $y$ 时已变为“已定义”。例如，以下每个序列都与后续序列处于 $\sqsubseteq$ 关系中：
+直观地说，序列 \(y\) 在信息上比序列 \(x\) “更好”，当且仅当 \(x\) 的一些“未定义”坐标在从 \(x\) 转到 \(y\) 时已变为“已定义”。例如，以下每个序列都与后续序列处于 \(\sqsubseteq\) 关系中：
 
-$\langle \perp, \perp, \perp, \perp, \dots \rangle$,
-$\langle true, \perp, \perp, \perp, \dots \rangle$,
-$\langle true, false, \perp, \perp, \dots \rangle$,
-$\langle true, false, true, \perp, \dots \rangle$.
+\(\langle \perp, \perp, \perp, \perp, \dots \rangle\),
+\(\langle true, \perp, \perp, \perp, \dots \rangle\),
+\(\langle true, false, \perp, \perp, \dots \rangle\),
+\(\langle true, false, true, \perp, \dots \rangle\).
 
-显然，这个列表可以无限扩展，而且也没有必要按严格的顺序 $n = 0, 1, 2 \dots$ 处理坐标。因此，$\mathscr{S}$ 上的 $\sqsubseteq$ 关系比 $\mathscr{B}$ 上原始的 $\sqsubseteq$ 复杂得多。
+显然，这个列表可以无限扩展，而且也没有必要按严格的顺序 \(n = 0, 1, 2 \dots\) 处理坐标。因此，\(\mathscr{S}\) 上的 \(\sqsubseteq\) 关系比 \(\mathscr{B}\) 上原始的 \(\sqsubseteq\) 复杂得多。
 
-$\mathscr{B}$ 和 $\mathscr{S}$ 之间的一个明显区别是 $\mathscr{B}$ 是有限的，而 $\mathscr{S}$ 有无限多个元素。在 $\mathscr{S}$ 中，某些元素也具有无限的信息内容，而在 $\mathscr{B}$ 中则不然。然而，我们可以利用 $\mathscr{S}$ 中的偏序来抽象地解释我们所说的“有限近似”和“极限”是什么意思。上面列出的序列在 $\mathscr{S}$ 中是有限的，因为它们只有有限多个坐标不同于 $\perp$。给定任何 $x \in \mathscr{S}$，我们可以通过定义将其削减为有限元素
+\(\mathscr{B}\) 和 \(\mathscr{S}\) 之间的一个明显区别是 \(\mathscr{B}\) 是有限的，而 \(\mathscr{S}\) 有无限多个元素。在 \(\mathscr{S}\) 中，某些元素也具有无限的信息内容，而在 \(\mathscr{B}\) 中则不然。然而，我们可以利用 \(\mathscr{S}\) 中的偏序来抽象地解释我们所说的“有限近似”和“极限”是什么意思。上面列出的序列在 \(\mathscr{S}\) 中是有限的，因为它们只有有限多个坐标不同于 \(\perp\)。给定任何 \(x \in \mathscr{S}\)，我们可以通过定义将其削减为有限元素
 
 $$(x \upharpoonright m)_n = \begin{cases} x_n, & \text{如果 } n < m; \\ \perp, & \text{否则.} \end{cases}$$
 
@@ -114,53 +114,53 @@ $$(x \upharpoonright m)_n = \begin{cases} x_n, & \text{如果 } n < m; \\ \perp,
 
 $$x \upharpoonright m \sqsubseteq x \upharpoonright (m + 1) \sqsubseteq x,$$
 
-因此 $x \upharpoonright m$ 正在“累积”到一个极限；事实上，那个极限就是原始的 $x$。我们将其写为
+因此 \(x \upharpoonright m\) 正在“累积”到一个极限；事实上，那个极限就是原始的 \(x\)。我们将其写为
 
 $$x = \bigsqcup_{m=0}^\infty (x \upharpoonright m),$$
 
-其中 $\bigsqcup$ 是偏序集 $\mathscr{S}$ 中的上确界或最小上界操作。关键是 $\mathscr{S}$ 有很多上确界；并且，每当我们有 $\mathscr{S}$ 中的元素 $y^{(m)} \sqsubseteq y^{(m+1)}$（无论它们是否有限），我们都可以定义“极限” $z$，其中
+其中 \(\bigsqcup\) 是偏序集 \(\mathscr{S}\) 中的上确界或最小上界操作。关键是 \(\mathscr{S}\) 有很多上确界；并且，每当我们有 \(\mathscr{S}\) 中的元素 \(y^{(m)} \sqsubseteq y^{(m+1)}\)（无论它们是否有限），我们都可以定义“极限” \(z\)，其中
 
 $$z = \bigsqcup_{m=0}^\infty y^{(m)}.$$
 
-（提示：问问你自己 $z$ 的坐标必须是什么。）我们不能在这里重新讨论细节，但 $\mathscr{S}$ 确实是一个拓扑空间，而 $z$ 确实是一个极限。因此，虽然 $\mathscr{S}$ 是无限的，但很有可能我们可以让操作回退到有限操作，并能够讨论 $\mathscr{S}$ 以及更复杂域上的可计算操作。
+（提示：问问你自己 \(z\) 的坐标必须是什么。）我们不能在这里重新讨论细节，但 \(\mathscr{S}\) 确实是一个拓扑空间，而 \(z\) 确实是一个极限。因此，虽然 \(\mathscr{S}\) 是无限的，但很有可能我们可以让操作回退到有限操作，并能够讨论 \(\mathscr{S}\) 以及更复杂域上的可计算操作。
 
-除了 $\mathscr{S}$ 上的序列和偏序结构外，我们还可以定义许多种代数结构。这就是为什么 $\mathscr{S}$ 是一个很好的例子。例如，在同构意义下，该空间满足
+除了 \(\mathscr{S}\) 上的序列和偏序结构外，我们还可以定义许多种代数结构。这就是为什么 \(\mathscr{S}\) 是一个很好的例子。例如，在同构意义下，该空间满足
 
 $$\mathscr{S} \cong \mathscr{S} \times \mathscr{S},$$
 
-其中右侧旨在表示通常的二元直积。抽象地，域 $\mathscr{S} \times \mathscr{S}$ 由所有有序对 $\langle x, y \rangle$ 组成，其中 $x, y \in \mathscr{S}$，我们在 $\mathscr{S} \times \mathscr{S}$ 上定义 $\sqsubseteq$ 为
+其中右侧旨在表示通常的二元直积。抽象地，域 \(\mathscr{S} \times \mathscr{S}\) 由所有有序对 \(\langle x, y \rangle\) 组成，其中 \(x, y \in \mathscr{S}\)，我们在 \(\mathscr{S} \times \mathscr{S}\) 上定义 \(\sqsubseteq\) 为
 
-$\langle x, y \rangle \sqsubseteq \langle x', y' \rangle$ 当且仅当 $x \sqsubseteq x'$ 且 $y \sqsubseteq y'$。
+\(\langle x, y \rangle \sqsubseteq \langle x', y' \rangle\) 当且仅当 \(x \sqsubseteq x'\) 且 \(y \sqsubseteq y'\)。
 
-但出于所有实际目的，将 $\langle x, y \rangle$ 与 $\mathscr{S}$ 中已有的序列等同起来并无大碍；事实上，在坐标方面我们可以定义
+但出于所有实际目的，将 \(\langle x, y \rangle\) 与 \(\mathscr{S}\) 中已有的序列等同起来并无大碍；事实上，在坐标方面我们可以定义
 
 $$\langle x, y \rangle_n = \begin{cases} x_k, & \text{如果 } n = 2k; \\ y_k, & \text{如果 } n = 2k + 1. \end{cases}$$
 
-上述对对之间 $\sqsubseteq$ 的标准将得到验证，我们可以说 $\mathscr{S}$ 具有一个（双射）配对函数。
+上述对对之间 \(\sqsubseteq\) 的标准将得到验证，我们可以说 \(\mathscr{S}\) 具有一个（双射）配对函数。
 
-$\mathscr{S}$ 上的配对函数 $\langle \cdot, \cdot \rangle$ 具有许多有趣的属性。实际上我们已经注意到它是单调的（直观地说：当你增加 $x$ 和 $y$的信息内容时，你就增加了 $\langle x, y \rangle$ 的信息内容）。更重要的是，$\langle \cdot, \cdot \rangle$ 在以下精确意义上是连续的：
+\(\mathscr{S}\) 上的配对函数 \(\langle \cdot, \cdot \rangle\) 具有许多有趣的属性。实际上我们已经注意到它是单调的（直观地说：当你增加 \(x\) 和 \(y\)的信息内容时，你就增加了 \(\langle x, y \rangle\) 的信息内容）。更重要的是，\(\langle \cdot, \cdot \rangle\) 在以下精确意义上是连续的：
 
 $$\langle x, y \rangle = \bigsqcup_{m=0}^\infty \langle x \upharpoonright m, y \upharpoonright m \rangle,$$
 
-这意味着 $\langle \cdot, \cdot \rangle$ 在取有限近似下表现良好。这只是一个例子；单调和连续函数的整个理论对于这种方法非常重要。
+这意味着 \(\langle \cdot, \cdot \rangle\) 在取有限近似下表现良好。这只是一个例子；单调和连续函数的整个理论对于这种方法非常重要。
 
-即使我们在 $\mathscr{S}$ 上只放了少量的结构，一种语言也会浮现出来。为了说明起见，我们集中讨论 $\mathscr{S}$ 满足的两个同构；即 $\mathscr{S} \cong \mathscr{B} \times \mathscr{S}$ 和 $\mathscr{S} \cong \mathscr{S} \times \mathscr{S}$。第一个确定了 $\mathscr{S}$ 与布尔值（无限）序列有关；而第二个提醒我们上面关于配对函数的讨论。在图 2 中，我们列出了具有两种表达式的语言的简要 BNF 定义：布尔型（$\beta$）和序列型（$\sigma$）。
+即使我们在 \(\mathscr{S}\) 上只放了少量的结构，一种语言也会浮现出来。为了说明起见，我们集中讨论 \(\mathscr{S}\) 满足的两个同构；即 \(\mathscr{S} \cong \mathscr{B} \times \mathscr{S}\) 和 \(\mathscr{S} \cong \mathscr{S} \times \mathscr{S}\)。第一个确定了 \(\mathscr{S}\) 与布尔值（无限）序列有关；而第二个提醒我们上面关于配对函数的讨论。在图 2 中，我们列出了具有两种表达式的语言的简要 BNF 定义：布尔型（\(\beta\)）和序列型（\(\sigma\)）。
 
 ![图 2:简要语言](assets/1976-scott/fig-02.png)
 
 **图 2. 简要语言。**
-$\beta ::= true \mid false \mid \mathbf{head} \sigma$
-$\sigma ::= \beta^* \mid \beta \sigma \mid \mathbf{tail} \sigma \mid$
-$\quad \mathbf{if} \beta \mathbf{then} \sigma' \mathbf{else} \sigma'' \mid$
-$\quad \mathbf{even} \sigma \mid \mathbf{odd} \sigma \mid \mathbf{merge} \sigma' \sigma''$
+\(\beta ::= true \mid false \mid \mathbf{head} \sigma\)
+\(\sigma ::= \beta^* \mid \beta \sigma \mid \mathbf{tail} \sigma \mid\)
+\(\quad \mathbf{if} \beta \mathbf{then} \sigma' \mathbf{else} \sigma'' \mid\)
+\(\quad \mathbf{even} \sigma \mid \mathbf{odd} \sigma \mid \mathbf{merge} \sigma' \sigma''\)
 
-这种语言确实非常简短：没有变量，没有声明，没有赋值，只有一小部分常量项。请注意，所选的符号旨在使这些表达式的含义显而易见。因此，如果 $\sigma$ 表示一个序列 $x$，那么 $\mathbf{head} \sigma$ 必须表示序列 $x$ 的第一项 $x_0$〔译注8〕。由于 $x_0 \in \mathscr{B}$ 且 $x \in \mathscr{S}$，我们保持了类型的正确。
+这种语言确实非常简短：没有变量，没有声明，没有赋值，只有一小部分常量项。请注意，所选的符号旨在使这些表达式的含义显而易见。因此，如果 \(\sigma\) 表示一个序列 \(x\)，那么 \(\mathbf{head} \sigma\) 必须表示序列 \(x\) 的第一项 \(x_0\)〔译注8〕。由于 \(x_0 \in \mathscr{B}\) 且 \(x \in \mathscr{S}\)，我们保持了类型的正确。
 
-更精确地说，对于每个表达式，我们可以定义其（常量）值 $\llbracket \cdot \rrbracket$；使得对于布尔表达式 $\beta$，$\llbracket \beta \rrbracket \in \mathscr{B}$，而对于序列表达式 $\sigma$，$\llbracket \sigma \rrbracket \in \mathscr{S}$〔译注8〕。由于 BNF 语言定义中有十个子句，我们将不得不列出十个方程来完全指定该示例的语义；我们在这里仅满足于选定的方程。继续上一段的评论：
+更精确地说，对于每个表达式，我们可以定义其（常量）值 \(\llbracket \cdot \rrbracket\)；使得对于布尔表达式 \(\beta\)，\(\llbracket \beta \rrbracket \in \mathscr{B}\)，而对于序列表达式 \(\sigma\)，\(\llbracket \sigma \rrbracket \in \mathscr{S}\)〔译注8〕。由于 BNF 语言定义中有十个子句，我们将不得不列出十个方程来完全指定该示例的语义；我们在这里仅满足于选定的方程。继续上一段的评论：
 
 $$\llbracket \mathbf{head} \sigma \rrbracket = \llbracket \sigma \rrbracket_0.$$
 
-另一方面，表达式 $\beta^*$ 创建一个布尔值的无限序列：
+另一方面，表达式 \(\beta^*\) 创建一个布尔值的无限序列：
 
 $$\llbracket \beta^* \rrbracket = \langle \llbracket \beta \rrbracket, \llbracket \beta \rrbracket, \llbracket \beta \rrbracket, \dots \rangle.$$
 
@@ -180,43 +180,43 @@ $$\llbracket \mathbf{even} \sigma \rrbracket = \langle \llbracket \sigma \rrbrac
 
 $$\llbracket \mathbf{merge} \sigma' \sigma'' \rrbracket = \langle \llbracket \sigma' \rrbracket, \llbracket \sigma'' \rrbracket \rangle.$$
 
-这些应该足以给出想法。还应该清楚的是，我们所拥有的实际上只是一个选择，因为 $\mathscr{S}$ 满足更多的同构（例如，$\mathscr{S} \cong \mathscr{S} \times \mathscr{S} \times \mathscr{S}$），并且有很多很多方法可以拆分和重新组合布尔值序列——所有这些都是以相当可计算的方式进行的。
+这些应该足以给出想法。还应该清楚的是，我们所拥有的实际上只是一个选择，因为 \(\mathscr{S}\) 满足更多的同构（例如，\(\mathscr{S} \cong \mathscr{S} \times \mathscr{S} \times \mathscr{S}\)），并且有很多很多方法可以拆分和重新组合布尔值序列——所有这些都是以相当可计算的方式进行的。
 
 ## 函数空间
 
 不应得出前一节包含了我全部想法的结论：这将使我们停留在程序模式（program schemes）的初级水平（例如 van Emden-Kowalski [6] 或 Manna [8]（最后一章））。有些人所谓的“不动点语义”（我本人不喜欢缩写词“fixpoint”）只是第一章。第二章已经包括了将过程作为参数的过程——高阶过程——我们已经远远超出了程序模式。诚然，不动点技术可以应用于这些高阶过程，但这并不是支持它们的唯一理由。使之明确所需的语义结构是函数空间。我从 1969 年开始就试图强调这一点，但许多人对我理解得不够。
 
-假设 $\mathscr{D}'$ 和 $\mathscr{D}''$ 是我们一直在讨论的那种域（比如 $\mathscr{B}$ 或 $\mathscr{B} \times \mathscr{B}$ 或 $\mathscr{S}$ 或更糟的东西）。通过 $[\mathscr{D}' \to \mathscr{D} '']$，让我们理解从 $\mathscr{D}'$ 映射到 $\mathscr{D}''$ 的所有单调且连续函数 $f$ 的域。这就是我所说的函数空间。这在数学上并不那么困难，但 $[\mathscr{D}' \to \mathscr{D}'']$ 再次是“同一种”域（尽管公认具有更复杂的结构）也并不那么显而易见。我无法在这里证明它，但至少我可以在函数空间上定义 $\sqsubseteq$ 关系：
+假设 \(\mathscr{D}'\) 和 \(\mathscr{D}''\) 是我们一直在讨论的那种域（比如 \(\mathscr{B}\) 或 \(\mathscr{B} \times \mathscr{B}\) 或 \(\mathscr{S}\) 或更糟的东西）。通过 \([\mathscr{D}' \to \mathscr{D} '']\)，让我们理解从 \(\mathscr{D}'\) 映射到 \(\mathscr{D}''\) 的所有单调且连续函数 \(f\) 的域。这就是我所说的函数空间。这在数学上并不那么困难，但 \([\mathscr{D}' \to \mathscr{D}'']\) 再次是“同一种”域（尽管公认具有更复杂的结构）也并不那么显而易见。我无法在这里证明它，但至少我可以在函数空间上定义 \(\sqsubseteq\) 关系：
 
-$f \sqsubseteq g$ 当且仅当对于所有 $x \in \mathscr{D}'$，$f(x) \sqsubseteq g(x)$。
+\(f \sqsubseteq g\) 当且仅当对于所有 \(x \in \mathscr{D}'\)，\(f(x) \sqsubseteq g(x)\)。
 
-将函数视为抽象对象并不是什么新鲜事；需要检查的是它们是否也是相当合理的计算对象。$[\mathscr{D}' \to \mathscr{D}'']$ 上的 $\sqsubseteq$ 关系是检查这一点的第一步，它导致了一个定义良好的函数有限近似的概念。（抱歉！这里没有时间更精确了。）当看到这一点时，通往函数空间迭代的道路就敞开了；如在 $[[\mathscr{D}' \to \mathscr{D}''] \to \mathscr{D}''']$ 中。这并不像起初看起来那么疯狂，因为我们的理论将 $f(x)$ 识别为变量 $f$ 和变量 $x$ 的可计算二元函数。因此，作为一个操作，它可以被视为函数空间的一个元素：
+将函数视为抽象对象并不是什么新鲜事；需要检查的是它们是否也是相当合理的计算对象。\([\mathscr{D}' \to \mathscr{D}'']\) 上的 \(\sqsubseteq\) 关系是检查这一点的第一步，它导致了一个定义良好的函数有限近似的概念。（抱歉！这里没有时间更精确了。）当看到这一点时，通往函数空间迭代的道路就敞开了；如在 \([[\mathscr{D}' \to \mathscr{D}''] \to \mathscr{D}''']\) 中。这并不像起初看起来那么疯狂，因为我们的理论将 \(f(x)\) 识别为变量 \(f\) 和变量 \(x\) 的可计算二元函数。因此，作为一个操作，它可以被视为函数空间的一个元素：
 
 $$[[\mathscr{D}' \to \mathscr{D}''] \times \mathscr{D}'] \to \mathscr{D}''.$$
 
 这只是这些算子（或组合子，如 Curry 和 Church 所称）理论的开始。
 
-吞下这一切，让我们尝试从 $\mathscr{S}$ 开始进行函数空间的无限迭代。我们定义 $\mathscr{F}_0 = \mathscr{S}$ 且 $\mathscr{F}_{n+1} = [\mathscr{F}_n \to \mathscr{S}]$。因此 $\mathscr{F}_1 = [\mathscr{S} \to \mathscr{S}]$ 且
+吞下这一切，让我们尝试从 \(\mathscr{S}\) 开始进行函数空间的无限迭代。我们定义 \(\mathscr{F}_0 = \mathscr{S}\) 且 \(\mathscr{F}_{n+1} = [\mathscr{F}_n \to \mathscr{S}]\)。因此 \(\mathscr{F}_1 = [\mathscr{S} \to \mathscr{S}]\) 且
 
 $$\mathscr{F}_2 = [[\mathscr{S} \to \mathscr{S}] \to \mathscr{S}].$$
 
 你只需要相信我，这一切都是高度构造性的（因为我们只使用连续函数）。
 
-很明显，这在某种自然意义上是累积的。首先，$\mathscr{S}$ 作为子空间“包含在” $[\mathscr{S} \to \mathscr{S}]$ 中：将每个 $x \in \mathscr{S}$ 与 $[\mathscr{S} \to \mathscr{S}]$ 中相应的常数函数等同起来。显然，根据我们的定义，这是一种保序对应。此外，每个 $f \in [\mathscr{S} \to \mathscr{S}]$ 都由一个常数（粗略地）近似，即 $f(\perp)$（这是所有值 $f(x)$ 的“最佳”元素 $\sqsubseteq$）。子空间和空间之间近似的这种关系将表示为 $\mathscr{S} \lhd [\mathscr{S} \to \mathscr{S}]$。
+很明显，这在某种自然意义上是累积的。首先，\(\mathscr{S}\) 作为子空间“包含在” \([\mathscr{S} \to \mathscr{S}]\) 中：将每个 \(x \in \mathscr{S}\) 与 \([\mathscr{S} \to \mathscr{S}]\) 中相应的常数函数等同起来。显然，根据我们的定义，这是一种保序对应。此外，每个 \(f \in [\mathscr{S} \to \mathscr{S}]\) 都由一个常数（粗略地）近似，即 \(f(\perp)\)（这是所有值 \(f(x)\) 的“最佳”元素 \(\sqsubseteq\)）。子空间和空间之间近似的这种关系将表示为 \(\mathscr{S} \lhd [\mathscr{S} \to \mathscr{S}]\)。
 
 我们可以说
 
 $$[\mathscr{S} \to \mathscr{S}] \lhd [[\mathscr{S} \to \mathscr{S}] \to \mathscr{S}],$$
 
-但现在是出于不同的原因。一旦我们确定了为什么 $\mathscr{S} \lhd [\mathscr{S} \to \mathscr{S}]$ 的原因，我们就必须尊重更高层 $\mathscr{F}_n$ 的函数空间结构。在特殊情况下，假设 $f \in [\mathscr{S} \to \mathscr{S}]$。我们想将 $f$ 注入下一个空间，所以称之为 $i(f) \in [[\mathscr{S} \to \mathscr{S}] \to \mathscr{S}]$。如果 $g$ 是 $[[\mathscr{S} \to \mathscr{S}] \to \mathscr{S}]$ 中的任何元素，我们被要求定义 $i(f)(g) \in \mathscr{S}$。现在，由于 $g \in [\mathscr{S} \to \mathscr{S}]$，我们有原始的向后投影 $j(g) = g(\perp) \in \mathscr{S}$。因此，由于这是我们在 $\mathscr{S}$ 中能得到的对 $g$ 的最佳近似，我们只能定义
+但现在是出于不同的原因。一旦我们确定了为什么 \(\mathscr{S} \lhd [\mathscr{S} \to \mathscr{S}]\) 的原因，我们就必须尊重更高层 \(\mathscr{F}_n\) 的函数空间结构。在特殊情况下，假设 \(f \in [\mathscr{S} \to \mathscr{S}]\)。我们想将 \(f\) 注入下一个空间，所以称之为 \(i(f) \in [[\mathscr{S} \to \mathscr{S}] \to \mathscr{S}]\)。如果 \(g\) 是 \([[\mathscr{S} \to \mathscr{S}] \to \mathscr{S}]\) 中的任何元素，我们被要求定义 \(i(f)(g) \in \mathscr{S}\)。现在，由于 \(g \in [\mathscr{S} \to \mathscr{S}]\)，我们有原始的向后投影 \(j(g) = g(\perp) \in \mathscr{S}\)。因此，由于这是我们在 \(\mathscr{S}\) 中能得到的对 \(g\) 的最佳近似，我们只能定义
 
 $$i(f)(g) = f(j(g)).$$
 
-这给出了下一个映射 $i: \mathscr{F}_1 \to \mathscr{F}_2$。为了定义相应的投影 $j: \mathscr{F}_2 \to \mathscr{F}_1$，我们以类似的方式论证并定义
+这给出了下一个映射 \(i: \mathscr{F}_1 \to \mathscr{F}_2\)。为了定义相应的投影 \(j: \mathscr{F}_2 \to \mathscr{F}_1\)，我们以类似的方式论证并定义
 
 $$j(\phi)(x) = \phi(i(x)),$$
 
-其中我们有 $\phi \in [[\mathscr{S} \to \mathscr{S}] \to \mathscr{S}]$，而 $i(x) \in [\mathscr{S} \to \mathscr{S}]$ 是值为 $x$ 的常数函数。考虑到这种进展，在定义 $i: \mathscr{F}_2 \to \mathscr{F}_3$ 和 $j: \mathscr{F}_3 \to \mathscr{F}_2$ 等方面使用完全类似的方案没有困难，从而给出了累积的精确含义：
+其中我们有 \(\phi \in [[\mathscr{S} \to \mathscr{S}] \to \mathscr{S}]\)，而 \(i(x) \in [\mathscr{S} \to \mathscr{S}]\) 是值为 \(x\) 的常数函数。考虑到这种进展，在定义 \(i: \mathscr{F}_2 \to \mathscr{F}_3\) 和 \(j: \mathscr{F}_3 \to \mathscr{F}_2\) 等方面使用完全类似的方案没有困难，从而给出了累积的精确含义：
 
 $$\mathscr{F}_0 \lhd \mathscr{F}_1 \lhd \mathscr{F}_2 \lhd \dots \lhd \mathscr{F}_n \lhd \mathscr{F}_{n+1} \lhd \dots$$
 
@@ -232,37 +232,37 @@ $$\mathscr{F}_{n+1} = [\mathscr{F}_n \to \mathscr{S}],$$
 
 $$\mathscr{F}_\infty \cong [\mathscr{F}_\infty \to \mathscr{S}]$$
 
-成立（至少在同构意义下）并不那么奇怪。它确实成立，但我只能指出这种同构的原因（和合理性）的梗概。首先，各个空间 $\mathscr{F}_n$ 已被一个接一个地放置，这不仅形成了一个空间塔，而且还将组合 $f(x)$ 尊重为两个变量的代数操作。$\mathscr{F}_\infty$ 在精确意义上是 $\mathscr{F}_n$ 并集的完备化；也就是说，在这些空间内，我们可以想到函数塔，每个函数都近似于下一个（通过使用 $i$ 和 $j$ 映射），使得在 $\mathscr{F}_\infty$ 中这些塔被赋予极限。如果塔被截断，那么我们可以争辩说每个空间 $\mathscr{F}_n \lhd \mathscr{F}_\infty$。
+成立（至少在同构意义下）并不那么奇怪。它确实成立，但我只能指出这种同构的原因（和合理性）的梗概。首先，各个空间 \(\mathscr{F}_n\) 已被一个接一个地放置，这不仅形成了一个空间塔，而且还将组合 \(f(x)\) 尊重为两个变量的代数操作。\(\mathscr{F}_\infty\) 在精确意义上是 \(\mathscr{F}_n\) 并集的完备化；也就是说，在这些空间内，我们可以想到函数塔，每个函数都近似于下一个（通过使用 \(i\) 和 \(j\) 映射），使得在 \(\mathscr{F}_\infty\) 中这些塔被赋予极限。如果塔被截断，那么我们可以争辩说每个空间 \(\mathscr{F}_n \lhd \mathscr{F}_\infty\)。
 
-现在为什么在 $\mathscr{F}_\infty$ 上有同构？取 $[\mathscr{F}_\infty \to \mathscr{S}]$ 中的一个函数（连续的！）。根据其连续性，它将由它对有限层 $\mathscr{F}_n$ 的作用决定。也就是说，它在 $[\mathscr{F}_n \to \mathscr{S}] = \mathscr{F}_{n+1}$ 中会有越来越好的近似；因此，近似“居住”在 $\mathscr{F}_\infty$ 的有限层中。它们的极限应该正好给我们返回我们开始时的函数 $[\mathscr{F}_\infty \to \mathscr{S}]$。以同样的方式，$\mathscr{F}_\infty$ 中的任何元素都可以被视为 $[\mathscr{F}_n \to \mathscr{S}]$ 空间中近似函数的极限。诚然，有细节需要检查；但在极限情况下，$\mathscr{F}_\infty$ 和 $[\mathscr{F}_\infty \to \mathscr{S}]$ 之间没有真正的区别：无限层的高阶函数就是它自己的函数空间。（一如既往：这是连续性的结果。）
+现在为什么在 \(\mathscr{F}_\infty\) 上有同构？取 \([\mathscr{F}_\infty \to \mathscr{S}]\) 中的一个函数（连续的！）。根据其连续性，它将由它对有限层 \(\mathscr{F}_n\) 的作用决定。也就是说，它在 \([\mathscr{F}_n \to \mathscr{S}] = \mathscr{F}_{n+1}\) 中会有越来越好的近似；因此，近似“居住”在 \(\mathscr{F}_\infty\) 的有限层中。它们的极限应该正好给我们返回我们开始时的函数 \([\mathscr{F}_\infty \to \mathscr{S}]\)。以同样的方式，\(\mathscr{F}_\infty\) 中的任何元素都可以被视为 \([\mathscr{F}_n \to \mathscr{S}]\) 空间中近似函数的极限。诚然，有细节需要检查；但在极限情况下，\(\mathscr{F}_\infty\) 和 \([\mathscr{F}_\infty \to \mathscr{S}]\) 之间没有真正的区别：无限层的高阶函数就是它自己的函数空间。（一如既往：这是连续性的结果。）
 
-这里潜伏着很多结构；事实上比我起初想的还要多。在图 3 中，我说明了一个同构链，它表明 $\mathscr{F}_\infty$ 获得了我们已经熟悉的 $\mathscr{S}$ 的大部分特征。这些之所以有效的原因如下。首先，我们将 $\mathscr{F}_\infty$ 视为一个函数空间。现在，函数对可以同构地与承担成对值的函数建立对应关系。但 $\mathscr{S} \times \mathscr{S} \cong \mathscr{S}$，正如我们已经知道的那样。最后一步只是将 $\mathscr{F}_\infty$ 上的函数放回 $\mathscr{F}_\infty$ 的元素。
+这里潜伏着很多结构；事实上比我起初想的还要多。在图 3 中，我说明了一个同构链，它表明 \(\mathscr{F}_\infty\) 获得了我们已经熟悉的 \(\mathscr{S}\) 的大部分特征。这些之所以有效的原因如下。首先，我们将 \(\mathscr{F}_\infty\) 视为一个函数空间。现在，函数对可以同构地与承担成对值的函数建立对应关系。但 \(\mathscr{S} \times \mathscr{S} \cong \mathscr{S}\)，正如我们已经知道的那样。最后一步只是将 \(\mathscr{F}_\infty\) 上的函数放回 \(\mathscr{F}_\infty\) 的元素。
 
 ![图 3:第一个同构链](assets/1976-scott/fig-03.png)
 
 **图 3. 第一个同构链。**
-$\mathscr{F}_\infty \times \mathscr{F}_\infty \cong [\mathscr{F}_\infty \to \mathscr{S}] \times [\mathscr{F}_\infty \to \mathscr{S}]$
-$\quad \cong [\mathscr{F}_\infty \to \mathscr{S} \times \mathscr{S}]$
-$\quad \cong [\mathscr{F}_\infty \to \mathscr{S}]$
-$\quad \cong \mathscr{F}_\infty$
+\(\mathscr{F}_\infty \times \mathscr{F}_\infty \cong [\mathscr{F}_\infty \to \mathscr{S}] \times [\mathscr{F}_\infty \to \mathscr{S}]\)
+\(\quad \cong [\mathscr{F}_\infty \to \mathscr{S} \times \mathscr{S}]\)
+\(\quad \cong [\mathscr{F}_\infty \to \mathscr{S}]\)
+\(\quad \cong \mathscr{F}_\infty\)
 
-利用图 3 的同构，我们可以获得图 4 所示的进一步结果。原因相当清楚。取一个从 $\mathscr{F}_\infty$ 到 $\mathscr{F}_\infty$ 的函数。该函数的值可以解释为函数。但考虑到一个其值为函数的函数（在空间同构意义下）只是一个具有两个参数的函数。正如我们在图 3 中看到的，$\mathscr{F}_\infty \times \mathscr{F}_\infty \cong \mathscr{F}_\infty$，因此我们获得了最终的简化（在同构意义下）。
+利用图 3 的同构，我们可以获得图 4 所示的进一步结果。原因相当清楚。取一个从 \(\mathscr{F}_\infty\) 到 \(\mathscr{F}_\infty\) 的函数。该函数的值可以解释为函数。但考虑到一个其值为函数的函数（在空间同构意义下）只是一个具有两个参数的函数。正如我们在图 3 中看到的，\(\mathscr{F}_\infty \times \mathscr{F}_\infty \cong \mathscr{F}_\infty\)，因此我们获得了最终的简化（在同构意义下）。
 
 ![图 4:第二个同构链](assets/1976-scott/fig-04.png)
 
 **图 4. 第二个同构链。**
-$[\mathscr{F}_\infty \to \mathscr{F}_\infty] \cong [\mathscr{F}_\infty \to [\mathscr{F}_\infty \to \mathscr{S}]]$
-$\quad \cong [\mathscr{F}_\infty \times \mathscr{F}_\infty \to \mathscr{S}]$
-$\quad \cong [\mathscr{F}_\infty \to \mathscr{S}]$
-$\quad \cong \mathscr{F}_\infty$
+\([\mathscr{F}_\infty \to \mathscr{F}_\infty] \cong [\mathscr{F}_\infty \to [\mathscr{F}_\infty \to \mathscr{S}]]\)
+\(\quad \cong [\mathscr{F}_\infty \times \mathscr{F}_\infty \to \mathscr{S}]\)
+\(\quad \cong [\mathscr{F}_\infty \to \mathscr{S}]\)
+\(\quad \cong \mathscr{F}_\infty\)
 
-我们所做的是勾勒出为什么 $\mathscr{F}_\infty$（无限类型函数的空间）是 $\lambda$-演算的一个模型。$\lambda$-演算是一种语言（此处未说明），其中每个项都可以被视为同时表示一个参数（或值）和一个函数。形式细节非常简单，但语义细节正是我们一直在研究的：空间 $\mathscr{F}_\infty$ 的每个元素都可以同时被视为空间 $[\mathscr{F}_\infty \to \mathscr{F}_\infty]$ 的一个元素；因此，$\mathscr{F}_\infty$ 提供了一个模型，但它只是众多模型中的一个。
+我们所做的是勾勒出为什么 \(\mathscr{F}_\infty\)（无限类型函数的空间）是 \(\lambda\)-演算的一个模型。\(\lambda\)-演算是一种语言（此处未说明），其中每个项都可以被视为同时表示一个参数（或值）和一个函数。形式细节非常简单，但语义细节正是我们一直在研究的：空间 \(\mathscr{F}_\infty\) 的每个元素都可以同时被视为空间 \([\mathscr{F}_\infty \to \mathscr{F}_\infty]\) 的一个元素；因此，\(\mathscr{F}_\infty\) 提供了一个模型，但它只是众多模型中的一个。
 
 在无法明确说明的情况下，为一种纯粹的过程语言（还有图 2 中的对和所有其他东西）勾勒了指称（或数学）语义。在引用的关于真实程序设计语言的参考文献中，添加了所有其他特性（赋值、顺序、声明等）。在这些参考文献中已经确立的是，语义定义的方法确实有效。我希望你们能研究一下。
 
 ## 参考文献
 
-1. Böhm, C., Ed. *$\lambda$-Calculus and Computer Science Theory*. Lecture Notes in Computer Science, Vol. 37, Springer-Verlag, New York, 1975.
+1. Böhm, C., Ed. *\(\lambda\)-Calculus and Computer Science Theory*. Lecture Notes in Computer Science, Vol. 37, Springer-Verlag, New York, 1975.
 2. Clark, K.L., and Cowell, D.F. *Programs, Machines, and Computation*. McGraw-Hill, New York, 1976.
 3. Crossley, J.N., ed. *Algebra and Logic*. Papers from the 1974 Summer Res. Inst. Australian Math. Soc., Monash U. Clayton, Victoria, Australia. Lecture Notes in Mathematics, Vol. 450, Springer-Verlag, New York, 1975.
 4. Donahue, J.E. *Complementary Definitions of Programming Language Semantics*. Lecture Notes in Computer Science, Vol. 42, Springer-Verlag, 1976.

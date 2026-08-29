@@ -1,6 +1,6 @@
 # 《形态发生》翻译工程索引
 
-本目录对应 P. T. Saunders 编、North-Holland 1992 年出版的 *Collected Works of A.M. Turing: Morphogenesis*。源文件为 `papers/Morphogenesis-North Holland (1992).pdf`，共 158 个物理页。当前仅建立来源页清单和拟定文件结构，不含正文翻译。
+本目录对应 P. T. Saunders 编、North-Holland 1992 年出版的 *Collected Works of A.M. Turing: Morphogenesis*。源文件为 `papers/Morphogenesis-North Holland $1992$.pdf`，共 158 个物理页。当前仅建立来源页清单和拟定文件结构，不含正文翻译。
 
 逐页对应关系见 [`翻译清单.md`](翻译清单.md)。页码范围以下均采用 PDF 物理页；括号内为书内印刷页码。
 
