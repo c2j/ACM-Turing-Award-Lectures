@@ -12,3 +12,4 @@ resources/
 go.mod
 go.sum
 __pycache__/
+.playwright-mcp/

@@ -1,0 +1,31 @@
+{{- /*
+  Hypothesis (hypothes.is) 社会性标注 embed。
+  通过官方 embed.js 在页面内注入标注侧栏,无需安装浏览器扩展。
+
+  配置(hugo.yaml -> params.hypothesis):
+    enable: true                   总开关
+    sections: [lectures, papers]   仅在这些 section 的普通页面上加载
+    show_highlights: true          显示他人高亮
+    open_sidebar: true             页面加载时自动展开侧栏(演示用)
+    group: __world__               标注写入的 group,默认公共组
+
+  注意:标注按"完整页面 URL"索引,本地 http://localhost:1313/... 与线上
+  https://c2j.github.io/... 是两套独立空间,互不可见。
+*/ -}}
+{{- $page := . -}}
+{{- $h := site.Params.hypothesis -}}
+{{- if and $h $h.enable -}}
+{{- $sections := $h.sections | default (slice "lectures" "papers") -}}
+{{- $eligible := and $page.IsPage (in $sections $page.Section) -}}
+{{- if $eligible -}}
+{{- $show := true -}}{{- if isset $h "show_highlights" -}}{{- $show = $h.show_highlights -}}{{- end -}}
+{{- $open := false -}}{{- if isset $h "open_sidebar" -}}{{- $open = $h.open_sidebar -}}{{- end -}}
+{{- $cfg := dict "showHighlights" $show "openSidebar" $open -}}
+{{- with $h.group -}}{{- $cfg = merge $cfg (dict "group" .) -}}{{- end -}}
+{{/* safeJS 必需:Go html/template 会把 <script> 内的 template.HTML 当 JS 字符串再转义一次 */}}
+<script type="application/json" class="js-hypothesis-config">
+{{ $cfg | jsonify (dict "indent" " ") | safeJS }}
+</script>
+<script async src="https://hypothes.is/embed.js"></script>
+{{- end -}}
+{{- end -}}
