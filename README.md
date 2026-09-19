@@ -90,6 +90,15 @@ ACM A.M. 图灵奖获奖演讲中文翻译项目,覆盖 1966–2024 全部获奖
 - 视频标题与链接均取自 ACM 官方演讲页 [amturing.acm.org/lectures.cfm](https://amturing.acm.org/lectures.cfm);2019/2022/2023 及 2003 年 ACM 页面仅以 "ACM A.M. Turing Award Lecture" 为题,故照录。
 - 1989 Kahan、1995 Blum、1997 Engelbart、1999 Brooks、2000 Yao 既无书面讲稿,亦不见于 ACM 演讲页(Kahan 一栏 ACM 官方书目注明 "never got around to publishing his");2001 Dahl & Nygaard 于颁奖后、演讲前相继逝世;2024 Sutton & Barto 的视频截至整理时尚未收录。
 
+## 站点标注(hypothes.is)
+
+站点的演讲页与图灵全集页已接入 [hypothes.is](https://web.hypothes.is/) 的社会性标注:通过官方 `embed.js` 注入标注侧栏,读者无需安装浏览器扩展即可高亮、批注、互相回复。
+
+- 实现:`layouts/partials/hooks/head-end.html`(OINK 主题的 `head-end` 钩子),开关与参数在 `hugo.yaml` 的 `params.hypothesis` 下,把 `enable` 设为 `false` 即可全站下线。
+- 当前只在 `lectures`、`papers` 两个 section 的普通页面上加载;`open_sidebar: true` 让侧栏进页面即展开(演示用,正式上线可改 `false`)。
+- 标注按**完整页面 URL**索引:本地 `http://localhost:1313/...` 与线上 `https://c2j.github.io/ACM-Turing-Award-Lectures/...` 属于两套互不可见的空间。
+- 免费个人账号即可开始标注;若要限定范围,把 `params.hypothesis.group` 换成私有 group ID,标注便只对该组可见。
+
 ## 相关文献翻译:`papers/` → `papers-cn/`
 
 `papers/` 目录另存有一批图灵相关原始文献:两篇独立论文与四卷图灵《全集》(*Collected Works of A.M. Turing*,North-Holland/Elsevier)。全部文献已译入 [`papers-cn/`](papers-cn/),格式规范与 `zh/` 一致(正文 + 译注);四卷《全集》合计约 1,000 页,按单元逐篇译出,每卷目录下有 `README.md`(单元对照表)与 `翻译清单.md`(逐页核对清单)。这些文献与 `zh/` 演讲译文一同由 Hugo 流水线(`scripts/build-site-content.py`)转换为 HTML,发布于站点"图灵全集"栏目。

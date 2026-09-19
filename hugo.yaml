@@ -56,6 +56,15 @@ markup:
     noClasses: false # code colours follow light and dark mode
 
 params:
+  # hypothes.is 社会性标注(embed.js)。关掉 enable 即可全站下线。
+  # 标注按完整页面 URL 索引,localhost 与线上站点互不可见。
+  hypothesis:
+    enable: true
+    sections: [lectures, papers]
+    show_highlights: true
+    open_sidebar: true # 演示:进页面即展开侧栏
+    group: __world__ # 公共组;换成私有组 ID 可只让组内可见
+
   offline_search: true
   github_repo: https://github.com/c2j/ACM-Turing-Award-Lectures
   copyright:

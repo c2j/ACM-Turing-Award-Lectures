@@ -110,3 +110,18 @@ Note: 1283920.1283927 (Dijkstra 1972, The Humble Programmer) is absent from the 
 - Never published as papers (video only): 1989 Kahan, 1995 Blum, 1997 Engelbart, 1999+ most years;
   written CACM Turing papers exist for 2005 Naur, 2007 Clarke/Emerson/Sifakis, 2014 Stonebraker,
   2017 Hennessy/Patterson, 2018 Bengio/Hinton/LeCun, 2020 Aho/Ullman. Full table in README.md.
+
+## Hugo site (repo root)
+
+- `hugo.yaml` (theme OINK as a Go module), `layouts/`, `scripts/build-site-content.py` generate
+  `content/lectures|papers` from `zh/` + `papers-cn/`. Local build needs
+  `hugo mod init github.com/c2j/ACM-Turing-Award-Lectures && hugo mod get github.com/pgsty/oink@v0.8.0`
+  first (`go.mod`/`go.sum` are gitignored). Preview: `hugo server --buildFuture`
+  (serves at `/ACM-Turing-Award-Lectures/` because baseURL keeps its subpath).
+- Project partial overrides live in `layouts/partials/hooks/{head-end,body-end}.html` and win over the
+  theme's `layouts/_partials/hooks/*` (both empty by default).
+- `head-end.html` injects the hypothes.is `embed.js` annotation sidebar (see README "站点标注").
+  Gotcha: inside `<script type="application/json">` Go's html/template re-escapes `jsonify`'s
+  `template.HTML` into a JS string literal, so the config must be piped through `safeJS`.
+- `.Page.OutputFormat` is not reachable from the head hook context (`*hugolib.pageState`); gate on
+  `.IsPage` + `.Section` instead. The `print` output format does not call `head.html` at all.
